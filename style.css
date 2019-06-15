@@ -1,0 +1,179 @@
+:root{
+	--blue-color: #0073e5;
+	--green-color: #7ddc1f;
+	--white-color: #f5f5f5;
+	--gray-color: #444444;
+	--black-color: #000000;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	background-color: var(--white-color);
+}
+
+.side-info{
+	text-align: center;
+	padding-left: 20px; 
+	padding-right: 20px;
+	position: sticky;
+	top: 14px;
+	padding-bottom: 14px;
+}
+
+.main-info{
+	padding-bottom: 24px;
+	background-color: rgba(255, 255, 255, 0.95);
+	/*-webkit-box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);
+	-moz-box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);
+	box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);*/
+}
+
+/*PROFILE*/
+
+.profile-img{
+	width: 80%;
+	max-width: 350px;
+	height: auto;
+	border-radius: 50%;
+	border: 2px solid var(--blue-color);
+	object-fit: cover;
+}
+
+.contact > a > img{
+	width: 13%;
+	max-width: 50px;
+	height: auto;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.lang-btn{
+	border-radius: 10px;
+	color: white;
+	background-color: var(--blue-color);
+	border: none;
+	outline: none;
+	user-select: none;
+}
+
+/*PROJECT*/
+.project-article{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 8px;
+}
+
+.project-section{
+	padding: 14px;
+	min-height: 150px;
+	position: relative;
+	cursor: pointer;
+	transition: box-shadow 0.2s, transform 0.2s;
+	background-color: white;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.project-section:hover{
+	-webkit-box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
+	-moz-box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
+	box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
+	transform: translate(0, -5px);
+}
+
+.project-section > h3{
+	font-size: 36px;
+	text-align: center;
+}
+
+
+.project-oneline{
+	text-align: center;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	background: rgba(0,0,0,0.2);
+	margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 2px;
+}
+
+.solvedeep{
+	font-family: 'Coiny', cursive;
+	color: white;
+}
+
+.automaTA{
+	font-family: 'Ubuntu', sans-serif;
+	color: white;
+	font-weight: bold;
+}
+
+.automaTA:after{
+	content: "TA";
+	color: #ffa444;
+}
+
+.listen{
+	font-family: 'Ubuntu', sans-serif;
+	color: white;
+}
+
+.melodize{
+	font-family: 'Amita', cursive;
+	color: white;
+}
+
+/*PUBLICATION*/
+
+.publication-list{
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.publication-list li:before{
+	content: '[' counter(item, decimal) '] ';
+	counter-increment: item;
+	font-family: Times;
+}
+
+.publication-list li, .publication-list li > a{
+	font-family: Times;
+	font-style: initial;
+	text-decoration: none;
+}
+
+.publication-list > li + li{
+	margin-top: 14px;
+}
+
+/*EDUCATION*/
+
+.institute > h3{
+	margin-top: 8px;
+}
+
+.institute > h3 > a, .institute > h3{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*FONT*/
+
+h1{
+	color: var(--blue-color);
+	font-family: 'Roboto', sans-serif;
+	font-size: 32px;
+}
+
+h2{
+	color: var(--green-color);
+	font-family: 'Lato', sans-serif;
+}
+
+h3{
+	font-family: 'Roboto', sans-serif;
+}
