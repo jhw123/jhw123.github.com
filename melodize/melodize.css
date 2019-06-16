@@ -1,6 +1,6 @@
 :root{
 	--backgroundColor: #333;
-	--grey-color: #bbb;
+	--yellow-color: #ffff84;
 }
 
 body{
@@ -33,7 +33,7 @@ body{
 }
 
 @media screen and (min-width: 1001px){
-	.interface > article, .training > article{
+	.interface > article, .technical > article{
 		padding-left: 40px;
 		padding-right: 40px;
 	}
@@ -75,7 +75,7 @@ body{
 .authors > section > a > figure > img{
 	max-width: 140px;
 	height: auto;
-	border: 2px solid var(--grey-color);
+	border: 2px solid var(--yellow-color);
 	border-radius: 50%;
 }
 
@@ -85,12 +85,12 @@ body{
 }
 
 .authors > section > a[href]:hover > figcaption{
-	color: var(--grey-color);
+	color: var(--yellow-color);
 }
 
-/*INTERFACE & TRAINING*/
+/*INTERFACE & TECHNICAL*/
 
-.interface > figure > img, .training > figure > img{
+.interface > figure > img, .technical > figure > img{
 	width: 100%;
 }
 

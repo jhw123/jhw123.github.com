@@ -39,7 +39,7 @@ body{
 }
 
 @media screen and (min-width: 1001px){
-	.interface > article, .training > article{
+	.interface > article, .technical > article{
 		padding-left: 40px;
 		padding-right: 40px;
 	}
@@ -94,12 +94,22 @@ body{
 	color: var(--orange-color);
 }
 
-/*INTERFACE & TRAINING*/
+/*INTERFACE & TECHNICAL*/
 
-.interface > figure > img, .training > figure > img{
+.interface > figure > img, .technical > figure > img{
 	width: 100%;
 }
 
+.interface > article > section > article, .technical > article > section > article{
+	text-align: justify;
+}
+
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
 h1{
 
