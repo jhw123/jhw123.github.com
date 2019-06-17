@@ -26,13 +26,6 @@ body{
 	color: #ffa444;
 }
 
-.section-box{
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-bottom: 15px;
-	padding-top: 8px;
-}
-
 .section-box + .purple{
 	background-color: var(--backgroundColor);
 	color: white;
@@ -52,6 +45,13 @@ body{
 		text-align: justify;
 		padding-bottom: 20px;
 	}
+
+	.section-box{
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-bottom: 20px;
+		padding-top: 8px;
+	}
 }
 
 @media screen and (max-width: 400px){
@@ -64,6 +64,13 @@ body{
 		padding-right: 20px;
 		text-align: justify;
 		padding-bottom: 20px;
+	}
+
+	.section-box{
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 20px;
+		padding-top: 8px;
 	}
 }
 
@@ -103,7 +110,6 @@ body{
 .interface > article > section > article, .technical > article > section > article{
 	text-align: justify;
 }
-
 
 .vcenter {
     display: inline-block;
