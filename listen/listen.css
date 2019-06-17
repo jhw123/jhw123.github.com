@@ -1,0 +1,9 @@
+:root{
+	--backgroundColor: #6FBFE0;
+	--title-color: white;
+	--author-color: #ffff84;
+}
+
+.listen{
+	font-family: 'Ubuntu', sans-serif;
+}

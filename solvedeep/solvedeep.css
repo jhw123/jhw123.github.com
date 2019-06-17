@@ -1,0 +1,33 @@
+:root{
+	--backgroundColor: #343d46;
+	--title-color: white;
+	--author-color: #419bf4;
+	--red-color: #ef7747;
+	--yellow-color: #fdc24a;
+}
+
+.solvedeep{
+	font-family: 'Coiny', cursive;
+}
+
+.interface > article > section > h3{
+	color: var(--red-color);
+}
+
+.technical > article > section > h3{
+	color: var(--yellow-color);
+}
+
+@media screen and (min-width: 1001px){
+	.technical > figure > img{
+		padding: 20px;
+		padding-top: 0px;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	.technical > figure > img{
+		padding: 0px;
+		padding-bottom: 14px;
+	}
+}

@@ -23,9 +23,6 @@ body{
 .main-info{
 	padding-bottom: 24px;
 	background-color: rgba(255, 255, 255, 0.95);
-	/*-webkit-box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);
-	-moz-box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);
-	box-shadow: 0px -36px 24px -3px rgba(245,245,245,0.95);*/
 }
 
 /*PROFILE*/
@@ -66,7 +63,7 @@ body{
 
 .project-section{
 	padding: 14px;
-	min-height: 150px;
+	min-height: 170px;
 	position: relative;
 	cursor: pointer;
 	transition: box-shadow 0.2s, transform 0.2s;
@@ -87,7 +84,6 @@ body{
 	text-align: center;
 }
 
-
 .project-oneline{
 	text-align: center;
 	color: white;
@@ -97,6 +93,48 @@ body{
     margin-left: 8px;
     margin-right: 8px;
     padding: 2px;
+}
+
+.project-info{
+	color: #ddd;
+    position: absolute;
+    border: 8px;
+    display: block;
+    width: 100%;
+    left: 0px;
+    bottom: 20px;
+}
+
+.project-section > aside{
+	position: absolute;
+    top: -2px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    background: red;
+    color: white;
+    padding: 5px;
+    padding-bottom: 0px;
+    text-align: center;
+    left: 8px;
+    font-size: 12px;
+    width: 36px;
+    -webkit-box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
+	box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
+}
+
+.project-section > aside:after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+    border: 18px solid transparent;
+    border-top-color: red;
+    border-bottom: 0;
+    margin-left: -18px;
+    margin-bottom: -18px;
 }
 
 .solvedeep{
