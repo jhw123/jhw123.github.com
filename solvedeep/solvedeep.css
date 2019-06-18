@@ -10,8 +10,21 @@
 	font-family: 'Coiny', cursive;
 }
 
-.interface > article > section > h3{
+.interface > article > h3{
 	color: var(--red-color);
+	margin-top: 0px;
+}
+
+.interface.row{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.interface > figure > img{
+	margin-top: 10px;
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .technical > article > section > h3{
@@ -20,14 +33,19 @@
 
 @media screen and (min-width: 1001px){
 	.technical > figure > img{
-		padding: 20px;
-		padding-top: 0px;
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.interface > article, .technical > article{
+		padding-left: 15px !important;
+		padding-right: 15px !important;
 	}
 }
 
 @media screen and (max-width: 1000px){
 	.technical > figure > img{
 		padding: 0px;
-		padding-bottom: 14px;
 	}
 }

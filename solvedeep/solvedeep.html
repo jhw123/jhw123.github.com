@@ -54,45 +54,54 @@
 		</section>
 		<section class="section-box">
 			<h2>Interface</h2>
-			<article class="interface row">
-				<figure class="col-lg-4 col-md-6 col-sm-6 col-xs-12 vcenter">
-					<img src="img/interface.png" style="border: 1px solid #ccc">
-				</figure><!--
-			 --><article class="col-lg-8 col-md-6 col-sm-6 col-xs-12 vcenter">
-					<section>
-						<h3>1. Grouping Steps</h3>
-						<article>
-							A learner first groups the steps in their solution into clusters that share a common goal. By doing so, the learner forms the basic structure of their conceptual hierarchy. When
-							the learner tries to group two steps, the system checks text similarity, which is based on the Sørensen-Dice coefficient, between the steps and encourages to cluster if the similarity is bigger than 0.6.
-						</article>
-					</section>
-					<section>
-						<h3>2. Generate Labels</h3>
-						<article>
-							The learner then defines the goal that each cluster achieves. Learners are encouraged to consider the transition from the previous step when defining the goals. This not only ensures that goals have a logical connection to their previous steps, but also helps learners describe the procedural action taken between steps instead of repeating or plainly rephrasing the mathematical phrases in their solution steps. The system also requires the learner to use a verb and a noun to form a complete clause to ensure they write a meaningful subgoal label.
-						</article>
-					</section>
-					<section>
-						<h3>3. Revise Labels</h3>
-						<article>
-							When the learner submits the subgoal labels, the system provides feedback on the content and structure of the submitted labels. The system provides four types of feedback based on different types of alignment patterns. The feedback helps learners to either generate more context-independent labels or develop a hierarchical structure by seeing higher/lower level subgoals that can be formed from their subgoal labels. The feedback is shown one at a time, and the learner can accept the feedback to apply it to their subgoal labels.
-						</article>
-					</section>
+			<section class="interface row">
+				<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<article>
+						SolveDeep aims to support learners in forming a hierarchical understanding on their solution by first defining subgoal labels on their own and then receiving detailed feedback on the hierarchy of their subgoals. Learners solve mathematics problems using the system, and participate in three consecutive activities that follow a typical subgoal labeling activity—grouping solution steps, generating subgoal labels for each group of steps, and revising labels with feedback.
+					</article>
 				</article>
-			</article>
+			</section>
+			<section class="interface row">
+			 	<article class="col-lg-8 col-md-7 col-sm-12 col-xs-12 vcenter">
+					<h3>1. Grouping Steps</h3>
+					<article>
+						A learner first groups the steps in their solution into clusters that share a common goal. By doing so, the learner forms the basic structure of their conceptual hierarchy. When the learner tries to group two steps, the system checks text similarity, which is based on the Sørensen-Dice coefficient, between the steps and encourages to cluster if the similarity is bigger than 0.6.
+					</article>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-12 col-xs-12 vcenter">
+					<img src="img/group.png">
+				</figure>
+			</section>
+			<section class="interface row">
+			 	<article class="col-lg-8 col-md-7 col-sm-12 col-xs-12 vcenter">
+					<h3>2. Describing Labels</h3>
+					<article>
+						The learner then defines the goal that each cluster achieves. Learners are encouraged to consider the transition from the previous step when defining the goals. This not only ensures that goals have a logical connection to their previous steps, but also helps learners describe the procedural action taken between steps instead of repeating or plainly rephrasing the mathematical phrases in their solution steps. The system also requires the learner to use a verb and a noun to form a complete clause to ensure they write a meaningful subgoal label.
+					</article>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-12 col-xs-12 vcenter">
+					<img src="img/generate.png">
+				</figure>
+			</section>
+			<section class="interface row">
+			 	<article class="col-lg-8 col-md-7 col-sm-12 col-xs-12 vcenter">
+					<h3>3. Revise Labels</h3>
+					<article>
+						When the learner submits the subgoal labels, the system provides feedback on the content and structure of the submitted labels. The system provides four types of feedback based on different types of alignment patterns. The feedback helps learners to either generate more context-independent labels or develop a hierarchical structure by seeing higher/lower level subgoals that can be formed from their subgoal labels. The feedback is shown one at a time, and the learner can accept the feedback to apply it to their subgoal labels.
+					</article>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-12 col-xs-12 vcenter">
+					<img src="img/revise.png">
+				</figure>
+			</section>
 		</section>
 		<section class="section-box color-box">
 			<h2>Computational Pipeline</h2>
+			<article>
+				To generate a single comprehensive representation of all learner-generated solutions to a specific problem, SolveDeep computes the similarity between two sequences of subgoal labels and their optimal alignment. The alignment is used to detect the hierarchical level differences between the sequences and produce useful feedback that can help learners form a hierarchical understanding.
+			</article>
 			<article class="technical row">
-				<figure class="col-lg-12 col-md-12 col-sm-12 col-xs-12 vcenter">
-					<img src="img/pipeline.png">
-				</figure><!--
-			 --><article class="col-lg-12 col-md-12 col-sm-12 col-xs-12 vcenter">
-					<section>
-						<article>
-							To generate a single comprehensive representation of all learner-generated solutions to a specific problem, SolveDeep computes the similarity between two sequences of subgoal labels and their optimal alignment. The alignment is used to detect the hierarchical level differences between the sequences and produce useful feedback that can help learners form a hierarchical understanding.
-						</article>
-					</section>
+			 	<article class="col-lg-6 col-md-12 col-sm-12 col-xs-12 vcenter">
 					<section>
 						<h3>Solution Graph</h3>
 						<article>
@@ -111,7 +120,10 @@
 							<p>There are two applications of this computation: merging an input sequence to the right position in a solution graph and generating feedback based on alignments. The similarity between sequences provides the cue for the system to perform a graph union operation to merge the sequence with the graph. The misalignments in two sequences of labels imply structural differences, which can produce useful feedback on structure.
 						</article>
 					</section>
-				</article>
+				</article><!--
+			 --><figure class="col-lg-6 col-md-12 col-sm-12 col-xs-12 vcenter">
+					<img src="img/pipeline.png">
+				</figure>
 			</article>
 		</section>
 		<section class="section-box">
