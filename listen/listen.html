@@ -15,12 +15,12 @@
 	</head>
 	<body>
 		<section class="title">
-			<h1><span class="listen">listen()</span>: Connecting Lectures</h1>
+			<h1><span class="listen">listen()</span>: Connecting Professors and Students</h1>
 		</section>
 		<section class="section-box abstract">
 			<h2>Abstract</h2>
 			<article>
-			
+			Having interviewed a diverse pool of professors, we have identified there is one concern they all share, namely student participation. Most of professors agreed that the reason for students' unwillingness to participate is shyness and peer pressure. This concern led us to an insight that increasing student participation can boost the quality of lectures and help KAIST professors to manage their course. To support this, we set three design goals for our system: 1) to track students' progress dynamically, 2) to make class participation more interactive, and 3) to make professors more approachable. We developed listen(), a web app that serves as proxy between professor and shy students. listen() achieves its design goals by getting questions from students, conducting quizzes and helping professors review. During our user testing with four participants for professor roles, we undug several issues for duplicate questions and alert boxes. All the testers were concerned about receiving and handling duplicate questions. So we added "reply to all" feature, which let professors select several questions and answer once. Testers also kept ignoring the alert boxes via which we were delivering important messages, but we solved the problem by replacing the default alert box with a custom one.
 			</article>
 		</section>
 		<section class="section-box color-box">
@@ -29,7 +29,7 @@
 				<section>
 					<a>
 						<figure>
-							<img src="img/default.jpeg">
+							<img src="img/ashim.jpeg">
 						</figure>
 						<figcaption>Bolat Ashim<br> KAIST</figcaption>
 					</a>
@@ -53,7 +53,7 @@
 				<section>
 					<a href="http://oaakx.space">
 						<figure>
-							<img src="img/default.jpeg">
+							<img src="img/aliyev.jpeg">
 						</figure>
 						<figcaption>Silap Aliyev<br> KAIST</figcaption>
 					</a>
@@ -61,24 +61,48 @@
 			</article>
 		</section>
 		<section class="section-box">
-			<h2>Interface</h2>
+			<h2>Interface for Professors</h2>
 			<article class="interface row">
-				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
-					<img src="img/interface.png" style="border: 1px solid #ccc">
-				</figure><!--
-			 --><article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
-					
-				</article>
+				<article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
+			 		<h3>Lecture Page for Tracking Students' Progress</h3>
+					<p>Professors receive and view questions from students on this page in realtime. The questions are categorized by their tags and professors can filter out question by the tags. Professors can end their lecture by clicking the "End Lecture" button at the top-left and receive no more questions from students. Professors can also start a quiz session which are composed of the questions that students asked previously.</p>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+					<img src="img/professor.png">
+				</figure>
+			</article>
+			<article class="interface row">
+				<article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
+			 		<h3>Quiz Page for Encouraging Participation</h3>
+					<p>On this page, professors select the questions they received from students and create multiple choice quizzes from those. We envision that students will be more likely to ask questions and pay more attention to lectures because quiz questions are from themselves or other students. Professors can activate the quizzes in a lecture to allow students to receive and answer quizzes through the student interface. listen() would then receive and compile the scores from all the students automatically for the professor. </p>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+					<img src="img/quiz.png">
+				</figure>
+			</article>
+			<article class="interface row">
+				<article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
+			 		<h3>Review Page for Making Professors Approachable</h3>
+					<p>Review page allows professors to review the questions asked by students during a given lecture. Professors can filter the lectures by their tags, mark them answered or unanswered, delete or rename a lecture. We leverage a mailing feature to the interface so that professors can answer student questions directly to send the questions or to the TA's to look at.</p>
+				</article><!--
+			 --><figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+					<img src="img/review.png">
+				</figure>
 			</article>
 		</section>
 		<section class="section-box color-box">
-			<h2></h2>
-			<article class="technical row">
+			<h2>Interface for Students</h2>
+			<article class="interface row">
 				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
-					<img src="img/training.png">
+					<div class="mobile-view">
+						<img src="img/student.png" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+					</div>
 				</figure><!--
 			 --><article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
-					
+			 		<h3>Ask without Raising a Hand</h3>
+					<p>Students can ask questions during lecture without raising their hand and attracting others' attention. We envision that this type of discrete interaction for questioning can encourage shy students to ask questions and help professors get a better understanding of their students.</p>
+					<h3>No Laptop Needed</h3>
+					<p>The student interface is optimized for mobile devices. During the interview with students, we found there are students who often do not bring their laptop computers to their classes, but there is no student who comes to a class without their mobile phone. We would like to give all students the chance to participate in their classes. The interface is also compatible with laptop browsers.</p>
 				</article>
 			</article>
 		</section>
@@ -93,7 +117,7 @@
 				<section class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
 					<ul>
 						<li><a href="http://melodize.github.io">Live Interface</a></li>
-						<li><a href="https://docs.google.com/presentation/d/1THZHavUXb2nKw8FkG2PTBxHtMGzfDv2y15hT15t1O1Y/edit?usp=sharing" target="_blank">Slides</a></li>
+						<li><a href="https://docs.google.com/presentation/d/1THZHavUXb2nKw8FkG2PTBxHtMGzfDv2y15hT15t1O1Y/edit?usp=sharing" target="_blank">Final Presentation Slides</a></li>
 					</ul>
 				</section>
 			</article>

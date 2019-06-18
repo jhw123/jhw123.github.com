@@ -73,9 +73,9 @@ body{
 }
 
 .project-section:hover{
-	-webkit-box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
-	-moz-box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
-	box-shadow: 0px 7px 15px -12px rgba(0,0,0,0.88);
+	-webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
 	transform: translate(0, -5px);
 }
 

@@ -10,11 +10,15 @@ body{
 	text-align: center;
 	padding: 12px;
     color: var(--title-color);
+    box-shadow: 0px 1px 5px #aaa;
 }
 
 .section-box + .color-box{
 	background-color: var(--backgroundColor);
 	color: white;
+	    -webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
 }
 
 @media screen and (min-width: 1001px){
@@ -93,6 +97,12 @@ body{
 	width: 100%;
 }
 
+.interface > figure > img{
+	-webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
+}
+
 .interface  > article, .technical > article{
 	text-align: justify;
 }
@@ -123,6 +133,53 @@ iframe{
     height: 97%;
     margin-left: auto;
     margin-right: auto;
+    -webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
+}
+
+.mobile-view{
+    border: 8px solid #333;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background: #333;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    -webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
+}
+
+.mobile-view > img{
+	width: 100%;
+}
+
+.mobile-view:before{
+	content: " ";
+	user-select: none;
+	width: 40px;
+	height: 2px;
+	border: 2px solid #ccc;
+	position: absolute;
+	color: #ccc;
+	top: 12px;
+	left: calc(50% - 14px);
+}
+
+.mobile-view:after{
+	content: " ";
+	user-select: none;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #ccc;
+	position: absolute;
+	color: #ccc;
+	border-radius: 50%;
+	bottom: 7px;
+	left: calc(50% - 8px);
 }
 
 h1{
@@ -132,4 +189,8 @@ h1{
 h2{
 	margin-top: 8px;
 	font-weight: bold;
+}
+
+h3{
+	text-align: left;
 }
