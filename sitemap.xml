@@ -9,4 +9,28 @@ layout: null
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://jhw123.github.io/solvedeep/solvedeep.html</loc>
+    <lastmod>2019-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jhw123.github.io/automaTA/automaTA.html</loc>
+    <lastmod>2019-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jhw123.github.io/listen/listen.html</loc>
+    <lastmod>2019-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jhw123.github.io/melodize/melodize.html</loc>
+    <lastmod>2019-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

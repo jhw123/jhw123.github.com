@@ -8,13 +8,53 @@
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.row + .row{
-	margin-top: 14px;
-}
-
 @media screen and (min-width: 1001px){
-	.interface > article, .technical > article{
+	.interface > div, .technical > div{
 		padding-left: 15px !important;
 		padding-right: 15px !important;
 	}
+}
+
+.mobile-view{
+    border: 8px solid #333;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background: #333;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    -webkit-box-shadow: 0px 1px 5px #aaa;
+	-moz-box-shadow: 0px 1px 5px #aaa;
+	box-shadow: 0px 1px 5px #aaa;
+}
+
+.mobile-view > img{
+	width: 100%;
+}
+
+.mobile-view:before{
+	content: " ";
+	user-select: none;
+	width: 40px;
+	height: 2px;
+	border: 2px solid #ccc;
+	position: absolute;
+	color: #ccc;
+	top: 26px;
+	left: calc(50% - 14px);
+}
+
+.mobile-view:after{
+	content: " ";
+	user-select: none;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #ccc;
+	position: absolute;
+	color: #ccc;
+	border-radius: 50%;
+	bottom: 21px;
+	left: calc(50% - 8px);
 }

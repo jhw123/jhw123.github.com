@@ -2,112 +2,75 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="Keywords" content="Hyoungwook Jin, HCI, KAIST, automaTA" />
+		<meta name="Keywords" content="Hyoungwook Jin, Donghoon Han, Changyoon Lee, Alice Oh, L@S, KAIST, automaTA, CS408" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="Author" content="Hyoungwook Jin" />
 		<title>automaTA</title>
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap-mini.css">
 		<link rel="stylesheet" type="text/css" href="automaTA.css">
 		<link rel="stylesheet" type="text/css" href="../template.css">
 		<link rel="icon" href="img/favicon.png">
 	</head>
 	<body>
-		<section class="title">
-			<h1><span class="automaTA">automa</span>: Human-Machine Interaction for Answering Context-Specific Questions</h1>
-		</section>
+		<h1 class="title"><span class="automaTA">automa</span>: Human-Machine Interaction for Answering Context-Specific Questions</h1>
 		<section class="section-box abstract">
 			<h2>Abstract</h2>
-			<article>
-				When online learners have questions that are related to a specific task, they often use Q&A boards instead of web search because they are looking for context-specific answers. While lecturers, teaching assistants, and other learners can provide context-specific answers on the Q&A boards, there is often a high response latency which can impede their learning. We present automaTA, a prototype that suggests context-specific answers to online learners’ questions by capturing the context of the questions. Our solution is to automate the response generation with a human-machine mixed approach, where humans generate high-quality answers, and the human-generated responses are used to train an automated algorithm to provide context-specific answers. automaTA adopts this approach as a prototype in which it generates automated answers for function-related questions in an online programming course. We conduct two user studies with undergraduate and graduate students with little or no experience with Python and found the potential that automaTA can automatically provide answers to context-specific questions without a human instructor, at scale.
-			</article>
+			When online learners have questions that are related to a specific task, they often use Q&A boards instead of web search because they are looking for context-specific answers. While lecturers, teaching assistants, and other learners can provide context-specific answers on the Q&A boards, there is often a high response latency which can impede their learning. We present automaTA, a prototype that suggests context-specific answers to online learners’ questions by capturing the context of the questions. Our solution is to automate the response generation with a human-machine mixed approach, where humans generate high-quality answers, and the human-generated responses are used to train an automated algorithm to provide context-specific answers. automaTA adopts this approach as a prototype in which it generates automated answers for function-related questions in an online programming course. We conduct two user studies with undergraduate and graduate students with little or no experience with Python and found the potential that automaTA can automatically provide answers to context-specific questions without a human instructor, at scale.
 		</section>
 		<section class="section-box color-box">
 			<h2>Authors</h2>
-			<article class="authors">
-				<section>
-					<a>
-						<figure>
-							<img src="img/lee.jpeg">
-						</figure>
-						<figcaption>Changyoon Lee *<br> KAIST</figcaption>
-					</a>
-				</section>
-				<section>
-					<a href="http://www.hoonhan.io/">
-						<figure>
-							<img src="img/han.jpeg">
-						</figure>
-						<figcaption>Donghoon Han *<br> KAIST</figcaption>
-					</a>
-				</section>
-				<section>
-					<a href="http://jhw123.github.io">
-						<figure>
-							<img src="https://jhw123.github.io/img/profile.jpeg">
-						</figure>
-						<figcaption>Hyoungwook Jin *<br> KAIST</figcaption>
-					</a>
-				</section>
-				<section>
-					<a href="http://aliceoh9.github.io">
-						<figure>
-							<img src="img/oh.jpeg">
-						</figure>
-						<figcaption>Alice Oh<br> KAIST</figcaption>
-					</a>
-				</section>
-			</article>
+			<div class="authors">
+				<a>
+					<img src="img/lee.jpeg" alt="Changyoon Lee's profile image"><br>
+					Changyoon Lee *<br> KAIST
+				</a>
+				<a href="http://www.hoonhan.io/">
+					<img src="img/han.jpeg" alt="Donghoon Han's profile image"><br>
+					Donghoon Han *<br> KAIST
+				</a>
+				<a href="http://jhw123.github.io">
+					<img src="https://jhw123.github.io/img/hyoungwook jin.jpeg" alt="Hyoungwook Jin's profile image"><br>
+					Hyoungwook Jin *<br> KAIST
+				</a>
+				<a href="http://aliceoh9.github.io">
+					<img src="img/oh.jpeg" alt="Alice Oh's profile image"><br>
+					Alice Oh<br> KAIST
+				</a>
+			</div>
 			<aside style="margin-top: 14px; font-size: 12px">* Authors contributed equally.</aside>
 		</section>
 		<section class="section-box">
 			<h2>Interface</h2>
-			<article class="interface row">
-				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter" style="text-align: center; padding-top: 14px; padding-bottom: 14px;">
-					<img src="img/interface.png" style=" width: 75%;">
+			<div class="interface row">
+				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+					<img src="img/interface.png" style=" width: 75%;" alt="System interface for asking and receiving the answers for function related questions. A learner can type a question on a search bar at the top and receive three function suggestions along with usage examples. If the suggestions are not satisfactory, the learner can ask the question to human teaching assistants.">
 				</figure><!--
-			 --><article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
-			 		<section>
-			 			<article>
-			 				automaTA is a Google Chrome extension that allows students to ask questions and receive automated answers on their programming task window. automaTA adds to the rich features built in <a href="http://elice.io" target="_blank">Elice</a>, an online Python learning platform.
-			 			</article>
-			 		</section>
-					<section>
-						<h3>Function Suggestions</h3>
-						<article>
-							Learners ask for function suggestions by describing the function they are looking for. automaTA suggests three relevant functions for the description. Learners can click the ‘Useful’ buttons if the suggestion is correct and helpful.
-						</article>
-					</section>
-					<section>
-						<h3>Relevant Code Examples</h3>
-						<article>
-							automaTA provides the code examples from the official Python documentation and peer code. The code example from peer codes can be more helpful for doing programming tasks because they show how functions are used in the tasks.
-						</article>
-					</section>
-					<section>
-						<h3>Ask to Teaching Assistants</h3>
-						<article>
-							Learners can ask questions directly to teaching assistants if the automated answers are unsatisfactory. The answers to the questions may not be provided immediately as teaching assistants answer them manually.
-						</article>
-					</section>
-				</article>
-			</article>
+			 --><div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
+			 		automaTA is a Google Chrome extension that allows students to ask questions and receive automated answers on their programming task window. automaTA adds to the rich features built in <a href="http://elice.io" target="_blank">Elice</a>, an online Python learning platform.
+					<h3>Function Suggestions</h3>
+					Learners ask for function suggestions by describing the function they are looking for. automaTA suggests three relevant functions for the description. Learners can click the ‘Useful’ buttons if the suggestion is correct and helpful.
+					<h3>Relevant Code Examples</h3>
+					automaTA provides the code examples from the official Python documentation and peer code. The code example from peer codes can be more helpful for doing programming tasks because they show how functions are used in the tasks.
+					<h3>Ask to Teaching Assistants</h3>
+					Learners can ask questions directly to teaching assistants if the automated answers are unsatisfactory. The answers to the questions may not be provided immediately as teaching assistants answer them manually.
+				</div>
+			</div>
 		</section>
 		<section class="section-box color-box">
 			<h2>Human-Machine Collaboration</h2>
-			<article class="technical row">
-				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter" style="padding-top: 14px; padding-bottom: 14px;">
-					<img src="img/training.png">
-					<figcaption style="font-size: 12px; padding-top: 5px;">Question by Aneeque Ahmed, Teacher by parkjisun, and Code programming by Fauzan Adiima from <a href="http://thenounproject.com">the Noun Project</a>.</figcaption>
+			<div class="technical row">
+				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+					<img src="img/human-machine collaboration.png" alt="A diagram that explains how human and machine collaboration happens to automate question and answering: 1) apture the context of questions from learners’ codes., 2) handover questions with unsatisfied answer to experts for qualified answers, and 3) train machines with the experts’ answers for automation." title="Question by Aneeque Ahmed and Teacher by parkjisun from the Noun Project.">
 				</figure><!--
-			 --><article class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter" style="text-align: justify;">
+			 --><div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
 					automaTA provides satisfactory answers by turn-taking between humans and machines. In the case when the automated answers by automaTA are not relevant for a question, learners can ask the same question directly to a human teaching assistant. This workflow ensures that learners can get satisfactory help even when automaTA is not mature enough to give useful answers. When a learner asks a question to a teaching assistant, learner’s code and task information are sent to the assistant along with the question. The teaching assistant uses an independent interface to answer the question. The teaching assistant suggests a list of functions and writes an explanation of how those functions can help solve the learner’s task. Question and answer data are then used to improve automaTA to give better answers.
-				</article>
-			</article>
+				</div>
+			</div>
 		</section>
-		<section class="section-box">
-			<article class="row">
+		<footer class="section-box">
+			<div class="row">
 				<section class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<h2>L@S2019 Work-In-Progress</h2>
 					<ul>
@@ -123,8 +86,7 @@
 						<li><a href="http://docs.google.com/presentation/d/1WXsRK-_i7lg0ED3dWHPgoj7OWxGvb9O2_0iLpyr-1xk/edit?usp=sharing" target="_blank">Final Slides</a></li>
 					</ul>
 				</section>
-			</article>
-		</section>
+			</div>
+		</footer>
 	</body>
-	<script></script>
 </html>
