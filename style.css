@@ -200,6 +200,17 @@ body{
 }
 
 /*FONT*/
+@media screen and (max-width: 1200px){
+	h1{
+		font-size: 26px !important;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	time{
+		display: block;
+	}
+}
 
 h1{
 	color: var(--blue-color);
