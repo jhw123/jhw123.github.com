@@ -15,25 +15,25 @@ function translate(lang='ko', speed=1000){
 }
 
 function translateElement(transto, elem = document.getElementById("target"), speed){
-	const kor = elem.getAttribute(transto);
+	const trans_str = elem.getAttribute(transto);
 	let temp_str = elem.textContent.trim();
 
-	let candidates = [...Array(Math.min(temp_str.length, kor.length)).keys()];
+	let candidates = [...Array(Math.min(temp_str.length, trans_str.length)).keys()];
 	shuffle(candidates);
 
-	let cnt = Math.max(kor.length, Math.abs(temp_str.length - kor.length));
+	let cnt = Math.max(trans_str.length, Math.abs(temp_str.length - trans_str.length));
 	const timeInt = speed/cnt;
 
 	const loop = setInterval(()=>{
 		if(cnt >= 0){
 			if(candidates.length > 0){
 				idx= candidates.pop();
-				temp_str = temp_str.replaceAt(idx, kor[idx]);
+				temp_str = temp_str.replaceAt(idx, trans_str[idx]);
 			}
-			if(temp_str.length > kor.length)
+			if(temp_str.length > trans_str.length)
 				temp_str = temp_str.slice(0, -1);
-			else if(temp_str.length < kor.length)
-				temp_str = temp_str+kor[temp_str.length];
+			else if(temp_str.length < trans_str.length)
+				temp_str = temp_str+trans_str[temp_str.length];
 			elem.innerHTML = temp_str;
 			cnt--;
 		}else{
