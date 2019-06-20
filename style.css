@@ -36,6 +36,13 @@ body{
 	object-fit: cover;
 }
 
+@media screen and (max-height: 400px){
+	.profile-img{
+		height: calc(100vh - 230px);
+   		width: auto;
+	}
+}
+
 .contact > a > img{
 	width: 13%;
 	max-width: 50px;
