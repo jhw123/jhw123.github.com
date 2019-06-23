@@ -4,23 +4,11 @@ let curLang='en';
 if(localStorage.getItem("jhwlang"))
 	curLang = localStorage.getItem("jhwlang");
 
-// function translate(lang='ko', speed=1000){
-// 	if(speed === 0){
-// 		for(let elem of document.querySelectorAll(`[${lang}]`))
-// 			elem.innerHTML = elem.getAttribute(`${lang}`);
-// 	}else if(curLang != lang){
-// 		for(let elem of document.querySelectorAll(`[${lang}]`))
-// 			translateElement(lang, elem, speed);
-// 	}
-// 	curLang = lang;
-// 	localStorage.setItem('jhwlang', lang);
-// }
-
 function translate(lang, speed=1000){
 	if(speed === 0){
 		for(let elem of document.querySelectorAll("[transto]")){
 			const trans_str = elem.getAttribute("transto");
-			let temp_str = elem.textContent.trim();
+			let temp_str = elem.textContent;
 			elem.setAttribute("transto", temp_str);
 			elem.innerHTML = trans_str;
 		}
@@ -32,37 +20,9 @@ function translate(lang, speed=1000){
 	localStorage.setItem('jhwlang', lang);
 }
 
-// function translateElement(transto, elem = document.getElementById("target"), speed){
-// 	const trans_str = elem.getAttribute(transto);
-// 	let temp_str = elem.textContent.trim();
-
-// 	let candidates = [...Array(Math.min(temp_str.length, trans_str.length)).keys()];
-// 	shuffle(candidates);
-
-// 	let cnt = Math.max(trans_str.length, Math.abs(temp_str.length - trans_str.length));
-// 	const timeInt = speed/cnt;
-
-// 	const loop = setInterval(()=>{
-// 		if(cnt >= 0){
-// 			if(candidates.length > 0){
-// 				idx= candidates.pop();
-// 				temp_str = temp_str.replaceAt(idx, trans_str[idx]);
-// 			}
-// 			if(temp_str.length > trans_str.length)
-// 				temp_str = temp_str.slice(0, -1);
-// 			else if(temp_str.length < trans_str.length)
-// 				temp_str = temp_str+trans_str[temp_str.length];
-// 			elem.innerHTML = temp_str;
-// 			cnt--;
-// 		}else{
-// 			clearInterval(loop);
-// 		}
-// 	}, timeInt);
-// }
-
 function translateElement(elem, speed){
 	const trans_str = elem.getAttribute("transto");
-	let temp_str = elem.textContent.trim();
+	let temp_str = elem.textContent;
 
 	elem.setAttribute("transto", temp_str);
 
