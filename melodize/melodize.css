@@ -7,3 +7,11 @@
 .melodize{
 	font-family: 'Amita', sans-serif;
 }
+
+@media screen and (min-width: 1001px){
+	.technical > figure > img{
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

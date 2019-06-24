@@ -23,7 +23,7 @@
 		<h1 class="title"><span class="melodize">Melodize</span>: Lyric-based Crowd Composing Platform</h1>
 		<section class="section-box abstract">
 			<h2>Abstract</h2>
-			Accessing and listening to music has become easier than ever thanks to numerous music streaming platforms available nowadays. However, composing music remains to be challenging and inaccessible to most people due to the musical expertise required to do so. Crowdsourcing solutions have already been tried-and-tested in the music industry, but most platforms worked by connecting experts music artists. Ones that supported casual use were limiting and didn’t allow enough room for musical experimentation. Melodize, is a crowd-sourced melody composition platform where people can submit lyrics to receive a suitable melody “crowd-composed” by other users. Users with no musical expertise can take part in the composition of submitted lyric snippets. To improve worker quality while ensuring freedom of expression, we introduce the Aggregate Display function, which lets users reflect on the input of other users to accommodate the creation of a musical consensus. Although Melodize did not generate musical masterpieces, it has the potential to produce inspirational melodies or the basis of more complex and meaningful remixes and adaptations.
+			Accessing and listening to music has become easier than ever thanks to numerous music streaming platforms available nowadays. However, composing music remains to be challenging and inaccessible to most people due to the musical expertise required to do so. Crowdsourcing solutions have already been tried-and-tested in the music industry, but most platforms worked by connecting expert music artists. Ones that supported casual use were limiting and did not allow enough room for musical experimentation. Melodize, is a crowd-sourced melody composition platform where people can submit lyrics to receive a suitable melody “crowd-composed” by other users. Users with no musical expertise can take part in the composition of submitted lyric snippets. To improve worker quality while ensuring freedom of expression, we introduce the Aggregate Display function, which lets users reflect on the input of other users to accommodate the creation of a musical consensus. Although Melodize did not generate musical masterpieces, it has the potential to produce inspirational melodies or the basis of more complex and meaningful remixes and adaptations.
 		</section>
 		<section class="section-box color-box">
 			<h2>Team Members</h2>
@@ -49,22 +49,22 @@
 		<section class="section-box">
 			<h2>Interface</h2>
 			<div class="interface row">
-				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
+				<figure class="col-lg-4 col-md-6 col-sm-12 col-xs-12 vcenter">
 					<img src="img/interface.png" alt="System interface for composing the music for a segment of lyric">
 				</figure><!--
-			 --><div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
-					
+			 --><div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 vcenter">
+					Our platform supports three core tasks: 1) submission of lyrics, 2) composition of melodies, and 3) community-wide interactions. Requesters submit their lyrics, and workers compose song sequentially from the beginning. The song is divided into segments and users work on one segment at a time. After enough users composed the segment, they work on the next segment and so on. Computer aggregates user inputs for previous segments and users can check previous melodies while working on their current segment. Completed songs are open for viewing for all users in the gallery page. Users can listen to, and even try altering the notes of the completed songs.
 				</div>
 			</div>
 		</section>
 		<section class="section-box color-box">
-			<h2></h2>
+			<h2>Melody Aggregation</h2>
 			<div class="technical row">
-				<figure class="col-lg-4 col-md-5 col-sm-6 col-xs-12 vcenter">
-					<img src="img/workflow.png" alt="" title="Lyric by priyanka, IN, Musical Note by Fajar Wahyu Pribadi, ID, Music Note by Line Icons Pro, Hyderabad, Music File Check by Hea Poh Lin, MY, User and Group by DTDesign, TH, Code Programming by Fauzan Adiima from the Noun Project.">
+				<figure class="col-lg-4 col-md-12 col-sm-12 col-xs-12 vcenter">
+					<img src="img/workflow.png" alt="" title="User and Group by DTDesign, TH from the Noun Project.">
 				</figure><!--
-			 --><div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 vcenter">
-					Our platform supports three core tasks: 1) submission of lyrics, 2) composition of melodies, and 3) community-wide interactions. Requesters submit their lyrics, and workers compose song sequentially from the beginning. The song is divided into segments and users work on one segment at a time. After enough users composed the segment, they work on the next segment and so on. Computer aggregates user inputs for previous segments and users can check previous melodies while working on their current segment. Completed songs are open for viewing for all users in the gallery page. Users can listen to, and even try altering the notes of the completed songs.
+			 --><div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 vcenter">
+					The song is divided into 8 note segments. In order for a segment to begin composition, the previous one must be finalized. This allows for the composers to get a sense of continuity between the segments when composing. In order to prevent overrepresentation of a single composer, each user can only submit for a single segment once. Such a system model may be counterintuitive to users, which is why we implemented a tutorial and an about page. Due to the subjective and open nature of music composition, we found the designing of an aggregation method quite challenging. An issue is that since the notes being submitted by users are not influenced by each other, that a cohesive song will be outputted is not guaranteed. This is why we decided to promote implicitly coordinated inputs by allowing users to see what other users inputted. Within the compose page is the ‘distribution’ button, which shows users previous submission for that segment. The frequency of the chosen notes are shown by gray-scale, the more popular the note, the darker it is. This would ensure a certain amount of convergence between the inputs.
 				</div>
 			</div>
 		</section>

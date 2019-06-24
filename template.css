@@ -151,6 +151,10 @@ iframe{
 	box-shadow: 0px 1px 5px #aaa;
 }
 
+li > a{
+	font-size: 24px;
+}
+
 h1{
 	
 }
