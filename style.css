@@ -115,33 +115,38 @@ body{
     padding-left: 8px;
 }
 
+.project-section > div > time{
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+}
+
 .project-section > div > div{
 	font-size: 17px;
 }
 
-.project-section > div > time{
+.project-section > div:nth-child(1){
 	margin-bottom: 14px;
+}
+
+.project-section > div > a{
+	display: inline-block;
 }
 
 .solvedeep{
 	font-family: 'Coiny', cursive;
-	color: white;
 }
 
 .automaTA{
 	font-family: 'Ubuntu', sans-serif;
-	color: white;
 	font-weight: bold;
 }
 
 .listen{
 	font-family: 'Ubuntu', sans-serif;
-	color: white;
 }
 
 .melodize{
 	font-family: 'Amita', cursive;
-	color: white;
 }
 
 /*PUBLICATION*/
