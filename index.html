@@ -15,19 +15,19 @@
 		<meta property="og:image" content="https://jhw123.github.io/img/hyoungwook jin.jpg">
 		<meta property="og:url" content="https://jhw123.github.io">
 		<!--Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Amita&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="bootstrap-mini.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="icon" href="img/favicon.png">
+		<link rel="shortcut icon" href="img/favicon48x48.png">
 	</head>
 	<body class="container">
 		<div class="row">
-			<section class="col-lg-4 col-md-4 col-sm-5 col-xs-12 side-info">
+			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 side-info">
 				<figure>
 					<img class="profile-img" src="img/hyoungwook jin.jpg" alt="Hyoungwook Jin's profile image">
 				</figure>
@@ -40,41 +40,117 @@
 					<!-- <a href="img/profile.jpeg"><img src="img/cv.png" alt="Hyoungwook Jin's CV"></a> -->
 					<p style="margin-top: 24px; font-size: 18px;" transto="저는 다양한 상황에서 사람들이 정보를 쉽게 얻고 배울 수 있도록 돕는 시스템을 만드는 크리에이터입니다.">Hello, I am a creator who loves to build end-to-end systems that enhance the productivity of learners in diverse contexts.</p>
 				</div>
-			</section>
-			<section class="col-lg-8 col-md-8 col-sm-7 col-xs-12 main-info">
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 main-info">
 				<aside style="position: absolute; top: 20px; right: 15px; z-index: 1;">
 					<button class="lang-btn" id="en-btn">English</button>
 					<button class="lang-btn" id="ko-btn">한국어</button>
 				</aside>
 				<article>
 					<h2 transto="프로젝트">PROJECT</h2>
-					<div class="project-article">
-						<section class="project-section" style="background-color: #343d46" onclick="window.location.href='solvedeep/solvedeep.html'">
-							<h3 class="solvedeep">SolveDeep</h3>
-							<span class="project-oneline" transto="수학 문제에서 하위목표 구조 추출하기">Learner-driven Subgoal Labeling on Math Problems</span>
-							<aside>CHI<br>2019</aside>
-							<span class="project-info" transto="카이스트 인터렉션 연구실 / 2017.12 ~ 2019.5">KIXLAB / Dec. 2017 ~ May 2019</span>
-						</section>
+					<section class="row project-section">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<h3 class="solvedeep"><a href="solvedeep/solvedeep.html">SolveDeep</a> </h3>
+							<div transto="수학 문제에서 하위목표 구조 추출하기">Learner-driven Subgoal Labeling on Math Problems</div>
+							<time transto="2017.12 ~ 2019.05">Dec. 2017 ~ May 2019</time>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div transto="카이스트 인터렉션 연구실(KIXLAB)의 학부 연구원으로써 수학 학습자가 문제 풀이 구조를 더 잘 이해하도록 돕는 시스템을 만들었습니다. 시스템 개발 및 연구 진행에서 주도적인 역할을 하였고, 연구적 성과를 인정받아 CHI2019 학회에서 Late-Breaking-Work를 발표하였습니다.">As an undergrad researcher of KIXLAB, I worked on building a system that helps math learners to better understand solution structures. I led this research project and presented the research results at CHI2019 Late-breaking-work.</div>
+							<article>
+								<h4 transto="역할">My Role</h4>
+								<ul>
+									<li transto="UX 디자인 및 jQuery 기반 프론트 개발">Desgined UX and developed jQuery-base front-end</li>
+									<li transto="Word2vec, Flask를 이용한 데이터 처리 API 서버 구축">Implemented an API server that uses Word2vec and Flask for data procesing</li>
+									<li transto="순차적 데이터 클러스터링 알고리즘 설계">Devised an algorithm for clustering sequential data</li>
+									<li transto="Firebase Realtime DB 구조 최적화">Designed an optimal structure for Firebase Realtime DB</li>
+									<li transto="연구 주도 및 연구 성과 창출">Led the whole research and made a research result</li>
+								</ul>
+							</article>
+							<article>
+								<h4 transto="개발">Tech Stack</h4>
+								jQuery, Express, Node.js, Flask, Firebase Realtime DB
+							</article>
+						</div>
+					</section>
+					
+					<section class="row project-section">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<h3 class=automaTA><a href="automaTA/automaTA.html">automa<span style="color: #ffa444;">TA</span></a></h3>
+							<div transto="인간-기계 협업을 통한 질의응답 자동화">Human-machine Collaboration for QnA Automation</div>
+							<time transto="2018.09 ~ 2019.04">Sept. 2018 ~ April 2019</time>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div transto="전산학 프로젝트 수업에서 2명의 팀원과 함께 프로그래밍 학습자들의 함수관련 질의응답을 돕는 시스템을 개발하였습니다. 14명의 프로그래밍 학습자를 모집해 실험을 2회 진행하였고, 개발된 시스템이 온라인 검색보다 함수를 찾는 데에 더 도움이 되었다는 의견을 얻었습니다. 결과를 정리해 L@S2019 학회의 Work-in-progress에 논문을 제출하였습니다.">Our team for CS project course developed a QnA system that answers programming beginners' questions on function usage. With 14 participants we conducted two experiments and found that the system is more effective to a function search than online searches. Our team summarized the results and submitted a paper to L@S 2019 Work-in-progress.</div>
+							<article>
+								<h4 transto="역할">My Role</h4>
+								<ul>
+									<li transto="크롬 확장 프로그램 형태의 질의응답창 디자인 및 개발">Designed and developed the QnA window in a form of Chrome extension</li>
+									<li transto="Background.js를 통해 크롬에서 서버 응답 알림 구현">Implemented a server notification feature on Chrome through background.js</li>
+									<li transto="React.js, Semantic UI로 코딩 플랫폼(프로토타입) 개발">Developed a prototypical coding platform by using React.js and Semantic UI library</li>
+									<li transto="A/B 테스팅을 통해 시스템 검증">Evaluated the system with a A/B testing</li>
+								</ul>
+							</article>
+							<article>
+								<h4 transto="개발">Tech Stack</h4>
+								Chrome extension, React.js, node.js, AWS, Firebase Realtime DB
+							</article>
+						</div>
+					</section>
 
-						<section class="project-section" style="background-color: #373744" onclick="window.location.href='automaTA/automaTA.html'">
-							<h3 class="automaTA">automa</h3>
-							<span class="project-oneline" transto="인간-기계 협업을 통한 질의응답 자동화">Human-machine Collaboration for QnA Automation</span>
-							<aside>L@S<br>2019</aside>
-							<span class="project-info" transto="전산학 프로젝트 / 2018.9 ~ 2019.4">CS Project / Sept. 2018 ~ Apr. 2019</span>
-						</section>
+					<section class="row project-section">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<h3 class="melodize"><a href="melodize/melodize.html">Melodize</a></h3>
+							<div transto="공동체가 함께하는 음악 작곡">Community-driven Music Composition</div>
+							<time transto="2017.09 ~ 2017.12">Sept. 2017 ~ Dec. 2017</time>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div transto='소셜컴퓨팅 수업에서 3명의 팀원과 함께 사람들이 음악을 함께 작곡할 수 있도록 돕는 크라우드소싱 기반 작곡 시스템을 만들었습니다. 개발은 전부 혼자 맡아 진행하였고, 교내 시스템 런칭에서 일주일 간 80명의 사용자를 확보하여 "Best Crowdsourcer" 팀으로 선정되었습니다.'>For the course project for the social computing class, I developed a crowd composing system which helps and organize people to compose a melody together. During a 1-week deploymet in school, the system gathered 80 users, and my team received the "Best Crowdsourcer" award.</div>
+							<article>
+								<h4 transto="역할">My Role</h4>
+								<ul>
+									<li transto="jQuery, Bootstrap을 이용한 시스템 전체 UI, UX 디자인 및 개발">Designed and developed the whole system UI and UX with jQuery and Bootstrap library</li>
+									<li transto="소셜 게임적 측면을 위한 랭킹 시스템 도입">Introduced a ranking system for social gamification</li>
+									<li transto="데이터베이스 계층 구조 설계">Designed the database structure</li>
+									<li transto="크라우드소싱 데이터 종합 과정 설계">Designed the mechanism to aggregate crowdsourced data</li>
+								</ul>
+							</article>
+							<article>
+								<h4 transto="개발">Tech Stack</h4>
+								jQuery, Bootstrap, Github page, Firebase Realtime DB
+							</article>
+						</div>
+					</section>
 
-						<section class="project-section" style="background-color: #333" onclick="window.location.href='melodize/melodize.html'">
-							<h3 class="melodize">Melodize</h3>
-							<span class="project-oneline" transto="공동체가 함께 하는 음악 작곡">Community-driven Music Composition</span>
-							<span class="project-info" transto="소셜컴퓨팅 / 2017.9 ~ 2017.12">Social Computing / Sept. 2017 ~ Dec. 2017</span>
-						</section>
-
-						<section class="project-section" style="background-color: #6FBFE0" onclick="window.location.href='listen/listen.html'">
-							<h3 class="listen">listen()</h3>
-							<span class="project-oneline" transto="강의자를 위한 실시간 질문 플랫폼">Realtime QnA Platform for Lecturers</span>
-							<span class="project-info" transto="인간컴퓨터 상호작용개론 / 2017.3 ~ 2017.6">Intro to HCI / Mar. 2017 ~ June 2017</span>
-						</section>
-					</div>
+					<section class="row project-section">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<h3 class="listen"><a href="listen/listen.html">listen()</a></h3>
+							<div transto="강의자를 위한 실시간 질문 플랫폼">Realtime QnA Platform for Lecturers</div>
+							<time transto="2017.03 ~ 2017.06">Mar. 2017 ~ June 2017</time>
+						<!--<a href="listen/listen.html">
+								<div class="project-card" style="background-color: #6FBFE0">
+									<h3 class="listen">listen()</h3>
+									<div transto="강의자를 위한 실시간 질의 플랫폼">Mobile UI Development</div>
+									<time transto="2017.03 ~ 2017.06">Mar. 2017 ~ June 2017</time>
+								</div>
+							</a> -->
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div transto="인간컴퓨터 상호작용 개론 수업에서 3명의 팀원과 함께 강의 중 질문을 장려하여 강의자가 학생들의 이해도를 체크하도록 돕는 질의응답 시스템을 만들었습니다. 카이스트 교수님들에게 시스템을 소개하고 긍정적 의견 및 발전 가능성 확인하였습니다.">This is the course project for the intro to Human-Computer Interaction class, and aims to build a QnA system that encourages questioning during lectures and helps a lecturer check students' level of understanding. The system was introduced to KAIST professors, and they gave positive comments and ideas for improvement.</div>
+							<article>
+								<h4 transto="역할">My Role</h4>
+								<ul>
+									<li transto="학생측 인터페이스 디자인 및 개발">Designed and developed the student-side interface</li>
+									<li transto="Bootstrap 그리드 시스템을 이용한 반응형 인터페이스 개발">Developed responsive interface by using the Bootstrap grid system</li>
+									<li transto="DB polling을 통한 학생, 교수자 시스템 동기화">Synchronized the student-side and lecturer-side systems through the DB polling method</li>
+									<li transto="질문 장려를 위한 시스템 기능 고안">Devised a system feature to encourage questioning</li>
+								</ul>
+							</article>
+							<article>
+								<h4 transto="개발">Tech Stack</h4>
+								jQuery, Bootstrap, Github page, Firebase Realtime DB
+							</article>
+						</div>
+					</section>
 				</article>
 
 				<article>
@@ -104,6 +180,7 @@
 						<h3><a href="http://gon.kaist.ac.kr/?page_id=12" target="_blank" transto="카이스트 해킹 동아리 GoN">KAIST GoN</a> <time transto="(16년 9월 ~ 17년 12월)">(Sept. 2016 ~ Dec. 2017)</time></h3>
 						<ul>
 							<li transto="웹, 암호, 시스템 해킹 및 보안 지식 습득">Learned basic security on Web, Crypto, and Pwnable</li>
+							<li transto="NAVER D2 보안세미나 참가">Attended NAVER D2 security seminar</li>
 						</ul>
 					</section>
 
@@ -111,7 +188,8 @@
 						<h3><a href="https://www.facebook.com/kaistundergraduateassociation" transto="카이스트 학부 총학생회">Undergraduate Student Council</a> <time transto="(16년 1월 ~ 17년 12월)">(Jan. 2016 ~ Dec. 2017)</time></h3>
 						<ul>
 							<li transto="국제사무국 국장 및 번역모니터링위원장">The head of both International Secretariat and Translation Moitoring Comittee</li>
-							<li transto="외국인 학생 처우 및 정책 개선, 소통국제화위원회 설립">Worked for improving the welfare of international students and established Communication Globalization Committee</li>
+							<li transto="외국인 학생 처우 및 정책 개선">Worked for improving the welfare of international students</li>
+							<li transto="소통국제화위원회 설립">Established Communication Globalization Committee</li>
 						</ul>
 					</section>
 				</article>
@@ -137,9 +215,27 @@
 				<article>
 					<h2 transto="개발">SKILL</h2>
 					<ul>
-						<li><b transto="프론트:">Front-end:</b> HTML, CSS, Javascript, jQuery</li>
-						<li><b transto="백엔드:">Back-end:</b> Node.js, Firebase, MySQL</li>
-						<li><b transto="시스템:">System Programming:</b> C, Java, python, Go</li>
+						<li><b transto="프로그래밍 언어:">Programming:</b> 
+							C<span class="expertise-level" transto="(익숙)">(familiar)</span>, 
+							Javascript<span class="expertise-level" transto="(익숙)">(familiar)</span>, 
+							python, 
+							Java,
+							Go</li>
+						<li><b transto="프레임 워크:">Framework:</b> 
+							Node.js + Express <span class="expertise-level" transto="(익숙)">(familiar)</span>, 
+							Flask, 
+							Django</li>
+						<li><b transto="프론트엔드:">Front-end:</b> 
+							jQuery <span class="expertise-level" transto="(익숙)">(familiar)</span>, 
+							Bootstrap, 
+							React.js, 
+							Semantic UI</li>
+						<li><b transto="클라우드 및 데이터베이스:">Back-end:</b> 
+							AWS EC2, 
+							Firebase Realtime DB <span class="expertise-level" transto="(익숙)">(familiar)</span>, 
+							MySQL</li>
+						<li><b transto="다뤄본 IDE:">IDE Usage:</b> 
+							Vim + Terminal, Eclipse, Code::Blocks, Visual Studio</li>
 					</ul>
 				</article>
 
@@ -165,7 +261,7 @@
 						</ul>
 					</section>
 				</article>
-			</section>
+			</div>
 		</div>
 	</body>
 	<script src="script.js"></script>
