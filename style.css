@@ -115,6 +115,10 @@ body{
     padding-left: 8px;
 }
 
+.project-section > div > article:nth-child(1) > h4{
+	margin-top: 0px;
+}
+
 .project-section > div > time{
 	font-family: 'Roboto', sans-serif;
 	font-size: 17px;
