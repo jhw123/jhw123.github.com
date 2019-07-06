@@ -9,7 +9,6 @@
 	font-weight: bold;
 }
 
-.automaTA:after{
-	content: "TA";
+.automaTA_Postfix{
 	color: #ffa444;
 }
