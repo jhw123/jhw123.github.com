@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: http://jhw123.github.io/sitemap.xml
