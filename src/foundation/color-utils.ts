@@ -1,5 +1,5 @@
-import { GreyColors } from './base-colors'
 import isNil from 'lodash/isNil'
+import { GreyColors } from './base-colors'
 
 export function opacify(color: GreyColors, opacity: number): string {
   let hex = color.replace('#', '')
@@ -9,7 +9,7 @@ export function opacify(color: GreyColors, opacity: number): string {
     return color
   }
 
-  if (value.length == 3) {
+  if (value.length === 3) {
     hex = value[0] + value[0] + value[1] + value[1] + value[2] + value[2]
   }
 

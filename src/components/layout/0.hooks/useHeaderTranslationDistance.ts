@@ -1,5 +1,5 @@
-import { useWindowSize } from '../../../hooks/useWindowSize'
 import { useLayoutEffect, useRef, useState } from 'react'
+import { useWindowSize } from '../../../hooks/useWindowSize'
 import { MOBILE_HEADER_BAR_HEIGHT } from '../../../constants/constants'
 
 export function useHeaderTranslationDistance() {
@@ -11,7 +11,7 @@ export function useHeaderTranslationDistance() {
     if (headerRef.current != null) {
       setTranslationDistance(headerRef.current.getBoundingClientRect().height - MOBILE_HEADER_BAR_HEIGHT)
     }
-  }, [headerRef.current, windowWidth])
+  }, [windowWidth])
 
   return { headerRef, translationDistance }
 }
