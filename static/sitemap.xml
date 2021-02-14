@@ -1,30 +1,147 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
     <url>
         <loc>https://jhw123.github.io</loc>
-        <lastmod>2021-02-04</lastmod>
+        <lastmod>2021-02-14T07:33:40.188Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://jhw123.github.io/files/hyoungwook_jin_cv.pdf</loc>
-        <lastmod>2021-02-04</lastmod>
+        <lastmod>2021-02-14T07:33:40.188Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://jhw123.github.io/miscs</loc>
-        <lastmod>2021-02-04</lastmod>
+        <lastmod>2021-02-14T07:33:40.188Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://jhw123.github.io/tils</loc>
-        <lastmod>2021-02-04</lastmod>
+        <lastmod>2021-02-14T07:33:40.188Z</lastmod>
         <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2020/12/24</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2020/12/25</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2020/12/26</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/04</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/10</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/11</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/12</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/13</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/18</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/19</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/21</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/22</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/27</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/28</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/01/29</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/02/02</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/02/05</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/tils/2021/02/10</loc>
+        <lastmod>2021-02-14T07:33:40.204Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/miscs/2020/01/2019-reflection</loc>
+        <lastmod>2021-02-14T07:33:40.205Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhw123.github.io/miscs/2021/01/2020-reflection</loc>
+        <lastmod>2021-02-14T07:33:40.205Z</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 </urlset>
