@@ -1,16 +1,11 @@
 import React, { FC } from 'react'
-import { HeaderContents } from '../header-contents'
 import styled from '@emotion/styled'
-import {
-  CONTENT_MAX_WIDTH,
-  MOBILE_HEADER_BAR_HEIGHT,
-  MOBILE_MODE_WIDTH,
-  SIDE_BAR_WIDTH_RATIO,
-} from '../../constants/constants'
+import { Global } from '@emotion/react'
+import { HeaderContents } from '../header-contents'
+import { MOBILE_HEADER_BAR_HEIGHT, MOBILE_MODE_WIDTH, SIDE_BAR_WIDTH_RATIO } from '../../constants/constants'
 import { FillColor, FillColors } from '../../foundation/semantic-colors'
 import { GreyColors } from '../../foundation/base-colors'
 import { opacify } from '../../foundation/color-utils'
-import { Global } from '@emotion/react'
 import { GlobalStyles } from '../../foundation/global-styles'
 import { TabButton } from '../tabButton'
 import { useTabMode } from './0.hooks/useTabMode'
@@ -61,7 +56,6 @@ const MAIN = styled.main`
 
 const Content = styled.div`
   margin: 0 auto;
-  max-width: ${CONTENT_MAX_WIDTH}px;
   padding: 1.45rem 1.0875rem 4rem;
 `
 
