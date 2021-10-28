@@ -8,7 +8,7 @@ module.exports = {
       email: 'mailto:jinhw@kaist.ac.kr',
       facebook: 'https://www.facebook.com/jin.hyoungwook',
       github: 'https://github.com/jhw123',
-      linkedin: 'https://www.linkedin.com/in/형욱-진-619b5b10a',
+      linkedin: 'https://www.linkedin.com/in/hyoungwook-jin-619b5b10a',
     },
     keywords: ['진형욱', 'Hyoungwook Jin', '카이스트', 'KAIST'],
   },
