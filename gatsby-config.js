@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `진형욱 블로그`,
-    description: `좋은 코드 패턴과 구조를 통해 개발자 경험 (DX) 개선을 고민하는 개발자이자, 크라우드 소싱 시스템과 교육에 관심있는 HCI 연구자입니다.`,
-    author: `진형욱`,
+    title: `HyoungWook Jin`,
+    description: `Hyoungwook Jin is a programmer who tries to improve developer experience through good code architecture and is also a human computer interaction researcher who is intertested in crowdsourcing and education.`,
+    author: `HyoungWook Jin`,
     mainImg: ``,
     contacts: {
       email: 'mailto:jinhw@kaist.ac.kr',
@@ -10,7 +10,17 @@ module.exports = {
       github: 'https://github.com/jhw123',
       linkedin: 'https://www.linkedin.com/in/hyoungwook-jin-619b5b10a',
     },
-    keywords: ['진형욱', 'Hyoungwook Jin', '카이스트', 'KAIST'],
+    keywords: [
+      '카이스트 진형욱',
+      'KAIST Hyoungwook Jin',
+      '진형욱',
+      'Hyoungwook Jin',
+      '카이스트',
+      'KAIST',
+      'SolveDeep',
+      'Learnersourcing',
+      'KIXLAB',
+    ],
   },
   plugins: [
     `gatsby-plugin-typescript`,

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { FC } from 'react'
+import styled from '@emotion/styled'
 import { Time } from './time'
 import { Tag } from './tag'
-import styled from '@emotion/styled'
 import { Typeface, Typefaces } from '../foundation/typefaces'
 import {
   BorderColor,
@@ -33,7 +33,7 @@ const Article = styled.section`
 
 const Title = styled.h1`
   ${TextColors[TextColor.Primary]};
-  ${Typefaces[Typeface.Bold18]};
+  ${Typefaces[Typeface.Bold24]};
 `
 
 const Header = styled.header`
@@ -50,7 +50,7 @@ export const Post: FC<Props> = props => {
     <Article>
       <Header>
         <Title>{props.title}</Title>
-        <Time dateTime={props.dateTime} format={'Date'} />
+        <Time dateTime={props.dateTime} format="Date" />
       </Header>
       {props.tags
         .filter(tag => tag.trim().length > 0)

@@ -5,6 +5,7 @@ import { opacify } from './color-utils'
 export enum TextColor {
   Primary = 'Primary',
   Secondary = 'Secondary',
+  Main010 = 'Main010',
   Main020 = 'Main020',
   Main040 = 'Main040',
   Red = 'Red',
@@ -12,15 +13,21 @@ export enum TextColor {
 
 export const TextColors = {
   [TextColor.Primary]: css`
-    color: ${GreyColors.Grey080};
+    color: ${GreyColors.Grey060};
     @media (prefers-color-scheme: dark) {
       color: ${GreyColors.Grey020};
     }
   `,
   [TextColor.Secondary]: css`
-    color: ${GreyColors.Grey060};
+    color: ${GreyColors.Grey040};
     @media (prefers-color-scheme: dark) {
       color: ${GreyColors.Grey040};
+    }
+  `,
+  [TextColor.Main010]: css`
+    color: ${MainColors.Blue010};
+    @media (prefers-color-scheme: dark) {
+      color: ${MainColors.Blue010};
     }
   `,
   [TextColor.Main020]: css`
@@ -95,60 +102,60 @@ export const FillColors = {
 }
 
 export enum ShadowColor {
-  Basic_0y_4b = 'Basic_0y_4b',
-  Basic_minus2y_4b = 'Basic_minus2y_4b',
-  Basic_2y_4b = 'Basic_2y_4b',
-  Thin_0y_4b = 'Thin_0y_4b',
-  Thin_minus2y_4b = 'Thin_minus2y_4b',
-  Thin_2y_4b = 'Thin_2y_4b',
-  Thin_0y_8b = 'Thin_0y_8b',
-  Thin_2y_8b = 'Thin_2y_8b',
+  Basic0y4b = 'Basic0y4b',
+  BasicMinus2y4b = 'BasicMinus2y4b',
+  Basic2y4b = 'Basic2y4b',
+  Thin0y4b = 'Thin0y4b',
+  ThinMinus2y4b = 'ThinMinus2y4b',
+  Thin2y4b = 'Thin2y4b',
+  Thin0y8b = 'Thin0y8b',
+  Thin2y8b = 'Thin2y8b',
 }
 
 export const ShadowColors = {
-  [ShadowColor.Basic_0y_4b]: css`
+  [ShadowColor.Basic0y4b]: css`
     box-shadow: 0 0 4px 0 ${opacify(GreyColors.Grey070, 0.25)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Basic_minus2y_4b]: css`
+  [ShadowColor.BasicMinus2y4b]: css`
     box-shadow: 0 -2px 4px 0 ${opacify(GreyColors.Grey070, 0.25)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Basic_2y_4b]: css`
+  [ShadowColor.Basic2y4b]: css`
     box-shadow: 0 2px 4px 0 ${opacify(GreyColors.Grey070, 0.25)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Thin_0y_4b]: css`
+  [ShadowColor.Thin0y4b]: css`
     box-shadow: 0 0 4px 0 ${opacify(GreyColors.Grey070, 0.1)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Thin_minus2y_4b]: css`
+  [ShadowColor.ThinMinus2y4b]: css`
     box-shadow: 0 -2px 4px 0 ${opacify(GreyColors.Grey070, 0.1)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Thin_2y_4b]: css`
+  [ShadowColor.Thin2y4b]: css`
     box-shadow: 0 2px 4px 0 ${opacify(GreyColors.Grey070, 0.1)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Thin_0y_8b]: css`
+  [ShadowColor.Thin0y8b]: css`
     box-shadow: 0 0 8px 0 ${opacify(GreyColors.Grey070, 0.1)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
     }
   `,
-  [ShadowColor.Thin_2y_8b]: css`
+  [ShadowColor.Thin2y8b]: css`
     box-shadow: 0 2px 8px 0 ${opacify(GreyColors.Grey070, 0.1)};
     @media (prefers-color-scheme: dark) {
       box-shadow: none;

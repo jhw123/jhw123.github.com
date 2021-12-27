@@ -1,15 +1,15 @@
 export const PagePath = {
   root: {
     build: () => `/`,
-    title: () => '프로젝트',
+    title: () => 'Who I am',
   },
   projects: {
-    build: () => `/`,
-    title: () => '프로젝트',
+    build: () => `/projects`,
+    title: () => 'Projects',
   },
   articles: {
     build: () => '/articles',
-    title: () => '개발',
+    title: () => 'Dev.',
   },
   article: {
     build: (filePath: string) => `${filePath}`,
@@ -17,7 +17,7 @@ export const PagePath = {
   },
   miscs: {
     build: () => '/miscs',
-    title: () => '잡다구리',
+    title: () => 'Misc.',
   },
   misc: {
     build: (filePath: string) => `${filePath}`,

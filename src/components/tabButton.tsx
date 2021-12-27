@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import { FillColor, FillColors, ShadowColor, ShadowColors, TextColor, TextColors } from '../foundation/semantic-colors'
 import React, { FC } from 'react'
+import { FillColor, FillColors, ShadowColor, ShadowColors, TextColor, TextColors } from '../foundation/semantic-colors'
 import { MOBILE_HEADER_BAR_HEIGHT } from '../constants/constants'
 import { GreyColors } from '../foundation/base-colors'
 import { opacify } from '../foundation/color-utils'
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Container = styled.div`
-  ${ShadowColors[ShadowColor.Basic_0y_4b]};
+  ${ShadowColors[ShadowColor.Basic0y4b]};
   width: 100vw;
   margin-bottom: 10px;
   display: flex;

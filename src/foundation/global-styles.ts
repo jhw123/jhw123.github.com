@@ -6,7 +6,6 @@ export const GlobalStyles = css`
   html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font: 112.5%/1.45em Spoqa Han Sans, serif;
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -19,10 +18,11 @@ export const GlobalStyles = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: Spoqa Han Sans, serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
+    font-size: 112.5%;
+    font-family: Arial, Helvetica, sans-serif;
     -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -66,7 +66,7 @@ export const GlobalStyles = css`
   }
 
   a {
-    ${TextColors[TextColor.Primary]};
+    color: inherit;
     text-decoration: underline;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -152,7 +152,7 @@ export const GlobalStyles = css`
     margin: 0;
 
     img {
-      ${ShadowColors[ShadowColor.Thin_0y_8b]};
+      ${ShadowColors[ShadowColor.Thin0y8b]};
       border-style: none;
       padding: 1rem;
       min-width: 316px;
@@ -290,7 +290,7 @@ export const GlobalStyles = css`
 
   h2 {
     padding: 0;
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.5rem;
     color: inherit;
     font-weight: bold;
     text-rendering: optimizeLegibility;
@@ -415,6 +415,7 @@ export const GlobalStyles = css`
   address {
     padding: 0;
     margin: 0;
+    font-style: normal;
   }
 
   b {
@@ -434,7 +435,7 @@ export const GlobalStyles = css`
   }
 
   li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   ol li {
@@ -559,21 +560,5 @@ export const GlobalStyles = css`
     html {
       font-size: 100%;
     }
-  }
-  @font-face {
-    font-family: 'Spoqa Han Sans';
-    font-weight: 600;
-    font-display: swap;
-    src: local('Spoqa Han Sans Bold'), url('/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Medium.woff') format('woff'),
-      url('/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Spoqa Han Sans';
-    font-weight: 400;
-    font-display: swap;
-    src: local('Spoqa Han Sans Regular'), url('/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
-      url('/fonts/SpoqaHanSansNeo-Regular.woff') format('woff'),
-      url('/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
   }
 `
