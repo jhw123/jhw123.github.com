@@ -60,7 +60,7 @@ const ProjectsPage = (props: PageProps) => (
     <ProjectCard
       title="Tada: Grab a First Class Taxi Driven by Premium Drivers"
       startDate="2019-08-26"
-      endDate="2020-04-09"
+      endDate="2020-10-08"
       liveLinkText="Visit TADA"
       liveLinkUrl="https://tadatada.com"
       association={Association.VCNC}
