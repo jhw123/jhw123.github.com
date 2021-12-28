@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, title, keywords }) {
         },
         {
           property: `og:image`,
-          content: `https://jhw123.github.io/image/hyoungwook jin.jpg`,
+          content: `https://jhw123.github.io/images/hyoungwook jin.jpg`,
         },
         {
           property: `og:description`,
