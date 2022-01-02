@@ -14,7 +14,7 @@ function getUrl(url, changeFreq, priority) {
 
 function wrapUrls(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\`
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}</urlset>
 `
 }
@@ -28,8 +28,8 @@ function getDynamicRoutes(dir) {
 let urls = ''
 
 // stationary pages
-urls += getUrl('https://jhw123.github.io', 'yearly', 1.0)
-urls += getUrl('https://jhw123.github.io/files/hyoungwook_jin_cv.pdf', 'yearly', 0.5)
+urls += getUrl('https://jhw123.github.io', 'monthly', 1.0)
+urls += getUrl('https://jhw123.github.io/files/hyoungwook_jin_cv.pdf', 'monthly', 0.5)
 urls += getUrl('https://jhw123.github.io/miscs', 'monthly', 0.5)
 urls += getUrl('https://jhw123.github.io/tils', 'weekly', 0.5)
 
