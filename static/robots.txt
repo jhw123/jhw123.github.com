@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /futuredesigners/
+Disallow: /Link-Link/
 
 Sitemap: http://jhw123.github.io/sitemap.xml
