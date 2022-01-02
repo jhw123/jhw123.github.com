@@ -1,4 +1,4 @@
-export const MOBILE_MODE_WIDTH = 400
+export const MOBILE_MODE_WIDTH = 780
 export const SIDE_BAR_WIDTH_RATIO = 25
 export const MOBILE_HEADER_BAR_HEIGHT = 50
 export const SMALL_WINDOW_WIDTH = 600
