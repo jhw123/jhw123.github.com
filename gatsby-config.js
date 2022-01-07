@@ -40,10 +40,6 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
-          {
-            resolve: `gatsby-remark-figure-caption`,
-            options: { figureClassName: 'md-figure' },
-          },
         ],
       },
     },
