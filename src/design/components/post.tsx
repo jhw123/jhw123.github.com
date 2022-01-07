@@ -12,7 +12,7 @@ import {
   TextColor,
   TextColors,
 } from '../foundation/semantic-colors'
-import { MOBILE_MODE_WIDTH } from '../constants/constants'
+import { MOBILE_MODE_WIDTH } from '../../constants/constants'
 
 interface Props {
   title: string

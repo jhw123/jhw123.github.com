@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { Global } from '@emotion/react'
-import { HeaderContents } from '../header-contents'
+import { HeaderContents } from '../components/header-contents'
 import { MOBILE_MODE_WIDTH, SIDE_BAR_WIDTH_RATIO } from '../../constants/constants'
-import { FillColor, FillColors } from '../../foundation/semantic-colors'
-import { GreyColors } from '../../foundation/base-colors'
-import { opacify } from '../../foundation/color-utils'
-import { GlobalStyles } from '../../foundation/global-styles'
+import { FillColor, FillColors } from '../foundation/semantic-colors'
+import { GreyColors } from '../foundation/base-colors'
+import { opacify } from '../foundation/color-utils'
+import { GlobalStyles } from '../foundation/global-styles'
 
 const ASIDE = styled.aside`
   padding: 20px 20px 20px;

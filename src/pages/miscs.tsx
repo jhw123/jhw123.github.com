@@ -2,9 +2,9 @@ import { Link, PageProps } from 'gatsby'
 
 import * as React from 'react'
 import { PagePath } from '../page-paths'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
-import { Post } from '../components/post'
+import Layout from '../design/layout/layout'
+import SEO from '../seo'
+import { Post } from '../design/components/post'
 import { useMarkdownData } from '../hooks/useMarkdownData'
 import { PostType } from '../constants/enums'
 

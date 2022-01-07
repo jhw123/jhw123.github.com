@@ -1,12 +1,12 @@
 import { PageProps } from 'gatsby'
 import * as React from 'react'
 import styled from '@emotion/styled'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../design/layout/layout'
+import SEO from '../seo'
 import { PagePath } from '../page-paths'
-import { Typeface, Typefaces } from '../foundation/typefaces'
-import { TextColor, TextColors } from '../foundation/semantic-colors'
-import { ExternalLink } from '../components/externalLink'
+import { Typeface, Typefaces } from '../design/foundation/typefaces'
+import { TextColor, TextColors } from '../design/foundation/semantic-colors'
+import { ExternalLink } from '../design/components/externalLink'
 
 const IntroductionPage = (props: PageProps) => (
   <Layout>

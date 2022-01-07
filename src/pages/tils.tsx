@@ -1,13 +1,12 @@
 import { Link, PageProps } from 'gatsby'
-
 import * as React from 'react'
 import styled from '@emotion/styled'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../design/layout/layout'
+import SEO from '../seo'
 import { PagePath } from '../page-paths'
 import { useTILMarkdownData } from '../hooks/useTILMarkdownData'
-import { Typeface, Typefaces } from '../foundation/typefaces'
-import { BorderColor, BorderColors, FillColor, FillColors } from '../foundation/semantic-colors'
+import { Typeface, Typefaces } from '../design/foundation/typefaces'
+import { BorderColor, BorderColors, FillColor, FillColors } from '../design/foundation/semantic-colors'
 import { LARGE_WINDOW_WIDTH, MEDIUM_WINDOW_WIDTH, SMALL_WINDOW_WIDTH } from '../constants/constants'
 
 const MonthCard = styled.section`

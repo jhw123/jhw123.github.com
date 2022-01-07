@@ -7,7 +7,7 @@ import { BorderColor, BorderColors, TextColor, TextColors } from '../foundation/
 import { Time } from './time'
 import { Tech, TechIcon } from './techIcon'
 import { AssociationTag } from './associationTag'
-import { MOBILE_MODE_WIDTH } from '../constants/constants'
+import { MOBILE_MODE_WIDTH } from '../../constants/constants'
 import { ExternalLink } from './externalLink'
 
 interface Props {

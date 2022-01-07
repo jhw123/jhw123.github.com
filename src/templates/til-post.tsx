@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../design/layout/layout'
+import SEO from '../seo'
 import styled from '@emotion/styled'
-import { Typeface, Typefaces } from '../foundation/typefaces'
+import { Typeface, Typefaces } from '../design/foundation/typefaces'
 import isNil from 'lodash/isNil'
 import { useTILMarkdownData } from '../hooks/useTILMarkdownData'
-import { HoverColor, HoverColors, TextColor, TextColors } from '../foundation/semantic-colors'
+import { HoverColor, HoverColors, TextColor, TextColors } from '../design/foundation/semantic-colors'
 import { PagePath } from '../page-paths'
 
 interface Props {

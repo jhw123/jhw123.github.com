@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import * as React from 'react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../design/layout/layout'
+import SEO from '../seo'
 import { PagePath } from '../page-paths'
 
 const NotFoundPage = () => (

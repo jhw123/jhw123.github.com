@@ -1,7 +1,7 @@
 // @flow strict
 import React from 'react'
 import styled from '@emotion/styled'
-import ICONS from '../constants/icons'
+import ICONS from '../../constants/icons'
 import { GreyColors } from '../foundation/base-colors'
 
 type Props = {
