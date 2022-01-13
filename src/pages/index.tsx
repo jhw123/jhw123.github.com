@@ -7,10 +7,12 @@ import { PagePath } from '../page-paths'
 import { Typeface, Typefaces } from '../design/foundation/typefaces'
 import { TextColor, TextColors } from '../design/foundation/semantic-colors'
 import { ExternalLink } from '../design/components/externalLink'
+import { PageTitle } from '../design/components/pagetitle'
 
 const IntroductionPage = (props: PageProps) => (
   <Layout>
     <SEO title={PagePath.root.title()} />
+    <PageTitle>👋 Hi, I am Hyoungwook.</PageTitle>
 
     <ARTICLE>
       <H2>
@@ -90,9 +92,8 @@ const IntroductionPage = (props: PageProps) => (
 )
 
 const H2 = styled.h2`
-  ${Typefaces[Typeface.Bold32]};
+  ${Typefaces[Typeface.Bold28]};
   ${TextColors[TextColor.Primary]};
-  text-align: center;
 `
 
 const ARTICLE = styled.article`

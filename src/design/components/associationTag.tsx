@@ -6,7 +6,7 @@ import { ExternalLink } from './externalLink'
 
 export const Association = {
   VCNC: {
-    url: 'http://engineering.vcnc.co.kr/',
+    url: 'https://vcnccorp.notion.site/Value-Creators-Company-28a75434e6154bee87e2a624cf6d08fa',
     title: 'VCNC',
   },
   KIXLAB: {

@@ -10,6 +10,7 @@ import { Association } from '../design/components/associationTag'
 import { Typeface, Typefaces } from '../design/foundation/typefaces'
 import { ExternalLink } from '../design/components/externalLink'
 import { TextColor, TextColors } from '../design/foundation/semantic-colors'
+import { PageTitle } from '../design/components/pagetitle'
 
 const H3 = styled.h3`
   ${Typefaces[Typeface.Bold22]};
@@ -23,6 +24,8 @@ const P = styled.p`
 const ProjectsPage = (props: PageProps) => (
   <Layout>
     <SEO title={PagePath.projects.title()} />
+    <PageTitle>🗂️ My Projects</PageTitle>
+
     <ProjectCard
       title="SOCAR Casting: Try 2-Day Test-ride and Buy Used Cars Fully Contactless"
       startDate="2020-04-09"

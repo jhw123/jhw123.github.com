@@ -33,7 +33,7 @@ interface Props {
 }
 
 const H1 = styled.h1`
-  ${Typefaces[Typeface.Bold24]};
+  ${Typefaces[Typeface.Bold32]};
 `
 
 const HEADER = styled.header`
@@ -107,12 +107,16 @@ export default function BlogPost({ data }: Props) {
           <UL>
             {prev && (
               <li>
-                <Navigator to={pagePath.build(prev.fields.filePath)}>{`이전 글: ${prev.frontmatter.title}`}</Navigator>
+                <Navigator
+                  to={pagePath.build(prev.fields.filePath)}
+                >{`Prev article: ${prev.frontmatter.title}`}</Navigator>
               </li>
             )}
             {next && (
               <li>
-                <Navigator to={pagePath.build(next.fields.filePath)}>{`다음 글: ${next.frontmatter.title}`}</Navigator>
+                <Navigator
+                  to={pagePath.build(next.fields.filePath)}
+                >{`Next article: ${next.frontmatter.title}`}</Navigator>
               </li>
             )}
           </UL>
@@ -123,7 +127,7 @@ export default function BlogPost({ data }: Props) {
 }
 
 export const query = graphql`
-  query($filePath: String!) {
+  query ($filePath: String!) {
     markdownRemark(fields: { filePath: { eq: $filePath } }) {
       html
       frontmatter {

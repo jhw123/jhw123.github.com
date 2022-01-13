@@ -8,6 +8,7 @@ interface Data {
     dateTime: string
     tags: string[]
     keywords: string[]
+    published: boolean
   }
   fields: {
     slug: string
@@ -30,6 +31,7 @@ export function useMarkdownData(path: PostType | ''): Data[] | undefined {
                           dateTime
                           tags
                           keywords
+                          published
                       }
                       fields {
                           slug
@@ -42,11 +44,11 @@ export function useMarkdownData(path: PostType | ''): Data[] | undefined {
       }`)
 
   return data.allMarkdownRemark.edges
-    .filter((edge: any) => edge.node.fields.filePath.includes(path))
+    .filter((edge: any) => edge.node.fields.filePath.includes(path) && edge.node.frontmatter.published)
     .map((edge: { node: any }) =>
       produce(edge.node, (node: any) => {
-        node.frontmatter.tags = node.frontmatter.tags.split(', ')
-        node.frontmatter.keywords = node.frontmatter.keywords.split(', ')
+        node.frontmatter.tags = node.frontmatter.tags?.split(', ') ?? []
+        node.frontmatter.keywords = node.frontmatter.keywords?.split(', ') ?? []
       })
     )
 }

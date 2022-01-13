@@ -1,7 +1,7 @@
 export const PagePath = {
   root: {
     build: () => `/`,
-    title: () => 'Who I am',
+    title: () => 'Who am I',
   },
   projects: {
     build: () => `/projects`,

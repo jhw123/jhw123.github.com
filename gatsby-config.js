@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `HyoungWook Jin`,
-    description: `Hyoungwook Jin is a programmer who tries to improve developer experience through good code architecture and is also a human computer interaction researcher who is intertested in crowdsourcing and education.`,
+    description: `Hyoungwook Jin is a programmer who considers code architecture for better developer experience and is also a human computer interaction researcher who is intertested in crowdsourcing and education.`,
     author: `HyoungWook Jin`,
     mainImg: ``,
     contacts: {
@@ -11,8 +11,6 @@ module.exports = {
       linkedin: 'https://www.linkedin.com/in/hyoungwook-jin-619b5b10a',
     },
     keywords: [
-      '카이스트 진형욱',
-      'KAIST Hyoungwook Jin',
       '진형욱',
       'Hyoungwook Jin',
       '카이스트',

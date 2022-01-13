@@ -370,6 +370,7 @@ export const GlobalStyles = css`
   p {
     padding: 0;
     margin: 0 0 1.45rem;
+    text-align: justify;
   }
 
   pre {

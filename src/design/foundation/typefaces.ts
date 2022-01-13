@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 
 export enum Typeface {
   Bold32 = 'Bold32',
+  Bold28 = 'Bold28',
   Bold24 = 'Bold24',
   Bold22 = 'Bold22',
   Bold18 = 'Bold18',
@@ -19,6 +20,11 @@ export enum Typeface {
 export const Typefaces = {
   [Typeface.Bold32]: css`
     font-size: 1.77778rem;
+    font-weight: bold;
+    line-height: 1.7;
+  `,
+  [Typeface.Bold28]: css`
+    font-size: 1.55556rem;
     font-weight: bold;
     line-height: 1.7;
   `,

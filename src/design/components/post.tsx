@@ -31,7 +31,7 @@ const Article = styled.section`
   margin-bottom: 1rem;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   ${TextColors[TextColor.Primary]};
   ${Typefaces[Typeface.Bold24]};
 `

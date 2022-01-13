@@ -15,12 +15,12 @@ import { UL } from './list'
 
 const LinkWithoutDecoration = styled(Link)`
   text-decoration: none;
+  margin-bottom: 1rem;
 `
 
-const H1 = styled.h1`
+const Name = styled.b`
   ${TextColors[TextColor.Primary]};
   ${Typefaces[Typeface.Bold24]};
-  margin-bottom: 0.5rem;
 `
 
 const LinkStyle = css`
@@ -44,7 +44,7 @@ const StyledExternalLink = styled(ExternalLink)`
 `
 
 const DATA = styled.data`
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
 `
 
 const IconLink = styled(ExternalLink)`
@@ -82,7 +82,7 @@ const Container = styled.div`
 
 export const HeaderContents: FC = () => {
   const siteMetadata = useSiteMetadata()
-  // const articlesData = useMarkdownData(PostType.Articles)
+  const articlesData = useMarkdownData(PostType.Articles)
   const miscData = useMarkdownData(PostType.Miscs)
 
   if (isNil(siteMetadata)) {
@@ -92,9 +92,8 @@ export const HeaderContents: FC = () => {
   return (
     <Container>
       <LinkWithoutDecoration rel="author" to={PagePath.root.build()}>
-        <H1>{siteMetadata.author}</H1>
+        <Name>{siteMetadata.author}</Name>
       </LinkWithoutDecoration>
-      {/* <Description>{siteMetadata.description}</Description> */}
       <DATA>
         {Object.keys(siteMetadata?.contacts).map((contact, idx) => (
           <IconLink key={contact} href={Object.values(siteMetadata?.contacts)[idx] ?? PagePath.root.build()}>
@@ -119,10 +118,10 @@ export const HeaderContents: FC = () => {
             <StyledExternalLink href="/files/hyoungwook_jin_cv.pdf">CV</StyledExternalLink>
           </li>
           <li>
-            <ComingSoon>DEV.</ComingSoon>
-            {/* <StyledLink to={PagePath.articles.build()} activeClassName={'active'} partiallyActive> */}
-            {/*  {`개발 (${articlesData?.length})`} */}
-            {/* </StyledLink> */}
+            {/* <ComingSoon>DEV.</ComingSoon> */}
+            <StyledLink to={PagePath.articles.build()} activeClassName={'active'} partiallyActive>
+              {`DEV. (${articlesData?.length})`}
+            </StyledLink>
           </li>
           <li>
             <StyledLink to={PagePath.miscs.build()} activeClassName="active" partiallyActive>
