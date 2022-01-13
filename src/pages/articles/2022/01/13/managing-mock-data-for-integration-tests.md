@@ -105,7 +105,7 @@ Manually making valid mock data is not easy due to inter-reliablity between data
 
 You may even collet testable data at scale by crowdsourcing. You can make a redux middleware that periodically (or on errors) sends redux states to a remote storage. If deploying it to production is risky due to privary issues, you can still implant it to your services in development environment so that whenever QA team work on a new test case you can easily add it to your test codes.
 
-Now, you might wonder how we can track test coverage efficiently. I came up with two approaches. The first is to make a custom logger that counts the number of duplicate cases (data point). For each test, log the case being tested with either a custom string or data itself as a key and check the number of duplicates after all tests. The second is to analyze the diversity metric of your mock data set. [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) is one of the diversit metrics. Using this metric, you can even identify and remove the data point that has duplicates and does not contribute to increase test coverage.
+Now, you might wonder how we can track test coverage efficiently. I came up with two approaches. The first is to make a custom logger that counts the number of duplicate cases (data point). For each test, log the case being tested with either a custom string or data itself as a key and check the number of duplicates after all tests. The second is to analyze the diversity metric of your mock data set. [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) is one of the diversity metrics. Using this metric, you can even identify and remove the data point that has duplicates and does not contribute to increase test coverage.
 
 ```typescript
 export class Logger {
@@ -135,6 +135,6 @@ export class Logger {
 ## ✅ Summary
 
 - Write durable and reusable test codes by using conditionals.
-- Decouple tests from mock data so that test coverage is only concerned with mock data.
+- Decouple tests from mock data so that test coverage is determined with mock data only.
 - Populate mock data by collecting data from your running service.
 - Monitor and improve the coverage of your tests by analyzing your mock data set.
