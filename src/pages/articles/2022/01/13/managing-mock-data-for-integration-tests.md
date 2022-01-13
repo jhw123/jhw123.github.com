@@ -134,7 +134,7 @@ export class Logger {
 
 ## ✅ Summary
 
-- Write durable and reusable test codes by using conditionals.
-- Decouple tests from mock data so that test coverage is determined with mock data only.
+- Write reusable tests by decoupling tests from mock data and using conditionals.
+- Let test coverage be determined by your mock data only.
 - Populate mock data by collecting data from your running service.
 - Monitor and improve the coverage of your tests by analyzing your mock data set.
