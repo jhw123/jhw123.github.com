@@ -5,7 +5,7 @@ import { Typeface, Typefaces } from '../foundation/typefaces'
 
 const Container = styled.div`
   ${BorderColors[BorderColor.Basic]};
-  ${Typefaces[Typeface.Regular12]};
+  ${Typefaces[Typeface.Regular18]};
   ${TextColors[TextColor.Primary]};
   display: inline-block;
   padding: 3px 5px;

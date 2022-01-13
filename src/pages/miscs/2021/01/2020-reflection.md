@@ -1,8 +1,8 @@
 ---
-title: '2020년 회고 및 새해 다짐'
+title: '2020 Annual Review (in Korean)'
 dateTime: '2021-01-01'
 image: ''
-tags: '회고'
+tags: '🧘 Reflective'
 keywords: '진형욱 2020년 회고'
 published: true
 ---

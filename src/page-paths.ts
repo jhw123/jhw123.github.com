@@ -9,7 +9,7 @@ export const PagePath = {
   },
   articles: {
     build: () => '/articles',
-    title: () => 'Dev.',
+    title: () => 'Dev articles',
   },
   article: {
     build: (filePath: string) => `${filePath}`,
@@ -17,7 +17,7 @@ export const PagePath = {
   },
   miscs: {
     build: () => '/miscs',
-    title: () => 'Misc.',
+    title: () => 'Miscellaneous articles',
   },
   misc: {
     build: (filePath: string) => `${filePath}`,

@@ -1,8 +1,8 @@
 ---
-title: 'Managing mock data for integration tests'
+title: 'Generating and Managing Mock Data for Tests'
 dateTime: '2022-01-13T01:00:00'
 image: ''
-tags: 'Web, Testing'
+tags: '🕸️ Web, 🧪 Testing'
 keywords: 'integration test data, managing mock data, mock integration tests'
 published: true
 ---
