@@ -21,7 +21,7 @@ interface Props {
 }
 
 const Container = styled.section`
-  ${BorderColors[BorderColor.Main]};
+  ${BorderColors[BorderColor.Basic]};
   border-width: 2px;
   border-top: none;
   border-right: none;

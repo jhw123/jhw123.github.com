@@ -8,11 +8,12 @@ import { Typeface, Typefaces } from '../design/foundation/typefaces'
 import { TextColor, TextColors } from '../design/foundation/semantic-colors'
 import { ExternalLink } from '../design/components/externalLink'
 import { PageTitle } from '../design/components/pagetitle'
+import { keyframes } from '@emotion/react'
 
 const IntroductionPage = (props: PageProps) => (
   <Layout>
     <SEO title={PagePath.root.title()} />
-    <PageTitle>👋 Hi, I am Hyoungwook.</PageTitle>
+    <WavingHand>Hi, I am Hyoungwook.</WavingHand>
 
     <ARTICLE>
       <H2>
@@ -107,6 +108,29 @@ const B = styled.b`
 const UL = styled.ul`
   ${Typefaces[Typeface.Regular20]};
   ${TextColors[TextColor.Secondary]};
+`
+
+const Waving = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(15deg);
+  }
+`
+
+const WavingHand = styled(PageTitle)`
+  display: inline-flex;
+
+  ::before {
+    content: '👋';
+    margin-right: 0.5rem;
+  }
+
+  :hover::before {
+    animation: ${Waving} 0.2s infinite ease-in-out alternate;
+  }
 `
 
 export default IntroductionPage
