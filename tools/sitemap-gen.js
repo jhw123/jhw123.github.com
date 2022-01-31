@@ -1,10 +1,15 @@
 const fs = require('fs')
 const glob = require('glob')
 
-function getUrl(url, changeFreq, priority) {
-  const now = new Date().toISOString()
+const HOST = 'https://jhw123.github.io'
+
+function getUrl(path, changeFreq, priority, isMd = false) {
+  let now = new Date().toISOString()
+  if (isMd) {
+    now = fs.statSync(`${process.cwd()}/src/pages${path}.md`).mtime.toISOString()
+  }
   return `    <url>
-        <loc>${url}</loc>
+        <loc>${HOST}${path}</loc>
         <lastmod>${now}</lastmod>
         <changefreq>${changeFreq}</changefreq>
         <priority>${priority.toFixed(1)}</priority>
@@ -28,15 +33,17 @@ function getDynamicRoutes(dir) {
 let urls = ''
 
 // stationary pages
-urls += getUrl('https://jhw123.github.io', 'monthly', 1.0)
-urls += getUrl('https://jhw123.github.io/files/hyoungwook_jin_cv.pdf', 'monthly', 0.5)
-urls += getUrl('https://jhw123.github.io/miscs', 'monthly', 0.5)
-urls += getUrl('https://jhw123.github.io/tils', 'weekly', 0.5)
+urls += getUrl('', 'monthly', 1.0)
+urls += getUrl('/files/hyoungwook_jin_cv.pdf', 'monthly', 0.5)
+urls += getUrl('/miscs', 'monthly', 0.5)
+urls += getUrl('/projects', 'monthly', 0.5)
+urls += getUrl('/articles', 'weekly', 0.5)
+urls += getUrl('/tils', 'weekly', 0.5)
 
 // dynamic pages
-;['tils', 'miscs'].forEach(dir => {
+;['tils', 'miscs', 'articles'].forEach(dir => {
   getDynamicRoutes(dir).forEach(route => {
-    urls += getUrl(`https://jhw123.github.io/${dir}/${route}`, 'monthly', 0.5)
+    urls += getUrl(`/${dir}/${route}`, 'monthly', 0.5, true)
   })
 })
 
