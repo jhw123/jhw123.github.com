@@ -15,26 +15,26 @@ When I was in the frontend team in [VCNC](https://vcnccorp.notion.site/Value-Cre
 
 The situation was aggravated as time went on. Since feature development had a higher priority over test codes and time was limited, we added many of new feature codes without test codes; since there were no test codes, my team could not refactor our code indenpendently and we also spent more time on addressing QA issues; consequently less time remained for feature development and the cycle repeated. At some point, I felt this as a severe issue and started to look for any improvement for better test code writing.
 
-## ✍️ How I (or you) have been writing test codes
+## ✍️ How I (or you) have written test codes
 
 Let's take a typical TODO application as an example. It has a list page that shows a list of your TODO items and their respective completion status. Each TODO item holds data of type `ToDoItem`. `ToDoItem` has several field such as status, time at completion, and the description of the task to do. The page has a business logic that TODO items with `status == "COMPLETED"` are marked "Complete!" on its card with the time of completion.
 
 ![Three steps to write test codes](/images/2022/01-13-three-steps-to-write-test-codes.png)
 
 My team aimed to write test codes that check if components in pages correctly present given data. For example, if two TODO items are given and one of them is completed, rendered page component should show two cards, one with Complete mark and another with only task description.
-My team have been followed a 3 step procedure for writing tests; 1) design some tests, 2) make several mock `ToDoItem`s that are specific to the tests, and 3) inject mock data to a component and see if it renders data correctly.
+My team followed a 3 step procedure for writing tests; 1) design some tests, 2) make several mock `ToDoItem`s that are specific to the tests, and 3) inject mock data to a component and see if it renders data correctly.
 
 ## 😓 Why is it hard to write test codes?
 
 At first the procedure was straightforward and the fact that each test is coupled with mock data made debugging easy. However, problems arised quickly as I added more tests.
 
-First, there were duplicates among mock data. For separation of concerns I had been making small tests that check only small part of a page. Each test had its own mock data that were nearly identical to others but differed slighly; hence, there were many duplicated fields in data.
+First, there were duplicates among mock data. For separation of concerns I made small tests that check only small part of a page. Each test had its own mock data that were nearly identical to others but differed slighly; hence, there were many duplicated fields in data.
 In order to reduce duplication I tried making a bigger test that checks multiple different conditions, but it made difficult to update and debug tests. I also tried applying the [factory pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) by making factory functions that generate mock data with some flexbility, but it was not satisfying either because I had to change the factory function frequently.
 
 Second, it was really annoying to make mock data. Unlike the TODO example above, there are usually dozens of fields in real-world data. One of the prime data types in my product had 63 fields and I had to fill them all for a test to work. Moreover, filling them was not simple because the fields were inter-related, meaning that some values in a field restrict the value of other fields. For example, `completedAt` field of `ToDoItem` cannot have a value unless the task is complete. I have to make sure that there is no mock data with non-null `completedAt` and `PENDING` together. Unfortunately type systems could not prevent this issue because such relation between fields is not representable through types. Now, imagine the difficulty of making mock data with 63 inter-related fields.
 
 ```typescript
-// examples of the test codes I had been writing.
+// examples of the test codes I have written.
 // Note that mock data are passed to redux store.
 
 describe('On the todo list page,', () => {
