@@ -91,8 +91,7 @@ const Icon = styled.img`
 export const TechIcon: FC<Props> = props => {
   return (
     <ExternalLink href={props.tech.url}>
-      <title>{props.tech.title}</title>
-      <Icon src={props.tech.icon} />
+      <Icon src={props.tech.icon} alt={props.tech.title} />
     </ExternalLink>
   )
 }
