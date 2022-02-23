@@ -6,6 +6,7 @@ interface Data {
   frontmatter: {
     title: string
     dateTime: string
+    image: string
     tags: string[]
     keywords: string[]
     published: boolean
