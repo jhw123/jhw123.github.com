@@ -15,7 +15,7 @@ export const Border = {
     border: 2px solid ${BaseColor.Green};
   `,
   Focus: css`
-    border: 2px solid ${BaseColor.RoyalBlue};
+    border: 2px solid ${BaseColor.Blue030};
   `,
   Action: css`
     border: 2px solid ${BaseColor.Green};

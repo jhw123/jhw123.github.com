@@ -24,7 +24,7 @@ export const Fill = {
     background-color: ${BaseColor.Gray010};
   `,
   Help: css`
-    background-color: ${BaseColor.LightBlue};
+    background-color: ${BaseColor.Blue020};
   `,
   Danger: css`
     background-color: ${BaseColor.Red};
@@ -33,7 +33,7 @@ export const Fill = {
     background-color: ${BaseColor.Gray030};
   `,
   Focus: css`
-    background-color: ${BaseColor.RoyalBlue};
+    background-color: ${BaseColor.Blue030};
   `,
   Transparent: css`
     background-color: transparent;

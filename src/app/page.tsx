@@ -37,7 +37,7 @@ export default function Home() {
 
           <div>
             <h1>
-              <HeaderText>👋 Hyoungwook Jin</HeaderText>
+              <HeaderText color="Focus">👋 Hyoungwook Jin</HeaderText>
             </h1>
 
             <BodyText marginBottom={8}>
@@ -75,7 +75,9 @@ export default function Home() {
         <Divider fill="Secondary" marginVertical={32} />
 
         <h2>
-          <SubHeaderText marginBottom={8}>NEWS</SubHeaderText>
+          <SubHeaderText color="Focus" marginBottom={8}>
+            NEWS
+          </SubHeaderText>
         </h2>
         {newsData.slice(0, 5).map(({ content, startDate }, i) => (
           <ListItem key={i} marginBottom={4}>
@@ -86,7 +88,9 @@ export default function Home() {
         <Divider fill="Secondary" marginVertical={32} />
 
         <h2>
-          <SubHeaderText marginBottom={8}>CONFERENCE PAPERS</SubHeaderText>
+          <SubHeaderText color="Focus" marginBottom={8}>
+            CONFERENCE PAPERS
+          </SubHeaderText>
         </h2>
         {publicationData
           .filter(({ type, endDate }) => type === 'full paper' && endDate)
@@ -127,7 +131,9 @@ export default function Home() {
           ))}
 
         <h2>
-          <SubHeaderText marginBottom={8}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
+          <SubHeaderText color="Focus" marginBottom={8}>
+            POSTERS AND WORKSHOP PAPERS
+          </SubHeaderText>
         </h2>
         {publicationData
           .filter(({ type }) => type !== 'full paper')
@@ -170,7 +176,9 @@ export default function Home() {
         <Divider fill="Secondary" marginVertical={32} />
 
         <h2>
-          <SubHeaderText marginBottom={8}>EDUCATION</SubHeaderText>
+          <SubHeaderText color="Focus" marginBottom={8}>
+            EDUCATION
+          </SubHeaderText>
         </h2>
         {educationData.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
           <EducationCard key={i}>
@@ -214,11 +222,9 @@ const Card = styled.section`
     grid-template-columns: 1fr 1.5fr;
     @media (max-width: ${MOBILE_BREAKPOINT}px) {
       grid-template-columns: 1fr;
-      ${theme.fill.Base};
-      padding: 8px;
     }
     gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -236,7 +242,7 @@ const PublicationImageContainer = styled.div`
   min-height: 150px;
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 `
 
 const Author = styled.span<{ isMe: boolean }>`
@@ -257,7 +263,7 @@ const EducationCard = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
     grid-template-columns: 1fr;
     gap: 8px;

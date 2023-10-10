@@ -41,8 +41,13 @@ export const Color = {
     stroke: ${BaseColor.Gray000};
   `,
   Focus: css`
-    color: ${BaseColor.RoyalBlue};
-    stroke: ${BaseColor.RoyalBlue};
+    color: ${BaseColor.Blue030};
+    stroke: ${BaseColor.Blue030};
+    @media (prefers-color-scheme: dark) {
+      color: ${BaseColor.Blue020};
+      stroke: ${BaseColor.Blue020};
+      fill: ${BaseColor.Blue020};
+    }
   `,
   Action: css`
     color: ${BaseColor.Green};
