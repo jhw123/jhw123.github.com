@@ -11,6 +11,7 @@ import { Time } from '@/component/time'
 import { contactData } from '@/data/contact'
 import { educationData } from '@/data/education'
 import { newsData } from '@/data/news'
+import { projectData } from '@/data/project'
 import { publicationData } from '@/data/publication'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -81,6 +82,36 @@ export default function Home() {
           <ListItem key={i} marginBottom={4}>
             <Time date={startDate} formatStr="dd LLL yyyy" /> - {content}
           </ListItem>
+        ))}
+
+        <Divider fill="Secondary" marginVertical={32} />
+
+        <h2>
+          <SubHeaderText color="Focus" marginBottom={8}>
+            CURRENT PROJECT{projectData.length > 1 && 'S'}
+          </SubHeaderText>
+        </h2>
+
+        {projectData.map(({ title, imagePath, description }, i) => (
+          <Card key={i}>
+            <PublicationImageContainer>
+              <Image
+                fill
+                src={imagePath}
+                style={{
+                  objectFit: 'cover',
+                }}
+                alt={`The teaser image of ${title}`}
+                sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
+              />
+            </PublicationImageContainer>
+            <div>
+              <h3>
+                <SubSubHeaderText marginBottom={8}>{title}</SubSubHeaderText>
+              </h3>
+              <BodyText>{description}</BodyText>
+            </div>
+          </Card>
         ))}
 
         <Divider fill="Secondary" marginVertical={32} />
@@ -205,6 +236,7 @@ const Container = styled.main`
   ${({ theme }) => css`
     ${theme.fill.Sheet}
     ${theme.color.Primary}
+    ${theme.font.Body}
   `}
 `
 
@@ -215,18 +247,16 @@ const Content = styled.div`
 `
 
 const Card = styled.section`
-  ${({ theme }) => css`
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    @media (max-width: ${MOBILE_BREAKPOINT}px) {
-      grid-template-columns: 1fr;
-    }
-    gap: 16px;
-    margin-bottom: 32px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  `}
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    grid-template-columns: 1fr;
+  }
+  gap: 16px;
+  margin-bottom: 32px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 const ProfileImageContainer = styled.div`
@@ -237,7 +267,7 @@ const ProfileImageContainer = styled.div`
 
 const PublicationImageContainer = styled.div`
   position: relative;
-  min-height: 150px;
+  height: 150px;
   overflow: hidden;
   border-radius: 4px;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
