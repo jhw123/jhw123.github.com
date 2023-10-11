@@ -1,6 +1,7 @@
 'use client'
 import { ContactIcon } from '@/component/contactIcon'
 import { Divider } from '@/component/divider'
+import { ExternalLink } from '@/component/externalLink'
 import { ListItem } from '@/component/listItem'
 import { BodyText } from '@/component/text/body'
 import { HeaderText } from '@/component/text/header'
@@ -41,18 +42,15 @@ export default function Home() {
             </h1>
 
             <BodyText marginBottom={8}>
-              My research has been on supporting personalized learning environments at scale. I am looking into
-              leveraging AI agents as tutors and tutees to build interactive learning systems personalized to each
-              learner&apos;s prior knowledge level and learning styles. I am working on building a framework that
-              provides reusable design patterns and pipelines for configuring AI agents&apos; behaviors and knowledge
-              levels to effectively simulate different roles in learning (e.g., tutor and tutee).
+              I am a MS candidate in the{' '}
+              <ExternalLink href="https://cs.kaist.ac.kr/">School of Computing at KAIST</ExternalLink>. I am working
+              with <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
+              <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
             </BodyText>
             <BodyText marginBottom={8}>
-              I also think of learning from a broader perspective as a gradual and unexpected shift in human
-              capabilities by AI assistance over time (e.g., students struggling to write essays from scratch after
-              receiving AI assistance). I am concerned about individuals&apos; autonomy in recognizing and controlling
-              the change. In the future, I would like to connect my research to longitudinal human-AI interaction
-              designs for desirable learning.
+              I am interested in supporting personalized learning environments at scale. I am looking into leveraging AI
+              agents as tutors and tutees to build interactive learning systems personalized to each learner&apos;s
+              prior knowledge level and learning styles.
             </BodyText>
 
             <LinkSection>
