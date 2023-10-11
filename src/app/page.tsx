@@ -95,7 +95,7 @@ export default function Home() {
           </h2>
           {newsData.slice(0, 5).map(({ content, startDate }, i) => (
             <ListItem key={i} marginBottom={4}>
-              <Time date={startDate} formatStr="dd LLL yyyy" /> - {content}
+              <Time date={startDate} formatStr="LLL dd, yyyy" /> - {content}
             </ListItem>
           ))}
 
@@ -355,7 +355,7 @@ const WavingHand = styled.span`
     margin-right: 0.5rem;
   }
 
-  :hover::before {
+  ::before {
     animation: ${Waving} 0.2s infinite ease-in-out alternate;
   }
 `
