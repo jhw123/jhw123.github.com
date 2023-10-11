@@ -1,26 +1,33 @@
-'use client'
-import { ResetStyle } from '@/design/foundation'
-import { DEFAULT_THEME } from '@/design/theme'
-import { Global, ThemeProvider, css } from '@emotion/react'
-import styled from '@emotion/styled'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const metadata: Metadata = {
+  title: 'Hyoungwook Jin',
+  description:
+    'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
+  icons: ['/favicon.png'],
+  keywords: [
+    '진형욱',
+    'Hyoungwook Jin',
+    'KIXLAB',
+    'Personalized education at scale',
+    'AI agents for personalized learning',
+  ],
+  openGraph: {
+    title: 'Hyoungwook Jin',
+    description:
+      'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
+    type: 'website',
+    images: ['/hyoungwook.jpg'],
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Global styles={ResetStyle} />
-
-      <ThemeProvider theme={DEFAULT_THEME}>
-        <Body className={inter.className}>{children}</Body>
-      </ThemeProvider>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
-
-const Body = styled.body`
-  ${({ theme }) => css`
-    ${theme.fill.Sheet}
-  `}
-`

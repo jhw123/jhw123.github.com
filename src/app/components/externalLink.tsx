@@ -14,4 +14,7 @@ export const ExternalLink = View<Props>(({ href, children, ...props }) => {
   )
 })
 
-const Container = styled.a``
+const Container = styled.a`
+  display: inline-flex;
+  align-items: center;
+`

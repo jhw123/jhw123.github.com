@@ -6,7 +6,7 @@ type Props = {
   name: keyof typeof IconSvgs
 }
 
-export const ContactIcon = View<Props>(({ name }) => {
+export const Icon = View<Props>(({ name }) => {
   const icon = IconSvgs[name]
   return (
     <Container viewBox={icon.viewBox}>

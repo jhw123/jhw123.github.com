@@ -1,4 +1,4 @@
-import { IconSvgs } from '@/component/contactIcon'
+import { IconSvgs } from '@/app/components/icon'
 
 interface Props {
   type: keyof typeof IconSvgs
