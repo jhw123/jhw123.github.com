@@ -58,7 +58,7 @@ export default function Home() {
               </h1>
 
               <BodyText marginBottom={8}>
-                I am a MS candidate in the{' '}
+                I am an MS candidate in the{' '}
                 <ExternalLink href="https://cs.kaist.ac.kr/">School of Computing at KAIST</ExternalLink>. I am working
                 with <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.

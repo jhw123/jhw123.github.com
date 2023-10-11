@@ -25,7 +25,7 @@ export const newsData = DataUtil.sortByTime([
     startDate: new Date('2023-09-19'),
   }),
   new News({
-    content: 'Solved 1000 Leetcode problems!',
+    content: 'Solved 1000 LeetCode problems!',
     startDate: new Date('2023-01-19'),
   }),
   new News({
