@@ -1,5 +1,5 @@
 'use client'
-import { Icon } from '@/app/components/icon'
+import { SvgIcon } from '@/app/components/svgIcon'
 import { Divider } from '@/design/component/divider'
 import { ExternalLink } from '@/app/components/externalLink'
 import { ListItem } from '@/app/components/listItem'
@@ -18,9 +18,7 @@ import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { Time } from './components/time'
-import { ar } from 'date-fns/locale'
-
-const MOBILE_BREAKPOINT = 768
+import { MOBILE_BREAKPOINT } from '@/constant/ui'
 
 export default function Home() {
   return (
@@ -74,11 +72,11 @@ export default function Home() {
               <LinkSection>
                 {contactData.map(({ type, link }) => {
                   return (
-                    <a key={type} href={link} target={'_blank'} rel="noreferrer">
+                    <ExternalLink key={type} href={link}>
                       <LinkButton>
-                        <Icon name={type} />
+                        <SvgIcon name={type} />
                       </LinkButton>
-                    </a>
+                    </ExternalLink>
                   )
                 })}
                 <Link href={'/files/hyoungwook_jin_cv.pdf'} target={'_blank'} rel="noreferrer">
