@@ -1,24 +1,25 @@
 'use client'
-import { SvgIcon } from '@/app/component/svgIcon'
-import { Divider } from '@/design/component/divider'
 import { ExternalLink } from '@/app/component/externalLink'
 import { ListItem } from '@/app/component/listItem'
-import { BodyText } from '@/design/component/text/body'
-import { HeaderText } from '@/design/component/text/header'
-import { SubHeaderText } from '@/design/component/text/subHeader'
-import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
+import { SvgIcon } from '@/app/component/svgIcon'
+import { MOBILE_BREAKPOINT } from '@/constant/ui'
 import { contactData } from '@/data/contact'
 import { educationData } from '@/data/education'
 import { newsData } from '@/data/news'
 import { projectData } from '@/data/project'
 import { publicationData } from '@/data/publication'
+import { Divider } from '@/design/component/divider'
+import { BodyText } from '@/design/component/text/body'
+import { HeaderText } from '@/design/component/text/header'
+import { SubHeaderText } from '@/design/component/text/subHeader'
+import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
 import { ResetStyle } from '@/design/foundation'
 import { DEFAULT_THEME } from '@/design/theme'
+import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { Time } from './component/time'
-import { MOBILE_BREAKPOINT } from '@/constant/ui'
 
 export default function Home() {
   return (
@@ -27,10 +28,7 @@ export default function Home() {
       <Global
         styles={css`
           body {
-            background-color: #ffffff;
-            @media (prefers-color-scheme: dark) {
-              background-color: #333333;
-            }
+            ${Fill.Sheet}
           }
         `}
       />
@@ -42,7 +40,7 @@ export default function Home() {
                 fill
                 src={'/hyoungwook.jpg'}
                 style={{
-                  objectFit: 'contain',
+                  objectFit: 'cover',
                 }}
                 alt="The profile image of Hyoungwook Jin."
                 sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
@@ -276,8 +274,17 @@ const Card = styled.section`
 
 const ProfileImageContainer = styled.div`
   position: relative;
-  min-height: 150px;
   overflow: hidden;
+  max-height: calc(800px / 2.5);
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
 `
 
 const PublicationImageContainer = styled.div`
