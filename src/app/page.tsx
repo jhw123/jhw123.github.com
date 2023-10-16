@@ -112,7 +112,7 @@ export default function Home() {
                   fill
                   src={imagePath}
                   style={{
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                   }}
                   alt={`The teaser image of ${title}`}
                   sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
@@ -151,7 +151,7 @@ export default function Home() {
                     fill
                     src={imagePath}
                     style={{
-                      objectFit: 'cover',
+                      objectFit: 'contain',
                     }}
                     alt={`The teaser image of ${title}`}
                     sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
@@ -190,7 +190,7 @@ export default function Home() {
                     fill
                     src={imagePath}
                     style={{
-                      objectFit: 'cover',
+                      objectFit: 'contain',
                     }}
                     alt={`The teaser image of ${title}`}
                     sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
@@ -303,6 +303,7 @@ const PublicationImageContainer = styled.div`
   overflow: hidden;
   border-radius: 4px;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
 `
 
 const Author = styled.span<{ isMe: boolean }>`
