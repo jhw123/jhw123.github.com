@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
     type: 'website',
-    images: ['/hyoungwook.jpg'],
+    images: ['/hyoungwook_og.jpg'],
   },
 }
 
