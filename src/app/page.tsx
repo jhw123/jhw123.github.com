@@ -48,7 +48,7 @@ export default function Home() {
               />
             </ProfileImageContainer>
 
-            <div>
+            <Introduction>
               <h1>
                 <HeaderText color="Focus">
                   <WavingHand>Hyoungwook Jin</WavingHand>
@@ -81,7 +81,7 @@ export default function Home() {
                   <LinkButton>CV</LinkButton>
                 </Link>
               </LinkSection>
-            </div>
+            </Introduction>
           </Card>
 
           <Divider fill="Secondary" marginVertical={32} />
@@ -122,7 +122,9 @@ export default function Home() {
                 <h3>
                   <SubSubHeaderText marginBottom={8}>{title}</SubSubHeaderText>
                 </h3>
-                <BodyText marginBottom={8}>{description}</BodyText>
+                <BodyText color="Secondary" marginBottom={8}>
+                  {description}
+                </BodyText>
                 {arxivLink && (
                   <ExternalLink href={arxivLink}>
                     <Image width={20} height={20} src="/icons/arxiv.png" alt={`arXiv submission link for ${title}`} />{' '}
@@ -230,8 +232,10 @@ export default function Home() {
                     {school} ({abbreviation})
                   </SubSubHeaderText>
                 </h3>
-                <ListItem marginBottom={4}>{degree}</ListItem>
-                <ListItem>{content}</ListItem>
+                <BodyText color="Secondary">
+                  <ListItem marginBottom={4}>{degree}</ListItem>
+                  <ListItem>{content}</ListItem>
+                </BodyText>
               </div>
               <SideInfo>
                 <Time date={startDate} formatStr="LLL yyyy" /> - <Time date={endDate} formatStr="LLL yyyy" />
@@ -275,7 +279,7 @@ const Card = styled.section`
 const ProfileImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  max-height: calc(800px / 2.5);
+  height: calc(800px / 2.5);
   overflow: hidden;
   border-radius: 4px;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
@@ -285,6 +289,12 @@ const ProfileImageContainer = styled.div`
     height: 150px;
     margin: auto;
   }
+`
+
+const Introduction = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const PublicationImageContainer = styled.div`
