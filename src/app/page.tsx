@@ -22,6 +22,7 @@ import Image from 'next/image'
 import { Fragment } from 'react'
 import { PaperLink } from './component/paperLink'
 import { Time } from './component/time'
+import { capitalize } from 'lodash'
 
 export default function Page() {
   return (
@@ -218,7 +219,7 @@ export default function Page() {
                     })}
                   </BodyText>
                   <BodyText marginBottom={8}>
-                    {conference} {type}
+                    {conference} {capitalize(type)}
                   </BodyText>
                   {paperLink && (
                     <PaperLink href={paperLink} title={title}>
