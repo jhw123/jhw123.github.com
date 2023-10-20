@@ -2,9 +2,9 @@ import { css } from '@emotion/react'
 
 export const Font = {
   Title: css`
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.6;
   `,
   SubTitle: css`
     font-size: 1.3rem;

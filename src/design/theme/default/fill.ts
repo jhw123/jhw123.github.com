@@ -33,7 +33,10 @@ export const Fill = {
     background-color: ${BaseColor.Gray030};
   `,
   Focus: css`
-    background-color: ${BaseColor.Blue030};
+    background-color: ${BaseColor.Blue020};
+    @media (prefers-color-scheme: dark) {
+      background-color: ${BaseColor.Blue030};
+    }
   `,
   Transparent: css`
     background-color: transparent;

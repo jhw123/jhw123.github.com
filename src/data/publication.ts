@@ -43,6 +43,7 @@ export const publicationData = DataUtil.sortByTime([
     endDate: new Date(2023, 9),
     conference: "🇨🇷 CSCW'24 (to appear)",
     type: 'full paper',
+    paperLink: '/files/CSCW2024 CodeTree.pdf',
     imagePath: '/projects/codetree.png',
   }),
   new Publication({
@@ -77,7 +78,7 @@ export const publicationData = DataUtil.sortByTime([
     startDate: new Date(2021, 10),
     endDate: new Date(2022, 5),
     type: 'workshop',
-    paperLink: '/files/2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf',
+    paperLink: 'https://ceur-ws.org/Vol-3410/',
     conference: "🇺🇸 L@S'22",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),

@@ -19,10 +19,11 @@ import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import { Fragment } from 'react'
 import { PaperLink } from './component/paperLink'
 import { Time } from './component/time'
 
-export default function Home() {
+export default function Page() {
   return (
     <ThemeProvider theme={DEFAULT_THEME}>
       <Global styles={ResetStyle} />
@@ -58,7 +59,7 @@ export default function Home() {
 
               <BodyText marginBottom={8}>
                 I am an MS candidate in the{' '}
-                <ExternalLink href="https://cs.kaist.ac.kr/">School of Computing at KAIST</ExternalLink>. I am working
+                <ExternalLink href="https://cs.kaist.ac.kr/">School of Computing</ExternalLink> at KAIST. I am working
                 with <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
               </BodyText>
@@ -88,20 +89,23 @@ export default function Home() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
+            <SubHeaderText color="Focus" marginBottom={16}>
               NEWS
             </SubHeaderText>
           </h2>
-          {newsData.slice(0, 5).map(({ content, startDate }, i) => (
-            <ListItem key={i} marginBottom={4}>
-              <Time date={startDate} formatStr="LLL dd, yyyy" /> - {content}
-            </ListItem>
-          ))}
+          <NewsRow>
+            {newsData.slice(0, 5).map(({ content, startDate }, i) => (
+              <Fragment key={i}>
+                <Time date={startDate} formatStr="LLL, yyyy" />
+                {content}
+              </Fragment>
+            ))}
+          </NewsRow>
 
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
+            <SubHeaderText color="Focus" marginBottom={16}>
               CURRENT PROJECT{projectData.length > 1 && 'S'}
             </SubHeaderText>
           </h2>
@@ -138,7 +142,7 @@ export default function Home() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
+            <SubHeaderText color="Focus" marginBottom={16}>
               CONFERENCE PAPERS
             </SubHeaderText>
           </h2>
@@ -181,7 +185,7 @@ export default function Home() {
             ))}
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
+            <SubHeaderText color="Focus" marginBottom={16}>
               POSTERS AND WORKSHOP PAPERS
             </SubHeaderText>
           </h2>
@@ -228,7 +232,7 @@ export default function Home() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
+            <SubHeaderText color="Focus" marginBottom={16}>
               EDUCATION
             </SubHeaderText>
           </h2>
@@ -277,7 +281,7 @@ const Card = styled.section`
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
     grid-template-columns: 1fr;
   }
-  gap: 16px;
+  gap: 32px;
   margin-bottom: 32px;
   &:last-child {
     margin-bottom: 0;
@@ -285,18 +289,20 @@ const Card = styled.section`
 `
 
 const ProfileImageContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: calc(800px / 2.5);
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  ${({ theme }) => css`
+    position: relative;
+    overflow: hidden;
+    height: calc(800px / 2.5);
+    overflow: hidden;
+    border-radius: 4px;
+    ${theme.elevation.L1}
 
-  @media (max-width: ${MOBILE_BREAKPOINT}px) {
-    width: 150px;
-    height: 150px;
-    margin: auto;
-  }
+    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+    }
+  `}
 `
 
 const Introduction = styled.div`
@@ -306,12 +312,14 @@ const Introduction = styled.div`
 `
 
 const PublicationImageContainer = styled.div`
-  position: relative;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  ${({ theme }) => css`
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 4px;
+    ${theme.elevation.L1}
+    background-color: white;
+  `}
 `
 
 const Author = styled.span<{ isMe: boolean }>`
@@ -349,18 +357,26 @@ const LinkButton = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 12px;
-    ${theme.border.Primary};
+    box-sizing: border-box;
+    ${theme.border.Secondary};
     border-radius: 8px;
     font-weight: bold;
-    ${theme.font.Title}
+    ${theme.font.SubTitle}
   `}
 `
 
 const Link = styled.a`
   text-decoration: none;
+`
+
+const NewsRow = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 8px;
+  row-gap: 4px;
 `
 
 const Waving = keyframes`

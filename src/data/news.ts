@@ -17,23 +17,23 @@ class News {
 
 export const newsData = DataUtil.sortByTime([
   new News({
-    content: 'Redesigned the website! Hope you like it.',
+    content: '💅 Redesigned the website! Hope you like it.',
     startDate: new Date('2023-10-10'),
   }),
   new News({
-    content: 'Got acceptances for two CSCW papers after a revision cycle!',
+    content: '🎉 Got acceptances for two CSCW papers after a revision cycle!',
     startDate: new Date('2023-09-19'),
   }),
   new News({
-    content: 'Solved 1000 LeetCode problems!',
+    content: '🔥 Solved 1000 LeetCode problems!',
     startDate: new Date('2023-01-19'),
   }),
   new News({
-    content: 'Submitted my first first-author full paper to CHI successfully.',
+    content: '🚀 Submitted my first first-author full paper to CHI successfully.',
     startDate: new Date('2022-09-19'),
   }),
   new News({
-    content: 'Started summer internship at UCSD Design Lab.',
+    content: '🧳 Started summer internship at UCSD Design Lab.',
     startDate: new Date('2022-06-27'),
   }),
   new News({
