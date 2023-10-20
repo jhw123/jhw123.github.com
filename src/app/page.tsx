@@ -19,6 +19,7 @@ import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import { PaperLink } from './component/paperLink'
 import { Time } from './component/time'
 
 export default function Home() {
@@ -126,10 +127,9 @@ export default function Home() {
                   {description}
                 </BodyText>
                 {arxivLink && (
-                  <ExternalLink href={arxivLink}>
-                    <Image width={20} height={20} src="/icons/arxiv.png" alt={`arXiv submission link for ${title}`} />{' '}
+                  <PaperLink href={arxivLink} title={title}>
                     arXiv submission
-                  </ExternalLink>
+                  </PaperLink>
                 )}
               </div>
             </Card>
@@ -171,7 +171,11 @@ export default function Home() {
                     })}
                   </BodyText>
                   <BodyText marginBottom={8}>{conference}</BodyText>
-                  {paperLink && <ExternalLink href={paperLink}>Link to paper</ExternalLink>}
+                  {paperLink && (
+                    <PaperLink href={paperLink} title={title}>
+                      Link to paper
+                    </PaperLink>
+                  )}
                 </div>
               </Card>
             ))}
@@ -212,7 +216,11 @@ export default function Home() {
                   <BodyText marginBottom={8}>
                     {conference} {type}
                   </BodyText>
-                  {paperLink && <ExternalLink href={paperLink}>Link to paper</ExternalLink>}
+                  {paperLink && (
+                    <PaperLink href={paperLink} title={title}>
+                      Link to paper
+                    </PaperLink>
+                  )}
                 </BodyText>
               </Card>
             ))}
