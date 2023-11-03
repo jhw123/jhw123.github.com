@@ -26,17 +26,9 @@ export const Color = {
     color: ${BaseColor.Red};
     fill: ${BaseColor.Red};
   `,
-  Warning: css`
-    color: ${BaseColor.Orange};
-    fill: ${BaseColor.Orange};
-  `,
-  Placeholder: css`
+  Inactive: css`
     color: ${BaseColor.Gray020};
     fill: ${BaseColor.Gray020};
-  `,
-  Highlight: css`
-    color: ${BaseColor.Gray000};
-    fill: ${BaseColor.Gray000};
   `,
   Focus: css`
     color: ${BaseColor.Blue030};
@@ -45,13 +37,6 @@ export const Color = {
       color: ${BaseColor.Blue020};
       fill: ${BaseColor.Blue020};
     }
-  `,
-  Action: css`
-    color: ${BaseColor.Green};
-    fill: ${BaseColor.Green};
-  `,
-  Inherit: css`
-    color: inherit;
   `,
 } as const
 

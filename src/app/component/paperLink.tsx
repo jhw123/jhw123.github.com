@@ -35,9 +35,8 @@ export const PaperLink = View<Props>(({ href, children, title, ...props }) => {
 const Container = styled.a`
   ${({ theme }) => css`
     padding: 4px 8px;
-    ${theme.fill.Focus}
-    ${theme.color.Highlight}
     border-radius: 4px;
+    ${theme.border.Secondary}
     text-decoration: none;
     display: inline-flex;
     align-items: center;

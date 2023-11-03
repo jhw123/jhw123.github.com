@@ -31,7 +31,7 @@ export default function Page() {
       <Global
         styles={css`
           body {
-            ${Fill.Sheet}
+            ${Fill.Primary}
           }
         `}
       />
@@ -90,9 +90,7 @@ export default function Page() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              NEWS
-            </SubHeaderText>
+            <SubHeaderText marginBottom={16}>NEWS</SubHeaderText>
           </h2>
           <NewsRow>
             {newsData.slice(0, 5).map(({ content, startDate }, i) => (
@@ -106,9 +104,7 @@ export default function Page() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              CURRENT PROJECT{projectData.length > 1 && 'S'}
-            </SubHeaderText>
+            <SubHeaderText marginBottom={16}>CURRENT PROJECT{projectData.length > 1 && 'S'}</SubHeaderText>
           </h2>
 
           {projectData.map(({ title, imagePath, description, arxivLink }, i) => (
@@ -126,7 +122,9 @@ export default function Page() {
               </PublicationImageContainer>
               <div>
                 <h3>
-                  <SubSubHeaderText marginBottom={8}>{title}</SubSubHeaderText>
+                  <SubSubHeaderText color="Focus" marginBottom={8}>
+                    {title}
+                  </SubSubHeaderText>
                 </h3>
                 <BodyText color="Secondary" marginBottom={8}>
                   {description}
@@ -143,9 +141,7 @@ export default function Page() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              CONFERENCE PAPERS
-            </SubHeaderText>
+            <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
           </h2>
           {publicationData
             .filter(({ type, endDate }) => type === 'full paper' && endDate)
@@ -164,7 +160,9 @@ export default function Page() {
                 </PublicationImageContainer>
                 <div>
                   <h3>
-                    <SubSubHeaderText marginBottom={8}>{title}</SubSubHeaderText>
+                    <SubSubHeaderText color="Focus" marginBottom={8}>
+                      {title}
+                    </SubSubHeaderText>
                   </h3>
                   <BodyText color="Secondary" marginBottom={8}>
                     {authors.map((name, i) => {
@@ -186,9 +184,7 @@ export default function Page() {
             ))}
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              POSTERS AND WORKSHOP PAPERS
-            </SubHeaderText>
+            <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
           {publicationData
             .filter(({ type }) => type !== 'full paper')
@@ -207,7 +203,9 @@ export default function Page() {
                 </PublicationImageContainer>
                 <BodyText>
                   <h3>
-                    <SubSubHeaderText marginBottom={8}>{title}</SubSubHeaderText>
+                    <SubSubHeaderText color="Focus" marginBottom={8}>
+                      {title}
+                    </SubSubHeaderText>
                   </h3>
                   <BodyText color="Secondary" marginBottom={8}>
                     {authors.map((name, i) => {
@@ -233,9 +231,7 @@ export default function Page() {
           <Divider fill="Secondary" marginVertical={32} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              EDUCATION
-            </SubHeaderText>
+            <SubHeaderText marginBottom={16}>EDUCATION</SubHeaderText>
           </h2>
           {educationData.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
             <EducationCard key={i}>
@@ -296,7 +292,7 @@ const ProfileImageContainer = styled.div`
     height: calc(800px / 2.5);
     overflow: hidden;
     border-radius: 4px;
-    ${theme.elevation.L1}
+    ${theme.elevation.L2}
 
     @media (max-width: ${MOBILE_BREAKPOINT}px) {
       width: 150px;
@@ -318,14 +314,14 @@ const PublicationImageContainer = styled.div`
     height: 150px;
     overflow: hidden;
     border-radius: 4px;
-    ${theme.elevation.L1}
+    ${theme.elevation.L2}
     background-color: white;
   `}
 `
 
 const Author = styled.span<{ isMe: boolean }>`
   ${({ isMe }) => css`
-    font-weight: ${isMe ? 'bold' : 'normal'};
+    font-weight: ${isMe ? '600' : '200'};
     font-style: italic;
     &:not(:last-child):after {
       content: ', ';
