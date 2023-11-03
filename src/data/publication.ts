@@ -78,7 +78,7 @@ export const publicationData = DataUtil.sortByTime([
     startDate: new Date(2021, 10),
     endDate: new Date(2022, 5),
     type: 'workshop',
-    paperLink: 'https://ceur-ws.org/Vol-3410/',
+    paperLink: '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf',
     conference: "L@S'22",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),
