@@ -1,3 +1,4 @@
+import { MIN_BUTTON_SIZE } from '@/constant/ui'
 import { View } from '@/design/foundation'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -19,6 +20,10 @@ export const PaperLink = View<Props>(({ href, children, title, ...props }) => {
         return '/icons/arxiv.png'
       case href.includes('dl.acm.org'):
         return '/icons/dl.png'
+      case href.includes('/project/'):
+        return '/icons/globe.png'
+      case href.includes('/demo/'):
+        return '/icons/slide.png'
       default:
         return ''
     }
@@ -40,7 +45,7 @@ const Container = styled.a`
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    min-height: 40px;
+    min-height: ${MIN_BUTTON_SIZE}px;
     box-sizing: border-box;
     gap: 4px;
   `}
