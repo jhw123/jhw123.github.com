@@ -1,5 +1,5 @@
 'use client'
-import { ExternalLink } from '@/app/component/externalLink'
+import { PaperLink } from '@/app/component/paperLink'
 import { Divider } from '@/design/component/divider'
 import { HeaderText } from '@/design/component/text/header'
 import { SubHeaderText } from '@/design/component/text/subHeader'
@@ -8,9 +8,7 @@ import { DEFAULT_THEME } from '@/design/theme'
 import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import Image from 'next/image'
 import { Profile } from '../component/profile'
-import { PaperLink } from '@/app/component/paperLink'
 
 export default function Page() {
   return (

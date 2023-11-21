@@ -31,8 +31,8 @@ export const Color = {
     fill: ${BaseColor.Gray020};
   `,
   Focus: css`
-    color: ${BaseColor.Blue030};
-    fill: ${BaseColor.Blue030};
+    color: ${BaseColor.Blue040};
+    fill: ${BaseColor.Blue040};
     @media (prefers-color-scheme: dark) {
       color: ${BaseColor.Blue020};
       fill: ${BaseColor.Blue020};

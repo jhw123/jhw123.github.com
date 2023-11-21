@@ -13,6 +13,8 @@ export const BaseColor = {
   Gray100: '#000000',
   Blue020: '#78cbcc',
   Blue030: '#69b3b3',
+  Blue040: '#5a9999',
+  Blue050: '#4b8080',
   Purple: '#9370DB',
   Green: '#29cf98',
   Orange: '#ECA869',

@@ -67,7 +67,13 @@ export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
 
       {onSend && (
         <InputContainer>
-          <TextInput value={message} onChange={setMessage} rows={3} onEnter={send} />
+          <TextInput
+            value={message}
+            onChange={setMessage}
+            rows={3}
+            onEnter={send}
+            placeholder="Teach AlgoBo how to write a binary search algorithm."
+          />
           <FillButton fill="Focus" onClick={send} state={isOpponentTyping ? 'Disabled' : 'Default'}>
             Send
           </FillButton>

@@ -8,7 +8,7 @@ interface Props {
   fill?: Fill
 }
 
-export const Divider = View<Props>(({ fill = 'Secondary', ...props }) => {
+export const Divider = View<Props>(({ fill = 'Inactive', ...props }) => {
   return <Container {...props} fill={fill}></Container>
 })
 
