@@ -1,4 +1,4 @@
-import { MIN_BUTTON_SIZE } from '@/constant/ui'
+import { MIN_BUTTON_SIZE } from '@/design/ui'
 import { View } from '@/design/foundation'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const PaperLink = View<Props>(({ href, children, title, ...props }) => {
+export const IconLink = View<Props>(({ href, children, title, ...props }) => {
   const icon = (() => {
     switch (true) {
       case last(href.split('.')) === 'pdf':
@@ -24,6 +24,8 @@ export const PaperLink = View<Props>(({ href, children, title, ...props }) => {
         return '/icons/globe.png'
       case href.includes('/demo/'):
         return '/icons/slide.png'
+      case href.includes('github.com'):
+        return '/icons/github.png'
       default:
         return ''
     }

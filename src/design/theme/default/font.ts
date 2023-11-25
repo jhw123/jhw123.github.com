@@ -1,3 +1,4 @@
+import { MOBILE_BREAKPOINT } from '@/design/ui'
 import { css } from '@emotion/react'
 
 export const Font = {
@@ -5,6 +6,11 @@ export const Font = {
     font-size: 2rem;
     font-weight: 400;
     line-height: 1.6;
+
+    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
   `,
   SubTitle: css`
     font-size: 1.3rem;

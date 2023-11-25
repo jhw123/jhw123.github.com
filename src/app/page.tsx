@@ -2,9 +2,9 @@
 import { ExternalLink } from '@/app/component/externalLink'
 import { ListItem } from '@/app/component/listItem'
 import { SvgIcon } from '@/app/component/svgIcon'
-import { MOBILE_BREAKPOINT } from '@/constant/ui'
-import { contactData } from '@/data/contact'
-import { educationData } from '@/data/education'
+import { MOBILE_BREAKPOINT } from '@/design/ui'
+import { CONTACTS } from '@/data/contact'
+import { EDUCATIONS } from '@/data/education'
 import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
@@ -21,7 +21,7 @@ import styled from '@emotion/styled'
 import { capitalize } from 'lodash'
 import Image from 'next/image'
 import { Fragment } from 'react'
-import { PaperLink } from './component/paperLink'
+import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
 
 export default function Page() {
@@ -71,7 +71,7 @@ export default function Page() {
               </BodyText>
 
               <LinkSection>
-                {contactData.map(({ type, link }) => {
+                {CONTACTS.map(({ type, link }) => {
                   return (
                     <ExternalLink key={type} href={link}>
                       <LinkButton>
@@ -131,9 +131,9 @@ export default function Page() {
                       {description}
                     </BodyText>
                     {arxivLink && (
-                      <PaperLink href={arxivLink} title={title}>
+                      <IconLink href={arxivLink} title={title}>
                         arXiv submission
-                      </PaperLink>
+                      </IconLink>
                     )}
                   </div>
                 </Card>
@@ -177,9 +177,9 @@ export default function Page() {
                   </BodyText>
                   <BodyText marginBottom={8}>{conference}</BodyText>
                   {paperLink && (
-                    <PaperLink href={paperLink} title={title}>
+                    <IconLink href={paperLink} title={title}>
                       Link to paper
-                    </PaperLink>
+                    </IconLink>
                   )}
                 </div>
               </Card>
@@ -222,9 +222,9 @@ export default function Page() {
                     {conference} {capitalize(type)}
                   </BodyText>
                   {paperLink && (
-                    <PaperLink href={paperLink} title={title}>
+                    <IconLink href={paperLink} title={title}>
                       Link to paper
-                    </PaperLink>
+                    </IconLink>
                   )}
                 </BodyText>
               </Card>
@@ -236,7 +236,7 @@ export default function Page() {
           <h2>
             <SubHeaderText marginBottom={16}>EDUCATION</SubHeaderText>
           </h2>
-          {educationData.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
+          {EDUCATIONS.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
             <EducationCard key={i}>
               <div>
                 <h3>

@@ -1,4 +1,4 @@
-import { MIN_BUTTON_SIZE } from '@/constant/ui'
+import { MIN_BUTTON_SIZE } from '@/design/ui'
 import { View } from '@/design/foundation'
 import { ComponentState } from '@/design/foundation/componentState'
 import { Color } from '@/design/theme/default/color'

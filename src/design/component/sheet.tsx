@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { View } from '../foundation'
 import { Fill } from '../theme/default/fill'
-import { MIN_BUTTON_SIZE } from '@/constant/ui'
+import { MIN_BUTTON_SIZE } from '@/design/ui'
 
 interface Props {
   fill?: Fill

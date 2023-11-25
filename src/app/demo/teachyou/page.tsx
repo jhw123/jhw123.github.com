@@ -1,6 +1,6 @@
 'use client'
-import { PaperLink } from '@/app/component/paperLink'
-import { MOBILE_BREAKPOINT } from '@/constant/ui'
+import { IconLink } from '@/app/component/iconLink'
+import { MOBILE_BREAKPOINT } from '@/design/ui'
 import { Divider } from '@/design/component/divider'
 import { TextInput } from '@/design/component/input/text'
 import { Sheet } from '@/design/component/sheet'
@@ -19,7 +19,7 @@ import { Chat, usePipeline } from './hook/usePipeline'
 export default function Page() {
   const [apiKey, setApiKey] = useState('')
   const [chatLogs, setChatLogs] = useState<Chat[]>([
-    { role: 'tutee', message: 'Hello! Can you explain Binary Search to me?' },
+    { role: 'tutee', message: 'Hello! Can you explain binary search to me?' },
   ])
   const {
     knowledgeState,
@@ -61,12 +61,12 @@ export default function Page() {
           <h1>
             <HeaderText marginBottom={12}>TeachYou Interactive Demo</HeaderText>
           </h1>
-          <PaperLink href="https://arxiv.org/abs/2309.14534" title="TeachYou Paper" marginBottom={12}>
+          <IconLink href="https://arxiv.org/abs/2309.14534" title="TeachYou Paper" marginBottom={12}>
             Paper
-          </PaperLink>
-          <PaperLink href="/project/teachyou" title="TeachYou Website" marginLeft={8} marginBottom={12}>
+          </IconLink>
+          <IconLink href="/project/teachyou" title="TeachYou Website" marginLeft={8} marginBottom={12}>
             Website
-          </PaperLink>
+          </IconLink>
 
           <BodyText marginBottom={12}>
             This page provides a demo of the Reflect-Respond pipeline. Try to teach AlgoBo how to write a binary search

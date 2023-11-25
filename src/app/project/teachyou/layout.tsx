@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'TeachYou',
   description:
     'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
-  icons: ['/favicon.png'],
+  icons: ['/images/tutor.png'],
   keywords: [
     '진형욱',
     'Hyoungwook Jin',

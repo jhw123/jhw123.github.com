@@ -15,7 +15,7 @@ class Contact {
   }
 }
 
-export const contactData: Contact[] = [
+export const CONTACTS: Contact[] = [
   new Contact({
     type: 'EMAIL',
     link: 'mailto:jinhw@kaist.ac.kr',

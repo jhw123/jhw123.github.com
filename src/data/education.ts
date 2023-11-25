@@ -33,7 +33,7 @@ class Education {
   }
 }
 
-export const educationData = DataUtil.sortByTime([
+export const EDUCATIONS = DataUtil.sortByTime([
   new Education({
     school: 'Korea Advanced Institute of Science and Technology',
     abbreviation: 'KAIST',
