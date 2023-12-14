@@ -84,6 +84,7 @@ export const ResetStyle = css`
   button,
   input,
   textarea,
+  select,
   video {
     margin: 0;
     padding: 0;
