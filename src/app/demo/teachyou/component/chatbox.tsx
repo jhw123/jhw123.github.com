@@ -7,14 +7,15 @@ import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Chat } from '../hook/usePipeline'
 import { Markdown } from '@/design/component/markdown'
+import { View } from '@/design/foundation'
 
 interface Props {
   onSend?: (message: string) => Promise<void>
   isOpponentTyping?: boolean
-  chatLogs: Chat[]
+  chatLogs: Readonly<Chat[]>
 }
 
-export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
+export const ChatBox = View<Props>(({ chatLogs, onSend, isOpponentTyping = false, ...props }) => {
   const [message, setMessage] = useState('')
   const [logCnt, setLogCnt] = useState(chatLogs.length)
   const chatContainerRef = useRef<HTMLDivElement>(null)
@@ -34,7 +35,7 @@ export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
   }, [logCnt, chatLogs.length])
 
   return (
-    <Container>
+    <Container hasGap={Boolean(onSend)} {...props}>
       <ChatContainer ref={chatContainerRef}>
         {chatLogs.map(({ message, role }, i) => {
           if (role === 'tutor') {
@@ -44,7 +45,7 @@ export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
                 <Image src="/images/tutor.png" width={20} height={20} alt="Tutor" />
               </TutorChat>
             )
-          } else {
+          } else if (role === 'tutee') {
             return (
               <Chat key={i}>
                 <Image src="/images/tutee.png" width={20} height={20} alt="Tutee" />
@@ -53,6 +54,8 @@ export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
                 </TuteeBubble>
               </Chat>
             )
+          } else {
+            return <SystemBubble key={i}>{message}</SystemBubble>
           }
         })}
         {isOpponentTyping && (
@@ -81,14 +84,16 @@ export function ChatBox({ chatLogs, onSend, isOpponentTyping = false }: Props) {
       )}
     </Container>
   )
-}
+})
 
-const Container = styled.div`
-  min-height: 0;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 16px;
-  padding: 16px;
+const Container = styled.div<{ hasGap: boolean }>`
+  ${({ hasGap }) => css`
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: ${hasGap ? 16 : 0}px;
+    max-height: 100%;
+  `}
 `
 
 const ChatContainer = styled.div`
@@ -139,4 +144,12 @@ const TutorBubble = styled(Bubble)`
 
 const TuteeBubble = styled(Bubble)`
   margin-left: 4px;
+`
+
+const SystemBubble = styled.div`
+  ${({ theme }) =>
+    css`
+      ${theme.color.Secondary}
+      text-align: center;
+    `}
 `

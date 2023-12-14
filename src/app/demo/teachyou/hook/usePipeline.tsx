@@ -5,15 +5,16 @@ import { EXTRACT_KNOWLEDGE_SYSTEM_PROMPT_EN, EXTRACT_KNOWLEDGE_USER_PROMPT } fro
 import { RETRIEVE_KNOWLEDGE_SYSTEM_PROMPT_EN, RETRIEVE_KNOWLEDGE_USER_PROMPT } from '../prompts/retrieveKnowledge'
 import { UPDATE_KNOWLEDGE_SYSTEM_PROMPT_EN, UPDATE_KNOWLEDGE_USER_PROMPT } from '../prompts/updateKnowledge'
 import { useOpenAIStream } from './useOpenAI'
+import OpenAI from 'openai'
 
 export interface Chat {
-  role: 'tutor' | 'tutee'
+  role: 'tutor' | 'tutee' | 'system'
   message: string
 }
 
 const NONE = 'NONE'
 
-export function usePipeline(apiKey: string) {
+export function usePipeline(apiKey: string, model: OpenAI.Model['id']) {
   const [knowledgeState, setKnowledgeState] = useState('{facts: [], code_implementation: []}')
   const [extractData, completeExtract] = useOpenAIStream()
   const [updateData, completeUpdate] = useOpenAIStream()
@@ -34,9 +35,10 @@ export function usePipeline(apiKey: string) {
         ],
         stop: '---',
         temperature: 0,
+        model,
       })
     },
-    [apiKey, completeExtract]
+    [apiKey, completeExtract, model]
   )
 
   const update = useCallback(
@@ -55,10 +57,11 @@ export function usePipeline(apiKey: string) {
           ],
           stop: '---',
           temperature: 0,
+          model,
         })
       }
     },
-    [apiKey, completeUpdate]
+    [apiKey, completeUpdate, model]
   )
 
   const perceive = useCallback((chatLogs: Chat[]) => {
@@ -79,9 +82,10 @@ export function usePipeline(apiKey: string) {
         ],
         stop: '---',
         temperature: 0,
+        model,
       })
     },
-    [apiKey, completeRetrieve]
+    [apiKey, completeRetrieve, model]
   )
 
   const compose = useCallback(
@@ -114,9 +118,10 @@ export function usePipeline(apiKey: string) {
         ],
         stop: '---',
         temperature: 0,
+        model,
       })
     },
-    [apiKey, completeCompose]
+    [apiKey, completeCompose, model]
   )
 
   const respond = useCallback(

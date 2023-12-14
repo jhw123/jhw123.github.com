@@ -5,13 +5,17 @@ import { Divider } from '@/design/component/divider'
 import { BodyText } from '@/design/component/text/body'
 import { HeaderText } from '@/design/component/text/header'
 import { SubHeaderText } from '@/design/component/text/subHeader'
+import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
 import { ResetStyle } from '@/design/foundation'
 import { DEFAULT_THEME } from '@/design/theme'
 import { Fill } from '@/design/theme/default/fill'
+import { MOBILE_BREAKPOINT } from '@/design/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Profile } from '../component/profile'
-import { MOBILE_BREAKPOINT } from '@/design/ui'
+import { Reconfigurability } from '../component/reconfigurability'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -28,8 +32,7 @@ export default function Page() {
         <Content>
           <h1>
             <HeaderText align="center" marginBottom={24}>
-              &quot;Teach AI How to Code&quot;: Using Large Language Models as Teachable Agents for Programming
-              Education
+              Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education
             </HeaderText>
           </h1>
 
@@ -138,20 +141,46 @@ export default function Page() {
           <Divider marginVertical={24} />
 
           <h2>
-            <SubHeaderText color="Focus">Interactive Demo</SubHeaderText>
+            <SubHeaderText color="Focus" marginBottom={16}>
+              Interactive Demo
+            </SubHeaderText>
           </h2>
+
+          <Link href={'/demo/teachyou'} style={{ display: 'inline-block', margin: `0 calc((100vw - 510px) / 2)` }}>
+            <ImageContainer>
+              <Image
+                fill
+                src={'/images/teachyou-demo.png'}
+                style={{
+                  objectFit: 'cover',
+                  filter: 'brightness(0.5)',
+                }}
+                alt={`The demo image of TeachYou`}
+              />
+            </ImageContainer>
+          </Link>
 
           <Divider marginVertical={24} />
 
           <h2>
-            <SubHeaderText color="Focus">Evaluation</SubHeaderText>
+            <SubHeaderText color="Focus" marginBottom={16}>
+              Evaluation
+            </SubHeaderText>
           </h2>
 
-          <Divider marginVertical={24} />
+          <h3>
+            <SubSubHeaderText marginBottom={16}>
+              The Reflect-Respond pipeline can effectively configure the knowledge level of AlgoBo.
+            </SubSubHeaderText>
+          </h3>
 
-          <h2>
-            <SubHeaderText color="Focus">Bibtex</SubHeaderText>
-          </h2>
+          <Reconfigurability />
+
+          <h3>
+            <SubSubHeaderText>
+              The Reflect-Respond makes AlgoBo produce responses persistent to knowledge states.
+            </SubSubHeaderText>
+          </h3>
         </Content>
       </Container>
     </ThemeProvider>
@@ -188,4 +217,33 @@ const LinkButtons = styled.div`
   width: 100%;
   gap: 16px;
   margin-top: 24px;
+`
+
+const ImageContainer = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    height: 320px;
+    width: 510px;
+    ${theme.elevation.L2}
+    margin: 0 auto;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.8);
+    }
+
+    &:after {
+      content: 'Click to chat with AlgoBo!';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      width: calc(100vw - 48px);
+      height: 62vw;
+    }
+  `}
 `

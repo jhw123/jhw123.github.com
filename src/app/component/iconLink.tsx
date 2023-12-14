@@ -50,5 +50,10 @@ const Container = styled.a`
     min-height: ${MIN_BUTTON_SIZE}px;
     box-sizing: border-box;
     gap: 4px;
+
+    &:hover {
+      background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+      background-blend-mode: darken;
+    }
   `}
 `

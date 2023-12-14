@@ -42,5 +42,6 @@ export function useOpenAIStream() {
     },
     []
   )
+
   return [data, completion, isStreaming] as const
 }

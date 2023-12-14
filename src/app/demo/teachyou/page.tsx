@@ -1,7 +1,7 @@
 'use client'
 import { IconLink } from '@/app/component/iconLink'
-import { MOBILE_BREAKPOINT } from '@/design/ui'
 import { Divider } from '@/design/component/divider'
+import { SelectInput } from '@/design/component/input/select'
 import { TextInput } from '@/design/component/input/text'
 import { Sheet } from '@/design/component/sheet'
 import { BodyText } from '@/design/component/text/body'
@@ -10,10 +10,12 @@ import { HeaderText } from '@/design/component/text/header'
 import { ResetStyle } from '@/design/foundation'
 import { DEFAULT_THEME } from '@/design/theme'
 import { Fill } from '@/design/theme/default/fill'
+import { MOBILE_BREAKPOINT } from '@/design/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { useCallback, useState } from 'react'
 import { ChatBox } from './component/chatbox'
+import { useOpenAIModels } from './hook/useOpenAIModels'
 import { Chat, usePipeline } from './hook/usePipeline'
 
 export default function Page() {
@@ -21,6 +23,8 @@ export default function Page() {
   const [chatLogs, setChatLogs] = useState<Chat[]>([
     { role: 'tutee', message: 'Hello! Can you explain binary search to me?' },
   ])
+  const { models } = useOpenAIModels(apiKey, 'gpt-4')
+  const [model, setModel] = useState<string>('gpt-4')
   const {
     knowledgeState,
     respond,
@@ -30,7 +34,7 @@ export default function Page() {
     retrieveData,
     composeData,
     isResponding,
-  } = usePipeline(apiKey)
+  } = usePipeline(apiKey, model)
 
   const enterKey = useCallback((s: string) => {
     setApiKey(s.trim())
@@ -79,6 +83,11 @@ export default function Page() {
           </CaptionText>
           <TextInput value={apiKey} onChange={enterKey} rows={1} placeholder="Your OpenAI API Key" />
 
+          <CaptionText color="Focus" marginBottom={4}>
+            Model
+          </CaptionText>
+          <SelectInput options={models.map(model => model.id)} onSelect={i => setModel(models[i].id)} />
+
           <Divider marginVertical={24} />
 
           <CaptionText color="Focus" marginBottom={4}>
@@ -118,7 +127,7 @@ export default function Page() {
           <Sheet fill="Inactive">{composeData}</Sheet>
         </Side>
 
-        <ChatBox chatLogs={chatLogs} onSend={send} isOpponentTyping={isResponding} />
+        <ChatBox chatLogs={chatLogs} onSend={send} isOpponentTyping={isResponding} margin={16} />
       </Container>
     </ThemeProvider>
   )
@@ -142,7 +151,7 @@ const Container = styled.main`
 
 const Side = styled.div`
   height: 100vh;
-  padding: 16px 16px 40px 16px;
+  padding: 16px;
   box-sizing: border-box;
   overflow: auto;
 
