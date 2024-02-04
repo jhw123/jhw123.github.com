@@ -5,7 +5,7 @@ interface Props {
   startDate: Date
 }
 
-class News {
+class Post {
   content: string
   startDate: Date
 
@@ -15,32 +15,32 @@ class News {
   }
 }
 
-export const newsData = DataUtil.sortByTime([
-  new News({
+export const POSTS = DataUtil.sortByTime([
+  new Post({
     content: '💅 Redesigned the website! Hope you like it.',
     startDate: new Date('2023-10-10'),
   }),
-  new News({
+  new Post({
     content: '🎉 Got acceptances for two CSCW papers after a revision cycle!',
     startDate: new Date('2023-09-19'),
   }),
-  new News({
+  new Post({
     content: '🔥 Solved 1000 LeetCode problems!',
     startDate: new Date('2023-01-19'),
   }),
-  new News({
+  new Post({
     content: '🚀 Submitted my first first-author full paper to CHI successfully.',
     startDate: new Date('2022-09-19'),
   }),
-  new News({
+  new Post({
     content: '🧳 Started summer internship at UCSD Design Lab.',
     startDate: new Date('2022-06-27'),
   }),
-  new News({
+  new Post({
     content: 'Solved 500 Leetcode problems!',
     startDate: new Date('2022-02-23'),
   }),
-  new News({
+  new Post({
     content: 'Left VCNC.',
     startDate: new Date('2021-10-08'),
   }),

@@ -1,10 +1,11 @@
+import Person, { PERSON } from './person'
 import { DataUtil } from './utils'
 
 type PaperType = 'full paper' | 'poster' | 'workshop'
 
 interface Props {
   title: string
-  authors: string[]
+  authors: Person[]
   startDate: Date
   endDate?: Date
   paperLink?: string
@@ -13,32 +14,17 @@ interface Props {
   imagePath: string
 }
 
+interface Publication extends Props {}
 class Publication {
-  title: string
-  authors: string[]
-  startDate: Date
-  endDate: Date | undefined
-  paperLink: string | undefined
-  type: PaperType
-  conference: string
-  imagePath: string
-
   constructor(props: Props) {
-    this.title = props.title
-    this.authors = props.authors
-    this.startDate = props.startDate
-    this.endDate = props.endDate
-    this.paperLink = props.paperLink
-    this.type = props.type
-    this.conference = props.conference
-    this.imagePath = props.imagePath
+    Object.assign(this, props)
   }
 }
 
-export const publicationData = DataUtil.sortByTime([
+export const PUBLICATIONS = DataUtil.sortByTime([
   new Publication({
     title: 'CodeTree: Learnersourcing Subgoal Hierarchies in Code Examples',
-    authors: ['Hyoungwook Jin', 'Juho Kim'],
+    authors: [PERSON.hyoungwook, PERSON.juho],
     startDate: new Date(2021, 10),
     endDate: new Date(2023, 9),
     conference: "CSCW'24 (to appear)",
@@ -50,13 +36,13 @@ export const publicationData = DataUtil.sortByTime([
     title:
       'ProcessGallery: An Online Gallery that Highlights Improvements by Principles through Contrasting Pairs of Examples',
     authors: [
-      'Grace Yu-Chun Yen',
-      'Jane L E',
-      'Hyoungwook Jin',
-      'Mingyi Li',
-      'Grace Lin',
-      'Isabelle Yan Pan',
-      'Steven P. Dow',
+      PERSON.graceyen,
+      PERSON.janee,
+      PERSON.hyoungwook,
+      PERSON.mingyi,
+      PERSON.gracelin,
+      PERSON.isabellepan,
+      PERSON.stevendow,
     ],
     startDate: new Date(2022, 6),
     endDate: new Date(2023, 9),
@@ -74,7 +60,7 @@ export const publicationData = DataUtil.sortByTime([
   }),
   new Publication({
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
-    authors: ['Hyoungwook Jin', 'Juho Kim'],
+    authors: [PERSON.hyoungwook, PERSON.juho],
     startDate: new Date(2021, 10),
     endDate: new Date(2022, 5),
     type: 'workshop',
@@ -84,7 +70,7 @@ export const publicationData = DataUtil.sortByTime([
   }),
   new Publication({
     title: 'automaTA: Human-Machine Interaction for Answering Context-Specific Questions',
-    authors: ['Changyoon Lee', 'Donghoon Han', 'Hyoungwook Jin', 'Alice Oh'],
+    authors: [PERSON.changyoon, PERSON.donghoon, PERSON.hyoungwook, PERSON.aliceoh],
     startDate: new Date(2018, 9),
     endDate: new Date(2019, 5),
     type: 'poster',
@@ -94,7 +80,7 @@ export const publicationData = DataUtil.sortByTime([
   }),
   new Publication({
     title: 'SolveDeep: Support Subgoal Learning in Online Math Problem Solving',
-    authors: ['Hyoungwook Jin', 'Minsuk Chang', 'Juho Kim'],
+    authors: [PERSON.hyoungwook, PERSON.minsuk, PERSON.juho],
     startDate: new Date(2017, 11),
     endDate: new Date(2019, 4),
     type: 'poster',

@@ -5,9 +5,9 @@ import { SvgIcon } from '@/app/component/svgIcon'
 import { MOBILE_BREAKPOINT } from '@/constant/ui'
 import { contactData } from '@/data/contact'
 import { educationData } from '@/data/education'
-import { newsData } from '@/data/news'
-import { projectData } from '@/data/project'
-import { publicationData } from '@/data/publication'
+import { POSTS } from '@/data/news'
+import { PROJECTS } from '@/data/project'
+import { PUBLICATIONS } from '@/data/publication'
 import { Divider } from '@/design/component/divider'
 import { BodyText } from '@/design/component/text/body'
 import { HeaderText } from '@/design/component/text/header'
@@ -18,11 +18,11 @@ import { DEFAULT_THEME } from '@/design/theme'
 import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
+import { capitalize } from 'lodash'
 import Image from 'next/image'
 import { Fragment } from 'react'
 import { PaperLink } from './component/paperLink'
 import { Time } from './component/time'
-import { capitalize } from 'lodash'
 
 export default function Page() {
   return (
@@ -35,7 +35,7 @@ export default function Page() {
           }
         `}
       />
-      <Container>
+      <main>
         <Content>
           <Card>
             <ProfileImageContainer>
@@ -67,7 +67,7 @@ export default function Page() {
               <BodyText marginBottom={8}>
                 I am interested in supporting personalized learning environments at scale. I am looking into leveraging
                 AI agents as tutors and tutees to build interactive learning systems personalized to each learner&apos;s
-                prior knowledge level and learning styles.
+                prior knowledge level and learning patterns.
               </BodyText>
 
               <LinkSection>
@@ -93,7 +93,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>NEWS</SubHeaderText>
           </h2>
           <NewsRow>
-            {newsData.slice(0, 5).map(({ content, startDate }, i) => (
+            {POSTS.slice(0, 5).map(({ content, startDate }, i) => (
               <Fragment key={i}>
                 <Time date={startDate} formatStr="LLL, yyyy" />
                 {content}
@@ -102,50 +102,52 @@ export default function Page() {
           </NewsRow>
 
           <Divider fill="Secondary" marginVertical={32} />
+          {0 < PROJECTS.length && (
+            <>
+              <h2>
+                <SubHeaderText marginBottom={16}>CURRENT PROJECT{PROJECTS.length > 1 && 'S'}</SubHeaderText>
+              </h2>
 
-          <h2>
-            <SubHeaderText marginBottom={16}>CURRENT PROJECT{projectData.length > 1 && 'S'}</SubHeaderText>
-          </h2>
+              {PROJECTS.map(({ title, imagePath, description, arxivLink }, i) => (
+                <Card key={i}>
+                  <PublicationImageContainer>
+                    <Image
+                      fill
+                      src={imagePath}
+                      style={{
+                        objectFit: 'contain',
+                      }}
+                      alt={`The teaser image of ${title}`}
+                      sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
+                    />
+                  </PublicationImageContainer>
+                  <div>
+                    <h3>
+                      <SubSubHeaderText color="Focus" marginBottom={8}>
+                        {title}
+                      </SubSubHeaderText>
+                    </h3>
+                    <BodyText color="Secondary" marginBottom={8}>
+                      {description}
+                    </BodyText>
+                    {arxivLink && (
+                      <PaperLink href={arxivLink} title={title}>
+                        arXiv submission
+                      </PaperLink>
+                    )}
+                  </div>
+                </Card>
+              ))}
 
-          {projectData.map(({ title, imagePath, description, arxivLink }, i) => (
-            <Card key={i}>
-              <PublicationImageContainer>
-                <Image
-                  fill
-                  src={imagePath}
-                  style={{
-                    objectFit: 'contain',
-                  }}
-                  alt={`The teaser image of ${title}`}
-                  sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
-                />
-              </PublicationImageContainer>
-              <div>
-                <h3>
-                  <SubSubHeaderText color="Focus" marginBottom={8}>
-                    {title}
-                  </SubSubHeaderText>
-                </h3>
-                <BodyText color="Secondary" marginBottom={8}>
-                  {description}
-                </BodyText>
-                {arxivLink && (
-                  <PaperLink href={arxivLink} title={title}>
-                    arXiv submission
-                  </PaperLink>
-                )}
-              </div>
-            </Card>
-          ))}
-
-          <Divider fill="Secondary" marginVertical={32} />
+              <Divider fill="Secondary" marginVertical={32} />
+            </>
+          )}
 
           <h2>
             <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
           </h2>
-          {publicationData
-            .filter(({ type, endDate }) => type === 'full paper' && endDate)
-            .map(({ title, conference, paperLink, imagePath, authors }, i) => (
+          {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
+            ({ title, conference, paperLink, imagePath, authors }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -165,7 +167,7 @@ export default function Page() {
                     </SubSubHeaderText>
                   </h3>
                   <BodyText color="Secondary" marginBottom={8}>
-                    {authors.map((name, i) => {
+                    {authors.map(({ name }, i) => {
                       return (
                         <Author key={i} isMe={name === 'Hyoungwook Jin'}>
                           {name}
@@ -181,14 +183,14 @@ export default function Page() {
                   )}
                 </div>
               </Card>
-            ))}
+            )
+          )}
 
           <h2>
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
-          {publicationData
-            .filter(({ type }) => type !== 'full paper')
-            .map(({ title, conference, paperLink, imagePath, authors, type }, i) => (
+          {PUBLICATIONS.filter(({ type }) => type !== 'full paper').map(
+            ({ title, conference, paperLink, imagePath, authors, type }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -208,7 +210,7 @@ export default function Page() {
                     </SubSubHeaderText>
                   </h3>
                   <BodyText color="Secondary" marginBottom={8}>
-                    {authors.map((name, i) => {
+                    {authors.map(({ name }, i) => {
                       return (
                         <Author key={i} isMe={name === 'Hyoungwook Jin'}>
                           {name}
@@ -226,7 +228,8 @@ export default function Page() {
                   )}
                 </BodyText>
               </Card>
-            ))}
+            )
+          )}
 
           <Divider fill="Secondary" marginVertical={32} />
 
@@ -254,22 +257,19 @@ export default function Page() {
             </EducationCard>
           ))}
         </Content>
-      </Container>
+      </main>
     </ThemeProvider>
   )
 }
 
-const Container = styled.main`
+const Content = styled.main`
   ${({ theme }) => css`
     ${theme.color.Primary}
     ${theme.font.Body}
+    max-width: 800px;
+    padding: 40px 24px;
+    margin: 0 auto;
   `}
-`
-
-const Content = styled.div`
-  max-width: 800px;
-  padding: 40px 24px;
-  margin: 0 auto;
 `
 
 const Card = styled.section`

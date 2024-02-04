@@ -9,25 +9,14 @@ interface Props {
   arxivLink?: string
 }
 
+interface Project extends Props {}
 class Project {
-  title: string
-  startDate: Date
-  endDate: Date | undefined
-  imagePath: string
-  description: string
-  arxivLink?: string
-
   constructor(props: Props) {
-    this.title = props.title
-    this.startDate = props.startDate
-    this.endDate = props.endDate
-    this.imagePath = props.imagePath
-    this.description = props.description
-    this.arxivLink = props.arxivLink
+    Object.assign(this, props)
   }
 }
 
-export const projectData = DataUtil.sortByTime([
+export const PROJECTS = DataUtil.sortByTime([
   new Project({
     title: '"Teach AI How to Code": Using Large Language Models as Teachable Agents for Programming Education',
     startDate: new Date(2023, 5),
