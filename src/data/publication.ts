@@ -23,6 +23,16 @@ class Publication {
 
 export const PUBLICATIONS = DataUtil.sortByTime([
   new Publication({
+    title: 'Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education',
+    authors: [PERSON.hyoungwook, PERSON.seonghee, PERSON.hyungyu, PERSON.juho],
+    startDate: new Date(2023, 5),
+    endDate: new Date(2024, 1),
+    conference: "CHI'24 (to appear)",
+    type: 'full paper',
+    paperLink: 'https://arxiv.org/abs/2309.14534',
+    imagePath: '/projects/teachyou.png',
+  }),
+  new Publication({
     title: 'CodeTree: Learnersourcing Subgoal Hierarchies in Code Examples',
     authors: [PERSON.hyoungwook, PERSON.juho],
     startDate: new Date(2021, 10),

@@ -17,6 +17,10 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: '🎉 TeachYou is accepted to CHI2024!',
+    startDate: new Date('2024-01-19'),
+  }),
+  new Post({
     content: '💅 Redesigned the website! Hope you like it.',
     startDate: new Date('2023-10-10'),
   }),
