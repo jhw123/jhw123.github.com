@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     '진형욱',
     'Hyoungwook Jin',
-    'KIXLAB',
-    'Personalized education at scale',
+    'KAIST KIXLAB',
+    'Personalized interactive learning at scale',
     'AI agents for personalized learning',
   ],
   openGraph: {
