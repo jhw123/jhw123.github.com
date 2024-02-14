@@ -39,9 +39,13 @@ export const PERSON = {
   }),
   janee: new Person({
     name: 'Jane L E',
+    institution: 'UCSD',
+    link: 'https://ejane.me',
   }),
   graceyen: new Person({
     name: 'Grace Yu-Chun Yen',
+    institution: 'National Yang-Ming Chiao-Tung University',
+    link: 'https://gracetfg2.github.io',
   }),
   stevendow: new Person({
     name: 'Steven P. Dow',
@@ -73,6 +77,7 @@ export const PERSON = {
   }),
   donghoon: new Person({
     name: 'Donghoon Lee',
+    link: 'https://sites.google.com/view/hoonhan',
   }),
 } as const
 
