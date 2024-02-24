@@ -147,7 +147,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
-            ({ title, conference, paperLink, imagePath, authors }, i) => (
+            ({ title, conference, links, imagePath, authors }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -176,11 +176,12 @@ export default function Page() {
                     })}
                   </BodyText>
                   <BodyText marginBottom={8}>{conference}</BodyText>
-                  {paperLink && (
-                    <IconLink href={paperLink} title={title}>
-                      Link to paper
-                    </IconLink>
-                  )}
+                  {links?.length &&
+                    links.map(([tag, link], i) => (
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                        {tag}
+                      </IconLink>
+                    ))}
                 </div>
               </Card>
             )
@@ -190,7 +191,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type }) => type !== 'full paper').map(
-            ({ title, conference, paperLink, imagePath, authors, type }, i) => (
+            ({ title, conference, links, imagePath, authors, type }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -221,11 +222,12 @@ export default function Page() {
                   <BodyText marginBottom={8}>
                     {conference} {capitalize(type)}
                   </BodyText>
-                  {paperLink && (
-                    <IconLink href={paperLink} title={title}>
-                      Link to paper
-                    </IconLink>
-                  )}
+                  {links?.length &&
+                    links.map(([tag, link], i) => (
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                        {tag}
+                      </IconLink>
+                    ))}
                 </BodyText>
               </Card>
             )

@@ -33,7 +33,7 @@ export const IconLink = View<Props>(({ href, children, title, ...props }) => {
 
   return (
     <Container {...props} href={href} target={'_blank'} rel="noreferrer">
-      {0 < icon.length && <Image width={20} height={20} src={icon} alt={`The paper link for ${title}`} />}
+      {0 < icon.length && <Image width={20} height={20} src={icon} alt={`The link for ${title}`} />}
       {children}
     </Container>
   )
