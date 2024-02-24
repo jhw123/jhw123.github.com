@@ -16,6 +16,9 @@ import { Profile } from '../component/profile'
 import { Reconfigurability } from '../component/reconfigurability'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Color } from '@/design/theme/default/color'
+import { ListItem } from '@/app/component/listItem'
+import { PUBLICATION } from '@/data/publication'
 
 export default function Page() {
   return (
@@ -25,10 +28,11 @@ export default function Page() {
         styles={css`
           body {
             ${Fill.Primary}
+            ${Color.Primary}
           }
         `}
       />
-      <Container>
+      <main>
         <Content>
           <h1>
             <HeaderText align="center" marginBottom={24}>
@@ -46,42 +50,34 @@ export default function Page() {
           </h2>
 
           <LinkButtons>
-            <IconLink href="https://arxiv.org/abs/2309.14534" title="TeachYou Paper">
-              Paper
-            </IconLink>
-            <IconLink href="/demo/teachyou" title="TeachYou Interactive Demo">
-              Demo
-            </IconLink>
-            <IconLink href="https://github.com/jhw123/TeachYou" title="TeachYou Github">
-              Github
-            </IconLink>
+            {PUBLICATION.teachyou.links?.map(([label, href], i) => (
+              <IconLink key={i} href={href} title={`TeachYou ${label}`}>
+                {label}
+              </IconLink>
+            ))}
           </LinkButtons>
 
           <Divider marginVertical={24} />
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
-              The Best Way to Learn is To Teach Others.
+              Abstract
             </SubHeaderText>
           </h2>
-          <BodyText marginBottom={16}>
-            <p>
-              We propose TeachYou, an online platform for undergraduate students to learn programming by teaching a
-              virtual AI tutee, AlgoBo. Students first write code to solve programming problems and then teach AlgoBo
-              the problems as a reflection activity through a chat interface. AlgoBo writes incorrect or incomplete code
-              initially and actively asks questions to students. Students can solidify and expand their knowledge by
-              answering the questions and correcting AlgoBo&apos;s code.
-            </p>
-          </BodyText>
           <BodyText>
             <p>
-              We use GPT-4, a large language model (LLM) to power AlgoBo. LLMs empower us to create sophisticated
-              chatbots without writing thousands of lines of subject-specific programs, which has been the main
-              bottleneck for building LBT systems across different subjects. However, we found that GPT-4, as is,
-              elicits only rudimentary LBT because GPT-4 is so competent that it solves problems with little help,
-              removing opportunities for students to explain. Moreover, GPT-4 rarely asks &quot;why&quot; or
-              &quot;how&quot; questions that can effectively help students find their knowledge gaps. To facilitate
-              effective LBT with AlgoBo, we added the following three technical components to TeachYou.
+              This work investigates large language models (LLMs) as teachable agents for learning by teaching (LBT).
+              LBT with teachable agents helps learners identify knowledge gaps and discover new knowledge. However,
+              teachable agents require expensive programming of subject-specific knowledge. While LLMs as teachable
+              agents can reduce the cost, LLMs&apos; expansive knowledge as tutees discourages learners from teaching.
+              We propose a prompting pipeline that restrains LLMs&apos; knowledge and makes them initiate
+              &quot;why&quot; and &quot;how&quot; questions for effective knowledge-building. We combined these
+              techniques into TeachYou, an LBT environment for algorithm learning, and AlgoBo, an LLM-based tutee
+              chatbot that can simulate misconceptions and unawareness prescribed in its knowledge state. Our technical
+              evaluation confirmed that our prompting pipeline can effectively configure AlgoBo&apos;s problem-solving
+              performance. Through a between-subject study with 40 algorithm novices, we also observed that
+              AlgoBo&apos;s questions led to knowledge-dense conversations (effect size=0.71). Lastly, we discuss design
+              implications, cost-efficiency, and personalization of LLM-based teachable agents.
             </p>
           </BodyText>
 
@@ -89,54 +85,15 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
-              💡 Reflect-Respond pipeline to instruct AlgoBo to simulate prescribed misconceptions and knowledge levels
+              Technical Components
             </SubHeaderText>
           </h2>
-          <BodyText>
-            <p>
-              We created an LLM prompting pipeline that makes AlgoBo&apos;s problem-solving performance customizable and
-              improves it only when taught correctly and precisely, making AlgoBo feasible for LBT. The LLM pipeline
-              stores the information AlgoBo has learned in a knowledge state and updates it as AlgoBo learns from
-              students. To achieve different learning objectives, instructors can empty the knowledge state or populate
-              incorrect information to simulate a learner who learns for the first time.
-            </p>
-          </BodyText>
 
-          <Divider marginVertical={24} />
-
-          <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              💡 Mode Shifting to make AlgoBo ask context-relevant questions to students
-            </SubHeaderText>
-          </h2>
-          <BodyText>
-            <p>
-              We also introduce Mode-shifting, in which AlgoBo shifts into questioner mode periodically (e.g., every
-              three messages) to enrich tutoring conversations with &quot;why&quot; and &quot;how &quot; questions.
-              These thought-provoking questions encourage students to analyze the flow of programs, compare alternative
-              implementations, and clarify their explanations. When students&apos; answers are vague or inconsistent,
-              AlgoBo asks follow-ups for elaboration and examples until the student gives quality answers that resolve
-              AlgoBo&apos;s misconceptions and curiosity. The frequency of questions is configurable, allowing students
-              to adjust their cognitive load.
-            </p>
-          </BodyText>
-
-          <Divider marginVertical={24} />
-
-          <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              💡 Teaching Helper to encourage students to follow good teaching practices for effective LBT
-            </SubHeaderText>
-          </h2>
-          <BodyText>
-            <p>
-              Lastly, TeachYou analyzes the tutoring conversation and gives students feedback on their teaching methods
-              (e.g., suggesting students ask guiding questions to AlgoBo rather than spoon-feeding it). We use a
-              fine-tuned GPT-3.5 to classify message types and teaching patterns in real-time. The feedback pops up
-              inside the chat interface with pattern-specific tips for better teaching. Students can recognize and
-              exercise the core strategies for good LBT, which they may adopt in future learning.
-            </p>
-          </BodyText>
+          <ListItem marginBottom={8}>
+            Reflect-Respond pipeline to instruct AlgoBo to simulate prescribed misconceptions and knowledge levels
+          </ListItem>
+          <ListItem marginBottom={8}>Mode Shifting to make AlgoBo ask context-relevant questions to students</ListItem>
+          <ListItem>Teaching Helper to encourage students to follow good teaching practices for effective LBT</ListItem>
 
           <Divider marginVertical={24} />
 
@@ -146,25 +103,27 @@ export default function Page() {
             </SubHeaderText>
           </h2>
 
-          <Link href={'/demo/teachyou'} style={{ display: 'inline-block', margin: `0 calc((100vw - 510px) / 2)` }}>
-            <ImageContainer>
-              <Image
-                fill
-                src={'/images/teachyou-demo.png'}
-                style={{
-                  objectFit: 'cover',
-                  filter: 'brightness(0.5)',
-                }}
-                alt={`The demo image of TeachYou`}
-              />
-            </ImageContainer>
-          </Link>
+          <Centered>
+            <Link href={'/demo/teachyou'} style={{ display: 'inline-block' }}>
+              <DemoImageContainer>
+                <Image
+                  fill
+                  src={'/images/teachyou/demo.png'}
+                  style={{
+                    objectFit: 'cover',
+                    filter: 'brightness(0.5)',
+                  }}
+                  alt={`The demo image of TeachYou`}
+                />
+              </DemoImageContainer>
+            </Link>
+          </Centered>
 
           <Divider marginVertical={24} />
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
-              Evaluation
+              Key Findings
             </SubHeaderText>
           </h2>
 
@@ -182,17 +141,10 @@ export default function Page() {
             </SubSubHeaderText>
           </h3>
         </Content>
-      </Container>
+      </main>
     </ThemeProvider>
   )
 }
-
-const Container = styled.main`
-  ${({ theme }) => css`
-    ${theme.color.Primary}
-    ${theme.font.Body}
-  `}
-`
 
 const Content = styled.div`
   max-width: 800px;
@@ -219,7 +171,7 @@ const LinkButtons = styled.div`
   margin-top: 24px;
 `
 
-const ImageContainer = styled.div`
+const DemoImageContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
     height: 320px;
@@ -246,4 +198,8 @@ const ImageContainer = styled.div`
       height: 62vw;
     }
   `}
+`
+
+const Centered = styled.div`
+  text-align: center;
 `
