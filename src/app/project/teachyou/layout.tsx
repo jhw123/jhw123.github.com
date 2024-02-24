@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const inter = Roboto({ subsets: ['latin'], weight: ['100', '400'] })
+const inter = Inter({ subsets: ['latin'], weight: ['300', '600'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jhw123.github.io'),
