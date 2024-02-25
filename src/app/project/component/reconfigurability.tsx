@@ -1,14 +1,10 @@
 import { ChatBox } from '@/app/demo/teachyou/component/chatbox'
-import { SelectInput } from '@/design/component/input/select'
-import { TextInput } from '@/design/component/input/text'
-import { BodyText } from '@/design/component/text/body'
-import { CaptionText } from '@/design/component/text/caption'
-import { ComponentState } from '@/design/foundation/componentState'
 import styled from '@emotion/styled'
 import { useState } from 'react'
 import { KnowledgeStates } from '../data/knowledgeStates'
 import { Problems } from '../data/problems'
-import { MOBILE_BREAKPOINT } from '@/design/ui'
+import { MOBILE_BREAKPOINT } from '@/ui'
+import { BodyText, CaptionText, SelectInput, TextInput } from '@wookiejin/react-component'
 
 const ReconfigurabilityChatLog = (problem: string, response: string, isCorrect: boolean) =>
   [
@@ -114,7 +110,7 @@ export function Reconfigurability() {
           onSelect={setKnowledgeState}
           marginBottom={8}
         />
-        <TextInput value={KnowledgeStates[knowledgeState]} rows={5} state={ComponentState.Disabled} />
+        <TextInput value={KnowledgeStates[knowledgeState]} disabled />
       </div>
       <ChatBox
         chatLogs={ReconfigurabilityChatLog(

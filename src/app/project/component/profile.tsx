@@ -1,9 +1,7 @@
 import { ExternalLink } from '@/app/component/externalLink'
 import Person from '@/data/person'
-import { BodyText } from '@/design/component/text/body'
-import { CaptionText } from '@/design/component/text/caption'
-import { View } from '@/design/foundation'
 import styled from '@emotion/styled'
+import { BodyText, CaptionText, View } from '@wookiejin/react-component'
 import Image from 'next/image'
 
 interface Props {

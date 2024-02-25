@@ -1,7 +1,7 @@
-import { MIN_BUTTON_SIZE } from '@/design/ui'
-import { View } from '@/design/foundation'
+import { MIN_BUTTON_SIZE } from '@/ui'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { View } from '@wookiejin/react-component'
 import { last } from 'lodash'
 import Image from 'next/image'
 

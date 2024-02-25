@@ -1,13 +1,10 @@
-import { FillButton } from '@/design/component/button/fill'
-import { TextInput } from '@/design/component/input/text'
-import { TextLoading } from '@/design/component/loading/text'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Chat } from '../hook/usePipeline'
-import { Markdown } from '@/design/component/markdown'
-import { View } from '@/design/foundation'
+import { Markdown } from '@/app/component/markdown'
+import { FillButton, TextInput, TextLoading, View } from '@wookiejin/react-component'
 
 interface Props {
   onSend?: (message: string) => Promise<void>
@@ -73,11 +70,10 @@ export const ChatBox = View<Props>(({ chatLogs, onSend, isOpponentTyping = false
           <TextInput
             value={message}
             onChange={setMessage}
-            rows={3}
             onEnter={send}
             placeholder="Teach AlgoBo how to write a binary search algorithm."
           />
-          <FillButton fill="Focus" onClick={send} state={isOpponentTyping ? 'Disabled' : 'Default'}>
+          <FillButton fill="Focus" onClick={send} disabled={isOpponentTyping}>
             Send
           </FillButton>
         </InputContainer>
@@ -132,7 +128,7 @@ const Bubble = styled.div`
     position: relative;
     white-space: pre-wrap;
     word-break: keep-all;
-    ${theme.fill.Inactive}
+    ${theme.fill.Secondary}
     ${theme.color.Primary}
   `}
 `

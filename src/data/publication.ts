@@ -32,6 +32,7 @@ export const PUBLICATION = {
     links: [
       ['Paper', 'https://arxiv.org/abs/2309.14534'],
       ['Website', '/project/teachyou'],
+      ['Demo', '/demo/teachyou'],
       ['GitHub', 'https://github.com/jhw123/TeachYou'],
     ],
     imagePath: '/projects/teachyou.png',

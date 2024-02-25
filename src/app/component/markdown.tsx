@@ -1,10 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
-import { SubSubHeaderText } from './text/subSubHeader'
-import { BodyText } from './text/body'
-import { HeaderText } from './text/header'
-import { SubHeaderText } from './text/subHeader'
-import { View } from '../foundation'
+import { BodyText, HeaderText, SubHeaderText, SubSubHeaderText, View } from '@wookiejin/react-component'
 
 interface Props {
   children: string

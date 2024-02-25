@@ -1,24 +1,24 @@
 'use client'
 import { IconLink } from '@/app/component/iconLink'
 import { PERSON } from '@/data/person'
-import { Divider } from '@/design/component/divider'
-import { BodyText } from '@/design/component/text/body'
-import { HeaderText } from '@/design/component/text/header'
-import { SubHeaderText } from '@/design/component/text/subHeader'
-import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
-import { ResetStyle } from '@/design/foundation'
-import { DEFAULT_THEME } from '@/design/theme'
-import { Fill } from '@/design/theme/default/fill'
-import { MOBILE_BREAKPOINT } from '@/design/ui'
+import { MOBILE_BREAKPOINT } from '@/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Profile } from '../component/profile'
 import { Reconfigurability } from '../component/reconfigurability'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Color } from '@/design/theme/default/color'
 import { ListItem } from '@/app/component/listItem'
 import { PUBLICATION } from '@/data/publication'
+import {
+  BodyText,
+  DEFAULT_THEME,
+  Divider,
+  HeaderText,
+  ResetStyle,
+  SubHeaderText,
+  SubSubHeaderText,
+} from '@wookiejin/react-component'
 
 export default function Page() {
   return (
@@ -27,8 +27,12 @@ export default function Page() {
       <Global
         styles={css`
           body {
-            ${Fill.Primary}
-            ${Color.Primary}
+            color: #333333;
+            background-color: #ffffff;
+            @media (prefers-color-scheme: dark) {
+              color: #e6e6e6;
+              background-color: #333333;
+            }
           }
         `}
       />
@@ -50,11 +54,13 @@ export default function Page() {
           </h2>
 
           <LinkButtons>
-            {PUBLICATION.teachyou.links?.map(([label, href], i) => (
-              <IconLink key={i} href={href} title={`TeachYou ${label}`}>
-                {label}
-              </IconLink>
-            ))}
+            {PUBLICATION.teachyou.links
+              ?.filter(([label]) => label !== 'Website')
+              .map(([label, href], i) => (
+                <IconLink key={i} href={href} title={`TeachYou ${label}`}>
+                  {label}
+                </IconLink>
+              ))}
           </LinkButtons>
 
           <Divider marginVertical={24} />

@@ -2,20 +2,12 @@
 import { ExternalLink } from '@/app/component/externalLink'
 import { ListItem } from '@/app/component/listItem'
 import { SvgIcon } from '@/app/component/svgIcon'
-import { MOBILE_BREAKPOINT } from '@/design/ui'
+import { MOBILE_BREAKPOINT } from '@/ui'
 import { CONTACTS } from '@/data/contact'
 import { EDUCATIONS } from '@/data/education'
 import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
-import { Divider } from '@/design/component/divider'
-import { BodyText } from '@/design/component/text/body'
-import { HeaderText } from '@/design/component/text/header'
-import { SubHeaderText } from '@/design/component/text/subHeader'
-import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
-import { ResetStyle } from '@/design/foundation'
-import { DEFAULT_THEME } from '@/design/theme'
-import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import { capitalize } from 'lodash'
@@ -23,6 +15,15 @@ import Image from 'next/image'
 import { Fragment } from 'react'
 import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
+import {
+  BodyText,
+  DEFAULT_THEME,
+  Divider,
+  HeaderText,
+  ResetStyle,
+  SubHeaderText,
+  SubSubHeaderText,
+} from '@wookiejin/react-component'
 
 export default function Page() {
   return (
@@ -31,7 +32,10 @@ export default function Page() {
       <Global
         styles={css`
           body {
-            ${Fill.Primary}
+            background-color: #ffffff;
+            @media (prefers-color-scheme: dark) {
+              background-color: #333333;
+            }
           }
         `}
       />

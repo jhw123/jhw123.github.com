@@ -1,5 +1,5 @@
 import '@emotion/react'
-import { DEFAULT_THEME } from './default'
+import { DEFAULT_THEME } from '@wookiejin/react-component'
 
 declare module '@emotion/react' {
   export interface Theme {
