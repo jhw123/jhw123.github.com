@@ -1,5 +1,5 @@
-import { View } from '@/design/foundation'
 import styled from '@emotion/styled'
+import { View } from '@wookiejin/react-component'
 
 interface Props {
   children: React.ReactNode

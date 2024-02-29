@@ -8,7 +8,7 @@ interface Props {
   authors: Person[]
   startDate: Date
   endDate?: Date
-  paperLink?: string
+  links?: [string, string][]
   conference: string
   type: PaperType
   imagePath: string
@@ -21,28 +21,33 @@ class Publication {
   }
 }
 
-export const PUBLICATIONS = DataUtil.sortByTime([
-  new Publication({
+export const PUBLICATION = {
+  teachyou: new Publication({
     title: 'Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education',
     authors: [PERSON.hyoungwook, PERSON.seonghee, PERSON.hyungyu, PERSON.juho],
     startDate: new Date(2023, 5),
     endDate: new Date(2024, 1),
     conference: "CHI'24 (to appear)",
     type: 'full paper',
-    paperLink: 'https://arxiv.org/abs/2309.14534',
+    links: [
+      ['Paper', 'https://arxiv.org/abs/2309.14534'],
+      // ['Website', '/project/teachyou'],
+      // ['Demo', '/demo/teachyou'],
+      // ['GitHub', 'https://github.com/jhw123/TeachYou'],
+    ],
     imagePath: '/projects/teachyou.png',
   }),
-  new Publication({
+  codeTree: new Publication({
     title: 'CodeTree: Learnersourcing Subgoal Hierarchies in Code Examples',
     authors: [PERSON.hyoungwook, PERSON.juho],
     startDate: new Date(2021, 10),
     endDate: new Date(2023, 9),
     conference: "CSCW'24 (to appear)",
     type: 'full paper',
-    paperLink: '/files/CSCW2024 CodeTree.pdf',
+    links: [['Paper', '/files/CSCW2024 CodeTree.pdf']],
     imagePath: '/projects/codetree.png',
   }),
-  new Publication({
+  processGallery: new Publication({
     title:
       'ProcessGallery: An Online Gallery that Highlights Improvements by Principles through Contrasting Pairs of Examples',
     authors: [
@@ -60,7 +65,7 @@ export const PUBLICATIONS = DataUtil.sortByTime([
     type: 'full paper',
     imagePath: '/projects/processgallery.png',
   }),
-  new Publication({
+  inActionFeedback: new Publication({
     title: 'Exploring In-Action Feedback for Visual Design',
     authors: [],
     startDate: new Date(2022, 6),
@@ -68,34 +73,35 @@ export const PUBLICATIONS = DataUtil.sortByTime([
     type: 'full paper',
     imagePath: '',
   }),
-  new Publication({
+  subgoalHierarchies: new Publication({
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
     authors: [PERSON.hyoungwook, PERSON.juho],
     startDate: new Date(2021, 10),
     endDate: new Date(2022, 5),
     type: 'workshop',
-    paperLink: '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf',
+    links: [['Paper', '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf']],
     conference: "L@S'22",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),
-  new Publication({
+  automaTA: new Publication({
     title: 'automaTA: Human-Machine Interaction for Answering Context-Specific Questions',
     authors: [PERSON.changyoon, PERSON.donghoon, PERSON.hyoungwook, PERSON.aliceoh],
     startDate: new Date(2018, 9),
     endDate: new Date(2019, 5),
     type: 'poster',
-    paperLink: 'https://dl.acm.org/doi/10.1145/3330430.3333658',
+    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3330430.3333658']],
     conference: "L@S'19",
     imagePath: '/projects/automata.png',
   }),
-  new Publication({
+  solveDeep: new Publication({
     title: 'SolveDeep: Support Subgoal Learning in Online Math Problem Solving',
     authors: [PERSON.hyoungwook, PERSON.minsuk, PERSON.juho],
     startDate: new Date(2017, 11),
     endDate: new Date(2019, 4),
     type: 'poster',
-    paperLink: 'https://dl.acm.org/doi/10.1145/3290607.3312822',
+    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3290607.3312822']],
     conference: "CHI'19",
     imagePath: '/projects/solvedeep.png',
   }),
-])
+} as const
+export const PUBLICATIONS = DataUtil.sortByTime(Object.values(PUBLICATION))

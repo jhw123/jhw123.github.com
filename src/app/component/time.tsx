@@ -1,5 +1,5 @@
-import { View } from '@/design/foundation'
 import styled from '@emotion/styled'
+import { View } from '@wookiejin/react-component'
 import { format } from 'date-fns'
 
 interface Props {

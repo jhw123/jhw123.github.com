@@ -1,7 +1,7 @@
 import { IconSvgs } from '@/constant/iconSvg'
-import { View } from '@/design/foundation'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { View } from '@wookiejin/react-component'
 
 interface Props {
   name: keyof typeof IconSvgs

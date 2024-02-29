@@ -2,27 +2,28 @@
 import { ExternalLink } from '@/app/component/externalLink'
 import { ListItem } from '@/app/component/listItem'
 import { SvgIcon } from '@/app/component/svgIcon'
-import { MOBILE_BREAKPOINT } from '@/constant/ui'
-import { contactData } from '@/data/contact'
-import { educationData } from '@/data/education'
+import { MOBILE_BREAKPOINT } from '@/ui'
+import { CONTACTS } from '@/data/contact'
+import { EDUCATIONS } from '@/data/education'
 import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
-import { Divider } from '@/design/component/divider'
-import { BodyText } from '@/design/component/text/body'
-import { HeaderText } from '@/design/component/text/header'
-import { SubHeaderText } from '@/design/component/text/subHeader'
-import { SubSubHeaderText } from '@/design/component/text/subSubHeader'
-import { ResetStyle } from '@/design/foundation'
-import { DEFAULT_THEME } from '@/design/theme'
-import { Fill } from '@/design/theme/default/fill'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import { capitalize } from 'lodash'
 import Image from 'next/image'
 import { Fragment } from 'react'
-import { PaperLink } from './component/paperLink'
+import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
+import {
+  BodyText,
+  DEFAULT_THEME,
+  Divider,
+  HeaderText,
+  ResetStyle,
+  SubHeaderText,
+  SubSubHeaderText,
+} from '@wookiejin/react-component'
 
 export default function Page() {
   return (
@@ -31,7 +32,10 @@ export default function Page() {
       <Global
         styles={css`
           body {
-            ${Fill.Primary}
+            background-color: #ffffff;
+            @media (prefers-color-scheme: dark) {
+              background-color: #333333;
+            }
           }
         `}
       />
@@ -71,7 +75,7 @@ export default function Page() {
               </BodyText>
 
               <LinkSection>
-                {contactData.map(({ type, link }) => {
+                {CONTACTS.map(({ type, link }) => {
                   return (
                     <ExternalLink key={type} href={link}>
                       <LinkButton>
@@ -131,9 +135,9 @@ export default function Page() {
                       {description}
                     </BodyText>
                     {arxivLink && (
-                      <PaperLink href={arxivLink} title={title}>
+                      <IconLink href={arxivLink} title={title}>
                         arXiv submission
-                      </PaperLink>
+                      </IconLink>
                     )}
                   </div>
                 </Card>
@@ -147,7 +151,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
-            ({ title, conference, paperLink, imagePath, authors }, i) => (
+            ({ title, conference, links, imagePath, authors }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -176,11 +180,12 @@ export default function Page() {
                     })}
                   </BodyText>
                   <BodyText marginBottom={8}>{conference}</BodyText>
-                  {paperLink && (
-                    <PaperLink href={paperLink} title={title}>
-                      Link to paper
-                    </PaperLink>
-                  )}
+                  {links?.length &&
+                    links.map(([tag, link], i) => (
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                        {tag}
+                      </IconLink>
+                    ))}
                 </div>
               </Card>
             )
@@ -190,7 +195,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type }) => type !== 'full paper').map(
-            ({ title, conference, paperLink, imagePath, authors, type }, i) => (
+            ({ title, conference, links, imagePath, authors, type }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -221,11 +226,12 @@ export default function Page() {
                   <BodyText marginBottom={8}>
                     {conference} {capitalize(type)}
                   </BodyText>
-                  {paperLink && (
-                    <PaperLink href={paperLink} title={title}>
-                      Link to paper
-                    </PaperLink>
-                  )}
+                  {links?.length &&
+                    links.map(([tag, link], i) => (
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                        {tag}
+                      </IconLink>
+                    ))}
                 </BodyText>
               </Card>
             )
@@ -236,7 +242,7 @@ export default function Page() {
           <h2>
             <SubHeaderText marginBottom={16}>EDUCATION</SubHeaderText>
           </h2>
-          {educationData.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
+          {EDUCATIONS.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
             <EducationCard key={i}>
               <div>
                 <h3>
