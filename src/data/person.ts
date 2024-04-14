@@ -66,6 +66,15 @@ export const PERSON = {
     profileImage: '/people/stevendow.jpg',
     link: 'https://spdow.ucsd.edu',
   }),
+  haijunxia: new Person({
+    name: 'Haijun Xia',
+    institution: 'UCSD',
+    profileImage: '/people/haijunxia.jpg',
+    link: 'https://creativity.ucsd.edu/haijunxia',
+  }),
+  mengyichen: new Person({
+    name: 'Mengyi Chen',
+  }),
   mingyi: new Person({
     name: 'Mingyi Li',
   }),
