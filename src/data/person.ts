@@ -37,6 +37,19 @@ export const PERSON = {
     profileImage: '/people/seonghee.png',
     link: 'https://shljessie.github.io',
   }),
+  hyungkwonko: new Person({
+    name: 'Hyungkwon Ko',
+    link: 'https://hyungkwonko.info',
+  }),
+  kihoonson: new Person({
+    name: 'Kihoon Son',
+  }),
+  yoonseochoi: new Person({
+    name: 'Yoonseo Choi',
+  }),
+  anthonychen: new Person({
+    name: 'Xiang Anthony Chen',
+  }),
   janee: new Person({
     name: 'Jane L E',
     institution: 'UCSD',
@@ -52,6 +65,15 @@ export const PERSON = {
     institution: 'UCSD',
     profileImage: '/people/stevendow.jpg',
     link: 'https://spdow.ucsd.edu',
+  }),
+  haijunxia: new Person({
+    name: 'Haijun Xia',
+    institution: 'UCSD',
+    profileImage: '/people/haijunxia.jpg',
+    link: 'https://creativity.ucsd.edu/haijunxia',
+  }),
+  mengyichen: new Person({
+    name: 'Mengyi Chen',
   }),
   mingyi: new Person({
     name: 'Mingyi Li',
