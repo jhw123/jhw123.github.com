@@ -37,6 +37,19 @@ export const PERSON = {
     profileImage: '/people/seonghee.png',
     link: 'https://shljessie.github.io',
   }),
+  hyungkwonko: new Person({
+    name: 'Hyungkwon Ko',
+    link: 'https://hyungkwonko.info',
+  }),
+  kihoonson: new Person({
+    name: 'Kihoon Son',
+  }),
+  yoonseochoi: new Person({
+    name: 'Yoonseo Choi',
+  }),
+  anthonychen: new Person({
+    name: 'Xiang Anthony Chen',
+  }),
   janee: new Person({
     name: 'Jane L E',
     institution: 'UCSD',

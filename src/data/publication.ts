@@ -80,8 +80,19 @@ export const PUBLICATION = {
     endDate: new Date(2022, 5),
     type: 'workshop',
     links: [['Paper', '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf']],
-    conference: "L@S'22",
+    conference: "L@S'22 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/learnersourcing-subgoals.png',
+  }),
+  ExGPTer: new Publication({
+    title:
+      'Moderating Customer Inquiries and Responses to Alleviate Stress and Reduce Emotional Dissonance of Customer Service Representatives',
+    authors: [PERSON.hyungkwonko, PERSON.kihoonson, PERSON.hyoungwook, PERSON.yoonseochoi, PERSON.anthonychen],
+    type: 'workshop',
+    startDate: new Date(2022, 11),
+    endDate: new Date(2023, 5),
+    conference: "CHI'23 Generative AI and HCI Workshop",
+    imagePath: '/projects/exgpter.png',
+    links: [['Paper', '/files/CHI2023 ExGPTer.pdf']],
   }),
   automaTA: new Publication({
     title: 'automaTA: Human-Machine Interaction for Answering Context-Specific Questions',
