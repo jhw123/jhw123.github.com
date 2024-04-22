@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 import { BodyText, HeaderText, SubHeaderText, SubSubHeaderText, View } from '@wookiejin/react-component'
+import { CodeEditor } from './codeEditor'
 
 interface Props {
   children: string
@@ -39,6 +40,9 @@ export const Markdown = React.memo(
                 {children}
               </BodyText>
             )
+          },
+          code({ children, ref, ...props }) {
+            return <CodeEditor {...props} code={children?.toString() ?? ''} onChange={undefined} readOnly />
           },
         }}
       >

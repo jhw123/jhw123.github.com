@@ -1,24 +1,29 @@
 'use client'
 import { IconLink } from '@/app/component/iconLink'
+import { ChatBox } from '@/app/demo/teachyou/component/chatbox'
 import { PERSON } from '@/data/person'
+import { PUBLICATION } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { Profile } from '../component/profile'
-import { Reconfigurability } from '../component/reconfigurability'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ListItem } from '@/app/component/listItem'
-import { PUBLICATION } from '@/data/publication'
 import {
   BodyText,
+  CaptionText,
   DEFAULT_THEME,
   Divider,
   HeaderText,
+  OutlineButton,
+  RadioInput,
   ResetStyle,
   SubHeaderText,
   SubSubHeaderText,
 } from '@wookiejin/react-component'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Profile } from '../component/profile'
+import { CONVERSATION1 } from '../data/conversation1'
+import { CONVERSATION2 } from '../data/conversation2'
+import { CONVERSATION3 } from '../data/conversation3'
 
 export default function Page() {
   return (
@@ -40,6 +45,8 @@ export default function Page() {
         <Content>
           <h1>
             <HeaderText align="center" marginBottom={24}>
+              <Image src="/images/tutee.png" width={32} height={32} alt="tutee icon" />
+              <Image src="/images/tutor.png" width={32} height={32} alt="tutor icon" style={{ marginRight: 8 }} />
               Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education
             </HeaderText>
           </h1>
@@ -91,23 +98,99 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
-              Technical Components
+              Key Components
             </SubHeaderText>
           </h2>
 
-          <ListItem marginBottom={8}>
-            Reflect-Respond pipeline to instruct AlgoBo to simulate prescribed misconceptions and knowledge levels
-          </ListItem>
-          <ListItem marginBottom={8}>Mode Shifting to make AlgoBo ask context-relevant questions to students</ListItem>
-          <ListItem>Teaching Helper to encourage students to follow good teaching practices for effective LBT</ListItem>
+          <h3>
+            <SubSubHeaderText marginBottom={8}>
+              Reflect-Respond pipeline to simulate prescribed misconceptions
+            </SubSubHeaderText>
+          </h3>
+
+          <CaptionText marginBottom={16}>
+            <p>
+              We created an LLM prompting pipeline that makes AlgoBo’&apos; problem-solving performance customizable and
+              improves it only when taught correctly and precisely, making AlgoBo feasible for learning-by-teaching. The
+              LLM pipeline stores the information AlgoBo has learned in a knowledge state and updates it as AlgoBo
+              learns from students. To achieve different learning objectives, instructors can empty the knowledge state
+              or populate incorrect information to simulate a learner who learns for the first time.
+            </p>
+          </CaptionText>
+
+          <SmallContent>
+            <ChatBox chatLogs={CONVERSATION1} />
+          </SmallContent>
+
+          <h3>
+            <SubSubHeaderText marginBottom={8} marginTop={28}>
+              Mode Shifting to make AlgoBo ask follow-up questions to students
+            </SubSubHeaderText>
+          </h3>
+
+          <CaptionText marginBottom={16}>
+            <p>
+              We also introduce mode-shifting, in which AlgoBo shifts into questioner mode periodically (e.g., every
+              three messages) to enrich tutoring conversations with &quot;why&quot; and &quot;how&quot; questions. These
+              thought-provoking questions encourage students to analyze the flow of programs, compare alternative
+              implementations, and clarify their explanations. When students&apos; answers are vague or inconsistent,
+              AlgoBo asks follow-ups for elaboration and examples until the student gives quality answers that resolve
+              AlgoBo’s misconceptions and curiosity.
+            </p>
+          </CaptionText>
+
+          <SmallContent>
+            <ChatBox chatLogs={CONVERSATION2} />
+          </SmallContent>
+
+          <h3>
+            <SubSubHeaderText marginBottom={8} marginTop={28}>
+              Teaching Helper to guide good teaching practices for effective LBT
+            </SubSubHeaderText>
+          </h3>
+
+          <CaptionText marginBottom={16}>
+            <p>
+              TeachYou analyzes the tutoring conversation and gives students feedback on their teaching methods (e.g.,
+              suggesting students ask guiding questions to AlgoBo rather than spoon-feeding it). We use a fine-tuned
+              GPT-3.5 to classify message types and teaching patterns in real-time. The feedback pops up inside the chat
+              interface with pattern-specific tips for better teaching.
+            </p>
+          </CaptionText>
+
+          <SmallContent>
+            <ChatBox chatLogs={CONVERSATION3}>
+              <TeachingHelper>
+                <SubSubHeaderText marginBottom={8}>
+                  Instead of ordering fixes, why not help AlgoBo grasp &quot;Why?&quot;
+                </SubSubHeaderText>
+                <RadioInput checked={false} fill="Primary" marginBottom={4}>
+                  I&apos;ll explain &quot;why&quot; when I tell where to fix.
+                </RadioInput>
+                <RadioInput checked={false} fill="Primary" marginBottom={4}>
+                  I&apos;ll ask why it&apos;s good to fix.
+                </RadioInput>
+                <RadioInput checked={false} fill="Primary" marginBottom={8}>
+                  I have a better way.
+                </RadioInput>
+                <OutlineButton>Resume Conversation</OutlineButton>
+              </TeachingHelper>
+            </ChatBox>
+          </SmallContent>
 
           <Divider marginVertical={24} />
 
           <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
+            <SubHeaderText color="Focus" marginBottom={8}>
               Interactive Demo
             </SubHeaderText>
           </h2>
+
+          <CaptionText marginBottom={16}>
+            We provide a demo of the Reflect-Respond pipeline. Try to teach AlgoBo how to write a binary search
+            algorithm. You will see how it learns from the conversation and the intermediate results for each step in
+            the pipeline.
+          </CaptionText>
 
           <Centered>
             <Link href={'/demo/teachyou'} style={{ display: 'inline-block' }}>
@@ -124,28 +207,6 @@ export default function Page() {
               </DemoImageContainer>
             </Link>
           </Centered>
-
-          <Divider marginVertical={24} />
-
-          <h2>
-            <SubHeaderText color="Focus" marginBottom={16}>
-              Key Findings
-            </SubHeaderText>
-          </h2>
-
-          <h3>
-            <SubSubHeaderText marginBottom={16}>
-              The Reflect-Respond pipeline can effectively configure the knowledge level of AlgoBo.
-            </SubSubHeaderText>
-          </h3>
-
-          <Reconfigurability />
-
-          <h3>
-            <SubSubHeaderText>
-              The Reflect-Respond makes AlgoBo produce responses persistent to knowledge states.
-            </SubSubHeaderText>
-          </h3>
         </Content>
       </main>
     </ThemeProvider>
@@ -156,6 +217,12 @@ const Content = styled.div`
   max-width: 800px;
   padding: 40px 24px;
   margin: 0 auto;
+`
+
+const SmallContent = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 16px;
 `
 
 const Authors = styled.div`
@@ -203,6 +270,13 @@ const DemoImageContainer = styled.div`
       width: calc(100vw - 48px);
       height: 62vw;
     }
+  `}
+`
+
+const TeachingHelper = styled.div`
+  ${({ theme }) => css`
+    ${theme.border.Danger}
+    padding: 8px;
   `}
 `
 

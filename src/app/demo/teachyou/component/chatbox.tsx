@@ -7,12 +7,13 @@ import { Markdown } from '@/app/component/markdown'
 import { FillButton, TextInput, TextLoading, View } from '@wookiejin/react-component'
 
 interface Props {
+  children?: React.ReactNode
   onSend?: (message: string) => Promise<void>
   isOpponentTyping?: boolean
   chatLogs: Readonly<Chat[]>
 }
 
-export const ChatBox = View<Props>(({ chatLogs, onSend, isOpponentTyping = false, ...props }) => {
+export const ChatBox = View<Props>(({ children, chatLogs, onSend, isOpponentTyping = false, ...props }) => {
   const [message, setMessage] = useState('')
   const [logCnt, setLogCnt] = useState(chatLogs.length)
   const chatContainerRef = useRef<HTMLDivElement>(null)
@@ -37,32 +38,33 @@ export const ChatBox = View<Props>(({ chatLogs, onSend, isOpponentTyping = false
         {chatLogs.map(({ message, role }, i) => {
           if (role === 'tutor') {
             return (
-              <TutorChat key={i}>
+              <TutorMessage key={i}>
                 <TutorBubble>{message}</TutorBubble>
                 <Image src="/images/tutor.png" width={20} height={20} alt="Tutor" />
-              </TutorChat>
+              </TutorMessage>
             )
           } else if (role === 'tutee') {
             return (
-              <Chat key={i}>
+              <Message key={i}>
                 <Image src="/images/tutee.png" width={20} height={20} alt="Tutee" />
                 <TuteeBubble>
                   <Markdown>{message}</Markdown>
                 </TuteeBubble>
-              </Chat>
+              </Message>
             )
           } else {
             return <SystemBubble key={i}>{message}</SystemBubble>
           }
         })}
         {isOpponentTyping && (
-          <Chat>
+          <Message>
             <Image src="/images/tutee.png" width={20} height={20} alt="Tutee" />
             <TuteeBubble>
               <TextLoading />
             </TuteeBubble>
-          </Chat>
+          </Message>
         )}
+        {children}
       </ChatContainer>
 
       {onSend && (
@@ -107,12 +109,12 @@ const InputContainer = styled.div`
   gap: 16px;
 `
 
-const Chat = styled.div`
+const Message = styled.div`
   display: flex;
   margin-bottom: 16px;
 `
 
-const TutorChat = styled.div`
+const TutorMessage = styled.div`
   display: flex;
   margin-bottom: 16px;
   justify-content: flex-end;
@@ -130,6 +132,7 @@ const Bubble = styled.div`
     word-break: keep-all;
     ${theme.fill.Secondary}
     ${theme.color.Primary}
+    ${theme.font.Body}
   `}
 `
 
@@ -147,5 +150,6 @@ const SystemBubble = styled.div`
     css`
       ${theme.color.Secondary}
       text-align: center;
+      margin-bottom: 16px;
     `}
 `
