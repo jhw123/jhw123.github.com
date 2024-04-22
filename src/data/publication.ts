@@ -31,9 +31,9 @@ export const PUBLICATION = {
     type: 'full paper',
     links: [
       ['Paper', 'https://arxiv.org/abs/2309.14534'],
-      // ['Website', '/project/teachyou'],
+      ['Website', '/project/teachyou'],
       ['Demo', '/demo/teachyou'],
-      // ['GitHub', 'https://github.com/jhw123/TeachYou'],
+      ['GitHub', 'https://github.com/TeachYou-org'],
     ],
     imagePath: '/projects/teachyou.png',
   }),
