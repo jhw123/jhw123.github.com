@@ -33,6 +33,10 @@ export const PUBLICATION = {
       ['Paper', 'https://arxiv.org/abs/2309.14534'],
       ['Website', '/project/teachyou'],
       ['Demo', '/demo/teachyou'],
+      [
+        'Slides',
+        'https://docs.google.com/presentation/d/1zBuMDBlXCRtb9cLOgbnu8oLqWDEtNuj_s5Y8-VVv5S0/edit?usp=sharing',
+      ],
       ['GitHub', 'https://github.com/TeachYou-org'],
     ],
     imagePath: '/projects/teachyou.png',

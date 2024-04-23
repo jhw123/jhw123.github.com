@@ -182,7 +182,7 @@ export default function Page() {
                   <BodyText marginBottom={8}>{conference}</BodyText>
                   {links?.length &&
                     links.map(([tag, link], i) => (
-                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
                         {tag}
                       </IconLink>
                     ))}

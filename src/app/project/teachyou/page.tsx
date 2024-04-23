@@ -24,6 +24,7 @@ import { Profile } from '../component/profile'
 import { CONVERSATION1 } from '../data/conversation1'
 import { CONVERSATION2 } from '../data/conversation2'
 import { CONVERSATION3 } from '../data/conversation3'
+import { Video } from '@/app/component/video'
 
 export default function Page() {
   return (
@@ -64,7 +65,7 @@ export default function Page() {
             {PUBLICATION.teachyou.links
               ?.filter(([label]) => label !== 'Website')
               .map(([label, href], i) => (
-                <IconLink key={i} href={href} title={`TeachYou ${label}`}>
+                <IconLink key={i} href={href} title={`TeachYou ${label}`} marginHorizontal={4} marginBottom={8}>
                   {label}
                 </IconLink>
               ))}
@@ -77,6 +78,7 @@ export default function Page() {
               Abstract
             </SubHeaderText>
           </h2>
+
           <BodyText>
             <p>
               This work investigates large language models (LLMs) as teachable agents for learning by teaching (LBT).
@@ -93,6 +95,16 @@ export default function Page() {
               implications, cost-efficiency, and personalization of LLM-based teachable agents.
             </p>
           </BodyText>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              Paper Presentation
+            </SubHeaderText>
+          </h2>
+
+          <Video src={'https://www.youtube-nocookie.com/embed/55ZynUaK_Bg?si=8DkFRptfcb7iSfP-'} />
 
           <Divider marginVertical={24} />
 
@@ -256,11 +268,12 @@ const Authors = styled.div`
 `
 
 const LinkButtons = styled.div`
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   width: 100%;
-  gap: 16px;
+  /* gap: 16px; */
   margin-top: 24px;
+  text-align: center;
 `
 
 const DemoImageContainer = styled.div`
