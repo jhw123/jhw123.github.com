@@ -7,7 +7,7 @@ interface Props {
   formatStr?: string
 }
 
-export const Time = View<Props>(({ date, formatStr = 'LLL do yyyy', ...props }) => {
+export const Time = View<Props>(({ date, formatStr = 'LLL do yyyy', forwardedRef, ...props }) => {
   return <Container {...props}>{date !== undefined ? format(date, formatStr) : 'Present'}</Container>
 })
 

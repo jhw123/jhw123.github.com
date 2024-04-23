@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const ExternalLink = View<Props>(({ href, children, ...props }) => {
+export const ExternalLink = View<Props>(({ href, children, forwardedRef, ...props }) => {
   return (
     <Container {...props} href={href} target={'_blank'} rel="noreferrer">
       {children}

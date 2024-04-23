@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Markdown = React.memo(
-  View<Props>(({ children, ...props }) => {
+  View<Props>(({ children, forwardedRef, ...props }) => {
     return (
       <ReactMarkdown
         {...props}

@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const ListItem = View<Props>(({ children, ...props }) => {
+export const ListItem = View<Props>(({ children, forwardedRef, ...props }) => {
   return <Container {...props}>{children}</Container>
 })
 

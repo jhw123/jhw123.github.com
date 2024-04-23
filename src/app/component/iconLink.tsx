@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const IconLink = View<Props>(({ href, children, title, ...props }) => {
+export const IconLink = View<Props>(({ href, children, title, forwardedRef, ...props }) => {
   const icon = (() => {
     switch (true) {
       case last(href.split('.')) === 'pdf':
@@ -26,6 +26,8 @@ export const IconLink = View<Props>(({ href, children, title, ...props }) => {
         return '/icons/slide.png'
       case href.includes('github.com'):
         return '/icons/github.png'
+      case href.includes('/presentation/'):
+        return '/icons/presentation.png'
       default:
         return ''
     }
