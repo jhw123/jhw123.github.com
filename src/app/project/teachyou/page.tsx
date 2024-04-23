@@ -8,10 +8,10 @@ import { Global, ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import {
   BodyText,
-  CaptionText,
   DEFAULT_THEME,
   Divider,
   HeaderText,
+  LinearLayout,
   OutlineButton,
   RadioInput,
   ResetStyle,
@@ -108,7 +108,7 @@ export default function Page() {
             </SubSubHeaderText>
           </h3>
 
-          <CaptionText marginBottom={16}>
+          <BodyText color="Secondary" marginBottom={16}>
             <p>
               We created an LLM prompting pipeline that makes AlgoBo’&apos; problem-solving performance customizable and
               improves it only when taught correctly and precisely, making AlgoBo feasible for learning-by-teaching. The
@@ -116,7 +116,7 @@ export default function Page() {
               learns from students. To achieve different learning objectives, instructors can empty the knowledge state
               or populate incorrect information to simulate a learner who learns for the first time.
             </p>
-          </CaptionText>
+          </BodyText>
 
           <SmallContent>
             <ChatBox chatLogs={CONVERSATION1} />
@@ -128,7 +128,7 @@ export default function Page() {
             </SubSubHeaderText>
           </h3>
 
-          <CaptionText marginBottom={16}>
+          <BodyText color="Secondary" marginBottom={16}>
             <p>
               We also introduce mode-shifting, in which AlgoBo shifts into questioner mode periodically (e.g., every
               three messages) to enrich tutoring conversations with &quot;why&quot; and &quot;how&quot; questions. These
@@ -137,7 +137,7 @@ export default function Page() {
               AlgoBo asks follow-ups for elaboration and examples until the student gives quality answers that resolve
               AlgoBo’s misconceptions and curiosity.
             </p>
-          </CaptionText>
+          </BodyText>
 
           <SmallContent>
             <ChatBox chatLogs={CONVERSATION2} />
@@ -149,14 +149,14 @@ export default function Page() {
             </SubSubHeaderText>
           </h3>
 
-          <CaptionText marginBottom={16}>
+          <BodyText color="Secondary" marginBottom={16}>
             <p>
               TeachYou analyzes the tutoring conversation and gives students feedback on their teaching methods (e.g.,
               suggesting students ask guiding questions to AlgoBo rather than spoon-feeding it). We use a fine-tuned
               GPT-3.5 to classify message types and teaching patterns in real-time. The feedback pops up inside the chat
               interface with pattern-specific tips for better teaching.
             </p>
-          </CaptionText>
+          </BodyText>
 
           <SmallContent>
             <ChatBox chatLogs={CONVERSATION3}>
@@ -186,11 +186,11 @@ export default function Page() {
             </SubHeaderText>
           </h2>
 
-          <CaptionText marginBottom={16}>
+          <BodyText color="Secondary" marginBottom={16}>
             We provide a demo of the Reflect-Respond pipeline. Try to teach AlgoBo how to write a binary search
             algorithm. You will see how it learns from the conversation and the intermediate results for each step in
             the pipeline.
-          </CaptionText>
+          </BodyText>
 
           <Centered>
             <Link href={'/demo/teachyou'} style={{ display: 'inline-block' }}>
@@ -207,6 +207,25 @@ export default function Page() {
               </DemoImageContainer>
             </Link>
           </Centered>
+
+          <Divider marginVertical={24} />
+
+          <LinearLayout justifyContent="center" gap={16}>
+            <Image
+              src="/images/kaist_logo.png"
+              width={813 / 6}
+              height={224 / 6}
+              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+              alt="KAIST logo"
+            />
+            <Image
+              src="/images/kixlab_logo.png"
+              width={813 / 7}
+              height={224 / 7}
+              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+              alt="KIXLAB logo"
+            />
+          </LinearLayout>
         </Content>
       </main>
     </ThemeProvider>
@@ -252,6 +271,7 @@ const DemoImageContainer = styled.div`
     ${theme.elevation.L2}
     margin: 0 auto;
     text-align: center;
+    color: white;
 
     &:hover {
       cursor: pointer;
