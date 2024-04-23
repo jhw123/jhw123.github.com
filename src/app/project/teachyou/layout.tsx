@@ -7,19 +7,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jhw123.github.io'),
   title: 'TeachYou',
   description:
-    'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
+    "TeachYou is a tool that college-level students can use to learn programming by teaching a conversational AI tutee, AlgoBo. Student-initiated explanations and discussions with AlgoBo on real-world examples of algorithms can improve students' knowledge-building skills. AlgoBo's knowledge level and question-asking are highly configurable through our LLM pipeline, opening up opportunities for personalization at scale",
   icons: ['/images/tutor.png'],
-  keywords: [
-    '진형욱',
-    'Hyoungwook Jin',
-    'KIXLAB',
-    'Personalized education at scale',
-    'AI agents for personalized learning',
-  ],
+  keywords: ['Human-AI interaction', 'LLM agents', 'AI and Education', 'Generative AI'],
   openGraph: {
-    title: 'Hyoungwook Jin',
+    title: 'TeachYou',
     description:
-      'Hyoungwook Jin is a human-computer interaction researcher who is intertested in personalized education at scale.',
+      "TeachYou is a tool that college-level students can use to learn programming by teaching a conversational AI tutee, AlgoBo. Student-initiated explanations and discussions with AlgoBo on real-world examples of algorithms can improve students' knowledge-building skills. AlgoBo's knowledge level and question-asking are highly configurable through our LLM pipeline, opening up opportunities for personalization at scale",
     type: 'website',
     images: [{ url: '/hyoungwook_og.jpeg', width: 1200, height: 630 }],
   },
