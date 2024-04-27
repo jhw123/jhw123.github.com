@@ -17,6 +17,7 @@ import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
 import {
   BodyText,
+  CaptionText,
   DEFAULT_THEME,
   Divider,
   HeaderText,
@@ -151,7 +152,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
-            ({ title, conference, links, imagePath, authors }, i) => (
+            ({ title, conference, links, imagePath, authors, awards }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -170,6 +171,15 @@ export default function Page() {
                       {title}
                     </SubSubHeaderText>
                   </h3>
+                  {awards?.length && (
+                    <CaptionText marginBottom={8}>
+                      {awards.map((award, i) => (
+                        <Award key={i}>
+                          <Image src={'/icons/medal.png'} width={16} height={16} alt={award} /> {award}
+                        </Award>
+                      ))}
+                    </CaptionText>
+                  )}
                   <BodyText color="Secondary" marginBottom={8}>
                     {authors.map(({ name }, i) => {
                       return (
@@ -380,6 +390,20 @@ const NewsRow = styled.div`
   grid-template-columns: auto 1fr;
   column-gap: 8px;
   row-gap: 4px;
+`
+
+const Award = styled.span`
+  ${({ theme }) => css`
+    ${theme.color.Warning}
+    ${theme.border.Warning}
+    ${theme.font.Caption}
+    padding: 4px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 4px;
+  `}
 `
 
 const Waving = keyframes`

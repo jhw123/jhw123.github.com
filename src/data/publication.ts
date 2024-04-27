@@ -12,6 +12,7 @@ interface Props {
   conference: string
   type: PaperType
   imagePath: string
+  awards?: string[]
 }
 
 interface Publication extends Props {}
@@ -40,6 +41,7 @@ export const PUBLICATION = {
       ['GitHub', 'https://github.com/TeachYou-org'],
     ],
     imagePath: '/projects/teachyou.png',
+    awards: ['Honorable Mention'],
   }),
   codeTree: new Publication({
     title: 'CodeTree: Learnersourcing Subgoal Hierarchies in Code Examples',
