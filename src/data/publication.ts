@@ -48,7 +48,7 @@ export const PUBLICATION = {
     endDate: new Date(2023, 9),
     conference: "CSCW'24 (to appear)",
     type: 'full paper',
-    links: [['Paper', '/files/CSCW2024 CodeTree.pdf']],
+    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3637308']],
     imagePath: '/projects/codetree.png',
   }),
   processGallery: new Publication({
@@ -67,6 +67,7 @@ export const PUBLICATION = {
     endDate: new Date(2023, 9),
     conference: "CSCW'24 (to appear)",
     type: 'full paper',
+    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3637389']],
     imagePath: '/projects/processgallery.png',
   }),
   inActionFeedback: new Publication({
