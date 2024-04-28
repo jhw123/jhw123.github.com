@@ -85,7 +85,13 @@ export default function Page() {
                     </ExternalLink>
                   )
                 })}
-                <Link href={'/files/hyoungwook_jin_cv.pdf'} target={'_blank'} rel="noreferrer">
+                <Link
+                  href={
+                    'https://docs.google.com/document/d/1TlDHuNITMMyG6UUo8lIUKLr2hgiTBXhEZg1uP4EVGnY/edit?usp=sharing'
+                  }
+                  target={'_blank'}
+                  rel="noreferrer"
+                >
                   <LinkButton>CV</LinkButton>
                 </Link>
               </LinkSection>
