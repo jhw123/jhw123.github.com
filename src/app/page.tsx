@@ -70,9 +70,9 @@ export default function Page() {
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
               </BodyText>
               <BodyText marginBottom={8}>
-                I am interested in supporting personalized learning environments at scale. I am looking into leveraging
-                AI agents as tutors and tutees to build interactive learning systems personalized to each learner&apos;s
-                prior knowledge level and learning patterns.
+                I am interested in supporting personalized interactive learning at scale. I build scalable learning
+                systems, technical pipelines, and user interfaces that leverage AI technologies to simulate, augment,
+                and substitute different stakeholders in learning (e.g., peer learners and instructors).
               </BodyText>
 
               <LinkSection>
