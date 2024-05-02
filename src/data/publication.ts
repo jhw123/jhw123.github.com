@@ -86,9 +86,10 @@ export const PUBLICATION = {
       PERSON.stevendow,
     ],
     startDate: new Date(2022, 6),
+    endDate: new Date(2024, 5),
     conference: "C&C'24 (to appear)",
     type: 'full paper',
-    imagePath: '',
+    imagePath: '/projects/realtime-feedback.png',
   }),
   subgoalHierarchies: new Publication({
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
