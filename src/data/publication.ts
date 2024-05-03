@@ -119,7 +119,7 @@ export const PUBLICATION = {
     endDate: new Date(2019, 5),
     type: 'poster',
     links: [['Paper', 'https://dl.acm.org/doi/10.1145/3330430.3333658']],
-    conference: "L@S'19",
+    conference: "L@S'19 Work-in-Progress",
     imagePath: '/projects/automata.png',
   }),
   solveDeep: new Publication({
@@ -129,7 +129,7 @@ export const PUBLICATION = {
     endDate: new Date(2019, 4),
     type: 'poster',
     links: [['Paper', 'https://dl.acm.org/doi/10.1145/3290607.3312822']],
-    conference: "CHI'19",
+    conference: "CHI'19 Extended Abstract",
     imagePath: '/projects/solvedeep.png',
   }),
 } as const
