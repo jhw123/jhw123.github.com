@@ -20,10 +20,10 @@ export const IconLink = View<Props>(({ href, children, title, forwardedRef, ...p
         return '/icons/arxiv.png'
       case href.includes('dl.acm.org'):
         return '/icons/dl.png'
+      case href.includes('/demo'):
+        return '/icons/slide.png'
       case href.includes('/project/'):
         return '/icons/globe.png'
-      case href.includes('/demo/'):
-        return '/icons/slide.png'
       case href.includes('github.com'):
         return '/icons/github.png'
       case href.includes('/presentation/'):

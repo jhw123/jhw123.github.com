@@ -33,7 +33,7 @@ export const PUBLICATION = {
     links: [
       ['Paper', 'https://arxiv.org/abs/2309.14534'],
       ['Website', '/project/teachyou'],
-      ['Demo', '/demo/teachyou'],
+      ['Demo', '/project/teachyou/demo'],
       [
         'Slides',
         'https://docs.google.com/presentation/d/1zBuMDBlXCRtb9cLOgbnu8oLqWDEtNuj_s5Y8-VVv5S0/edit?usp=sharing',

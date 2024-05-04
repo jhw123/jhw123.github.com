@@ -14,10 +14,11 @@ import {
   TextInput,
 } from '@wookiejin/react-component'
 import { useCallback, useState } from 'react'
-import { ChatBox } from './component/chatbox'
-import { useOpenAIModels } from './hook/useOpenAIModels'
-import { Chat, usePipeline } from './hook/usePipeline'
+import { ChatBox } from '../component/chatbox'
 import { PUBLICATION } from '@/data/publication'
+import { Chat, usePipeline } from '../hook/usePipeline'
+import { useOpenAIModels } from '../hook/useOpenAIModels'
+import { ExternalLink } from '@/app/component/externalLink'
 
 export default function Page() {
   const [apiKey, setApiKey] = useState('')
@@ -84,7 +85,11 @@ export default function Page() {
           </BodyText>
 
           <CaptionText color="Focus" marginBottom={4}>
-            This demo requires the access to OpenAI API.
+            This demo requires the access to{' '}
+            <ExternalLink href="https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key">
+              OpenAI API
+            </ExternalLink>
+            .
           </CaptionText>
           <TextInput value={apiKey} onChange={enterKey} placeholder="Your OpenAI API Key" marginBottom={16} />
 

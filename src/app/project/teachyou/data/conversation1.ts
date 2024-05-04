@@ -1,4 +1,4 @@
-import { Chat } from '@/app/demo/teachyou/hook/usePipeline'
+import { Chat } from '../hook/usePipeline'
 
 export const CONVERSATION1: Chat[] = [
   {

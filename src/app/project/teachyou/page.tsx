@@ -1,6 +1,7 @@
 'use client'
 import { IconLink } from '@/app/component/iconLink'
-import { ChatBox } from '@/app/demo/teachyou/component/chatbox'
+import { Video } from '@/app/component/video'
+import { ChatBox } from '@/app/project/teachyou/component/chatbox'
 import { PERSON } from '@/data/person'
 import { PUBLICATION } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
@@ -20,11 +21,12 @@ import {
 } from '@wookiejin/react-component'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Profile } from '../component/profile'
-import { CONVERSATION1 } from '../data/conversation1'
-import { CONVERSATION2 } from '../data/conversation2'
-import { CONVERSATION3 } from '../data/conversation3'
-import { Video } from '@/app/component/video'
+import { Banner } from '../../component/banner'
+import { Profile } from '../../component/profile'
+import { Sample } from './component/sample'
+import { CONVERSATION1 } from './data/conversation1'
+import { CONVERSATION2 } from './data/conversation2'
+import { CONVERSATION3 } from './data/conversation3'
 
 export default function Page() {
   return (
@@ -40,14 +42,23 @@ export default function Page() {
               background-color: #333333;
             }
           }
+          strong {
+            font-weight: bold;
+          }
         `}
       />
       <main>
         <Content>
           <h1>
             <HeaderText align="center" marginBottom={24}>
-              <Image src="/images/tutee.png" width={32} height={32} alt="tutee icon" />
-              <Image src="/images/tutor.png" width={32} height={32} alt="tutor icon" style={{ marginRight: 8 }} />
+              <Image src="/images/teachyou/algobo.png" width={32} height={40} alt="tutee icon" />
+              <Image
+                src="/images/teachyou/student.png"
+                width={36}
+                height={45}
+                alt="tutor icon"
+                style={{ marginRight: 8 }}
+              />
               Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education
             </HeaderText>
           </h1>
@@ -71,11 +82,17 @@ export default function Page() {
               ))}
           </LinkButtons>
 
+          <Centered>
+            <Banner marginTop={12}>
+              🚀 If you want to try out TeachYou in your class, please contact jinhw@kaist.ac.kr! 🚀
+            </Banner>
+          </Centered>
+
           <Divider marginVertical={24} />
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
-              Abstract
+              ABSTRACT
             </SubHeaderText>
           </h2>
 
@@ -100,7 +117,7 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
-              Paper Presentation
+              PAPER PRESENTATION
             </SubHeaderText>
           </h2>
 
@@ -110,7 +127,7 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
-              Key Components
+              KEY COMPONENTS
             </SubHeaderText>
           </h2>
 
@@ -174,7 +191,7 @@ export default function Page() {
             <ChatBox chatLogs={CONVERSATION3}>
               <TeachingHelper>
                 <SubSubHeaderText marginBottom={8}>
-                  Instead of ordering fixes, why not help AlgoBo grasp &quot;Why?&quot;
+                  ❗ Instead of ordering fixes, why not help AlgoBo grasp &quot;Why?&quot;
                 </SubSubHeaderText>
                 <RadioInput checked={false} fill="Primary" marginBottom={4}>
                   I&apos;ll explain &quot;why&quot; when I tell where to fix.
@@ -194,18 +211,18 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
-              Interactive Demo
+              INTERACTIVE DEMO
             </SubHeaderText>
           </h2>
 
           <BodyText color="Secondary" marginBottom={16}>
             We provide a demo of the Reflect-Respond pipeline. Try to teach AlgoBo how to write a binary search
             algorithm. You will see how it learns from the conversation and the intermediate results for each step in
-            the pipeline.
+            the pipeline. <strong>You need an OpenAI API key for this demo.</strong>
           </BodyText>
 
           <Centered>
-            <Link href={'/demo/teachyou'} style={{ display: 'inline-block' }}>
+            <Link href={'/project/teachyou/demo'} style={{ display: 'inline-block' }}>
               <DemoImageContainer>
                 <Image
                   fill
@@ -219,6 +236,21 @@ export default function Page() {
               </DemoImageContainer>
             </Link>
           </Centered>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              CONVERSATION SAMPLES
+            </SubHeaderText>
+          </h2>
+
+          <BodyText color="Secondary" marginBottom={16}>
+            These are the conversations that students had with AlgoBo in our study. Click the buttons below to see the
+            conversation samples.
+          </BodyText>
+
+          <Sample />
 
           <Divider marginVertical={24} />
 
@@ -268,10 +300,8 @@ const Authors = styled.div`
 `
 
 const LinkButtons = styled.div`
-  /* display: flex; */
   justify-content: center;
   width: 100%;
-  /* gap: 16px; */
   margin-top: 24px;
   text-align: center;
 `
