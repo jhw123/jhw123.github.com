@@ -21,10 +21,11 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { Profile } from '../component/profile'
-import { CONVERSATION1 } from '../data/conversation1'
-import { CONVERSATION2 } from '../data/conversation2'
-import { CONVERSATION3 } from '../data/conversation3'
+import { CONVERSATION1 } from './data/conversation1'
+import { CONVERSATION2 } from './data/conversation2'
+import { CONVERSATION3 } from './data/conversation3'
 import { Video } from '@/app/component/video'
+import { Banner } from '../component/banner'
 
 export default function Page() {
   return (
@@ -70,6 +71,12 @@ export default function Page() {
                 </IconLink>
               ))}
           </LinkButtons>
+
+          <Centered>
+            <Banner marginTop={12}>
+              🚀 If you want to try out TeachYou in your class, please contact jinhw@kaist.ac.kr!
+            </Banner>
+          </Centered>
 
           <Divider marginVertical={24} />
 
@@ -268,10 +275,8 @@ const Authors = styled.div`
 `
 
 const LinkButtons = styled.div`
-  /* display: flex; */
   justify-content: center;
   width: 100%;
-  /* gap: 16px; */
   margin-top: 24px;
   text-align: center;
 `
