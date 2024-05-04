@@ -210,7 +210,7 @@ export default function Page() {
           <h2>
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
-          {PUBLICATIONS.filter(({ type }) => type !== 'full paper').map(
+          {PUBLICATIONS.filter(({ type, endDate }) => type !== 'full paper' && endDate).map(
             ({ title, conference, links, imagePath, authors, type }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>

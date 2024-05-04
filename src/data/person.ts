@@ -47,6 +47,18 @@ export const PERSON = {
   yoonseochoi: new Person({
     name: 'Yoonseo Choi',
   }),
+  yoonsukim: new Person({
+    name: 'Yoonsu Kim',
+  }),
+  yeonsupark: new Person({
+    name: 'Yeonsu Park',
+  }),
+  bekzattilekbay: new Person({
+    name: 'Bekzat Tilekbay',
+  }),
+  jinhoson: new Person({
+    name: 'Jinho Son',
+  }),
   anthonychen: new Person({
     name: 'Xiang Anthony Chen',
   }),

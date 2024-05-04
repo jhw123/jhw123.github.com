@@ -101,6 +101,21 @@ export const PUBLICATION = {
     conference: "L@S'22 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),
+  hamamathWIP: new Publication({
+    title: 'Using Large Language Models to Diagnose Math Problem-Solving Skills at Scale',
+    authors: [
+      PERSON.hyoungwook,
+      PERSON.yoonsukim,
+      PERSON.yeonsupark,
+      PERSON.bekzattilekbay,
+      PERSON.jinhoson,
+      PERSON.juho,
+    ],
+    startDate: new Date(2023, 11),
+    type: 'poster',
+    conference: "L@S'24 Work-in-Progress",
+    imagePath: '',
+  }),
   ExGPTer: new Publication({
     title:
       'Moderating Customer Inquiries and Responses to Alleviate Stress and Reduce Emotional Dissonance of Customer Service Representatives',
