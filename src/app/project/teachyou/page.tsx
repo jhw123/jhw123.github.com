@@ -27,6 +27,8 @@ import { Sample } from './component/sample'
 import { CONVERSATION1 } from './data/conversation1'
 import { CONVERSATION2 } from './data/conversation2'
 import { CONVERSATION3 } from './data/conversation3'
+import { CONTACT } from '@/data/contact'
+import { ExternalLink } from '@/app/component/externalLink'
 
 export default function Page() {
   return (
@@ -247,10 +249,28 @@ export default function Page() {
 
           <BodyText color="Secondary" marginBottom={16}>
             These are the conversations that students had with AlgoBo in our study. Click the buttons below to see the
-            conversation samples.
+            conversation samples. More samples are available at{' '}
+            <ExternalLink href="https://github.com/TeachYou-org/conversation-data">our GitHub repository</ExternalLink>.
           </BodyText>
 
           <Sample />
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              EDUCATORS AND RESEARCHERS
+            </SubHeaderText>
+          </h2>
+
+          <BodyText color="Secondary">
+            Our team is looking for deployment partners. If you are educators or researchers who are interested in using
+            TeachYou in classes, please contact <a href={CONTACT.email.link}>the authors</a>. We would like to conduct
+            longitudinal studies to confirm the effectiveness of TeachYou in real-world settings and receive feedback
+            from educators and researchers in the field. Since we plan to expand TeachYou to various subjects (e.g.,
+            math and physics) and learning contexts, do not hesitate to contact us and share your circumstances and
+            needs!
+          </BodyText>
 
           <Divider marginVertical={24} />
 
