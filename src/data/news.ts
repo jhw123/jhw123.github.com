@@ -17,6 +17,10 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: '🌺 I will attend CHI in person to give a presentation.',
+    startDate: new Date('2024-05-05'),
+  }),
+  new Post({
     content: '🎉 Got an acceptance for a C&C paper!',
     startDate: new Date('2024-05-02'),
   }),
@@ -49,11 +53,11 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2022-06-27'),
   }),
   new Post({
-    content: 'Solved 500 Leetcode problems!',
+    content: '🔥 Solved 500 Leetcode problems!',
     startDate: new Date('2022-02-23'),
   }),
   new Post({
-    content: 'Left VCNC.',
+    content: '🧳 Left VCNC.',
     startDate: new Date('2021-10-08'),
   }),
 ])

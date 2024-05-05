@@ -12,7 +12,7 @@ import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import { capitalize } from 'lodash'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
 import {
@@ -24,9 +24,12 @@ import {
   ResetStyle,
   SubHeaderText,
   SubSubHeaderText,
+  TextButton,
 } from '@wookiejin/react-component'
 
 export default function Page() {
+  const [newsLength, setNewsLength] = useState(5)
+
   return (
     <ThemeProvider theme={DEFAULT_THEME}>
       <Global styles={ResetStyle} />
@@ -85,15 +88,6 @@ export default function Page() {
                     </ExternalLink>
                   )
                 })}
-                <Link
-                  href={
-                    'https://docs.google.com/document/d/1TlDHuNITMMyG6UUo8lIUKLr2hgiTBXhEZg1uP4EVGnY/edit?usp=sharing'
-                  }
-                  target={'_blank'}
-                  rel="noreferrer"
-                >
-                  <LinkButton>CV</LinkButton>
-                </Link>
               </LinkSection>
             </Introduction>
           </Card>
@@ -104,15 +98,17 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>NEWS</SubHeaderText>
           </h2>
           <NewsRow>
-            {POSTS.slice(0, 5).map(({ content, startDate }, i) => (
+            {POSTS.slice(0, newsLength).map(({ content, startDate }, i) => (
               <Fragment key={i}>
                 <Time date={startDate} formatStr="LLL, yyyy" />
                 {content}
               </Fragment>
             ))}
           </NewsRow>
+          {newsLength < POSTS.length && <TextButton onClick={() => setNewsLength(POSTS.length)}>Show more</TextButton>}
 
           <Divider fill="Secondary" marginVertical={32} />
+
           {0 < PROJECTS.length && (
             <>
               <h2>
@@ -385,10 +381,6 @@ const LinkButton = styled.div`
     font-weight: bold;
     ${theme.font.SubTitle}
   `}
-`
-
-const Link = styled.a`
-  text-decoration: none;
 `
 
 const NewsRow = styled.div`
