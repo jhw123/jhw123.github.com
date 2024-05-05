@@ -213,6 +213,23 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
+              🚀 EDUCATORS AND RESEARCHERS
+            </SubHeaderText>
+          </h2>
+
+          <BodyText color="Secondary">
+            Our team is looking for deployment partners. If you are an educator or researcher interested in using
+            TeachYou in classes, please get in touch with <a href={CONTACT.email.link}>the authors</a>. We would like to
+            conduct longitudinal studies to confirm the effectiveness of TeachYou in real-world settings and receive
+            feedback from educators and researchers in the field. Since we plan to expand TeachYou to various subjects
+            (e.g., math and physics) and support the cost of running our software (e.g., OpenAI API, server), do not
+            hesitate to contact us and share your circumstances and needs!
+          </BodyText>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
               INTERACTIVE DEMO
             </SubHeaderText>
           </h2>
@@ -254,23 +271,6 @@ export default function Page() {
           </BodyText>
 
           <Sample />
-
-          <Divider marginVertical={24} />
-
-          <h2>
-            <SubHeaderText color="Focus" marginBottom={8}>
-              EDUCATORS AND RESEARCHERS
-            </SubHeaderText>
-          </h2>
-
-          <BodyText color="Secondary">
-            Our team is looking for deployment partners. If you are educators or researchers who are interested in using
-            TeachYou in classes, please contact <a href={CONTACT.email.link}>the authors</a>. We would like to conduct
-            longitudinal studies to confirm the effectiveness of TeachYou in real-world settings and receive feedback
-            from educators and researchers in the field. Since we plan to expand TeachYou to various subjects (e.g.,
-            math and physics) and learning contexts, do not hesitate to contact us and share your circumstances and
-            needs!
-          </BodyText>
 
           <Divider marginVertical={24} />
 
@@ -329,7 +329,7 @@ const LinkButtons = styled.div`
 const DemoImageContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
-    height: 320px;
+    height: 315px;
     width: 510px;
     ${theme.elevation.L2}
     margin: 0 auto;
