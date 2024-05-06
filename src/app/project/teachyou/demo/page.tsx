@@ -73,7 +73,7 @@ export default function Page() {
           {PUBLICATION.teachyou.links
             ?.filter(([label]) => label !== 'Demo')
             .map(([label, href], i) => (
-              <IconLink key={i} href={href} title={`TeachYou ${label}`} marginRight={8}>
+              <IconLink key={i} href={href} title={`TeachYou ${label}`} marginRight={8} marginBottom={8}>
                 {label}
               </IconLink>
             ))}
