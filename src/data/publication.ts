@@ -31,7 +31,7 @@ export const PUBLICATION = {
     conference: "CHI'24 (to appear)",
     type: 'full paper',
     links: [
-      ['Paper', 'https://arxiv.org/abs/2309.14534'],
+      ['Paper', 'https://dl.acm.org/doi/10.1145/3613904.3642349'],
       ['Website', '/project/teachyou'],
       ['Demo', '/project/teachyou/demo'],
       [

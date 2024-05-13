@@ -35,7 +35,15 @@ export const IconLink = View<Props>(({ href, children, title, forwardedRef, ...p
 
   return (
     <Container {...props} href={href} target={'_blank'} rel="noreferrer">
-      {0 < icon.length && <Image width={20} height={20} src={icon} alt={`The link for ${title}`} />}
+      {0 < icon.length && (
+        <Image
+          width={20}
+          height={20}
+          src={icon}
+          alt={`The link for ${title}`}
+          style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+        />
+      )}
       {children}
     </Container>
   )
