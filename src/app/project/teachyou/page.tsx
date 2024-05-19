@@ -193,7 +193,7 @@ export default function Page() {
             <ChatBox chatLogs={CONVERSATION3}>
               <TeachingHelper>
                 <SubSubHeaderText marginBottom={8}>
-                  ❗ Instead of ordering fixes, why not help AlgoBo grasp &quot;Why?&quot;
+                  ❗ Instead of directly telling it what to fix, why not help AlgoBo grasp &quot;Why?&quot;
                 </SubSubHeaderText>
                 <RadioInput checked={false} fill="Primary" marginBottom={4}>
                   I&apos;ll explain &quot;why&quot; when I tell where to fix.

@@ -19,7 +19,7 @@ export const TeachingHelper = ({ feedback: { pattern, selected } }: Props) => {
   useEffect(() => {
     if (pattern) {
       if (pattern === 'Commanding') {
-        setFeedback('Instead of ordering fixes, why not help AlgoBo grasp "why?"')
+        setFeedback('Instead of directly telling it what to fix, why not help AlgoBo grasp "why?"')
         setOptions([
           'I\'ll explain "why" when I tell where to fix.',
           "I'll ask  why it's good to fix.",
