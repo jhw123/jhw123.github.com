@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "TeachYou is a tool that college-level students can use to learn programming by teaching a conversational AI tutee, AlgoBo. Student-initiated explanations and discussions with AlgoBo on real-world examples of algorithms can improve students' knowledge-building skills. AlgoBo's knowledge level and question-asking are highly configurable through our LLM pipeline, opening up opportunities for personalization at scale.",
     type: 'website',
-    images: [{ url: '/proejcts/teachyou_og.jpeg', width: 1200, height: 630 }],
+    images: [{ url: '/projects/teachyou_og.jpeg', width: 1200, height: 630 }],
   },
 }
 
