@@ -28,7 +28,7 @@ export const PUBLICATION = {
     authors: [PERSON.hyoungwook, PERSON.seonghee, PERSON.hyungyu, PERSON.juho],
     startDate: new Date(2023, 5),
     endDate: new Date(2024, 1),
-    conference: "CHI'24 (to appear)",
+    conference: "CHI'24",
     type: 'full paper',
     links: [
       ['Paper', 'https://dl.acm.org/doi/10.1145/3613904.3642349'],
@@ -112,9 +112,13 @@ export const PUBLICATION = {
       PERSON.juho,
     ],
     startDate: new Date(2023, 11),
+    endDate: new Date(2024, 5),
     type: 'poster',
     conference: "L@S'24 Work-in-Progress",
-    imagePath: '',
+    imagePath: '/projects/hamamath.png',
+    links: [
+      ['Paper', '/files/L@S2024 Using Large Language Models To Dianose Math Problem-solving Skills At Scale.pdf'],
+    ],
   }),
   ExGPTer: new Publication({
     title:
