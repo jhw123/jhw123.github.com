@@ -2,30 +2,30 @@
 import { ExternalLink } from '@/app/component/externalLink'
 import { ListItem } from '@/app/component/listItem'
 import { SvgIcon } from '@/app/component/svgIcon'
-import { MOBILE_BREAKPOINT } from '@/ui'
 import { CONTACTS } from '@/data/contact'
 import { EDUCATIONS } from '@/data/education'
 import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
+import { MOBILE_BREAKPOINT } from '@/ui'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
-import { capitalize } from 'lodash'
-import Image from 'next/image'
-import { Fragment, useState } from 'react'
-import { IconLink } from './component/iconLink'
-import { Time } from './component/time'
 import {
   BodyText,
-  CaptionText,
   DEFAULT_THEME,
   Divider,
   HeaderText,
+  LinearLayout,
   ResetStyle,
   SubHeaderText,
   SubSubHeaderText,
   TextButton,
 } from '@wookiejin/react-component'
+import { capitalize } from 'lodash'
+import Image from 'next/image'
+import { Fragment, useState } from 'react'
+import { IconLink } from './component/iconLink'
+import { Time } from './component/time'
 
 export default function Page() {
   const [newsLength, setNewsLength] = useState(5)
@@ -173,15 +173,6 @@ export default function Page() {
                       {title}
                     </SubSubHeaderText>
                   </h3>
-                  {awards?.length && (
-                    <CaptionText marginBottom={8}>
-                      {awards.map((award, i) => (
-                        <Award key={i}>
-                          <Image src={'/icons/medal.png'} width={16} height={16} alt={award} /> {award}
-                        </Award>
-                      ))}
-                    </CaptionText>
-                  )}
                   <BodyText color="Secondary" marginBottom={8}>
                     {authors.map(({ name }, i) => {
                       return (
@@ -191,7 +182,14 @@ export default function Page() {
                       )
                     })}
                   </BodyText>
-                  <BodyText marginBottom={8}>{conference}</BodyText>
+                  <LinearLayout justifyContent="flex-start" gap={8} marginBottom={8}>
+                    <BodyText>{conference}</BodyText>
+                    {awards?.map((award, i) => (
+                      <Award key={i}>
+                        <Image src={'/icons/medal.png'} width={16} height={16} alt={award} /> {award}
+                      </Award>
+                    ))}
+                  </LinearLayout>
                   {links?.length &&
                     links.map(([tag, link], i) => (
                       <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
