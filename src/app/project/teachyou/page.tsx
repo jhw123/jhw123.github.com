@@ -29,6 +29,24 @@ import { CONVERSATION2 } from './data/conversation2'
 import { CONVERSATION3 } from './data/conversation3'
 import { CONTACT } from '@/data/contact'
 import { ExternalLink } from '@/app/component/externalLink'
+import { BibTex } from '@/app/component/bibtex'
+
+const BIBTEX = `@inproceedings{jin2024teach,
+  author = {Jin, Hyoungwook and Lee, Seonghee and Shin, Hyungyu and Kim, Juho},
+  title = {Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education},
+  year = {2024},
+  isbn = {9798400703300},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3613904.3642349},
+  doi = {10.1145/3613904.3642349},
+  booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+  articleno = {652},
+  numpages = {28},
+  keywords = {AI and Education, Generative AI, Human-AI interaction, LLM agents},
+  location = {Honolulu, HI, USA},
+  series = {CHI '24}
+}`
 
 export default function Page() {
   return (
@@ -271,6 +289,16 @@ export default function Page() {
           </BodyText>
 
           <Sample />
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              BIBTEX
+            </SubHeaderText>
+          </h2>
+
+          <BibTex text={BIBTEX} />
 
           <Divider marginVertical={24} />
 
