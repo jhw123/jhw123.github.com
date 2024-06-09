@@ -21,7 +21,6 @@ import {
   SubSubHeaderText,
   TextButton,
 } from '@wookiejin/react-component'
-import { capitalize } from 'lodash'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import { IconLink } from './component/iconLink'
@@ -233,9 +232,7 @@ export default function Page() {
                       )
                     })}
                   </BodyText>
-                  <BodyText marginBottom={8}>
-                    {conference} {capitalize(type)}
-                  </BodyText>
+                  <BodyText marginBottom={8}>{conference}</BodyText>
                   {links?.length &&
                     links.map(([tag, link], i) => (
                       <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
