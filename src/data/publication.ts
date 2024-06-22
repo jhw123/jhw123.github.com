@@ -69,7 +69,10 @@ export const PUBLICATION = {
     endDate: new Date(2023, 9),
     conference: "CSCW'24",
     type: 'full paper',
-    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3637389']],
+    links: [
+      ['ACM DL', 'https://dl.acm.org/doi/10.1145/3637389'],
+      ['Paper', '/files/CSCW2024 ProcessGallery.pdf'],
+    ],
     imagePath: '/projects/processgallery.png',
   }),
   inActionFeedback: new Publication({
@@ -87,8 +90,13 @@ export const PUBLICATION = {
     ],
     startDate: new Date(2022, 6),
     endDate: new Date(2024, 5),
-    conference: "C&C'24 (to appear)",
+    conference: "C&C'24",
     type: 'full paper',
+    links: [
+      ['ACM DL', 'https://dl.acm.org/doi/10.1145/3635636.3656183'],
+      ['Paper', '/files/C&C2024 When to Give Feedback.pdf'],
+      ['Website', 'https://ejane.me/inactionfeedback.html'],
+    ],
     imagePath: '/projects/realtime-feedback.png',
   }),
   subgoalHierarchies: new Publication({
@@ -137,7 +145,10 @@ export const PUBLICATION = {
     startDate: new Date(2018, 9),
     endDate: new Date(2019, 5),
     type: 'poster',
-    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3330430.3333658']],
+    links: [
+      ['ACM DL', 'https://dl.acm.org/doi/10.1145/3330430.3333658'],
+      ['Paper', '/files/L@S2019 automaTA.pdf'],
+    ],
     conference: "L@S'19 Work-in-Progress",
     imagePath: '/projects/automata.png',
   }),
@@ -147,7 +158,10 @@ export const PUBLICATION = {
     startDate: new Date(2017, 11),
     endDate: new Date(2019, 4),
     type: 'poster',
-    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3290607.3312822']],
+    links: [
+      ['ACM DL', 'https://dl.acm.org/doi/10.1145/3290607.3312822'],
+      ['Paper', '/files/CHI2019 SolveDeep.pdf'],
+    ],
     conference: "CHI'19 Extended Abstract",
     imagePath: '/projects/solvedeep.png',
   }),
