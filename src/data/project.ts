@@ -18,11 +18,10 @@ class Project {
 
 export const PROJECTS = DataUtil.sortByTime([
   new Project({
-    title: 'Personalized Teachable Agents',
+    title: 'Simulated Students as Test Cases: Evaluating the Coverage of Pedagogical Agents with Mock Conversations',
     startDate: new Date(2023, 12),
-    imagePath: '/projects/personalized-teachable-agents.png',
-    description:
-      'Teachable agents are pedagogical AI agents that simulate a student role to help learners find gaps in their knowledge by teaching the agents. This project explores how the knowledge level of teachable agents affects the learning experience and aims to develop a technical pipeline for controlling and personalizing the knowledge level of teachable agents to individual learners.',
+    imagePath: '/projects/teachyou2.png',
+    description: `Large language models (LLMs) empowered educators to build pedagogical conversational agents (PCAs) for their students. As students have different knowledge levels and learning attitudes, educators have to test their PCAs against diverse cases, such as students showing disinterest or competence. Although educators can assess their PCAs through direct chats and test cases, those methods are either manually intensive for multiple iterations or limited to testing only single-turn interactions. We present \sysname{}, where educators can create virtual students and evaluate PCAs by observing mock conversations between PCAs and virtual students. `,
   }),
   new Project({
     title: 'Helping Students Abstract Subgoals from Code Examples',
