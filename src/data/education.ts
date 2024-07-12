@@ -53,14 +53,4 @@ export const EDUCATIONS = DataUtil.sortByTime([
     degree: 'BS in Computer Science',
     link: 'https://www.kaist.ac.kr/en/',
   }),
-  new Education({
-    school: 'Yew Chung International School of Beijing',
-    abbreviation: 'YCIS Bejing',
-    content: 'Valedictorian',
-    startDate: new Date(2011, 11),
-    endDate: new Date(2015, 5),
-    location: '🇨🇳 Beijing, China',
-    degree: 'IB Diploma',
-    link: 'https://www.ycis-bj.com/en',
-  }),
 ])
