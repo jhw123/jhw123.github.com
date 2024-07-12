@@ -11,25 +11,10 @@ interface Props {
   link: string
 }
 
+interface Education extends Props {}
 class Education {
-  content: string
-  startDate: Date
-  endDate: Date | undefined
-  school: string
-  location: string
-  abbreviation: string | undefined
-  degree: string
-  link: string
-
-  constructor({ content, startDate, endDate, school, location, abbreviation, degree, link }: Props) {
-    this.content = content
-    this.startDate = startDate
-    this.endDate = endDate
-    this.school = school
-    this.location = location
-    this.abbreviation = abbreviation
-    this.degree = degree
-    this.link = link
+  constructor(props: Props) {
+    Object.assign(this, props)
   }
 }
 

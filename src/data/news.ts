@@ -5,13 +5,10 @@ interface Props {
   startDate: Date
 }
 
+interface Post extends Props {}
 class Post {
-  content: string
-  startDate: Date
-
-  constructor({ content, startDate }: Props) {
-    this.content = content
-    this.startDate = startDate
+  constructor(props: Props) {
+    Object.assign(this, props)
   }
 }
 

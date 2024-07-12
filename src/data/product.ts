@@ -12,27 +12,10 @@ interface Props {
   link?: string
 }
 
+interface Product extends Props {}
 class Product {
-  name: string
-  subTitle: string | undefined
-  startDate: Date
-  endDate: Date | undefined
-  goal: string
-  solution: string
-  role: string
-  team: string
-  link: string | undefined
-
-  constructor({ name, subTitle, startDate, endDate, goal, solution, role, team, link }: Props) {
-    this.name = name
-    this.subTitle = subTitle
-    this.startDate = startDate
-    this.endDate = endDate
-    this.goal = goal
-    this.solution = solution
-    this.role = role
-    this.team = team
-    this.link = link
+  constructor(props: Props) {
+    Object.assign(this, props)
   }
 }
 

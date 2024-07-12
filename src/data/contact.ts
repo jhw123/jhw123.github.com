@@ -5,13 +5,10 @@ interface Props {
   link: string
 }
 
+interface Contact extends Props {}
 class Contact {
-  type: keyof typeof IconSvgs
-  link: string
-
-  constructor({ type, link }: Props) {
-    this.type = type
-    this.link = link
+  constructor(props: Props) {
+    Object.assign(this, props)
   }
 }
 
