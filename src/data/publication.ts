@@ -93,8 +93,7 @@ export const PUBLICATION = {
     conference: "C&C'24",
     type: 'full paper',
     links: [
-      ['ACM DL', 'https://dl.acm.org/doi/10.1145/3635636.3656183'],
-      ['Paper', '/files/C&C2024 When to Give Feedback.pdf'],
+      ['Paper', 'https://dl.acm.org/doi/10.1145/3635636.3656183'],
       ['Website', 'https://ejane.me/inactionfeedback.html'],
     ],
     imagePath: '/projects/realtime-feedback.png',
