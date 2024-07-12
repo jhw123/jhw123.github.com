@@ -108,6 +108,16 @@ export const PUBLICATION = {
     conference: "L@S'22 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),
+  kuizWorkshop: new Publication({
+    title: 'KUIZ: Encouraging Modular Learnersourcing of Multiple Choice Questions through LLM Interventions',
+    authors: [PERSON.hyoungwook, PERSON.haesookim, PERSON.nathanHaile, PERSON.soyeongMin, PERSON.juho],
+    startDate: new Date(2022, 11),
+    endDate: new Date(2024, 7),
+    type: 'workshop',
+    links: [['Paper', '/files/L@S2024 KUIZ.pdf']],
+    conference: "L@S'24 Workshop on Learnersourcing: Student-generated Content @ Scale",
+    imagePath: '/projects/kuiz.png',
+  }),
   hamamathWIP: new Publication({
     title: 'Using Large Language Models to Diagnose Math Problem-Solving Skills at Scale',
     authors: [

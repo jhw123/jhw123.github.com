@@ -113,6 +113,16 @@ export const PERSON = {
     name: 'Donghoon Lee',
     link: 'https://sites.google.com/view/hoonhan',
   }),
+  haesookim: new Person({
+    name: 'Haesoo Kim',
+    link: 'https://haesookim.info/',
+  }),
+  nathanHaile: new Person({
+    name: 'Nathan Mekuria Haile',
+  }),
+  soyeongMin: new Person({
+    name: 'Soyeong Min',
+  }),
 } as const
 
 export default Person
