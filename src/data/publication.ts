@@ -133,9 +133,7 @@ export const PUBLICATION = {
     type: 'poster',
     conference: "L@S'24 Work-in-Progress",
     imagePath: '/projects/hamamath.png',
-    links: [
-      ['Paper', '/files/L@S2024 Using Large Language Models To Dianose Math Problem-solving Skills At Scale.pdf'],
-    ],
+    links: [['Paper', 'https://dl.acm.org/doi/10.1145/3657604.3664697']],
   }),
   ExGPTer: new Publication({
     title:
