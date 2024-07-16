@@ -123,6 +123,30 @@ export const PERSON = {
   soyeongMin: new Person({
     name: 'Soyeong Min',
   }),
+  stevenMoore: new Person({
+    name: 'Steven Moore',
+  }),
+  anjaliSingh: new Person({
+    name: 'Anjali Singh',
+  }),
+  xinyiLu: new Person({
+    name: 'Xinyi Lu',
+  }),
+  paulDenny: new Person({
+    name: 'Paul Denny',
+  }),
+  christopherBrooks: new Person({
+    name: 'Christopher Brooks',
+  }),
+  hassanKhosravi: new Person({
+    name: 'Hassan Khosravi',
+  }),
+  xuWang: new Person({
+    name: 'Xu Wang',
+  }),
+  johnStamper: new Person({
+    name: 'John Stamper',
+  }),
 } as const
 
 export default Person

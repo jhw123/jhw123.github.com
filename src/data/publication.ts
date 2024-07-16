@@ -1,7 +1,7 @@
 import Person, { PERSON } from './person'
 import { DataUtil } from './utils'
 
-type PaperType = 'full paper' | 'poster' | 'workshop'
+type PaperType = 'full paper' | 'poster' | 'workshop' | 'host'
 
 interface Props {
   title: string
@@ -117,6 +117,30 @@ export const PUBLICATION = {
     links: [['Paper', '/files/L@S2024 KUIZ.pdf']],
     conference: "L@S'24 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/kuiz.png',
+  }),
+  learnersourcingWorkshop: new Publication({
+    title: 'Learnersourcing: Student-generated Content @ Scale: 2nd Annual Workshop',
+    authors: [
+      PERSON.stevenMoore,
+      PERSON.anjaliSingh,
+      PERSON.xinyiLu,
+      PERSON.hyoungwook,
+      PERSON.hassanKhosravi,
+      PERSON.paulDenny,
+      PERSON.christopherBrooks,
+      PERSON.xuWang,
+      PERSON.juho,
+      PERSON.johnStamper,
+    ],
+    startDate: new Date(2024, 3),
+    endDate: new Date(2024, 7),
+    type: 'host',
+    links: [
+      ['Paper', 'https://dl.acm.org/doi/10.1145/3657604.3664643'],
+      ['Website', 'https://sites.google.com/andrew.cmu.edu/learnersourcing'],
+    ],
+    conference: "L@S'24",
+    imagePath: '/projects/learnersourcing-workshop.png',
   }),
   hamamathWIP: new Publication({
     title: 'Using Large Language Models to Diagnose Math Problem-Solving Skills at Scale',

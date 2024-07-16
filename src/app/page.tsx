@@ -203,7 +203,51 @@ export default function Page() {
           <h2>
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
-          {PUBLICATIONS.filter(({ type, endDate }) => type !== 'full paper' && endDate).map(
+          {PUBLICATIONS.filter(({ type, endDate }) => (type === 'workshop' || type === 'poster') && endDate).map(
+            ({ title, conference, links, imagePath, authors, type }, i) => (
+              <Card key={i}>
+                <PublicationImageContainer>
+                  <Image
+                    fill
+                    src={imagePath}
+                    style={{
+                      objectFit: 'contain',
+                    }}
+                    alt={`The teaser image of ${title}`}
+                    sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
+                  />
+                </PublicationImageContainer>
+                <BodyText>
+                  <h3>
+                    <SubSubHeaderText color="Focus" marginBottom={8}>
+                      {title}
+                    </SubSubHeaderText>
+                  </h3>
+                  <BodyText color="Secondary" marginBottom={8}>
+                    {authors.map(({ name }, i) => {
+                      return (
+                        <Author key={i} isMe={name === 'Hyoungwook Jin'}>
+                          {name}
+                        </Author>
+                      )
+                    })}
+                  </BodyText>
+                  <BodyText marginBottom={8}>{conference}</BodyText>
+                  {links?.length &&
+                    links.map(([tag, link], i) => (
+                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                        {tag}
+                      </IconLink>
+                    ))}
+                </BodyText>
+              </Card>
+            )
+          )}
+
+          <h2>
+            <SubHeaderText marginBottom={16}>HOSTED WORKSHOP</SubHeaderText>
+          </h2>
+          {PUBLICATIONS.filter(({ type, endDate }) => type === 'host' && endDate).map(
             ({ title, conference, links, imagePath, authors, type }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
