@@ -104,7 +104,13 @@ export const PUBLICATION = {
     startDate: new Date(2021, 10),
     endDate: new Date(2022, 5),
     type: 'workshop',
-    links: [['Paper', '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf']],
+    links: [
+      ['Paper', '/files/L@S2022 Learnersourcing Subgoal Hierarchies of Code Examples.pdf'],
+      [
+        'Slides',
+        'https://docs.google.com/presentation/d/1QLr-jHf4tTPvcdJF4GBrO47A10fGkWSdBQVZb2ts2Sc/edit?usp=sharing',
+      ],
+    ],
     conference: "L@S'22 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/learnersourcing-subgoals.png',
   }),
@@ -114,7 +120,13 @@ export const PUBLICATION = {
     startDate: new Date(2022, 11),
     endDate: new Date(2024, 7),
     type: 'workshop',
-    links: [['Paper', '/files/L@S2024 KUIZ.pdf']],
+    links: [
+      ['Paper', '/files/L@S2024 KUIZ.pdf'],
+      [
+        'Slides',
+        'https://docs.google.com/presentation/d/1eG-Q3W8q_SVBAVDnQaQDXmBOasveJbHt-6_RSlN4hI4/edit?usp=sharing',
+      ],
+    ],
     conference: "L@S'24 Workshop on Learnersourcing: Student-generated Content @ Scale",
     imagePath: '/projects/kuiz.png',
   }),
