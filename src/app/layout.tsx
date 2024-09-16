@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { GoogleAnalytics } from './googleAnalytics'
 
-const inter = Inter({ subsets: ['latin'], weight: ['300', '600'] })
+const inter = Inter({ subsets: ['latin'], weight: ['300', '600'], display: 'swap', preload: true })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jhw123.github.io'),

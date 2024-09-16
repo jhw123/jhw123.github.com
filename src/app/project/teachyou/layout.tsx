@@ -1,8 +1,4 @@
-import { GoogleAnalytics } from '@/app/googleAnalytics'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'], weight: ['300', '600'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jhw123.github.io'),
@@ -20,11 +16,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <GoogleAnalytics />
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+export default function ProjectTeachYouLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
 }
