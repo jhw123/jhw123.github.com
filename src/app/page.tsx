@@ -25,6 +25,7 @@ import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
+import Markdown from 'react-markdown'
 
 export default function Page() {
   const [newsLength, setNewsLength] = useState(5)
@@ -100,7 +101,7 @@ export default function Page() {
             {POSTS.slice(0, newsLength).map(({ content, startDate }, i) => (
               <Fragment key={i}>
                 <Time date={startDate} formatStr="LLL, yyyy" />
-                {content}
+                <Markdown>{content}</Markdown>
               </Fragment>
             ))}
           </NewsRow>
