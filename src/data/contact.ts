@@ -17,9 +17,13 @@ export const CONTACT = {
     type: 'EMAIL',
     link: 'mailto:jinhw@kaist.ac.kr',
   }),
-  facebook: new Contact({
-    type: 'FACEBOOK',
-    link: 'https://www.facebook.com/jin.hyoungwook',
+  googleScholar: new Contact({
+    type: 'GOOGLE_SCHOLAR',
+    link: 'https://scholar.google.com/citations?user=vJK5xk4AAAAJ',
+  }),
+  twitter: new Contact({
+    type: 'TWITTER',
+    link: 'https://x.com/HyoungWookJin',
   }),
   github: new Contact({
     type: 'GITHUB',
