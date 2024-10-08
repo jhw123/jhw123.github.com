@@ -139,7 +139,7 @@ export default function Page() {
                     </BodyText>
                     {arxivLink && (
                       <IconLink href={arxivLink} title={title}>
-                        arXiv submission
+                        arXiv
                       </IconLink>
                     )}
                   </div>

@@ -16,18 +16,20 @@ class Project {
   }
 }
 
-export const PROJECTS = DataUtil.sortByTime([
-  new Project({
-    title: 'Simulated Students as Test Cases: Evaluating the Coverage of Pedagogical Agents with Mock Conversations',
+export const PROJECT = {
+  teachtune: new Project({
+    title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
     startDate: new Date(2023, 12),
-    imagePath: '/projects/teachyou2.png',
-    description: `Large language models (LLMs) empowered educators to build pedagogical conversational agents (PCAs) for their students. As students have different knowledge levels and learning attitudes, educators have to test their PCAs against diverse cases, such as students showing disinterest or competence. Although educators can assess their PCAs through direct chats and test cases, those methods are either manually intensive for multiple iterations or limited to testing only single-turn interactions. We present \sysname{}, where educators can create virtual students and evaluate PCAs by observing mock conversations between PCAs and virtual students. `,
+    imagePath: '/projects/teachtune.png',
+    description: `Large language models (LLMs) can empower educators to build pedagogical conversational agents (PCAs) customized for their students. As students have different prior knowledge and motivation levels, educators must evaluate the adaptivity of their PCAs to diverse students. Existing chatbot evaluation methods (e.g., direct chat and benchmarks) are either manually intensive for multiple iterations or limited to testing only single-turn interactions. We present TeachTune, where educators can create simulated students and review PCAs by observing automated chats between PCAs and simulated students.`,
+    arxivLink: 'https://arxiv.org/abs/2410.04078',
   }),
-  new Project({
+  stepwise: new Project({
     title: 'Helping Students Abstract Subgoals from Code Examples',
     startDate: new Date(2023, 11),
     imagePath: '/projects/subgoal-learning.png',
     description:
       "This project builds a system that supports programming novices to abstract generalizable subgoals from code examples. We elicit abstract thinking by asking learners to write down subgoals common to interrelated code examples. We use code-generation AI models to create feedback on the generalizability and abstraction level of learners' subgoals by testing if the models can generate code examples from learners' descriptions.",
   }),
-])
+} as const
+export const PROJECTS = DataUtil.sortByTime(Object.values(PROJECT))
