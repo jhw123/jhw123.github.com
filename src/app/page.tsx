@@ -41,6 +41,10 @@ export default function Page() {
               background-color: #333333;
             }
           }
+
+          strong {
+            font-weight: bold;
+          }
         `}
       />
       <main>
@@ -73,9 +77,10 @@ export default function Page() {
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
               </BodyText>
               <BodyText marginBottom={8}>
-                I am interested in supporting personalized interactive learning at scale. I build scalable learning
-                systems, technical pipelines, and user interfaces that leverage AI technologies to simulate, augment,
-                and substitute different stakeholders in learning (e.g., peer learners and instructors).
+                I envision <strong>Malleable Learning Environments</strong> where learners and instructors can customize
+                existing or even create new learning content, paths, and tools beyond given resources and classes for
+                their personal needs. I research human-AI interaction, computer-supported cooperative work, and learning
+                at scale to realize my vision.
               </BodyText>
 
               <LinkSection>
@@ -115,7 +120,7 @@ export default function Page() {
                 <SubHeaderText marginBottom={16}>CURRENT PROJECT{PROJECTS.length > 1 && 'S'}</SubHeaderText>
               </h2>
 
-              {PROJECTS.map(({ title, imagePath, description, arxivLink }, i) => (
+              {PROJECTS.map(({ title, imagePath, description, links }, i) => (
                 <Card key={i}>
                   <PublicationImageContainer>
                     <Image
@@ -137,11 +142,12 @@ export default function Page() {
                     <BodyText color="Secondary" marginBottom={8}>
                       {description}
                     </BodyText>
-                    {arxivLink && (
-                      <IconLink href={arxivLink} title={title}>
-                        arXiv
-                      </IconLink>
-                    )}
+                    {0 < links?.length &&
+                      links.map(([tag, link], i) => (
+                        <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
+                          {tag}
+                        </IconLink>
+                      ))}
                   </div>
                 </Card>
               ))}
