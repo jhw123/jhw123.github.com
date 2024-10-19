@@ -48,6 +48,8 @@ const BIBTEX = `@inproceedings{jin2024teach,
   series = {CHI '24}
 }`
 
+const project = 'teachyou'
+
 export default function Page() {
   return (
     <ThemeProvider theme={DEFAULT_THEME}>
@@ -79,21 +81,20 @@ export default function Page() {
                 alt="tutor icon"
                 style={{ marginRight: 8 }}
               />
-              Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education
+              {PUBLICATION[project].title}
             </HeaderText>
           </h1>
 
           <h2>
             <Authors>
-              <Profile person={PERSON.hyoungwook} />
-              <Profile person={PERSON.seonghee} />
-              <Profile person={PERSON.hyungyu} />
-              <Profile person={PERSON.juho} />
+              {PUBLICATION[project].authors.map((person, i) => (
+                <Profile key={i} person={person} />
+              ))}
             </Authors>
           </h2>
 
           <LinkButtons>
-            {PUBLICATION.teachyou.links
+            {PUBLICATION[project].links
               ?.filter(([label]) => label !== 'Website')
               .map(([label, href], i) => (
                 <IconLink key={i} href={href} title={`TeachYou ${label}`} marginHorizontal={4} marginBottom={8}>
