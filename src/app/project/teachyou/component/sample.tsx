@@ -1,6 +1,6 @@
 'use client'
 import { ChatBox } from '@/app/project/teachyou/component/chatbox'
-import { FillButton, LinearLayout, OutlineButton, View } from '@wookiejin/react-component'
+import { LinearLayout, OutlineButton, View } from '@wookiejin/react-component'
 import { useState } from 'react'
 import { SAMPLE1, SAMPLE_FEEDBACK1 } from '../data/sample1'
 import { SAMPLE2, SAMPLE_FEEDBACK2 } from '../data/sample2'

@@ -16,6 +16,7 @@ import {
 } from '@wookiejin/react-component'
 import Image from 'next/image'
 import { Profile } from '../../component/profile'
+import { Examples } from './component/examples'
 
 const BIBTEX = `@inproceedings{jin2024codetree,
   author = {Jin, Hyoungwook and Kim, Juho},
@@ -123,6 +124,52 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
+              LEARNERSOURCING PIPELINE
+            </SubHeaderText>
+          </h2>
+
+          <BodyText marginBottom={16}>
+            CodeTree consists of two subgoal learning activities: Generation and Selection. In the{' '}
+            <strong>Generation</strong> activity, learners self-explain subgoals of code examples by grouping code lines
+            into functionally meaningful units and describing each unit. In the <strong>Selection</strong> activity,
+            learners solve multiple choice questions (MCQs) that ask for selecting the best label for each subgoal.
+            After populating enough subgoals from learners, CodeTree algorithmically aggregates the subgoals into
+            comprehensive subgoal hierarchies. Learner-generated subgoals from the <strong>Generation</strong> activity
+            are the seed for our algorithm to generate initial subgoal hierarchies. The generated hierarchies are fed to
+            the <strong>Selection</strong> activity to use learners&apos; votes to verify and filter subgoal labels.
+          </BodyText>
+
+          <ImageContainer>
+            <Image
+              src={'/images/codetree/pipeline.png'}
+              fill
+              style={{
+                objectFit: 'contain',
+              }}
+              alt="CodeTree's learnersourcing pipeline"
+            />
+          </ImageContainer>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              LEARNERSOURCED SUBGOAL HIERARCHIES
+            </SubHeaderText>
+          </h2>
+
+          <BodyText marginBottom={16}>
+            Through a user study with 45 Python learners, we collected subgoal hierarchies for the following three code
+            examples. Hover over the colored bars to see the subgoal label and expert-assessed quality for each code
+            group. Note that the subgoal labels are machine-translated from Korean to English.
+          </BodyText>
+
+          <Examples />
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
               BIBTEX
             </SubHeaderText>
           </h2>
@@ -159,13 +206,6 @@ const Content = styled.div`
   margin: 0 auto;
 `
 
-const Authors = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  gap: 16px;
-`
-
 const LinkButtons = styled.div`
   justify-content: center;
   width: 100%;
@@ -173,6 +213,8 @@ const LinkButtons = styled.div`
   text-align: center;
 `
 
-const Centered = styled.div`
-  text-align: center;
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: calc(min(800px, 100vw) * 0.4);
 `

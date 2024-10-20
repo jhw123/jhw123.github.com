@@ -1,0 +1,20 @@
+export const QUALITY_2 = [
+  { id: '0', group: 'Meaningful', label: 'Problem-specific' },
+  { id: '1', group: 'Core & Meaningful', label: 'Problem-independent' },
+  { id: '2', group: 'Core & Meaningful', label: 'Problem-specific' },
+  { id: '3', group: 'Core & Meaningful', label: 'Problem-specific' },
+  { id: '4', group: 'Core & Meaningful', label: 'Problem-specific' },
+  { id: '5', group: 'Core & Meaningful', label: 'Problem-independent' },
+  { id: '6', group: 'Meaningful', label: 'Problem-independent' },
+  { id: '7', group: 'Meaningful', label: 'Incorrect' },
+  { id: '8', group: 'Incorrect', label: 'Problem-specific' },
+  { id: '9', group: 'Meaningful', label: 'Problem-independent' },
+  { id: '10', group: 'Core & Meaningful', label: 'Incorrect' },
+  {
+    id: '11',
+    group: 'Meaningful',
+    label: 'Incorrect',
+  },
+  { id: '12', group: 'Meaningful', label: 'Problem-specific' },
+  { id: '13', group: 'Meaningful', label: 'Problem-independent' },
+]
