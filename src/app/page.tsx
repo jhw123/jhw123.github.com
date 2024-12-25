@@ -77,10 +77,13 @@ export default function Page() {
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
               </BodyText>
               <BodyText marginBottom={8}>
-                I envision <strong>End-learner Programming</strong> in which learners and instructors can customize
-                existing or even create new learning content, paths, and tools beyond given resources and classes for
-                their personal needs. I research human-AI interaction, computer-supported cooperative work, and learning
-                at scale to realize my vision.
+                I envision{' '}
+                <ExternalLink href="https://docs.google.com/presentation/d/1ceeAvr6LtJf5zyLr69K3CoH3PYKuXd0wWbwgVQWBXgw/edit?usp=sharing">
+                  End-learner Programming
+                </ExternalLink>{' '}
+                in which learners and instructors can customize existing or even create new learning content, paths, and
+                tools beyond given resources and classes for their personal needs. I research human-AI interaction,
+                computer-supported cooperative work, and learning at scale to realize my vision.
               </BodyText>
 
               <LinkSection>
