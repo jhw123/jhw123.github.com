@@ -25,7 +25,7 @@ export const PROJECT = {
     title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
     startDate: new Date(2023, 12),
     imagePath: '/projects/teachtune.png',
-    description: `Large language models (LLMs) can empower educators to build pedagogical conversational agents (PCAs) customized for their students. As students have different prior knowledge and motivation levels, educators must evaluate the adaptivity of their PCAs to diverse students. Existing chatbot evaluation methods (e.g., direct chat and benchmarks) are either manually intensive for multiple iterations or limited to testing only single-turn interactions. We present TeachTune, where educators can create simulated students and review PCAs by observing automated chats between PCAs and simulated students.`,
+    description: `Large language models (LLMs) can empower teachers to build pedagogical conversational agents (PCAs) customized for their students. As students have different prior knowledge and motivation levels, teachers must evaluate the adaptivity of their PCAs to diverse students. Existing chatbot evaluation methods (e.g., direct chat and benchmarks) are either manually intensive for multiple iterations or limited to testing only single-turn interactions. We present TeachTune, where teachers can create simulated students and review PCAs by observing automated chats between PCAs and simulated students.`,
     link: {
       Paper: 'https://arxiv.org/abs/2410.04078',
     },
