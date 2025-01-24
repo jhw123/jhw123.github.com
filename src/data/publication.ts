@@ -27,6 +27,18 @@ class Publication {
 }
 
 export const PUBLICATION = {
+  teachtune: new Publication({
+    title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
+    authors: [PERSON.hyoungwook, PERSON.minjuYoo, PERSON.jeongeonPark, PERSON.yokyungLee, PERSON.xuWang, PERSON.juho],
+    startDate: new Date(2023, 12),
+    endDate: new Date(2025, 1),
+    imagePath: '/projects/teachtune.png',
+    conference: "CHI'25 (to appear)",
+    type: 'full paper',
+    link: {
+      Paper: 'https://arxiv.org/abs/2410.04078',
+    },
+  }),
   teachyou: new Publication({
     title: 'Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education',
     authors: [PERSON.hyoungwook, PERSON.seonghee, PERSON.hyungyu, PERSON.juho],
@@ -183,7 +195,7 @@ export const PUBLICATION = {
   }),
   automaTA: new Publication({
     title: 'automaTA: Human-Machine Interaction for Answering Context-Specific Questions',
-    authors: [PERSON.changyoon, PERSON.donghoon, PERSON.hyoungwook, PERSON.aliceoh],
+    authors: [PERSON.hyoungwook, PERSON.changyoon, PERSON.donghoon, PERSON.aliceoh],
     startDate: new Date(2018, 9),
     endDate: new Date(2019, 5),
     type: 'poster',

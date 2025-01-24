@@ -147,6 +147,22 @@ export const PERSON = {
   johnStamper: new Person({
     name: 'John Stamper',
   }),
+  jeongeonPark: new Person({
+    name: 'Jeongeon Park',
+    profileImage: '/people/jeongeonpark.jpg',
+    institution: 'UCSD',
+    link: 'https://jeongeonpark.com/',
+  }),
+  minjuYoo: new Person({
+    name: 'Minju Yoo',
+    profileImage: '/people/minjuyoo.jpg',
+    institution: 'Ewha Womans University',
+  }),
+  yokyungLee: new Person({
+    name: 'Yokyung Lee',
+    profileImage: '/people/yokyunglee.png',
+    institution: 'KAIST',
+  }),
 } as const
 
 export default Person
