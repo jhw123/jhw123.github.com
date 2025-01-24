@@ -16,6 +16,14 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: `✈️ I will visit UC San Diego on Feb 5-7th.`,
+    startDate: new Date('2025-01-24'),
+  }),
+  new Post({
+    content: `🎉 [TeachTune](${PUBLICATION.teachtune.link?.['Paper']}) is accepted to CHI2025!`,
+    startDate: new Date('2025-01-17'),
+  }),
+  new Post({
     content: `🇺🇸 I will visit Atlanta to present a [WIP paper at L@S](${PUBLICATION.hamamathWIP.link?.['Paper']}).`,
     startDate: new Date('2024-06-10'),
   }),
@@ -28,7 +36,7 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2024-05-02'),
   }),
   new Post({
-    content: '🏆 TeachYou received an honorable mention award at CHI2024!',
+    content: `🏆 [TeachYou](${PUBLICATION.teachyou.link?.['Paper']}) received an honorable mention award at CHI2024!`,
     startDate: new Date('2024-04-27'),
   }),
   new Post({
@@ -52,11 +60,11 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2022-09-19'),
   }),
   new Post({
-    content: '🧳 Started summer internship at [UCSD Design Lab](https://designlab.ucsd.edu).',
+    content: `🧳 Started summer internship at [UCSD Design Lab](https://designlab.ucsd.edu).`,
     startDate: new Date('2022-06-27'),
   }),
   new Post({
-    content: '🔥 Solved 500 [LeetCode problems](${CONTACT.leetcode.link})!',
+    content: `🔥 Solved 500 [LeetCode problems](${CONTACT.leetcode.link})!`,
     startDate: new Date('2022-02-23'),
   }),
   new Post({
