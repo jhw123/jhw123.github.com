@@ -1,8 +1,10 @@
 'use client'
+import { BibTex } from '@/app/component/bibtex'
+import { ExternalLink } from '@/app/component/externalLink'
 import { IconLink } from '@/app/component/iconLink'
 import { Video } from '@/app/component/video'
 import { ChatBox } from '@/app/project/teachyou/component/chatbox'
-import { PERSON } from '@/data/person'
+import { CONTACT } from '@/data/contact'
 import { PUBLICATION } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
@@ -27,9 +29,6 @@ import { Sample } from './component/sample'
 import { CONVERSATION1 } from './data/conversation1'
 import { CONVERSATION2 } from './data/conversation2'
 import { CONVERSATION3 } from './data/conversation3'
-import { CONTACT } from '@/data/contact'
-import { ExternalLink } from '@/app/component/externalLink'
-import { BibTex } from '@/app/component/bibtex'
 
 const BIBTEX = `@inproceedings{jin2024teach,
   author = {Jin, Hyoungwook and Lee, Seonghee and Shin, Hyungyu and Kim, Juho},

@@ -193,6 +193,9 @@ export const PERSON = {
   xuWang: new Person({
     firstName: 'Xu',
     lastName: 'Wang',
+    profileImage: '/people/xuwang.png',
+    institution: 'University of Michigan',
+    link: 'https://web.eecs.umich.edu/~xwanghci/',
   }),
   johnStamper: new Person({
     firstName: 'John',

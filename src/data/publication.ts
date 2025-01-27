@@ -37,6 +37,7 @@ export const PUBLICATION = {
     type: 'full paper',
     link: {
       Paper: 'https://arxiv.org/abs/2410.04078',
+      Website: '/project/teachtune',
     },
   }),
   teachyou: new Publication({
