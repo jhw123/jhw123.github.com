@@ -303,20 +303,24 @@ export default function Page() {
           <Divider marginVertical={24} />
 
           <LinearLayout justifyContent="center" gap={16}>
-            <Image
-              src="/images/kaist_logo.png"
-              width={813 / 6}
-              height={224 / 6}
-              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
-              alt="KAIST logo"
-            />
-            <Image
-              src="/images/kixlab_logo.png"
-              width={813 / 7}
-              height={224 / 7}
-              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
-              alt="KIXLAB logo"
-            />
+            <ExternalLink href="https://cs.kaist.ac.kr">
+              <Image
+                src="/images/kaist_logo.png"
+                width={813 / 6}
+                height={224 / 6}
+                style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+                alt="KAIST logo"
+              />
+            </ExternalLink>
+            <ExternalLink href="https://kixlab.org/">
+              <Image
+                src="/images/kixlab_logo.png"
+                width={813 / 7}
+                height={224 / 7}
+                style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+                alt="KIXLAB logo"
+              />
+            </ExternalLink>
           </LinearLayout>
         </Content>
       </main>
