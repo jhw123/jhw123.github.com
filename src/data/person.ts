@@ -205,7 +205,7 @@ export const PERSON = {
     firstName: 'Jeongeon',
     lastName: 'Park',
     profileImage: '/people/jeongeonpark.jpg',
-    institution: 'UCSD',
+    institution: 'UC San Diego',
     link: 'https://jeongeonpark.com/',
   }),
   minjuYoo: new Person({
@@ -213,6 +213,7 @@ export const PERSON = {
     lastName: 'Yoo',
     profileImage: '/people/minjuyoo.jpg',
     institution: 'Ewha Womans University',
+    link: 'https://minjuu1.github.io/',
   }),
   yokyungLee: new Person({
     firstName: 'Yokyung',
