@@ -30,7 +30,7 @@ import { CONVERSATION1 } from './data/conversation1'
 import { CONVERSATION2 } from './data/conversation2'
 import { CONVERSATION3 } from './data/conversation3'
 
-const BIBTEX = `@inproceedings{jin2024teach,
+const BIBTEX = `@inproceedings{jin2024teachyou,
   author = {Jin, Hyoungwook and Lee, Seonghee and Shin, Hyungyu and Kim, Juho},
   title = {Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education},
   year = {2024},
