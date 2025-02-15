@@ -25,6 +25,7 @@ import { Profile } from './component/profile'
 import { Profiles } from './component/profiles'
 import { CHATBOT } from './data/chatbot'
 import { ExternalLink } from '@/app/component/externalLink'
+import { BibTex } from '@/app/component/bibtex'
 
 const THEME = {
   ...DEFAULT_LIGHT_THEME,
@@ -37,6 +38,23 @@ const THEME = {
     `,
   },
 }
+
+const BIBTEX = `@inproceedings{jin2025teachtune,
+  author = {Jin, Hyoungwook and Yoo, Minju and Park, Jeongeon and Lee, Yokyung and Wang, Xu and Kim, Juho},
+  title = {TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students},
+  year = {2025},
+  isbn = {9798400713941},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3706598.3714054},
+  doi = {10.1145/3706598.3714054},
+  booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+  articleno = {XX},
+  numpages = {28},
+  keywords = {LLM-assisted evaluation, Simulated students, Pedagogical conversational agents},
+  location = {Yokohama, Japan},
+  series = {CHI '25}
+}`
 
 export default function Page() {
   return (
@@ -186,6 +204,16 @@ export default function Page() {
             feedback from educators and researchers in the field. Since we can support the cost of running our software
             (e.g., OpenAI API, server), do not hesitate to contact us and share your circumstances and needs!
           </BodyText>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={8}>
+              BIBTEX
+            </SubHeaderText>
+          </h2>
+
+          <BibTex text={BIBTEX} />
 
           <Divider marginVertical={24} />
 
