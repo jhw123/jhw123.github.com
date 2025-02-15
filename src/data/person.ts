@@ -1,5 +1,7 @@
 interface Props {
-  name: string
+  firstName: string
+  middleName?: string
+  lastName: string
   institution?: string
   link?: string
   profileImage?: string
@@ -10,156 +12,208 @@ class Person {
   constructor(props: Props) {
     Object.assign(this, props)
   }
+
+  get name() {
+    if (this.middleName) {
+      return `${this.firstName} ${this.middleName} ${this.lastName}`
+    } else {
+      return `${this.firstName} ${this.lastName}`
+    }
+  }
 }
 
 export const PERSON = {
   hyoungwook: new Person({
-    name: 'Hyoungwook Jin',
+    firstName: 'Hyoungwook',
+    lastName: 'Jin',
     institution: 'KAIST',
     profileImage: '/hyoungwook.jpg',
     link: 'https://jhw123.github.io',
   }),
   juho: new Person({
-    name: 'Juho Kim',
+    firstName: 'Juho',
+    lastName: 'Kim',
     institution: 'KAIST',
     profileImage: '/people/juho.jpg',
     link: 'https://juhokim.com',
   }),
   hyungyu: new Person({
-    name: 'Hyungyu Shin',
+    firstName: 'Hyungyu',
+    lastName: 'Shin',
     institution: 'KAIST',
     profileImage: '/people/hyungyu.jpg',
     link: 'https://hyungyu.com',
   }),
   seonghee: new Person({
-    name: 'Seonghee Lee',
+    firstName: 'Seonghee',
+    lastName: 'Lee',
     institution: 'Stanford',
     profileImage: '/people/seonghee.png',
     link: 'https://shljessie.github.io',
   }),
   hyungkwonko: new Person({
-    name: 'Hyungkwon Ko',
+    firstName: 'Hyungkwon',
+    lastName: 'Ko',
     link: 'https://hyungkwonko.info',
   }),
   kihoonson: new Person({
-    name: 'Kihoon Son',
+    firstName: 'Kihoon',
+    lastName: 'Son',
   }),
   yoonseochoi: new Person({
-    name: 'Yoonseo Choi',
+    firstName: 'Yoonseo',
+    lastName: 'Choi',
   }),
   yoonsukim: new Person({
-    name: 'Yoonsu Kim',
+    firstName: 'Yoonsu',
+    lastName: 'Kim',
   }),
   yeonsupark: new Person({
-    name: 'Yeonsu Park',
+    firstName: 'Yeon Su',
+    lastName: 'Park',
   }),
   bekzattilekbay: new Person({
-    name: 'Bekzat Tilekbay',
+    firstName: 'Bekzat',
+    lastName: 'Tilekbay',
   }),
   jinhoson: new Person({
-    name: 'Jinho Son',
+    firstName: 'Jinho',
+    lastName: 'Son',
   }),
   anthonychen: new Person({
-    name: 'Xiang Anthony Chen',
+    firstName: 'Xiang',
+    middleName: 'Anthony',
+    lastName: 'Chen',
   }),
   janee: new Person({
-    name: 'Jane L E',
+    firstName: 'Jane',
+    middleName: 'L',
+    lastName: 'E',
     institution: 'UCSD',
     link: 'https://ejane.me',
   }),
   graceyen: new Person({
-    name: 'Grace Yu-Chun Yen',
+    firstName: 'Grace',
+    middleName: 'Yu-Chun',
+    lastName: 'Yen',
     institution: 'National Yang-Ming Chiao-Tung University',
     link: 'https://gracetfg2.github.io',
   }),
   stevendow: new Person({
-    name: 'Steven P. Dow',
+    firstName: 'Steven',
+    middleName: 'P.',
+    lastName: 'Dow',
     institution: 'UCSD',
     profileImage: '/people/stevendow.jpg',
     link: 'https://spdow.ucsd.edu',
   }),
   haijunxia: new Person({
-    name: 'Haijun Xia',
+    firstName: 'Haijun',
+    lastName: 'Xia',
     institution: 'UCSD',
     profileImage: '/people/haijunxia.jpg',
     link: 'https://creativity.ucsd.edu/haijunxia',
   }),
   mengyichen: new Person({
-    name: 'Mengyi Chen',
+    firstName: 'Mengyi',
+    lastName: 'Chen',
   }),
   mingyi: new Person({
-    name: 'Mingyi Li',
+    firstName: 'Mingyi',
+    lastName: 'Li',
   }),
   gracelin: new Person({
-    name: 'Grace Lin',
+    firstName: 'Grace',
+    lastName: 'Lin',
   }),
   isabellepan: new Person({
-    name: 'Isabelle Yan Pan',
+    firstName: 'Isabelle',
+    middleName: 'Yan',
+    lastName: 'Pan',
   }),
   minsuk: new Person({
-    name: 'Minsuk Chang',
+    firstName: 'Minsuk',
+    lastName: 'Chang',
     institution: 'Google Research',
     link: 'https://minsukchang.com',
   }),
   aliceoh: new Person({
-    name: 'Alice Oh',
+    firstName: 'Alice',
+    lastName: 'Oh',
     institution: 'KAIST',
     link: 'https://aliceoh9.github.io',
   }),
   changyoon: new Person({
-    name: 'Changyoon Lee',
+    firstName: 'Changyoon',
+    lastName: 'Lee',
   }),
   donghoon: new Person({
-    name: 'Donghoon Lee',
+    firstName: 'Donghoon',
+    lastName: 'Han',
     link: 'https://sites.google.com/view/hoonhan',
   }),
   haesookim: new Person({
-    name: 'Haesoo Kim',
+    firstName: 'Haesoo',
+    lastName: 'Kim',
     link: 'https://haesookim.info/',
   }),
   nathanHaile: new Person({
-    name: 'Nathan Mekuria Haile',
+    firstName: 'Nathan',
+    middleName: 'Mekuria',
+    lastName: 'Haile',
   }),
   soyeongMin: new Person({
-    name: 'Soyeong Min',
+    firstName: 'Soyeong',
+    lastName: 'Min',
   }),
   stevenMoore: new Person({
-    name: 'Steven Moore',
+    firstName: 'Steven',
+    lastName: 'Moore',
   }),
   anjaliSingh: new Person({
-    name: 'Anjali Singh',
+    firstName: 'Anjali',
+    lastName: 'Singh',
   }),
   xinyiLu: new Person({
-    name: 'Xinyi Lu',
+    firstName: 'Xinyi',
+    lastName: 'Lu',
   }),
   paulDenny: new Person({
-    name: 'Paul Denny',
+    firstName: 'Paul',
+    lastName: 'Denny',
   }),
   christopherBrooks: new Person({
-    name: 'Christopher Brooks',
+    firstName: 'Christopher',
+    lastName: 'Brooks',
   }),
   hassanKhosravi: new Person({
-    name: 'Hassan Khosravi',
+    firstName: 'Hassan',
+    lastName: 'Khosravi',
   }),
   xuWang: new Person({
-    name: 'Xu Wang',
+    firstName: 'Xu',
+    lastName: 'Wang',
   }),
   johnStamper: new Person({
-    name: 'John Stamper',
+    firstName: 'John',
+    lastName: 'Stamper',
   }),
   jeongeonPark: new Person({
-    name: 'Jeongeon Park',
+    firstName: 'Jeongeon',
+    lastName: 'Park',
     profileImage: '/people/jeongeonpark.jpg',
     institution: 'UCSD',
     link: 'https://jeongeonpark.com/',
   }),
   minjuYoo: new Person({
-    name: 'Minju Yoo',
+    firstName: 'Minju',
+    lastName: 'Yoo',
     profileImage: '/people/minjuyoo.jpg',
     institution: 'Ewha Womans University',
   }),
   yokyungLee: new Person({
-    name: 'Yokyung Lee',
+    firstName: 'Yokyung',
+    lastName: 'Lee',
     profileImage: '/people/yokyunglee.png',
     institution: 'KAIST',
   }),
