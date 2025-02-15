@@ -26,6 +26,7 @@ import { Profiles } from './component/profiles'
 import { CHATBOT } from './data/chatbot'
 import { ExternalLink } from '@/app/component/externalLink'
 import { BibTex } from '@/app/component/bibtex'
+import { Video } from '@/app/component/video'
 
 const THEME = {
   ...DEFAULT_LIGHT_THEME,
@@ -139,6 +140,16 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
+              PAPER PRESENTATION
+            </SubHeaderText>
+          </h2>
+
+          <Video src={'https://www.youtube-nocookie.com/embed/55ZynUaK_Bg?si=8DkFRptfcb7iSfP-'} />
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={16}>
               KEY INTERFACES
             </SubHeaderText>
           </h2>
@@ -148,11 +159,11 @@ export default function Page() {
           </h3>
 
           <BodyText marginBottom={16}>
-            Teachers can build PCAs with a graph-like state machine representation. The state machine of a PCA starts
-            with a root node that consists of the PCA&apos;s start message to students and the instruction it initially
-            follows. The state changes to one of the connected nodes depending on students&apos; responses. When the
-            state changes to a new node, PCA receives a new instruction described in the node and behave accordingly.
-            The below is an example of a PCA created by a teacher in our user study.
+            Teachers use a node-based interface to create the state machine of a PCA. The state machine starts with a
+            root node that consists of the PCA&apos;s start message and the behavioral instruction. The state changes to
+            one of the connected nodes depending on a student&apos;s response. When the state changes, PCA receives a
+            new instruction described in the node and behave accordingly. Below is an example of a PCA&apos;s state
+            machine diagram by a teacher in our user study.
           </BodyText>
 
           <Modal>
@@ -166,11 +177,10 @@ export default function Page() {
           </h3>
 
           <BodyText marginBottom={16}>
-            Teachers should first define what types of students they review against. TeachTune helps teachers
-            externalize and develop their evaluation space with templated student profiles. Our interface provides
-            knowledge components and student trait inventories to help teachers recognize possible combinations and
-            granularities of different knowledge levels and traits and organize them effectively. Below are the student
-            profiles created by a teacher in our user study.
+            Teachers can organize the types of students they review. TeachTune helps teachers externalize and develop
+            their PCA evaluation space with templated student profiles. Our interface provides knowledge components and
+            student trait inventories to help teachers explore different combinations of different knowledge levels and
+            traits effectively. Below are the student profiles created by a teacher in our user study.
           </BodyText>
 
           <Profiles marginBottom={24} />
@@ -180,11 +190,11 @@ export default function Page() {
           </h3>
 
           <BodyText marginBottom={16}>
-            TeachTune generates simulated chats between pedagogical agents and created student profiles. Simulated
-            students acquire knowledge throughout the chats, actively ask questions, show indifference, or exhibit
-            passive learning attitudes according to their traits. Teachers can use the chats to quickly review different
-            PCA designs without manually typing messages. When teachers find corner cases that their PCA design did not
-            cover, they can add a node that describes the case and appropriate instruction.
+            TeachTune generates mock chats between a PCA and simulated students. Simulated students acquire knowledge
+            throughout the chats, actively ask questions, show indifference, or exhibit passive learning attitudes
+            according to their profiles. Teachers can use the chats to quickly review different PCA designs without
+            manually typing messages. Teachers can iteratively refine their PCA by identifying and re-evaluating corner
+            cases.
           </BodyText>
 
           <Conversations />
@@ -193,15 +203,15 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
-              🚀 EDUCATORS AND RESEARCHERS
+              🚀 TEACHERS AND EDUCATORS
             </SubHeaderText>
           </h2>
 
           <BodyText color="Secondary">
-            Our team is looking for deployment partners. If you are an educator or researcher interested in using
+            Our team is looking for deployment partners. If you are a teacher or an educator interested in using
             TeachTune in classes, please get in touch with <a href={CONTACT.email.link}>the authors</a>. We would like
             to conduct longitudinal studies to confirm the effectiveness of TeachTune in real-world settings and receive
-            feedback from educators and researchers in the field. Since we can support the cost of running our software
+            feedback from teachers and educators in the field. Since we can support the cost of running our software
             (e.g., OpenAI API, server), do not hesitate to contact us and share your circumstances and needs!
           </BodyText>
 
