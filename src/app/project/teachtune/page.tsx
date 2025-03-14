@@ -110,7 +110,9 @@ export default function Page() {
           </LinkButtons>
 
           <Centered>
-            <Banner marginTop={12}>🚀 If you want to try out TeachTune, please contact jinhw@kaist.ac.kr! 🚀</Banner>
+            <Banner marginTop={12}>
+              🚀 If you want to try out TeachTune, please contact {CONTACT.email.value}! 🚀
+            </Banner>
           </Centered>
 
           <Divider marginVertical={24} />

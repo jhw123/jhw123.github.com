@@ -104,7 +104,7 @@ export default function Page() {
 
           <Centered>
             <Banner marginTop={12}>
-              🚀 If you want to try out TeachYou in your class, please contact jinhw@kaist.ac.kr! 🚀
+              🚀 If you want to try out TeachYou in your class, please contact {CONTACT.email.value}! 🚀
             </Banner>
           </Centered>
 
