@@ -27,8 +27,10 @@ import { IconLink } from './component/iconLink'
 import { Time } from './component/time'
 import Markdown from 'react-markdown'
 
+const NEWS_LENGTH = 5
+
 export default function Page() {
-  const [newsLength, setNewsLength] = useState(5)
+  const [newsLength, setNewsLength] = useState(NEWS_LENGTH)
 
   return (
     <ThemeProvider theme={DEFAULT_THEME}>
@@ -113,14 +115,18 @@ export default function Page() {
               </Fragment>
             ))}
           </NewsRow>
-          {newsLength < POSTS.length && <TextButton onClick={() => setNewsLength(POSTS.length)}>Show more</TextButton>}
+          {newsLength < POSTS.length && (
+            <TextButton onClick={() => setNewsLength(l => Math.min(l + NEWS_LENGTH, POSTS.length))}>
+              Show more
+            </TextButton>
+          )}
 
           <Divider fill="Secondary" marginVertical={32} />
 
           {0 < PROJECTS.length && (
             <>
               <h2>
-                <SubHeaderText marginBottom={16}>CURRENT PROJECT{PROJECTS.length > 1 && 'S'}</SubHeaderText>
+                <SubHeaderText marginBottom={16}>ONGOING PROJECT{PROJECTS.length > 1 && 'S'}</SubHeaderText>
               </h2>
 
               {PROJECTS.map(({ title, imagePath, description, links }, i) => (
