@@ -1,8 +1,10 @@
 'use client'
+import { BibTex } from '@/app/component/bibtex'
+import { ExternalLink } from '@/app/component/externalLink'
 import { IconLink } from '@/app/component/iconLink'
 import { Video } from '@/app/component/video'
 import { ChatBox } from '@/app/project/teachyou/component/chatbox'
-import { PERSON } from '@/data/person'
+import { CONTACT } from '@/data/contact'
 import { PUBLICATION } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
 import { Global, ThemeProvider, css } from '@emotion/react'
@@ -27,11 +29,8 @@ import { Sample } from './component/sample'
 import { CONVERSATION1 } from './data/conversation1'
 import { CONVERSATION2 } from './data/conversation2'
 import { CONVERSATION3 } from './data/conversation3'
-import { CONTACT } from '@/data/contact'
-import { ExternalLink } from '@/app/component/externalLink'
-import { BibTex } from '@/app/component/bibtex'
 
-const BIBTEX = `@inproceedings{jin2024teach,
+const BIBTEX = `@inproceedings{jin2024teachyou,
   author = {Jin, Hyoungwook and Lee, Seonghee and Shin, Hyungyu and Kim, Juho},
   title = {Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education},
   year = {2024},
@@ -105,7 +104,7 @@ export default function Page() {
 
           <Centered>
             <Banner marginTop={12}>
-              🚀 If you want to try out TeachYou in your class, please contact jinhw@kaist.ac.kr! 🚀
+              🚀 If you want to try out TeachYou in your class, please contact {CONTACT.email.value}! 🚀
             </Banner>
           </Centered>
 
@@ -304,20 +303,24 @@ export default function Page() {
           <Divider marginVertical={24} />
 
           <LinearLayout justifyContent="center" gap={16}>
-            <Image
-              src="/images/kaist_logo.png"
-              width={813 / 6}
-              height={224 / 6}
-              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
-              alt="KAIST logo"
-            />
-            <Image
-              src="/images/kixlab_logo.png"
-              width={813 / 7}
-              height={224 / 7}
-              style={{ filter: 'drop-shadow(white 0 0 1px)' }}
-              alt="KIXLAB logo"
-            />
+            <ExternalLink href="https://cs.kaist.ac.kr">
+              <Image
+                src="/images/kaist_logo.png"
+                width={813 / 6}
+                height={224 / 6}
+                style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+                alt="KAIST logo"
+              />
+            </ExternalLink>
+            <ExternalLink href="https://kixlab.org/">
+              <Image
+                src="/images/kixlab_logo.png"
+                width={813 / 7}
+                height={224 / 7}
+                style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+                alt="KIXLAB logo"
+              />
+            </ExternalLink>
           </LinearLayout>
         </Content>
       </main>

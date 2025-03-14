@@ -3,6 +3,7 @@ import { IconSvgs } from '@/constant/iconSvg'
 interface Props {
   type: keyof typeof IconSvgs
   link: string
+  value?: string
 }
 
 interface Contact extends Props {}
@@ -16,6 +17,7 @@ export const CONTACT = {
   email: new Contact({
     type: 'EMAIL',
     link: 'mailto:jinhw@kaist.ac.kr',
+    value: 'jinhw@kaist.ac.kr',
   }),
   googleScholar: new Contact({
     type: 'GOOGLE_SCHOLAR',

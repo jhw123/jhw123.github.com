@@ -193,6 +193,9 @@ export const PERSON = {
   xuWang: new Person({
     firstName: 'Xu',
     lastName: 'Wang',
+    profileImage: '/people/xuwang.png',
+    institution: 'University of Michigan',
+    link: 'https://web.eecs.umich.edu/~xwanghci/',
   }),
   johnStamper: new Person({
     firstName: 'John',
@@ -202,7 +205,7 @@ export const PERSON = {
     firstName: 'Jeongeon',
     lastName: 'Park',
     profileImage: '/people/jeongeonpark.jpg',
-    institution: 'UCSD',
+    institution: 'UC San Diego',
     link: 'https://jeongeonpark.com/',
   }),
   minjuYoo: new Person({
@@ -210,6 +213,7 @@ export const PERSON = {
     lastName: 'Yoo',
     profileImage: '/people/minjuyoo.jpg',
     institution: 'Ewha Womans University',
+    link: 'https://minjuu1.github.io/',
   }),
   yokyungLee: new Person({
     firstName: 'Yokyung',
