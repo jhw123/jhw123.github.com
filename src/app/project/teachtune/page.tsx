@@ -40,6 +40,7 @@ const THEME = {
   },
 }
 
+// TODO: fill the article number
 const BIBTEX = `@inproceedings{jin2025teachtune,
   author = {Jin, Hyoungwook and Yoo, Minju and Park, Jeongeon and Lee, Yokyung and Wang, Xu and Kim, Juho},
   title = {TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students},
@@ -144,7 +145,7 @@ export default function Page() {
             </SubHeaderText>
           </h2>
 
-          <Video src={'https://www.youtube-nocookie.com/embed/55ZynUaK_Bg?si=8DkFRptfcb7iSfP-'} />
+          <Video src={'https://www.youtube.com/embed/5JUowb92S2c?si=506_wEiVeiHSDVow'} />
 
           <Divider marginVertical={24} />
 
@@ -163,7 +164,7 @@ export default function Page() {
             root node that consists of the PCA&apos;s start message and the behavioral instruction. The state changes to
             one of the connected nodes depending on a student&apos;s response. When the state changes, PCA receives a
             new instruction described in the node and behave accordingly. Below is an example of a PCA&apos;s state
-            machine diagram by a teacher in our user study.
+            machine diagram created by a teacher in our user study.
           </BodyText>
 
           <Modal>
@@ -180,7 +181,7 @@ export default function Page() {
             Teachers can organize the types of students they review. TeachTune helps teachers externalize and develop
             their PCA evaluation space with templated student profiles. Our interface provides knowledge components and
             student trait inventories to help teachers explore different combinations of different knowledge levels and
-            traits effectively. Below are the student profiles created by a teacher in our user study.
+            student traits effectively. Below are the student profiles created by a teacher in our user study.
           </BodyText>
 
           <Profiles marginBottom={24} />
@@ -217,7 +218,7 @@ export default function Page() {
 
           <Divider marginVertical={24} />
 
-          <h2>
+          {/* <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
               BIBTEX
             </SubHeaderText>
@@ -225,7 +226,7 @@ export default function Page() {
 
           <BibTex text={BIBTEX} />
 
-          <Divider marginVertical={24} />
+          <Divider marginVertical={24} /> */}
 
           <LinearLayout justifyContent="center" gap={16}>
             <ExternalLink href="https://cs.kaist.ac.kr">
