@@ -20,7 +20,7 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2025-03-14'),
   }),
   new Post({
-    content: `✈️ I will visit Univeristy of Michigan on Mar 20-21st.`,
+    content: `✈️ I will visit the University of Michigan on Mar 20-21st.`,
     startDate: new Date('2025-03-14'),
   }),
   new Post({
