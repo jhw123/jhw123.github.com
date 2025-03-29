@@ -27,6 +27,18 @@ class Publication {
 }
 
 export const PUBLICATION = {
+  teachcraftWorkshop: new Publication({
+    title: 'How Do Teachers Create Pedagogical Chatbots?: Current Practices and Challenges',
+    authors: [PERSON.minjuYoo, PERSON.hyoungwook, PERSON.juho],
+    startDate: new Date(2024, 10),
+    endDate: new Date(2025, 3),
+    imagePath: '/projects/teachcraft-workshop.png',
+    conference: "CHI'25 Workshop on Augmented Educators and AI",
+    type: 'workshop',
+    link: {
+      Paper: 'https://arxiv.org/abs/2503.00967',
+    },
+  }),
   teachtune: new Publication({
     title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
     authors: [PERSON.hyoungwook, PERSON.minjuYoo, PERSON.jeongeonPark, PERSON.yokyungLee, PERSON.xuWang, PERSON.juho],
