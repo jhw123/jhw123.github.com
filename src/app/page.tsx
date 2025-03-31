@@ -23,9 +23,9 @@ import {
 } from '@wookiejin/react-component'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import { IconLink } from './component/iconLink'
-import { Time } from './component/time'
 import Markdown from 'react-markdown'
+import { Link } from './component/link'
+import { Time } from './component/time'
 
 const NEWS_LENGTH = 5
 
@@ -153,9 +153,9 @@ export default function Page() {
                     </BodyText>
                     {0 < links?.length &&
                       links.map(([tag, link], i) => (
-                        <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
+                        <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
                           {tag}
-                        </IconLink>
+                        </Link>
                       ))}
                   </div>
                 </Card>
@@ -207,9 +207,9 @@ export default function Page() {
                   </LinearLayout>
                   {links?.length &&
                     links.map(([tag, link], i) => (
-                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
+                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
                         {tag}
-                      </IconLink>
+                      </Link>
                     ))}
                 </div>
               </Card>
@@ -251,9 +251,9 @@ export default function Page() {
                   <BodyText marginBottom={8}>{conference}</BodyText>
                   {links?.length &&
                     links.map(([tag, link], i) => (
-                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
                         {tag}
-                      </IconLink>
+                      </Link>
                     ))}
                 </BodyText>
               </Card>
@@ -295,9 +295,9 @@ export default function Page() {
                   <BodyText marginBottom={8}>{conference}</BodyText>
                   {links?.length &&
                     links.map(([tag, link], i) => (
-                      <IconLink key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
+                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
                         {tag}
-                      </IconLink>
+                      </Link>
                     ))}
                 </BodyText>
               </Card>
@@ -314,7 +314,7 @@ export default function Page() {
               <div>
                 <h3>
                   <SubSubHeaderText marginBottom={8}>
-                    {school} ({abbreviation})
+                    {school} {abbreviation && `(${abbreviation})`}
                   </SubSubHeaderText>
                 </h3>
                 <BodyText color="Secondary">
@@ -352,6 +352,13 @@ const Card = styled.section`
     grid-template-columns: 1fr;
   }
   gap: 32px;
+  margin-bottom: 32px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+
+const ShortPaper = styled.section`
   margin-bottom: 32px;
   &:last-child {
     margin-bottom: 0;
