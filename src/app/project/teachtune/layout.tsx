@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'TeachTune',
     description: '',
     type: 'website',
-    images: [{ url: '/projects/teachtune_og.jpeg', width: 1200, height: 630 }],
+    images: [{ url: '/projects/teachtune_og.png', width: 1200, height: 630 }],
   },
 }
 
