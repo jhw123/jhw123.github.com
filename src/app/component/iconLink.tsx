@@ -16,15 +16,15 @@ export const IconLink = View<Props>(({ href, children, title, forwardedRef, ...p
     switch (true) {
       case last(href.split('.')) === 'pdf':
         return '/icons/pdf.png'
-      case href.includes('arxiv.org'):
+      case new URL(href).host === 'arxiv.org':
         return '/icons/arxiv.png'
-      case href.includes('dl.acm.org'):
+      case new URL(href).host === 'dl.acm.org':
         return '/icons/dl.png'
       case href.includes('/demo'):
         return '/icons/slide.png'
       case href.includes('/project/'):
         return '/icons/globe.png'
-      case href.includes('github.com'):
+      case new URL(href).host === 'github.com':
         return '/icons/github.png'
       case href.includes('/presentation/'):
         return '/icons/presentation.png'
