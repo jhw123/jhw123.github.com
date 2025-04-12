@@ -16,6 +16,10 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: `🔥 Solved 1500 [LeetCode problems](${CONTACT.leetcode.link})!`,
+    startDate: new Date('2025-04-12'),
+  }),
+  new Post({
     content: `🌸 I will visit Yokohama to present [TeachTune](${PUBLICATION.teachtune.link?.['Website']}) at CHI.`,
     startDate: new Date('2025-03-14'),
   }),
