@@ -104,14 +104,12 @@ export const PERSON = {
     middleName: 'P.',
     lastName: 'Dow',
     institution: 'UCSD',
-    profileImage: '/people/stevendow.jpg',
     link: 'https://spdow.ucsd.edu',
   }),
   haijunxia: new Person({
     firstName: 'Haijun',
     lastName: 'Xia',
     institution: 'UCSD',
-    profileImage: '/people/haijunxia.jpg',
     link: 'https://creativity.ucsd.edu/haijunxia',
   }),
   mengyichen: new Person({
