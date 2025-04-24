@@ -40,7 +40,6 @@ const THEME = {
   },
 }
 
-// TODO: fill the article number
 const BIBTEX = `@inproceedings{jin2025teachtune,
   author = {Jin, Hyoungwook and Yoo, Minju and Park, Jeongeon and Lee, Yokyung and Wang, Xu and Kim, Juho},
   title = {TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students},
@@ -50,8 +49,8 @@ const BIBTEX = `@inproceedings{jin2025teachtune,
   address = {New York, NY, USA},
   url = {https://doi.org/10.1145/3706598.3714054},
   doi = {10.1145/3706598.3714054},
-  booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
-  articleno = {XX},
+  booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems},
+  articleno = {1073},
   numpages = {28},
   keywords = {LLM-assisted evaluation, Simulated students, Pedagogical conversational agents},
   location = {Yokohama, Japan},
@@ -220,7 +219,7 @@ export default function Page() {
 
           <Divider marginVertical={24} />
 
-          {/* <h2>
+          <h2>
             <SubHeaderText color="Focus" marginBottom={8}>
               BIBTEX
             </SubHeaderText>
@@ -228,7 +227,7 @@ export default function Page() {
 
           <BibTex text={BIBTEX} />
 
-          <Divider marginVertical={24} /> */}
+          <Divider marginVertical={24} />
 
           <LinearLayout justifyContent="center" gap={16}>
             <ExternalLink href="https://cs.kaist.ac.kr">

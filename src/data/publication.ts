@@ -48,7 +48,7 @@ export const PUBLICATION = {
     conference: "CHI'25 (to appear)",
     type: 'full paper',
     link: {
-      Paper: 'https://arxiv.org/abs/2410.04078',
+      Paper: 'https://dl.acm.org/doi/10.1145/3706598.3714054',
       Website: '/project/teachtune',
       Slides: 'https://docs.google.com/presentation/d/1U0MKm-wsd0e18SokBuylmbxD2Pdv8pZ5aEP1tOj6jcs/edit?usp=sharing',
     },
