@@ -17,6 +17,7 @@ import {
   HeaderText,
   LinearLayout,
   ResetStyle,
+  Sheet,
   SubHeaderText,
   SubSubHeaderText,
   TextButton,
@@ -99,6 +100,13 @@ export default function Page() {
                   )
                 })}
               </LinkSection>
+
+              <Sheet fill="Secondary" padding={8} marginTop={16}>
+                📣 I will start my Ph.D. at the University of Michigan{' '}
+                <ExternalLink href="https://cse.engin.umich.edu">CSE</ExternalLink> in Fall 2025! I will work with{' '}
+                <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/">Xu Wang</ExternalLink>, and I am looking for
+                more collaborators! Feel free to reach out if you are interested in working with me!
+              </Sheet>
             </Introduction>
           </Card>
 
