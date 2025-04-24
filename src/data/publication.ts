@@ -45,7 +45,7 @@ export const PUBLICATION = {
     startDate: new Date(2023, 12),
     endDate: new Date(2025, 1),
     imagePath: '/projects/teachtune.png',
-    conference: "CHI'25 (to appear)",
+    conference: "CHI'25",
     type: 'full paper',
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3706598.3714054',
