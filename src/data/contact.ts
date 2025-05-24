@@ -27,10 +27,6 @@ export const CONTACT = {
     type: 'TWITTER',
     link: 'https://x.com/HyoungWookJin',
   }),
-  github: new Contact({
-    type: 'GITHUB',
-    link: 'https://github.com/jhw123',
-  }),
   linkedin: new Contact({
     type: 'LINKEDIN',
     link: 'https://www.linkedin.com/in/hyoungwook-jin-619b5b10a',
