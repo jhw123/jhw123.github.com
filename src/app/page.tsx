@@ -8,11 +8,11 @@ import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
+import { THEME } from '@/utils/theme'
 import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import {
   BodyText,
-  DEFAULT_THEME,
   Divider,
   HeaderText,
   LinearLayout,
@@ -34,15 +34,12 @@ export default function Page() {
   const [newsLength, setNewsLength] = useState(NEWS_LENGTH)
 
   return (
-    <ThemeProvider theme={DEFAULT_THEME}>
+    <ThemeProvider theme={THEME}>
       <Global styles={ResetStyle} />
       <Global
         styles={css`
           body {
-            background-color: #ffffff;
-            @media (prefers-color-scheme: dark) {
-              background-color: #333333;
-            }
+            ${THEME.fill.Primary}
           }
 
           strong {
