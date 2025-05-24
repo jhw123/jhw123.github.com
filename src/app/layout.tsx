@@ -10,13 +10,7 @@ export const metadata: Metadata = {
   description:
     'Hyoungwook Jin is a human-computer interaction researcher who is interested in End-learner Programming.',
   icons: ['/favicon.png'],
-  keywords: [
-    '진형욱',
-    'Hyoungwook Jin',
-    'KAIST KIXLAB',
-    'End-learner Programming',
-    'Personalized interactive learning at scale',
-  ],
+  keywords: ['카이스트 진형욱', 'HCI 진형욱', 'KAIST Hyoungwook Jin', 'End-learner Programming'],
   openGraph: {
     title: 'Hyoungwook Jin',
     description:
