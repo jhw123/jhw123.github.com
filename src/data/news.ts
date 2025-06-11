@@ -16,6 +16,10 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: `🚀 I successfully defended my Master's thesis!`,
+    startDate: new Date('2025-06-11'),
+  }),
+  new Post({
     content: `🎉 [My citation](${CONTACT.googleScholar.link}) reached 100!`,
     startDate: new Date('2025-04-30'),
   }),
