@@ -16,8 +16,8 @@ class Contact {
 export const CONTACT = {
   email: new Contact({
     type: 'EMAIL',
-    link: 'mailto:jinhw@kaist.ac.kr',
-    value: 'jinhw@kaist.ac.kr',
+    link: 'mailto:jinhw@umich.edu',
+    value: 'jinhw@umich.edu',
   }),
   googleScholar: new Contact({
     type: 'GOOGLE_SCHOLAR',

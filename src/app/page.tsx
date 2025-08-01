@@ -53,9 +53,10 @@ export default function Page() {
             <ProfileImageContainer>
               <Image
                 fill
-                src={'/hyoungwook.jpg'}
+                src={'/hyoungwook.png'}
                 style={{
                   objectFit: 'cover',
+                  transform: 'scale(1.4) translate(-10%, 14%)',
                 }}
                 alt="The profile image of Hyoungwook Jin."
                 sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
@@ -363,13 +364,6 @@ const Card = styled.section`
   }
 `
 
-const ShortPaper = styled.section`
-  margin-bottom: 32px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-`
-
 const ProfileImageContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
@@ -380,8 +374,8 @@ const ProfileImageContainer = styled.div`
     ${theme.elevation.L2}
 
     @media (max-width: ${MOBILE_BREAKPOINT}px) {
-      width: 150px;
-      height: 150px;
+      width: 224px;
+      height: 224px;
       margin: auto;
     }
   `}
