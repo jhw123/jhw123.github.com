@@ -156,7 +156,7 @@ export const PUBLICATION = {
     imagePath: '/projects/kuiz.png',
   }),
   learnersourcingWorkshop: new Publication({
-    title: 'Learnersourcing: Student-generated Content @ Scale: 2nd Annual Workshop',
+    title: 'Learnersourcing: Student-generated Content @ Scale: Annual Workshop',
     authors: [
       PERSON.stevenMoore,
       PERSON.anjaliSingh,
@@ -176,7 +176,7 @@ export const PUBLICATION = {
       Paper: 'https://dl.acm.org/doi/10.1145/3657604.3664643',
       Website: 'https://sites.google.com/andrew.cmu.edu/learnersourcing',
     },
-    conference: "L@S'24",
+    conference: "L@S'24, L@S'25",
     imagePath: '/projects/learnersourcing-workshop.png',
   }),
   hamamathWIP: new Publication({
