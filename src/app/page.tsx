@@ -55,7 +55,6 @@ export default function Page() {
                 src={'/hyoungwook.jpeg'}
                 style={{
                   objectFit: 'cover',
-                  transform: 'scale(1.4) translate(-10%, 14%)',
                 }}
                 alt="The profile image of Hyoungwook Jin."
                 sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
