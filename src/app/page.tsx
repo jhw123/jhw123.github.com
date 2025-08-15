@@ -17,7 +17,6 @@ import {
   HeaderText,
   LinearLayout,
   ResetStyle,
-  Sheet,
   SubHeaderText,
   SubSubHeaderText,
   TextButton,
@@ -53,7 +52,7 @@ export default function Page() {
             <ProfileImageContainer>
               <Image
                 fill
-                src={'/hyoungwook.png'}
+                src={'/hyoungwook.jpeg'}
                 style={{
                   objectFit: 'cover',
                   transform: 'scale(1.4) translate(-10%, 14%)',
@@ -72,11 +71,13 @@ export default function Page() {
               </h1>
 
               <BodyText marginBottom={8}>
-                I am an MS candidate in the{' '}
-                <ExternalLink href="https://cs.kaist.ac.kr/">School of Computing</ExternalLink> at KAIST. I am working
-                with <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
-                <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
+                I am a PhD student at 🇺🇸 the University of Michigan,{' '}
+                <ExternalLink href="https://cse.engin.umich.edu">Computer Science and Engineering</ExternalLink>. I am
+                working with <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/">Xu Wang</ExternalLink> and
+                researchers at{' '}
+                <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/lab.html">Lifelong Learning Lab</ExternalLink>.
               </BodyText>
+
               <BodyText marginBottom={8}>
                 I envision{' '}
                 <ExternalLink href="https://docs.google.com/presentation/d/1ceeAvr6LtJf5zyLr69K3CoH3PYKuXd0wWbwgVQWBXgw/edit?usp=sharing">
@@ -85,6 +86,12 @@ export default function Page() {
                 in which learners and instructors can customize existing or even create new learning content, paths, and
                 tools beyond given resources and classes for their personal needs. I research human-AI interaction,
                 computer-supported cooperative work, and learning at scale to realize my vision.
+              </BodyText>
+
+              <BodyText marginBottom={8}>
+                Formerly, I did my master&apos;s and bachelor&apos;s at 🇰🇷 KAIST. I was fortunate to work with{' '}
+                <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
+                <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
               </BodyText>
 
               <LinkSection>
@@ -98,13 +105,6 @@ export default function Page() {
                   )
                 })}
               </LinkSection>
-
-              <Sheet fill="Secondary" padding={8} marginTop={16}>
-                📣 I will start my Ph.D. at the University of Michigan{' '}
-                <ExternalLink href="https://cse.engin.umich.edu">CSE</ExternalLink> in Fall 2025! I will work with{' '}
-                <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/">Xu Wang</ExternalLink>, and I am looking for
-                more collaborators! Feel free to reach out if you are interested in working with me!
-              </Sheet>
             </Introduction>
           </Card>
 
@@ -226,7 +226,7 @@ export default function Page() {
             <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
           </h2>
           {PUBLICATIONS.filter(({ type, endDate }) => (type === 'workshop' || type === 'poster') && endDate).map(
-            ({ title, conference, links, imagePath, authors, type }, i) => (
+            ({ title, conference, links, imagePath, authors }, i) => (
               <Card key={i}>
                 <PublicationImageContainer>
                   <Image
@@ -309,32 +309,6 @@ export default function Page() {
               </Card>
             )
           )}
-
-          <Divider fill="Secondary" marginVertical={32} />
-
-          <h2>
-            <SubHeaderText marginBottom={16}>EDUCATION</SubHeaderText>
-          </h2>
-          {EDUCATIONS.map(({ school, abbreviation, degree, startDate, endDate, content, location }, i) => (
-            <EducationCard key={i}>
-              <div>
-                <h3>
-                  <SubSubHeaderText marginBottom={8}>
-                    {school} {abbreviation && `(${abbreviation})`}
-                  </SubSubHeaderText>
-                </h3>
-                <BodyText color="Secondary">
-                  <ListItem marginBottom={4}>{degree}</ListItem>
-                  <ListItem>{content}</ListItem>
-                </BodyText>
-              </div>
-              <SideInfo>
-                <Time date={startDate} formatStr="LLL yyyy" /> - <Time date={endDate} formatStr="LLL yyyy" />
-                <br />
-                {location}
-              </SideInfo>
-            </EducationCard>
-          ))}
         </Content>
       </main>
     </ThemeProvider>
@@ -393,7 +367,7 @@ const PublicationImageContainer = styled.div`
     height: 150px;
     overflow: hidden;
     border-radius: 4px;
-    ${theme.elevation.L2}
+    ${theme.elevation.L1}
     background-color: white;
   `}
 `
@@ -406,21 +380,6 @@ const Author = styled.span<{ isMe: boolean }>`
       content: ', ';
     }
   `}
-`
-
-const EducationCard = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
-  margin-bottom: 32px;
-  @media (max-width: ${MOBILE_BREAKPOINT}px) {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-`
-
-const SideInfo = styled.div`
-  text-align: right;
 `
 
 const LinkSection = styled.div`
