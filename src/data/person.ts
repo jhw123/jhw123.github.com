@@ -27,7 +27,7 @@ export const PERSON = {
     firstName: 'Hyoungwook',
     lastName: 'Jin',
     institution: 'University of Michigan',
-    profileImage: '/hyoungwook.jpg',
+    profileImage: '/hyoungwook.jpeg',
     link: 'https://jhw123.github.io',
   }),
   juho: new Person({
