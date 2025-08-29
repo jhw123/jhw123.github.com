@@ -89,7 +89,7 @@ export const PERSON = {
     firstName: 'Jane',
     middleName: 'L',
     lastName: 'E',
-    institution: 'UCSD',
+    institution: 'NUS',
     link: 'https://ejane.me',
   }),
   graceyen: new Person({
@@ -103,13 +103,13 @@ export const PERSON = {
     firstName: 'Steven',
     middleName: 'P.',
     lastName: 'Dow',
-    institution: 'UCSD',
+    institution: 'UC San Diego',
     link: 'https://spdow.ucsd.edu',
   }),
   haijunxia: new Person({
     firstName: 'Haijun',
     lastName: 'Xia',
-    institution: 'UCSD',
+    institution: 'UC San Diego',
     link: 'https://creativity.ucsd.edu/haijunxia',
   }),
   mengyichen: new Person({
@@ -210,7 +210,7 @@ export const PERSON = {
     firstName: 'Minju',
     lastName: 'Yoo',
     profileImage: '/people/minjuyoo.jpg',
-    institution: 'Ewha Womans University',
+    institution: 'KAIST',
     link: 'https://minjuu1.github.io/',
   }),
   yokyungLee: new Person({
