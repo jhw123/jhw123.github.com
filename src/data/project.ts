@@ -26,7 +26,6 @@ export const PROJECT = {
     startDate: new Date(2025, 2),
     imagePath: '/projects/teachcraft.png',
     description: `Teachers' interest in using chatbots in their classes is growing, but they often lack the necessary skills and knowledge to effectively integrate them into their teaching. This project aims to build an End-to-End education platform that supports teachers with lesson planning, chatbot development, and real-time monitoring of chatbot usage in the classroom.`,
-    link: { Platform: 'https://teach-you.com' },
   }),
   mathCog: new Project({
     title: "Investigating Large Language Models in Diagnosing Students' Cognitive Skills in Math Problem-solving",
