@@ -30,127 +30,127 @@ export const PERSON = {
     profileImage: '/hyoungwook.jpeg',
     link: 'https://jhw123.github.io',
   }),
-  juho: new Person({
+  juhoKim: new Person({
     firstName: 'Juho',
     lastName: 'Kim',
     institution: 'KAIST',
     profileImage: '/people/juho.jpg',
     link: 'https://juhokim.com',
   }),
-  hyungyu: new Person({
+  hyungyuShin: new Person({
     firstName: 'Hyungyu',
     lastName: 'Shin',
     institution: 'KAIST',
     profileImage: '/people/hyungyu.jpg',
     link: 'https://hyungyu.com',
   }),
-  seonghee: new Person({
+  seongheeLee: new Person({
     firstName: 'Seonghee',
     lastName: 'Lee',
     institution: 'Stanford',
     profileImage: '/people/seonghee.png',
     link: 'https://shljessie.github.io',
   }),
-  hyungkwonko: new Person({
+  hyungkwonKo: new Person({
     firstName: 'Hyungkwon',
     lastName: 'Ko',
     link: 'https://hyungkwonko.info',
   }),
-  kihoonson: new Person({
+  kihoonSon: new Person({
     firstName: 'Kihoon',
     lastName: 'Son',
   }),
-  yoonseochoi: new Person({
+  yoonseoChoi: new Person({
     firstName: 'Yoonseo',
     lastName: 'Choi',
   }),
-  yoonsukim: new Person({
+  yoonsuKim: new Person({
     firstName: 'Yoonsu',
     lastName: 'Kim',
   }),
-  yeonsupark: new Person({
+  yeonsuPark: new Person({
     firstName: 'Yeon Su',
     lastName: 'Park',
   }),
-  bekzattilekbay: new Person({
+  bekzatTilekbay: new Person({
     firstName: 'Bekzat',
     lastName: 'Tilekbay',
   }),
-  jinhoson: new Person({
+  jinhoSon: new Person({
     firstName: 'Jinho',
     lastName: 'Son',
   }),
-  anthonychen: new Person({
+  anthonyChen: new Person({
     firstName: 'Xiang',
     middleName: 'Anthony',
     lastName: 'Chen',
   }),
-  janee: new Person({
+  janeE: new Person({
     firstName: 'Jane',
     middleName: 'L',
     lastName: 'E',
     institution: 'NUS',
     link: 'https://ejane.me',
   }),
-  graceyen: new Person({
+  graceYen: new Person({
     firstName: 'Grace',
     middleName: 'Yu-Chun',
     lastName: 'Yen',
     institution: 'National Yang-Ming Chiao-Tung University',
     link: 'https://gracetfg2.github.io',
   }),
-  stevendow: new Person({
+  stevenDow: new Person({
     firstName: 'Steven',
     middleName: 'P.',
     lastName: 'Dow',
     institution: 'UC San Diego',
     link: 'https://spdow.ucsd.edu',
   }),
-  haijunxia: new Person({
+  haijunXia: new Person({
     firstName: 'Haijun',
     lastName: 'Xia',
     institution: 'UC San Diego',
     link: 'https://creativity.ucsd.edu/haijunxia',
   }),
-  mengyichen: new Person({
+  mengyiChen: new Person({
     firstName: 'Mengyi',
     lastName: 'Chen',
   }),
-  mingyi: new Person({
+  mingyiLi: new Person({
     firstName: 'Mingyi',
     lastName: 'Li',
   }),
-  gracelin: new Person({
+  graceLin: new Person({
     firstName: 'Grace',
     lastName: 'Lin',
   }),
-  isabellepan: new Person({
+  isabellePan: new Person({
     firstName: 'Isabelle',
     middleName: 'Yan',
     lastName: 'Pan',
   }),
-  minsuk: new Person({
+  minsukChang: new Person({
     firstName: 'Minsuk',
     lastName: 'Chang',
     institution: 'Google Research',
     link: 'https://minsukchang.com',
   }),
-  aliceoh: new Person({
+  aliceOh: new Person({
     firstName: 'Alice',
     lastName: 'Oh',
     institution: 'KAIST',
     link: 'https://aliceoh9.github.io',
   }),
-  changyoon: new Person({
+  changyoonLee: new Person({
     firstName: 'Changyoon',
     lastName: 'Lee',
   }),
-  donghoon: new Person({
+  donghoonHan: new Person({
     firstName: 'Donghoon',
     lastName: 'Han',
     link: 'https://sites.google.com/view/hoonhan',
   }),
-  haesookim: new Person({
+  haesooKim: new Person({
     firstName: 'Haesoo',
     lastName: 'Kim',
     link: 'https://haesookim.info/',

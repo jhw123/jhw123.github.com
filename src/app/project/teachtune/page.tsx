@@ -94,7 +94,7 @@ export default function Page() {
               <Profile person={PERSON.jeongeonPark} />
               <Profile person={PERSON.yokyungLee} />
               <Profile person={PERSON.xuWang} />
-              <Profile person={PERSON.juho} />
+              <Profile person={PERSON.juhoKim} />
             </Authors>
           </h2>
 
