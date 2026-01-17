@@ -219,6 +219,30 @@ export const PERSON = {
     profileImage: '/people/yokyunglee.png',
     institution: 'KAIST',
   }),
+  junhoMyung: new Person({
+    firstName: 'Junho',
+    lastName: 'Myung',
+  }),
+  hyunseungLim: new Person({
+    firstName: 'Hyunseung',
+    lastName: 'Lim',
+  }),
+  nayeonKang: new Person({
+    firstName: 'Nayeon',
+    lastName: 'Kang',
+  }),
+  soYeonAhn: new Person({
+    firstName: 'So Yeon',
+    lastName: 'Ahn',
+  }),
+  hwajungHong: new Person({
+    firstName: 'Hwajung',
+    lastName: 'Hong',
+  }),
+  hanaOh: new Person({
+    firstName: 'Hana',
+    lastName: 'Oh',
+  }),
 } as const
 
 export default Person

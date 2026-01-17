@@ -27,6 +27,29 @@ class Publication {
 }
 
 export const PUBLICATION = {
+  scaffoldingBreaks: new Publication({
+    title:
+      'When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms',
+    authors: [
+      PERSON.junhoMyung,
+      PERSON.hyunseungLim,
+      PERSON.hanaOh,
+      PERSON.hyoungwook,
+      PERSON.nayeonKang,
+      PERSON.soYeonAhn,
+      PERSON.hwajungHong,
+      PERSON.aliceOh,
+      PERSON.juhoKim,
+    ],
+    startDate: new Date(2024, 7),
+    endDate: new Date(2025, 3),
+    imagePath: '/projects/scaffolding-breaks.png',
+    conference: "CHI'26",
+    type: 'full paper',
+    link: {
+      Paper: 'https://arxiv.org/abs/2512.05506',
+    },
+  }),
   teachcraftWorkshop: new Publication({
     title: 'How Do Teachers Create Pedagogical Chatbots?: Current Practices and Challenges',
     authors: [PERSON.minjuYoo, PERSON.hyoungwook, PERSON.juhoKim],
