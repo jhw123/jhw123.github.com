@@ -20,7 +20,7 @@
     "@uiw/react-codemirror": "^4.21.25",
     "@wookiejin/react-component": "^0.1.6",
     "date-fns": "^2.30.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "next": "16.0.10",
     "openai": "^4.19.0",
     "react": "^18",
