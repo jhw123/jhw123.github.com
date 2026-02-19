@@ -21,14 +21,16 @@ class Project {
 }
 
 export const PROJECT = {
-  teachcraft: new Project({
-    title: 'Helping Teachers Plan, Develop, and Monitor Chatbot-integrated Classes',
-    startDate: new Date(2025, 2),
-    imagePath: '/projects/teachcraft.png',
-    description: `Teachers' interest in using chatbots in their classes is growing, but they often lack the necessary skills and knowledge to effectively integrate them into their teaching. This project aims to build an End-to-End education platform that supports teachers with lesson planning, chatbot development, and real-time monitoring of chatbot usage in the classroom.`,
+  relianceScope: new Project({
+    title:
+      "RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving",
+    startDate: new Date(2025, 8),
+    imagePath: '/projects/reliancescope.png',
+    description: `This project introduces RelianceScope, an analytical framework that (1) operationalizes reliance into nine patterns based on combinations of engagement modes in help-seeking and response-use, and (2) situates these patterns within a knowledge-context lens that accounts for students' prior knowledge and the instructional significance of knowledge components.`,
+    link: { Paper: 'https://arxiv.org/abs/2602.16251' },
   }),
   mathCog: new Project({
-    title: "Investigating Large Language Models in Diagnosing Students' Cognitive Skills in Math Problem-solving",
+    title: "Benchmarking Large Language Models for Diagnosing Students' Cognitive Skills from Handwritten Math Work",
     startDate: new Date(2024, 12),
     imagePath: '/projects/mathcog.png',
     description:
