@@ -201,7 +201,7 @@ export default function Page() {
                     })}
                   </BodyText>
                   <LinearLayout justifyContent="flex-start" gap={8} marginBottom={8}>
-                    <BodyText>{conference}</BodyText>
+                    <Conference>{conference}</Conference>
                     {awards?.map((award, i) => (
                       <Award key={i}>
                         <Image src={'/icons/medal.png'} width={16} height={16} alt={award} /> {award}
@@ -418,6 +418,18 @@ const Award = styled.span`
     align-items: center;
     text-transform: uppercase;
     gap: 4px;
+  `}
+`
+
+const Conference = styled.span`
+  ${({ theme }) => css`
+    ${theme.color.Primary}
+    ${theme.border.Primary}
+    ${theme.font.Caption}
+    padding: 4px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
   `}
 `
 

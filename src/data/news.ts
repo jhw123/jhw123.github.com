@@ -16,6 +16,14 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: `🇪🇸 I will visit Barcelona in April to attend CHI2026.`,
+    startDate: new Date('2026-03-09'),
+  }),
+  new Post({
+    content: `🏆 ["When Scaffolding Breaks" paper](${PUBLICATION.scaffoldingBreaks.link?.['Paper']}) received a best paper award at CHI2026!`,
+    startDate: new Date('2026-03-08'),
+  }),
+  new Post({
     content: `🎉 A [paper I contributed to](${PUBLICATION.scaffoldingBreaks.link?.['Paper']}) was accepted to CHI2026!`,
     startDate: new Date('2026-01-16'),
   }),
@@ -36,7 +44,7 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2025-04-12'),
   }),
   new Post({
-    content: `🌸 I will visit Yokohama to present [TeachTune](${PUBLICATION.teachtune.link?.['Website']}) at CHI.`,
+    content: `🌸 I will visit Yokohama to present [TeachTune](${PUBLICATION.teachtune.link?.['Website']}) at CHI2025.`,
     startDate: new Date('2025-03-14'),
   }),
   new Post({

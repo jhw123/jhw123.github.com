@@ -49,6 +49,7 @@ export const PUBLICATION = {
     link: {
       Paper: 'https://arxiv.org/abs/2512.05506',
     },
+    awards: ['Best Paper'],
   }),
   teachcraftWorkshop: new Publication({
     title: 'How Do Teachers Create Pedagogical Chatbots?: Current Practices and Challenges',
