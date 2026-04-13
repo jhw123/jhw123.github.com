@@ -61,7 +61,7 @@ export const PUBLICATION = {
     conference: "CHI'26",
     type: 'full paper',
     link: {
-      Paper: 'https://arxiv.org/abs/2512.05506',
+      Paper: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
     },
     awards: ['Best Paper'],
   }),
@@ -110,7 +110,7 @@ export const PUBLICATION = {
       Website: '/project/teachyou',
       Demo: '/project/teachyou/demo',
       Slides: 'https://docs.google.com/presentation/d/1zBuMDBlXCRtb9cLOgbnu8oLqWDEtNuj_s5Y8-VVv5S0/edit?usp=sharing',
-      GitHub: 'https://github.com/TeachYou-org',
+      Dataset: 'https://github.com/TeachYou-org',
     },
     imagePath: '/projects/teachyou.png',
     awards: ['Honorable Mention'],
