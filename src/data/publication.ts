@@ -27,6 +27,20 @@ class Publication {
 }
 
 export const PUBLICATION = {
+  relianceScope: new Publication({
+    title:
+      "RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving",
+    authors: [PERSON.hyoungwook, PERSON.minjuYoo, PERSON.jieunHan, PERSON.zixinChen, PERSON.soYeonAhn, PERSON.xuWang],
+    startDate: new Date(2025, 8),
+    endDate: new Date(2026, 2),
+    conference: "L@S'26",
+    type: 'full paper',
+    imagePath: '/projects/reliancescope.png',
+    link: {
+      Paper: 'https://arxiv.org/abs/2602.16251',
+      Dataset: 'https://osf.io/27ec5/overview?view_only=a8234a17f908464297d35d5ca1ef476c',
+    },
+  }),
   scaffoldingBreaks: new Publication({
     title:
       'When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms',

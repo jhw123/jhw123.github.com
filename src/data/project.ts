@@ -21,14 +21,6 @@ class Project {
 }
 
 export const PROJECT = {
-  relianceScope: new Project({
-    title:
-      "RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving",
-    startDate: new Date(2025, 8),
-    imagePath: '/projects/reliancescope.png',
-    description: `This project introduces RelianceScope, an analytical framework that (1) operationalizes reliance into nine patterns based on combinations of engagement modes in help-seeking and response-use, and (2) situates these patterns within a knowledge-context lens that accounts for students' prior knowledge and the instructional significance of knowledge components.`,
-    link: { Paper: 'https://arxiv.org/abs/2602.16251' },
-  }),
   mathCog: new Project({
     title: "Benchmarking Large Language Models for Diagnosing Students' Cognitive Skills from Handwritten Math Work",
     startDate: new Date(2024, 12),

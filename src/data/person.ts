@@ -243,6 +243,14 @@ export const PERSON = {
     firstName: 'Hana',
     lastName: 'Oh',
   }),
+  jieunHan: new Person({
+    firstName: 'Jieun',
+    lastName: 'Han',
+  }),
+  zixinChen: new Person({
+    firstName: 'Zixin',
+    lastName: 'Chen',
+  }),
 } as const
 
 export default Person
