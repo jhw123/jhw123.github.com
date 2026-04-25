@@ -62,6 +62,7 @@ export const PUBLICATION = {
     type: 'full paper',
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
+      Dataset: 'https://github.com/JunhoMyung/WriteAid-Data',
     },
     awards: ['Best Paper'],
   }),
