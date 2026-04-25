@@ -68,7 +68,7 @@ export default function Page() {
               </h1>
 
               <BodyText marginBottom={8}>
-                I am a PhD student at 🇺🇸 the University of Michigan,{' '}
+                I am a PhD student at 🇺🇸 University of Michigan,{' '}
                 <ExternalLink href="https://cse.engin.umich.edu">Computer Science and Engineering</ExternalLink>. I am
                 working with <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/">Xu Wang</ExternalLink> and
                 researchers at{' '}

@@ -16,7 +16,7 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
-    content: `🎉 [RelianceScope](${PUBLICATION.relianceScope.link?.['Paper']}) was accepted to L@S2026!`,
+    content: `🎉 [RelianceScope](${PUBLICATION.relianceScope.link?.['Paper']}) is accepted to L@S2026!`,
     startDate: new Date('2026-04-12'),
   }),
   new Post({
@@ -28,7 +28,7 @@ export const POSTS = DataUtil.sortByTime([
     startDate: new Date('2026-03-08'),
   }),
   new Post({
-    content: `🎉 A [paper I contributed to](${PUBLICATION.scaffoldingBreaks.link?.['Paper']}) was accepted to CHI2026!`,
+    content: `🎉 A [paper I contributed to](${PUBLICATION.scaffoldingBreaks.link?.['Paper']}) is accepted to CHI2026!`,
     startDate: new Date('2026-01-16'),
   }),
   new Post({
