@@ -18,6 +18,7 @@
     "@types/lodash": "^4.14.200",
     "@uiw/codemirror-theme-basic": "^4.21.25",
     "@uiw/react-codemirror": "^4.21.25",
+    "@uiw/react-md-editor": "^4.1.1",
     "@wookiejin/react-component": "^0.1.6",
     "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
