@@ -234,6 +234,9 @@ export const PERSON = {
   soYeonAhn: new Person({
     firstName: 'So Yeon',
     lastName: 'Ahn',
+    profileImage: '/people/soyeonahn.jpg',
+    institution: 'KAIST',
+    link: 'https://sites.google.com/view/soyeonahn/about',
   }),
   hwajungHong: new Person({
     firstName: 'Hwajung',
@@ -246,10 +249,16 @@ export const PERSON = {
   jieunHan: new Person({
     firstName: 'Jieun',
     lastName: 'Han',
+    profileImage: '/people/jieunhan.jpeg',
+    institution: 'KAIST',
+    link: 'https://zeunie.github.io',
   }),
   zixinChen: new Person({
     firstName: 'Zixin',
     lastName: 'Chen',
+    profileImage: '/people/zixinchen.jpg',
+    institution: 'HKUST',
+    link: 'https://cinderd.github.io',
   }),
 } as const
 

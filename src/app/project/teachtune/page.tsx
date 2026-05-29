@@ -40,7 +40,8 @@ const THEME = {
   },
 }
 
-const BIBTEX = `@inproceedings{jin2025teachtune,
+const BIBTEX = `
+@inproceedings{jin2025teachtune,
   author = {Jin, Hyoungwook and Yoo, Minju and Park, Jeongeon and Lee, Yokyung and Wang, Xu and Kim, Juho},
   title = {TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students},
   year = {2025},
@@ -55,7 +56,7 @@ const BIBTEX = `@inproceedings{jin2025teachtune,
   keywords = {LLM-assisted evaluation, Simulated students, Pedagogical conversational agents},
   location = {Yokohama, Japan},
   series = {CHI '25}
-}`
+}`.trim()
 
 export default function Page() {
   return (
