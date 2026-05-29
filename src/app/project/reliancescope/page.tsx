@@ -289,5 +289,6 @@ const ImageContainer = styled.div`
 const Highlight = styled.span`
   ${({ theme }) => css`
     ${theme.color.Focus}
+    font-variant: small-caps;
   `}
 `
