@@ -14,6 +14,7 @@ import {
   HeaderText,
   LinearLayout,
   ResetStyle,
+  StrongText,
   SubHeaderText,
 } from '@wookiejin/react-component'
 import Image from 'next/image'
@@ -138,9 +139,43 @@ export default function Page() {
 
           <h2>
             <SubHeaderText color="Focus" marginBottom={16}>
+              DEFINING RELIANCE
+            </SubHeaderText>
+          </h2>
+
+          <BodyText marginBottom={16}>
+            <p>
+              RelianceScope models student-chatbot interaction as cycles of two actions:{' '}
+              <StrongText>help-seeking </StrongText>(asking the chatbot) and <StrongText>response-use</StrongText>{' '}
+              (using the chatbot’s reply). Each action is classified by cognitive engagement as passive, active, or
+              constructive. We define reliance as the combination of engagement modes across these two actions.
+            </p>
+          </BodyText>
+
+          <ImageContainer>
+            <Image src={'/images/reliancescope/reliancescope.png'} fill objectFit="contain" alt="RelianceScope" />
+          </ImageContainer>
+
+          <Divider marginVertical={24} />
+
+          <h2>
+            <SubHeaderText color="Focus" marginBottom={16}>
               DATA COLLECTION
             </SubHeaderText>
           </h2>
+
+          <BodyText marginBottom={16}>
+            <p>
+              We collected a dataset of 79 college students&apos; interactions with a chatbot while solving a web
+              programming problem. Students used the interface shown below to create a to-do list application using
+              Vue.js, with access to a chatbot for help. The dataset includes 1,362 chat logs annotated with reliance
+              patterns, 2,708 code edit logs, pre- and post-assessments, and self-reported self-regulation measures.
+            </p>
+          </BodyText>
+
+          <ImageContainer>
+            <Image src={'/images/reliancescope/interface.png'} fill objectFit="contain" alt="interface" />
+          </ImageContainer>
 
           <Divider marginVertical={24} />
 
@@ -150,9 +185,27 @@ export default function Page() {
             </SubHeaderText>
           </h2>
 
-          <ReliancePatterns onClick={setPatternIndex} />
+          <BodyText marginBottom={16}>
+            <p>
+              We identified the nine reliance patterns in our dataset and analyzed their distribution and
+              characteristics. Each pattern reflects a unique combination of engagement modes, revealing diverse ways
+              students interact with AI chatbots during problem-solving. The distribution of these patterns are noted in
+              each square below. <StrongText>CLICK</StrongText> on each square to see example conversations from our
+              dataset.
+            </p>
+          </BodyText>
 
-          <ChatViewer conversation={PATTERNS[patternIndex]} assistantImg="/images/reliancescope/chatbot.png" />
+          <ReliancePatterns selectedPatternIndex={patternIndex} onClick={setPatternIndex} />
+          <ChatContainer>
+            <ChatViewer conversation={PATTERNS[patternIndex]} assistantImg="/images/reliancescope/chatbot.png" />
+          </ChatContainer>
+
+          <BodyText marginTop={16}>
+            <p>
+              Check more findings and insights in our paper and dataset. We also provide design guidelines for
+              AI-supported educational systems based on our findings.
+            </p>
+          </BodyText>
 
           <Divider marginVertical={24} />
 
@@ -214,6 +267,23 @@ const LinkButtons = styled.div`
   width: 100%;
   margin-top: 24px;
   text-align: center;
+`
+
+const ChatContainer = styled.div`
+  ${({ theme }) => css`
+    ${theme.border.Secondary}
+    margin-top: 16px;
+    padding: 8px;
+  `}
+`
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: 300px;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    height: 200px;
+  }
 `
 
 const Highlight = styled.span`

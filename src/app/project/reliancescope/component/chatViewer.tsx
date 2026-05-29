@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { CaptionText, ColorIcon, TextButton, TextLoading } from '@wookiejin/react-component'
+import { BodyText, CaptionText, ColorIcon, TextButton, TextLoading } from '@wookiejin/react-component'
 import { Color } from '@wookiejin/react-component/dist/cjs/themes/default/color'
 import { Fill } from '@wookiejin/react-component/dist/cjs/themes/default/fill'
 import Image from 'next/image'
@@ -13,6 +13,7 @@ interface Props {
   conversation: (
     | { role: 'assistant'; content: string; resourceIndex?: number }
     | { role: 'user' | 'system'; content: string }
+    | { role: 'comment'; type: 'help-seeking' | 'response-use'; content: string }
   )[]
   assistantImg?: string
   assistantName?: string
@@ -53,9 +54,27 @@ export const ChatViewer = ({
         } else if (message.role === 'user') {
           return (
             <UserMessageRow key={i}>
-              <Bubble fill="Secondary" color="Primary">
+              <Bubble fill="Contrast" color="Contrast">
                 {message.content}
               </Bubble>
+              <Profile>
+                <Image src={'/images/reliancescope/student.png'} width={PROFILE_SIZE} height={PROFILE_SIZE} alt="" />
+              </Profile>
+            </UserMessageRow>
+          )
+        } else if (message.role === 'comment') {
+          return (
+            <Comment key={i}>
+              <Image src={`/images/reliancescope/${message.type}.png`} width={20} height={20} alt="" />
+              {message.content}
+            </Comment>
+          )
+        } else {
+          return (
+            <UserMessageRow key={i}>
+              <SystemMessage>
+                <Markdown readOnly source={message.content} />
+              </SystemMessage>
               <Profile>
                 <Image src={'/images/reliancescope/student.png'} width={PROFILE_SIZE} height={PROFILE_SIZE} alt="" />
               </Profile>
@@ -80,7 +99,6 @@ const MessageRow = styled.div<{ marginBottom?: number }>`
   ${({ marginBottom = 0 }) => css`
     display: grid;
     grid-template-columns: auto fit-content(80%) auto;
-    gap: 8px;
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: ${marginBottom}px;
@@ -104,6 +122,36 @@ const Bubble = styled.div<{ fill: Fill; color: Color }>`
     border-radius: 8px;
     white-space: pre-wrap;
     min-width: 0;
+  `}
+`
+
+const SystemMessage = styled.div`
+  ${({ theme }) => css`
+    ${theme.font.Body}
+    background: #c9daf8ff;
+    border-radius: 8px;
+    padding: 8px;
+    color: #4a86e8;
+    border: 1px dashed #4a86e8;
+    white-space: pre-wrap;
+    min-width: 0;
+  `}
+`
+
+const Comment = styled.div`
+  ${({ theme }) => css`
+    ${theme.font.Body}
+    display: grid;
+    grid-template-columns: auto auto;
+    width: fit-content;
+    gap: 4px;
+    color: #6aa84fff;
+    padding: 8px;
+    margin-right: 40px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    text-align: right;
+    align-items: center;
   `}
 `
 

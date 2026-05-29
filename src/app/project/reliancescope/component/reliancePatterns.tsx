@@ -3,23 +3,42 @@ import styled from '@emotion/styled'
 import { BodyText, CaptionText, LinearLayout } from '@wookiejin/react-component'
 
 interface Props {
+  selectedPatternIndex: number
   onClick: (i: number) => void
 }
 
-export const ReliancePatterns = ({ onClick }: Props) => {
+export const ReliancePatterns = ({ selectedPatternIndex, onClick }: Props) => {
   return (
-    <div>
+    <Container>
       <Patterns>
         <Grid>
-          <Level2 onClick={() => onClick(0)}>3.3%</Level2>
-          <Level1 onClick={() => onClick(1)}>1.5%</Level1>
-          <Level1 onClick={() => onClick(2)}>1.8%</Level1>
-          <Level4 onClick={() => onClick(3)}>10%</Level4>
-          <Level3 onClick={() => onClick(4)}>7.7%</Level3>
-          <Level2 onClick={() => onClick(5)}>3.3%</Level2>
-          <Level6 onClick={() => onClick(6)}>44%</Level6>
-          <Level5 onClick={() => onClick(7)}>18%</Level5>
-          <Level3 onClick={() => onClick(8)}>9.8%</Level3>
+          <Level2 highlight={selectedPatternIndex === 0} onClick={() => onClick(0)}>
+            3.3%
+          </Level2>
+          <Level1 highlight={selectedPatternIndex === 1} onClick={() => onClick(1)}>
+            1.5%
+          </Level1>
+          <Level1 highlight={selectedPatternIndex === 2} onClick={() => onClick(2)}>
+            1.8%
+          </Level1>
+          <Level4 highlight={selectedPatternIndex === 3} onClick={() => onClick(3)}>
+            10%
+          </Level4>
+          <Level3 highlight={selectedPatternIndex === 4} onClick={() => onClick(4)}>
+            7.7%
+          </Level3>
+          <Level2 highlight={selectedPatternIndex === 5} onClick={() => onClick(5)}>
+            3.3%
+          </Level2>
+          <Level6 highlight={selectedPatternIndex === 6} onClick={() => onClick(6)}>
+            44%
+          </Level6>
+          <Level5 highlight={selectedPatternIndex === 7} onClick={() => onClick(7)}>
+            18%
+          </Level5>
+          <Level3 highlight={selectedPatternIndex === 8} onClick={() => onClick(8)}>
+            9.8%
+          </Level3>
         </Grid>
         <EngagementLabels>
           <CaptionText align="center">Passive</CaptionText>
@@ -40,12 +59,16 @@ export const ReliancePatterns = ({ onClick }: Props) => {
           </BodyText>
         </VerticalActionLabel>
       </Patterns>
-    </div>
+    </Container>
   )
 }
 
 const SQUARE_SIZE = 264
 const GRID_GAP = 8
+
+const Container = styled.div`
+  margin-left: 40px;
+`
 
 const Patterns = styled.div`
   width: ${SQUARE_SIZE}px;
@@ -87,15 +110,19 @@ const VerticalActionLabel = styled.div`
   transform-origin: top right;
 `
 
-const Square = styled.button`
-  ${({ theme }) => css`
+const Square = styled.button<{ highlight: boolean }>`
+  ${({ theme, highlight }) => css`
     ${theme.font.SubTitle}
     background-color: #f0f0f0;
     aspect-ratio: 1 / 1;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.2s ease-in-out;
+    transition: scale 0.2s ease-in-out;
+    ${highlight &&
+    css`
+      ${theme.border.Danger}
+    `}
 
     :hover {
       scale: 1.05;
