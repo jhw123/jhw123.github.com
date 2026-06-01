@@ -8,7 +8,7 @@ export const PATTERNS = [
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Constructive] The student chose to ask for an example.',
+      content: '[Constructive Help-Seeking] The student chose to ask for an example.',
     },
     {
       role: 'assistant' as const,
@@ -34,7 +34,7 @@ Try adding this to your \`data()\` function. Let me know if you need more help!
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Passive] The student copied the code verbatim.',
+      content: '[Passive Response-Use] The student copied the code verbatim.',
     },
     {
       role: 'system' as const,
@@ -59,7 +59,7 @@ data() {
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Constructive] The student asked for an example instead of answer.',
+      content: '[Constructive Help-Seeking] The student asked for an example instead of answer.',
     },
     {
       role: 'assistant' as const,
@@ -83,7 +83,7 @@ Try adding this code to your \`data()\` function. Let me know when you're ready 
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Active] The student did not copy the code but made an adjustment (newTodo).',
+      content: '[Active Response-Use] The student did not copy but made an adjustment (newTodo).',
     },
     {
       role: 'system' as const,
@@ -106,7 +106,7 @@ return {
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Constructive] The student asked for hints instead of a direct answer.',
+      content: '[Constructive Help-Seeking] The student asked for hints instead of a direct answer.',
     },
     {
       role: 'assistant' as const,
@@ -123,7 +123,7 @@ Would you like to make these adjustments and try again?
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Constructive] The student create code on their own based on the hints.',
+      content: '[Constructive Response-Use] The student create code on their own based on the hints.',
     },
     {
       role: 'system' as const,
@@ -143,7 +143,7 @@ Would you like to make these adjustments and try again?
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Active] The student asked a knowledge-specific question.',
+      content: '[Active Help-Seeking] The student asked a knowledge-specific question.',
     },
     {
       role: 'assistant' as const,
@@ -169,7 +169,7 @@ Would you like to try adding this logic to your \`createTodo\` function?
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Passive] The student copied the code verbatim.',
+      content: '[Passive Response-Use] The student copied the code verbatim.',
     },
     {
       role: 'system' as const,
@@ -192,7 +192,7 @@ createTodo() {
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Active] The student asked a knowledge-specific question.',
+      content: '[Active Help-Seeking] The student asked a knowledge-specific question.',
     },
     {
       role: 'assistant' as const,
@@ -224,7 +224,7 @@ You can add this method inside the \`methods\` object. Would you like to try wri
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Active] The student asked a follow-up clarification question.',
+      content: '[Active Response-Use] The student asked a follow-up clarification question.',
     },
     {
       role: 'user' as const,
@@ -240,7 +240,7 @@ You can add this method inside the \`methods\` object. Would you like to try wri
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Active] The student ask a confirmation question about a specific knowledge.',
+      content: '[Active Help-Seeking] The student ask a confirmation question about a specific knowledge.',
     },
     {
       role: 'assistant' as const,
@@ -255,7 +255,7 @@ Would you like to try writing the \`removeTodo\` method now?
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Constructive] The student create code on their own based on the response.',
+      content: '[Constructive Response-Use] The student create code on their own based on the response.',
     },
     {
       role: 'system' as const,
@@ -277,7 +277,7 @@ removeTodo(id) {
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Passive] The student asked a broad question without any effort.',
+      content: '[Passive Help-Seeking] The student asked a broad question without any effort.',
     },
     {
       role: 'assistant' as const,
@@ -299,7 +299,7 @@ Try adding this input element to your code inside the \`<div id="app">\`. Let me
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Passive] The student copied the code verbatim.',
+      content: '[Passive Response-Use] The student copied the code verbatim.',
     },
     {
       role: 'system' as const,
@@ -319,7 +319,7 @@ Try adding this input element to your code inside the \`<div id="app">\`. Let me
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Passive] The student copied the activity instruction verbatim.',
+      content: '[Passive Help-Seeking] The student copied the activity instruction verbatim.',
     },
     {
       role: 'assistant' as const,
@@ -340,7 +340,7 @@ This will allow the input field to update the \`newTodo\` data property in real-
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Active] The student made an adjustment to the code (placeholder).',
+      content: '[Active Response-Use] The student made an adjustment to the code (placeholder).',
     },
     {
       role: 'system' as const,
@@ -360,7 +360,7 @@ This will allow the input field to update the \`newTodo\` data property in real-
     {
       role: 'comment' as const,
       type: 'help-seeking' as const,
-      content: '[Passive] The student copied the activity instruction verbatim.',
+      content: '[Passive Help-Seeking] The student copied the activity instruction verbatim.',
     },
     {
       role: 'assistant' as const,
@@ -379,7 +379,7 @@ If you are facing any specific issues or errors, please let me know, and I can h
     {
       role: 'comment' as const,
       type: 'response-use' as const,
-      content: '[Constructive] The student extends knowledge by asking a "why" question.',
+      content: '[Constructive Response-Use] The student extends knowledge by asking a "why" question.',
     },
     { role: 'user' as const, content: `why does every item in the list need a unique key?` },
   ],

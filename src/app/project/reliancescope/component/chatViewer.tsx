@@ -65,7 +65,7 @@ export const ChatViewer = ({
         } else if (message.role === 'comment') {
           return (
             <Comment key={i}>
-              <Image src={`/images/reliancescope/${message.type}.png`} width={20} height={20} alt="" />
+              <Image src={`/images/reliancescope/${message.type}.png`} width={20} height={20} alt={message.type} />
               {message.content}
             </Comment>
           )
