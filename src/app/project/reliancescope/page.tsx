@@ -219,7 +219,7 @@ export default function Page() {
 
           <Divider marginVertical={24} />
 
-          <LinearLayout justifyContent="center" gap={16}>
+          <Footer>
             <ExternalLink href="https://cse.engin.umich.edu/">
               <Image
                 src="/images/umich_logo.png"
@@ -247,7 +247,7 @@ export default function Page() {
                 alt="HKUST logo"
               />
             </ExternalLink>
-          </LinearLayout>
+          </Footer>
         </Content>
       </main>
     </ThemeProvider>
@@ -300,4 +300,12 @@ const Highlight = styled.span`
     ${theme.color.Focus}
     font-variant: small-caps;
   `}
+`
+
+const Footer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 16px;
 `
