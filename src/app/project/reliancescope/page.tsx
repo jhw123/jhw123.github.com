@@ -18,9 +18,9 @@ import {
   SubHeaderText,
 } from '@wookiejin/react-component'
 import Image from 'next/image'
-import { ReliancePatterns } from './component/reliancePatterns'
 import { useState } from 'react'
 import { ChatViewer } from './component/chatViewer'
+import { ReliancePatterns } from './component/reliancePatterns'
 import { PATTERNS } from './data/patterns'
 
 const THEME = {
@@ -236,6 +236,15 @@ export default function Page() {
                 height={224 / 6}
                 style={{ filter: 'drop-shadow(white 0 0 1px)' }}
                 alt="KAIST logo"
+              />
+            </ExternalLink>
+            <ExternalLink href="https://cse.hkust.edu.hk/">
+              <Image
+                src="/images/hkust_logo.png"
+                width={2332 / 14}
+                height={742 / 14}
+                style={{ filter: 'drop-shadow(white 0 0 1px)' }}
+                alt="HKUST logo"
               />
             </ExternalLink>
           </LinearLayout>
