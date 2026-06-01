@@ -16,6 +16,10 @@ class Post {
 
 export const POSTS = DataUtil.sortByTime([
   new Post({
+    content: `🇰🇷 I will visit Seoul to present [RelianceScope](${PUBLICATION.relianceScope.link?.['Paper']}) at L@S2026.`,
+    startDate: new Date('2026-06-01'),
+  }),
+  new Post({
     content: `🎉 [RelianceScope](${PUBLICATION.relianceScope.link?.['Paper']}) is accepted to L@S2026!`,
     startDate: new Date('2026-04-12'),
   }),
