@@ -38,7 +38,7 @@ export const PUBLICATION = {
     imagePath: '/projects/reliancescope.png',
     link: {
       Paper: 'https://arxiv.org/abs/2602.16251',
-      // Website: '/project/reliancescope',
+      Website: '/project/reliancescope',
       Dataset: 'https://osf.io/27ec5/overview?view_only=a8234a17f908464297d35d5ca1ef476c',
     },
   }),
