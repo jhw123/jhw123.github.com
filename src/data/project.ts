@@ -23,7 +23,7 @@ class Project {
 export const PROJECT = {
   mathCog: new Project({
     title: "Benchmarking Large Language Models for Diagnosing Students' Cognitive Skills from Handwritten Math Work",
-    startDate: new Date(2024, 12),
+    startDate: new Date('2024-12'),
     imagePath: '/projects/mathcog.png',
     description:
       "This project investigates whether large language models (LLMs) can diagnose students’ cognitive skills from handwritten math responses. By introducing the MathCog benchmark and evaluating 16 LLMs, we reveal that even advanced models struggle to infer students' thinking process from fragmented visual and textual cues.",

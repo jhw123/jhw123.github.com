@@ -12,7 +12,6 @@ import {
   DEFAULT_LIGHT_THEME,
   Divider,
   HeaderText,
-  LinearLayout,
   ResetStyle,
   StrongText,
   SubHeaderText,
@@ -42,11 +41,21 @@ const THEME = {
 }
 
 const BIBTEX = `
-@article{jin2026reliancescope,
-  title={RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving},
-  author={Jin, Hyoungwook and Yoo, Minju and Han, Jieun and Chen, Zixin and Ahn, So-Yeon and Wang, Xu},
-  journal={arXiv preprint arXiv:2602.16251},
-  year={2026}
+@inproceedings{jin2026reliancescope,
+  author = {Jin, Hyoungwook and Yoo, Minju and Han, Jieun and Chen, Zixin and Ahn, So-Yeon and Wang, Xu},
+  title = {RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving},
+  year = {2026},
+  isbn = {9798400722936},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3774398.3811612},
+  doi = {10.1145/3774398.3811612},
+  booktitle = {Proceedings of the Thirteenth ACM Conference on Learning @ Scale},
+  pages = {136–147},
+  numpages = {12},
+  keywords = {reliance on ai, analytical framework, problem-solving},
+  location = {Republic of Korea},
+  series = {L@S '26}
 }
 `.trim()
 
