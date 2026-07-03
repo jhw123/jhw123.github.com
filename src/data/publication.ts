@@ -42,6 +42,7 @@ export const PUBLICATION = {
       Slides: 'https://docs.google.com/presentation/d/19R1vGbe9taKw28-d0zZJgYcf5a5lR3VCM961T_aZZ7Q/edit?usp=sharing',
       Dataset: 'https://osf.io/27ec5/overview?view_only=a8234a17f908464297d35d5ca1ef476c',
     },
+    awards: ['Best Paper'],
   }),
   scaffoldingBreaks: new Publication({
     title:
