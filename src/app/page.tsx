@@ -225,9 +225,8 @@ const Content = styled.main`
   line-height: 1.4;
   display: grid;
   grid-template-columns: 420px minmax(0, 1fr);
-  gap: 48px;
   max-width: 1440px;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
 
   @media (prefers-color-scheme: dark) {
@@ -289,7 +288,7 @@ const ShowMoreButton = styled.button`
   color: #495961;
   background: transparent;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
   line-height: 1.2;
 
@@ -309,43 +308,91 @@ const ShowMoreButton = styled.button`
 
 const Sidebar = styled.aside`
   padding: 20px;
-  color: #f4ede1;
-  background: linear-gradient(160deg, #292016 0%, #17120e 52%, #0e0c0a 100%);
-  box-shadow: inset -1px 0 0 rgba(241, 199, 111, 0.28);
+  padding-bottom: 64px;
+  color: #4f412f;
+  background: linear-gradient(160deg, #fffefa 0%, #fdf8ee 52%, #f8ecd5 100%);
+  box-shadow: inset -1px 0 0 rgba(155, 107, 30, 0.16);
 
-  h1 > div,
-  h2 > div {
-    color: #f1c76f;
+  h1 > span,
+  h2 > span {
+    color: #9b6b1e;
   }
 
   a {
-    color: #f1c76f;
+    color: #8a601c;
   }
 
   hr {
-    background-color: rgba(241, 199, 111, 0.42);
+    background-color: rgba(155, 107, 30, 0.22);
   }
 
   button {
-    color: #f1c76f;
+    color: #8a601c;
   }
 
   a > div {
-    border-color: rgba(241, 199, 111, 0.7);
-    background: rgba(241, 199, 111, 0.07);
+    border-color: rgba(138, 96, 28, 0.32);
+    background: rgba(255, 255, 255, 0.72);
     transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 
     &:hover {
-      border-color: #f1c76f;
-      background: rgba(241, 199, 111, 0.18);
+      border-color: #9b6b1e;
+      background: rgba(155, 107, 30, 0.12);
       transform: translateY(-1px);
+    }
+  }
+
+  a svg {
+    color: #8a601c;
+    fill: #8a601c;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #f4ede1;
+    background: linear-gradient(160deg, #292016 0%, #17120e 52%, #0e0c0a 100%);
+    box-shadow: inset -1px 0 0 rgba(241, 199, 111, 0.28);
+
+    h1 > span,
+    h2 > span {
+      color: #f1c76f;
+    }
+
+    a,
+    button {
+      color: #f1c76f;
+    }
+
+    hr {
+      background-color: rgba(241, 199, 111, 0.42);
+    }
+
+    a > div {
+      border-color: rgba(241, 199, 111, 0.7);
+      background: rgba(241, 199, 111, 0.07);
+
+      &:hover {
+        border-color: #f1c76f;
+        background: rgba(241, 199, 111, 0.18);
+      }
+    }
+
+    a svg {
+      color: #f1c76f;
+      fill: #f1c76f;
     }
   }
 
   @media (min-width: ${MOBILE_BREAKPOINT + 1}px) {
     position: sticky;
-    height: 100%;
+    top: 0;
+    height: calc(100vh - 84px);
     overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `
 
@@ -357,6 +404,7 @@ const SidebarProfile = styled.section`
 
 const PosterContent = styled.section`
   min-width: 0;
+  margin: 0 24px 64px 24px;
 
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
     margin: 0 20px;
@@ -387,18 +435,11 @@ const Introduction = styled.div`
 
 const PosterGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  justify-content: start;
   gap: 20px;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 `
@@ -406,11 +447,8 @@ const PosterGrid = styled.div`
 const Poster = styled.article`
   position: relative;
   aspect-ratio: 2 / 3;
-  overflow: hidden;
-  border-radius: 4px;
   perspective: 1000px;
   z-index: 20;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 
   &:focus-visible {
     outline: 3px solid currentColor;
@@ -443,6 +481,9 @@ const Poster = styled.article`
 const PosterFront = styled.div`
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   backface-visibility: hidden;
   transform: rotateY(0deg);
   transition: transform 220ms ease-in;
@@ -457,12 +498,14 @@ const PosterOverlay = styled.div`
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   color: white;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.6));
   backface-visibility: hidden;
   transform: rotateY(180deg);
   transition: transform 220ms ease-in;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
   line-height: 1.2;
 
@@ -477,7 +520,7 @@ const PosterOverlay = styled.div`
     position: relative;
     justify-content: center;
     text-align: center;
-    font-size: 0.72em;
+    font-size: 1rem;
     font-weight: 600;
     font-family: var(--font-cinema), Impact, sans-serif;
     letter-spacing: 0.1em;
@@ -509,7 +552,7 @@ const PosterAward = styled.span`
   left: 10px;
   padding: 5px 8px;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
   line-height: 1.2;
   color: white;
@@ -518,7 +561,7 @@ const PosterAward = styled.span`
 `
 
 const PosterDescription = styled.p`
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
   line-height: 1.2;
   color: white;
@@ -539,7 +582,7 @@ const PublicationMeta = styled.div`
     padding: 3px 6px;
     border: 1px solid currentColor;
     border-radius: 999px;
-    font-size: 0.75em;
+    font-size: 1rem;
   }
 `
 

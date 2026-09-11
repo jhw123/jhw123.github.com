@@ -22,7 +22,7 @@ const Container = styled.span`
   white-space: pre-wrap;
   height: min-content;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   line-height: 1.3;
