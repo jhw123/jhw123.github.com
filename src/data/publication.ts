@@ -11,7 +11,7 @@ interface Props {
   link?: Record<string, string>
   conference: string
   type: PaperType
-  imagePath: string
+  imagePath?: string
   awards?: string[]
 }
 
@@ -27,6 +27,27 @@ class Publication {
 }
 
 export const PUBLICATION = {
+  knowSim: new Publication({
+    title: 'KnowSim: Evaluating Information Calibration in LLM Assistants with User Simulators that Learn',
+    authors: [
+      PERSON.yoonjooLee,
+      PERSON.hyoungwook,
+      PERSON.taesooKim,
+      PERSON.shaoyangZhang,
+      PERSON.philippeLaban,
+      PERSON.veraLiao,
+    ],
+    startDate: new Date('2026-03'),
+    endDate: new Date('2026-08'),
+    conference: "EMNLP'26",
+    type: 'full paper',
+    imagePath: '/posters/knowsim.png',
+    link: {
+      Paper: 'https://arxiv.org/abs/2608.17150',
+      Website: 'https://yoonjoolee.com/knowsim/',
+      Dataset: 'https://huggingface.co/datasets/yjlee36/knowchat-multi-turn-dialogues',
+    },
+  }),
   relianceScope: new Publication({
     title:
       "RelianceScope: An Analytical Framework for Examining Students' Reliance on Generative AI Chatbots in Problem Solving",

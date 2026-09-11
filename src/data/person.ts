@@ -260,6 +260,26 @@ export const PERSON = {
     institution: 'HKUST',
     link: 'https://cinderd.github.io',
   }),
+  yoonjooLee: new Person({
+    firstName: 'Yoonjoo',
+    lastName: 'Lee',
+  }),
+  taesooKim: new Person({
+    firstName: 'Tae Soo',
+    lastName: 'Kim',
+  }),
+  shaoyangZhang: new Person({
+    firstName: 'Shaoyang',
+    lastName: 'Zhang',
+  }),
+  philippeLaban: new Person({
+    firstName: 'Philippe',
+    lastName: 'Laban',
+  }),
+  veraLiao: new Person({
+    firstName: 'Q. Vera',
+    lastName: 'Liao',
+  }),
 } as const
 
 export default Person
