@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { View } from '@wookiejin/react-component'
 import { format } from 'date-fns'
 
 interface Props {
@@ -7,11 +6,25 @@ interface Props {
   formatStr?: string
 }
 
-export const Time = View<Props>(({ date, formatStr = 'LLL do yyyy', forwardedRef, ...props }) => {
-  return <Container {...props}>{date !== undefined ? format(date, formatStr) : 'Present'}</Container>
-})
+export const Time = ({ date, formatStr = 'LLL do yyyy' }: Props) => {
+  if (date === undefined) {
+    return <Container>Present</Container>
+  }
+
+  // Date-only strings are parsed as UTC. Rebuilding this as a local date from
+  // UTC fields keeps server and browser formatting consistent across time zones.
+  const localDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
+
+  return <Container>{format(localDate, formatStr)}</Container>
+}
 
 const Container = styled.span`
   white-space: pre-wrap;
   height: min-content;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
 `

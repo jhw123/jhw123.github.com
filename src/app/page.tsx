@@ -143,7 +143,7 @@ export default function Page() {
                   <PosterFront data-poster-face="front">
                     <Image
                       fill
-                      src={imagePath}
+                      src={imagePath ?? ''}
                       style={{ objectFit: 'cover' }}
                       alt={`The poster image of ${title}`}
                       sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"

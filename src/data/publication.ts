@@ -35,7 +35,7 @@ export const PUBLICATION = {
     endDate: new Date('2026-02'),
     conference: "L@S'26",
     type: 'full paper',
-    imagePath: '/projects/reliancescope.png',
+    imagePath: '/posters/reliancescope.png',
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3774398.3811612',
       Website: '/project/reliancescope',
@@ -60,7 +60,7 @@ export const PUBLICATION = {
     ],
     startDate: new Date('2024-07'),
     endDate: new Date('2025-03'),
-    imagePath: '/projects/scaffolding-breaks.png',
+    imagePath: '/posters/scaffolding-breaks.png',
     conference: "CHI'26",
     type: 'full paper',
     link: {
@@ -74,7 +74,6 @@ export const PUBLICATION = {
     authors: [PERSON.minjuYoo, PERSON.hyoungwook, PERSON.juhoKim],
     startDate: new Date('2024-10'),
     endDate: new Date('2025-03'),
-    imagePath: '/projects/teachcraft-workshop.png',
     conference: "CHI'25 Workshop on Augmented Educators and AI",
     type: 'workshop',
     link: {
@@ -93,7 +92,7 @@ export const PUBLICATION = {
     ],
     startDate: new Date('2023-12'),
     endDate: new Date('2025-01'),
-    imagePath: '/projects/teachtune.png',
+    imagePath: '/posters/teachtune.png',
     conference: "CHI'25",
     type: 'full paper',
     link: {
@@ -116,7 +115,7 @@ export const PUBLICATION = {
       Slides: 'https://docs.google.com/presentation/d/1zBuMDBlXCRtb9cLOgbnu8oLqWDEtNuj_s5Y8-VVv5S0/edit?usp=sharing',
       Dataset: 'https://github.com/TeachYou-org',
     },
-    imagePath: '/projects/teachyou.png',
+    imagePath: '/posters/teachyou.png',
     awards: ['Honorable Mention'],
   }),
   codeTree: new Publication({
@@ -131,7 +130,7 @@ export const PUBLICATION = {
       Website: '/project/codetree',
       Slides: 'https://docs.google.com/presentation/d/16gyYuJMdnoS4WgNY6zmWtY_NMSINaMfunGW0TnK71k4/edit?usp=sharing',
     },
-    imagePath: '/projects/codetree.png',
+    imagePath: '/posters/codetree.png',
   }),
   processGallery: new Publication({
     title:
@@ -152,7 +151,7 @@ export const PUBLICATION = {
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3637389',
     },
-    imagePath: '/projects/processgallery.png',
+    imagePath: '/posters/processgallery.png',
   }),
   inActionFeedback: new Publication({
     title: 'When to Give Feedback: Exploring Tradeoffs in the Timing of Design Feedback',
@@ -175,7 +174,7 @@ export const PUBLICATION = {
       Paper: 'https://dl.acm.org/doi/10.1145/3635636.3656183',
       Website: 'https://ejane.me/inactionfeedback.html',
     },
-    imagePath: '/projects/realtime-feedback.png',
+    imagePath: '/posters/realtime-feedback.png',
   }),
   subgoalHierarchies: new Publication({
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
@@ -188,7 +187,6 @@ export const PUBLICATION = {
       Slides: 'https://docs.google.com/presentation/d/1QLr-jHf4tTPvcdJF4GBrO47A10fGkWSdBQVZb2ts2Sc/edit?usp=sharing',
     },
     conference: "L@S'22 Workshop on Learnersourcing: Student-generated Content @ Scale",
-    imagePath: '/projects/learnersourcing-subgoals.png',
   }),
   kuizWorkshop: new Publication({
     title: 'KUIZ: Encouraging Modular Learnersourcing of Multiple Choice Questions through LLM Interventions',
@@ -201,7 +199,6 @@ export const PUBLICATION = {
       Slides: 'https://docs.google.com/presentation/d/1eG-Q3W8q_SVBAVDnQaQDXmBOasveJbHt-6_RSlN4hI4/edit?usp=sharing',
     },
     conference: "L@S'24 Workshop on Learnersourcing: Student-generated Content @ Scale",
-    imagePath: '/projects/kuiz.png',
   }),
   learnersourcingWorkshop: new Publication({
     title: 'Learnersourcing: Student-generated Content @ Scale: Annual Workshop',
@@ -225,7 +222,6 @@ export const PUBLICATION = {
       Website: 'https://sites.google.com/andrew.cmu.edu/learnersourcing',
     },
     conference: "L@S'24, L@S'25",
-    imagePath: '/projects/learnersourcing-workshop.png',
   }),
   hamamathWIP: new Publication({
     title: 'Using Large Language Models to Diagnose Math Problem-Solving Skills at Scale',
@@ -241,7 +237,6 @@ export const PUBLICATION = {
     endDate: new Date('2024-05'),
     type: 'poster',
     conference: "L@S'24 Work-in-Progress",
-    imagePath: '/projects/hamamath.png',
     link: { Paper: 'https://dl.acm.org/doi/10.1145/3657604.3664697' },
   }),
   ExGPTer: new Publication({
@@ -252,7 +247,6 @@ export const PUBLICATION = {
     startDate: new Date('2022-11'),
     endDate: new Date('2023-05'),
     conference: "CHI'23 Generative AI and HCI Workshop",
-    imagePath: '/projects/exgpter.png',
     link: { Paper: '/files/CHI2023 ExGPTer.pdf' },
   }),
   automaTA: new Publication({
@@ -263,7 +257,6 @@ export const PUBLICATION = {
     type: 'poster',
     link: { Paper: 'https://dl.acm.org/doi/10.1145/3330430.3333658' },
     conference: "L@S'19 Work-in-Progress",
-    imagePath: '/projects/automata.png',
   }),
   solveDeep: new Publication({
     title: 'SolveDeep: Support Subgoal Learning in Online Math Problem Solving',
@@ -273,7 +266,6 @@ export const PUBLICATION = {
     type: 'poster',
     link: { Paper: 'https://dl.acm.org/doi/10.1145/3290607.3312822' },
     conference: "CHI'19 Extended Abstract",
-    imagePath: '/projects/solvedeep.png',
   }),
 } as const
 export const PUBLICATIONS = DataUtil.sortByTime(Object.values(PUBLICATION))
