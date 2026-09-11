@@ -41,7 +41,7 @@ export const PUBLICATION = {
     endDate: new Date('2026-08'),
     conference: "EMNLP'26",
     type: 'full paper',
-    imagePath: '/posters/knowsim.png',
+    imagePath: '/posters/knowsim.webp',
     link: {
       Paper: 'https://arxiv.org/abs/2608.17150',
       Website: 'https://yoonjoolee.com/knowsim/',
@@ -56,7 +56,7 @@ export const PUBLICATION = {
     endDate: new Date('2026-02'),
     conference: "L@S'26",
     type: 'full paper',
-    imagePath: '/posters/reliancescope.png',
+    imagePath: '/posters/reliancescope.webp',
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3774398.3811612',
       Website: '/project/reliancescope',
@@ -81,7 +81,7 @@ export const PUBLICATION = {
     ],
     startDate: new Date('2024-07'),
     endDate: new Date('2025-03'),
-    imagePath: '/posters/scaffolding-breaks.png',
+    imagePath: '/posters/scaffolding-breaks.webp',
     conference: "CHI'26",
     type: 'full paper',
     link: {
@@ -113,7 +113,7 @@ export const PUBLICATION = {
     ],
     startDate: new Date('2023-12'),
     endDate: new Date('2025-01'),
-    imagePath: '/posters/teachtune.png',
+    imagePath: '/posters/teachtune.webp',
     conference: "CHI'25",
     type: 'full paper',
     link: {
@@ -136,7 +136,7 @@ export const PUBLICATION = {
       Slides: 'https://docs.google.com/presentation/d/1zBuMDBlXCRtb9cLOgbnu8oLqWDEtNuj_s5Y8-VVv5S0/edit?usp=sharing',
       Dataset: 'https://github.com/TeachYou-org',
     },
-    imagePath: '/posters/teachyou.png',
+    imagePath: '/posters/teachyou.webp',
     awards: ['Honorable Mention'],
   }),
   codeTree: new Publication({
@@ -151,7 +151,7 @@ export const PUBLICATION = {
       Website: '/project/codetree',
       Slides: 'https://docs.google.com/presentation/d/16gyYuJMdnoS4WgNY6zmWtY_NMSINaMfunGW0TnK71k4/edit?usp=sharing',
     },
-    imagePath: '/posters/codetree.png',
+    imagePath: '/posters/codetree.webp',
   }),
   processGallery: new Publication({
     title:
@@ -172,7 +172,7 @@ export const PUBLICATION = {
     link: {
       Paper: 'https://dl.acm.org/doi/10.1145/3637389',
     },
-    imagePath: '/posters/processgallery.png',
+    imagePath: '/posters/processgallery.webp',
   }),
   inActionFeedback: new Publication({
     title: 'When to Give Feedback: Exploring Tradeoffs in the Timing of Design Feedback',
@@ -195,7 +195,7 @@ export const PUBLICATION = {
       Paper: 'https://dl.acm.org/doi/10.1145/3635636.3656183',
       Website: 'https://ejane.me/inactionfeedback.html',
     },
-    imagePath: '/posters/realtime-feedback.png',
+    imagePath: '/posters/realtime-feedback.webp',
   }),
   subgoalHierarchies: new Publication({
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
