@@ -6,19 +6,9 @@ import { POSTS } from '@/data/news'
 import { PROJECTS } from '@/data/project'
 import { PUBLICATIONS } from '@/data/publication'
 import { MOBILE_BREAKPOINT } from '@/ui'
-import { THEME } from '@/utils/theme'
-import { Global, ThemeProvider, css, keyframes } from '@emotion/react'
+import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import {
-  BodyText,
-  Divider,
-  HeaderText,
-  LinearLayout,
-  ResetStyle,
-  SubHeaderText,
-  SubSubHeaderText,
-  TextButton,
-} from '@wookiejin/react-component'
+import { ResetStyle } from '@wookiejin/react-component'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import Markdown from 'react-markdown'
@@ -26,27 +16,33 @@ import { Link } from './component/link'
 import { Time } from './component/time'
 
 const NEWS_LENGTH = 5
+const CONTACT_LABELS: Record<string, string> = {
+  EMAIL: 'Email Hyoungwook Jin',
+  GOOGLE_SCHOLAR: 'Google Scholar profile',
+  TWITTER: 'X profile',
+  LINKEDIN: 'LinkedIn profile',
+  LEETCODE: 'LeetCode profile',
+  CV: 'Curriculum vitae',
+}
 
 export default function Page() {
   const [newsLength, setNewsLength] = useState(NEWS_LENGTH)
 
   return (
-    <ThemeProvider theme={THEME}>
+    <>
       <Global styles={ResetStyle} />
       <Global
         styles={css`
           body {
-            ${THEME.fill.Primary}
-          }
-
-          strong {
-            font-weight: bold;
+            @media (prefers-color-scheme: dark) {
+              background-color: #222;
+            }
           }
         `}
       />
-      <main>
-        <Content>
-          <Card>
+      <Content>
+        <Sidebar>
+          <SidebarProfile>
             <ProfileImageContainer>
               <Image
                 fill
@@ -62,20 +58,18 @@ export default function Page() {
 
             <Introduction>
               <h1>
-                <HeaderText color="Focus">
-                  <WavingHand>Hyoungwook Jin</WavingHand>
-                </HeaderText>
+                <PageTitle>Hyoungwook Jin</PageTitle>
               </h1>
 
-              <BodyText marginBottom={8}>
+              <Body $marginBottom={8}>
                 I am a PhD student at 🇺🇸 University of Michigan,{' '}
                 <ExternalLink href="https://cse.engin.umich.edu">Computer Science and Engineering</ExternalLink>. I am
                 working with <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/">Xu Wang</ExternalLink> and
                 researchers at{' '}
                 <ExternalLink href="https://web.eecs.umich.edu/~xwanghci/lab.html">Lifelong Learning Lab</ExternalLink>.
-              </BodyText>
+              </Body>
 
-              <BodyText marginBottom={8}>
+              <Body $marginBottom={8}>
                 I envision{' '}
                 <ExternalLink href="https://docs.google.com/presentation/d/1ceeAvr6LtJf5zyLr69K3CoH3PYKuXd0wWbwgVQWBXgw/edit?usp=sharing">
                   End-learner Programming
@@ -83,18 +77,25 @@ export default function Page() {
                 in which learners and instructors can customize existing or even create new learning content, paths, and
                 tools beyond given resources and classes for their personal needs. I research human-AI interaction,
                 computer-supported cooperative work, and learning at scale to realize my vision.
-              </BodyText>
+              </Body>
 
-              <BodyText marginBottom={8}>
+              <Body $marginBottom={8}>
                 Formerly, I did my master&apos;s and bachelor&apos;s at 🇰🇷 KAIST. I was fortunate to work with{' '}
                 <ExternalLink href="https://juhokim.com">Juho Kim</ExternalLink> and researchers at{' '}
                 <ExternalLink href="https://www.kixlab.org/">KIXLAB</ExternalLink>.
-              </BodyText>
+              </Body>
 
-              <LinkSection>
+              <LinkSection aria-label="Contact links">
                 {CONTACTS.map(({ type, link }) => {
                   return (
-                    <ExternalLink key={type} href={link}>
+                    <ExternalLink
+                      key={type}
+                      href={link}
+                      opensInNewTab={type !== 'EMAIL'}
+                      aria-label={
+                        type === 'EMAIL' ? CONTACT_LABELS[type] : `${CONTACT_LABELS[type]} (opens in a new tab)`
+                      }
+                    >
                       <LinkButton>
                         <SvgIcon name={type} />
                       </LinkButton>
@@ -103,14 +104,14 @@ export default function Page() {
                 })}
               </LinkSection>
             </Introduction>
-          </Card>
+          </SidebarProfile>
 
-          <Divider fill="Secondary" marginVertical={32} />
+          <SectionDivider />
 
           <h2>
-            <SubHeaderText marginBottom={16}>NEWS</SubHeaderText>
+            <SectionTitle $marginBottom={16}>NEWS</SectionTitle>
           </h2>
-          <NewsRow>
+          <NewsRow id="news-list" aria-live="polite" aria-atomic="false">
             {POSTS.slice(0, newsLength).map(({ content, startDate }, i) => (
               <Fragment key={i}>
                 <Time date={startDate} formatStr="LLL, yyyy" />
@@ -119,237 +120,263 @@ export default function Page() {
             ))}
           </NewsRow>
           {newsLength < POSTS.length && (
-            <TextButton onClick={() => setNewsLength(l => Math.min(l + NEWS_LENGTH, POSTS.length))}>
+            <ShowMoreButton
+              onClick={() => setNewsLength(l => Math.min(l + NEWS_LENGTH, POSTS.length))}
+              aria-controls="news-list"
+              aria-label="Show five more news items"
+            >
               Show more
-            </TextButton>
+            </ShowMoreButton>
           )}
+        </Sidebar>
 
-          <Divider fill="Secondary" marginVertical={32} />
-
-          {0 < PROJECTS.length && (
-            <>
-              <h2>
-                <SubHeaderText marginBottom={16}>ONGOING PROJECT{PROJECTS.length > 1 && 'S'}</SubHeaderText>
-              </h2>
-
-              {PROJECTS.map(({ title, imagePath, description, links }, i) => (
-                <Card key={i}>
-                  <PublicationImageContainer>
+        <PosterContent>
+          <h2>
+            <SectionTitle $marginTop={16} $marginBottom={16}>
+              PUBLICATION
+            </SectionTitle>
+          </h2>
+          <PosterGrid>
+            {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
+              ({ title, conference, links, imagePath, authors, awards }, i) => (
+                <Poster key={i} aria-label={`${title} publication details`}>
+                  <PosterFront data-poster-face="front">
                     <Image
                       fill
                       src={imagePath}
-                      style={{
-                        objectFit: 'contain',
-                      }}
-                      alt={`The teaser image of ${title}`}
-                      sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
+                      style={{ objectFit: 'cover' }}
+                      alt={`The poster image of ${title}`}
+                      sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                     />
-                  </PublicationImageContainer>
-                  <div>
-                    <h3>
-                      <SubSubHeaderText color="Focus" marginBottom={8}>
-                        {title}
-                      </SubSubHeaderText>
-                    </h3>
-                    <BodyText color="Secondary" marginBottom={8}>
-                      {description}
-                    </BodyText>
-                    {0 < links?.length &&
+                    {awards?.map((award, i) => (
+                      <PosterAward key={i}>{award}</PosterAward>
+                    ))}
+                  </PosterFront>
+                  <PosterOverlay data-poster-face="back">
+                    <PublicationMeta>
+                      <span>{conference}</span>
+                      {awards?.map((award, i) => (
+                        <span key={i}>{award}</span>
+                      ))}
+                    </PublicationMeta>
+                    <PosterDescription>
+                      {authors.map(({ name }, i) => (
+                        <Author key={i} isMe={name === 'Hyoungwook Jin'}>
+                          {name}
+                        </Author>
+                      ))}
+                    </PosterDescription>
+                    {links?.length &&
                       links.map(([tag, link], i) => (
                         <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
                           {tag}
                         </Link>
                       ))}
-                  </div>
-                </Card>
-              ))}
+                  </PosterOverlay>
+                </Poster>
+              )
+            )}
+          </PosterGrid>
 
-              <Divider fill="Secondary" marginVertical={32} />
+          {0 < PROJECTS.length && (
+            <>
+              <h2>
+                <SectionTitle $marginTop={16} $marginBottom={16}>
+                  COMING SOON
+                </SectionTitle>
+              </h2>
+
+              <PosterGrid>
+                {PROJECTS.map(({ title, imagePath, description, links }, i) => (
+                  <Poster key={i} aria-label={`${title} project details`}>
+                    <PosterFront data-poster-face="front">
+                      <Image
+                        fill
+                        src={imagePath}
+                        style={{ objectFit: 'cover' }}
+                        alt={`The poster image of ${title}`}
+                        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      />
+                    </PosterFront>
+                    <PosterOverlay data-poster-face="back">
+                      <PosterDescription>{description}</PosterDescription>
+                      {0 < links?.length &&
+                        links.map(([tag, link], i) => (
+                          <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
+                            {tag}
+                          </Link>
+                        ))}
+                    </PosterOverlay>
+                  </Poster>
+                ))}
+              </PosterGrid>
             </>
           )}
-
-          <h2>
-            <SubHeaderText marginBottom={16}>CONFERENCE PAPERS</SubHeaderText>
-          </h2>
-          {PUBLICATIONS.filter(({ type, endDate }) => type === 'full paper' && endDate).map(
-            ({ title, conference, links, imagePath, authors, awards }, i) => (
-              <Card key={i}>
-                <PublicationImageContainer>
-                  <Image
-                    fill
-                    src={imagePath}
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                    alt={`The teaser image of ${title}`}
-                    sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
-                  />
-                </PublicationImageContainer>
-                <div>
-                  <h3>
-                    <SubSubHeaderText color="Focus" marginBottom={8}>
-                      {title}
-                    </SubSubHeaderText>
-                  </h3>
-                  <BodyText color="Secondary" marginBottom={8}>
-                    {authors.map(({ name }, i) => {
-                      return (
-                        <Author key={i} isMe={name === 'Hyoungwook Jin'}>
-                          {name}
-                        </Author>
-                      )
-                    })}
-                  </BodyText>
-                  <LinearLayout justifyContent="flex-start" gap={8} marginBottom={8}>
-                    <Conference>{conference}</Conference>
-                    {awards?.map((award, i) => (
-                      <Award key={i}>
-                        <Image src={'/icons/medal.png'} width={16} height={16} alt={award} /> {award}
-                      </Award>
-                    ))}
-                  </LinearLayout>
-                  {links?.length &&
-                    links.map(([tag, link], i) => (
-                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8} marginBottom={8}>
-                        {tag}
-                      </Link>
-                    ))}
-                </div>
-              </Card>
-            )
-          )}
-
-          <h2>
-            <SubHeaderText marginBottom={16}>POSTERS AND WORKSHOP PAPERS</SubHeaderText>
-          </h2>
-          {PUBLICATIONS.filter(({ type, endDate }) => (type === 'workshop' || type === 'poster') && endDate).map(
-            ({ title, conference, links, imagePath, authors }, i) => (
-              <Card key={i}>
-                <PublicationImageContainer>
-                  <Image
-                    fill
-                    src={imagePath}
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                    alt={`The teaser image of ${title}`}
-                    sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
-                  />
-                </PublicationImageContainer>
-                <BodyText>
-                  <h3>
-                    <SubSubHeaderText color="Focus" marginBottom={8}>
-                      {title}
-                    </SubSubHeaderText>
-                  </h3>
-                  <BodyText color="Secondary" marginBottom={8}>
-                    {authors.map(({ name }, i) => {
-                      return (
-                        <Author key={i} isMe={name === 'Hyoungwook Jin'}>
-                          {name}
-                        </Author>
-                      )
-                    })}
-                  </BodyText>
-                  <BodyText marginBottom={8}>{conference}</BodyText>
-                  {links?.length &&
-                    links.map(([tag, link], i) => (
-                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
-                        {tag}
-                      </Link>
-                    ))}
-                </BodyText>
-              </Card>
-            )
-          )}
-
-          <h2>
-            <SubHeaderText marginBottom={16}>HOSTED WORKSHOP</SubHeaderText>
-          </h2>
-          {PUBLICATIONS.filter(({ type, endDate }) => type === 'host' && endDate).map(
-            ({ title, conference, links, imagePath, authors, type }, i) => (
-              <Card key={i}>
-                <PublicationImageContainer>
-                  <Image
-                    fill
-                    src={imagePath}
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                    alt={`The teaser image of ${title}`}
-                    sizes={`(max-width: ${MOBILE_BREAKPOINT}px) 100vw, 33vw`}
-                  />
-                </PublicationImageContainer>
-                <BodyText>
-                  <h3>
-                    <SubSubHeaderText color="Focus" marginBottom={8}>
-                      {title}
-                    </SubSubHeaderText>
-                  </h3>
-                  <BodyText color="Secondary" marginBottom={8}>
-                    {authors.map(({ name }, i) => {
-                      return (
-                        <Author key={i} isMe={name === 'Hyoungwook Jin'}>
-                          {name}
-                        </Author>
-                      )
-                    })}
-                  </BodyText>
-                  <BodyText marginBottom={8}>{conference}</BodyText>
-                  {links?.length &&
-                    links.map(([tag, link], i) => (
-                      <Link key={i} href={link} title={`the ${tag} of ${title}`} marginRight={8}>
-                        {tag}
-                      </Link>
-                    ))}
-                </BodyText>
-              </Card>
-            )
-          )}
-        </Content>
-      </main>
-    </ThemeProvider>
+        </PosterContent>
+      </Content>
+    </>
   )
 }
 
 const Content = styled.main`
-  ${({ theme }) => css`
-    ${theme.color.Primary}
-    ${theme.font.Body}
-    max-width: 800px;
-    padding: 40px 24px;
-    margin: 0 auto;
-  `}
-`
-
-const Card = styled.section`
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.4;
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 48px;
+  max-width: 1440px;
+  height: 100vh;
+  margin: auto;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ffffff;
+  }
+
   @media (max-width: ${MOBILE_BREAKPOINT}px) {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
-  gap: 32px;
-  margin-bottom: 32px;
-  &:last-child {
-    margin-bottom: 0;
+`
+
+const PageTitle = styled.span`
+  display: block;
+  color: #f1c76f;
+  text-align: center;
+  font-family: var(--font-cinema), Impact, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  white-space: pre-wrap;
+`
+
+const Body = styled.p<{ $marginBottom?: number }>`
+  margin: 0 0 ${({ $marginBottom = 0 }) => $marginBottom}px;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.4;
+`
+
+const SectionDivider = styled.hr`
+  height: 1px;
+  margin: 32px 0;
+  border: 0;
+  background-color: #495961;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #647a85;
+  }
+`
+
+const SectionTitle = styled.span<{ $marginTop?: number; $marginBottom?: number }>`
+  display: block;
+  margin: ${({ $marginTop = 0 }) => $marginTop}px 0 ${({ $marginBottom = 0 }) => $marginBottom}px;
+  font-family: var(--font-cinema), Impact, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  white-space: pre-wrap;
+`
+
+const ShowMoreButton = styled.button`
+  min-height: 40px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: #495961;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.2;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ffffff;
+  }
+
+  &:not(:disabled):hover {
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: contrast(0.6);
+  }
+`
+
+const Sidebar = styled.aside`
+  padding: 20px;
+  color: #f4ede1;
+  background: linear-gradient(160deg, #292016 0%, #17120e 52%, #0e0c0a 100%);
+  box-shadow: inset -1px 0 0 rgba(241, 199, 111, 0.28);
+
+  h1 > div,
+  h2 > div {
+    color: #f1c76f;
+  }
+
+  a {
+    color: #f1c76f;
+  }
+
+  hr {
+    background-color: rgba(241, 199, 111, 0.42);
+  }
+
+  button {
+    color: #f1c76f;
+  }
+
+  a > div {
+    border-color: rgba(241, 199, 111, 0.7);
+    background: rgba(241, 199, 111, 0.07);
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+
+    &:hover {
+      border-color: #f1c76f;
+      background: rgba(241, 199, 111, 0.18);
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (min-width: ${MOBILE_BREAKPOINT + 1}px) {
+    position: sticky;
+    height: 100%;
+    overflow-y: auto;
+  }
+`
+
+const SidebarProfile = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+
+const PosterContent = styled.section`
+  min-width: 0;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    margin: 0 20px;
   }
 `
 
 const ProfileImageContainer = styled.div`
-  ${({ theme }) => css`
-    position: relative;
-    overflow: hidden;
-    height: calc(800px / 2.5);
-    overflow: hidden;
-    border-radius: 4px;
-    ${theme.elevation.L2}
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  margin: auto;
+  z-index: 20;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 
-    @media (max-width: ${MOBILE_BREAKPOINT}px) {
-      width: 224px;
-      height: 224px;
-      margin: auto;
-    }
-  `}
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    width: 224px;
+    margin: auto;
+  }
 `
 
 const Introduction = styled.div`
@@ -358,15 +385,162 @@ const Introduction = styled.div`
   justify-content: space-between;
 `
 
-const PublicationImageContainer = styled.div`
-  ${({ theme }) => css`
+const PosterGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const Poster = styled.article`
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  perspective: 1000px;
+  z-index: 20;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+
+  &:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  &:hover [data-poster-face='front'],
+  &:focus [data-poster-face='front'],
+  &:focus-within [data-poster-face='front'] {
+    transform: rotateY(-180deg);
+    transition-duration: 500ms;
+  }
+
+  &:hover [data-poster-face='back'],
+  &:focus [data-poster-face='back'],
+  &:focus-within [data-poster-face='back'] {
+    transform: rotateY(0deg);
+    transition-duration: 500ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    [data-poster-face='front'],
+    [data-poster-face='back'] {
+      transition: none;
+    }
+  }
+`
+
+const PosterFront = styled.div`
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: transform 220ms ease-in;
+`
+
+const PosterOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.6));
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 220ms ease-in;
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.2;
+
+  a {
+    color: white;
+    min-height: 32px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.18);
     position: relative;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 4px;
-    ${theme.elevation.L1}
-    background-color: white;
-  `}
+    justify-content: center;
+    text-align: center;
+    font-size: 0.72em;
+    font-weight: 600;
+    font-family: var(--font-cinema), Impact, sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #1b1407;
+      border-color: #f1c76f;
+      background: #f1c76f;
+      background-image: none;
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a {
+      transition: none;
+    }
+  }
+`
+
+const PosterAward = styled.span`
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.2;
+  color: white;
+  background: rgba(122, 80, 0, 0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+`
+
+const PosterDescription = styled.p`
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.2;
+  color: white;
+  margin: 0 0 12px;
+`
+
+const PublicationMeta = styled.div`
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+
+  span,
+  strong {
+    padding: 3px 6px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 0.75em;
+  }
 `
 
 const Author = styled.span<{ isMe: boolean }>`
@@ -379,25 +553,27 @@ const Author = styled.span<{ isMe: boolean }>`
   `}
 `
 
-const LinkSection = styled.div`
+const LinkSection = styled.nav`
   display: flex;
   gap: 8px;
 `
 
 const LinkButton = styled.div`
-  ${({ theme }) => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    box-sizing: border-box;
-    ${theme.border.Secondary};
-    border-radius: 8px;
-    font-weight: bold;
-    ${theme.font.SubTitle}
-  `}
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #495961;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #647a85;
+  }
 `
 
 const NewsRow = styled.div`
@@ -405,53 +581,4 @@ const NewsRow = styled.div`
   grid-template-columns: auto 1fr;
   column-gap: 8px;
   row-gap: 4px;
-`
-
-const Award = styled.span`
-  ${({ theme }) => css`
-    ${theme.color.Warning}
-    ${theme.border.Warning}
-    ${theme.font.Caption}
-    padding: 4px;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    text-transform: uppercase;
-    gap: 4px;
-  `}
-`
-
-const Conference = styled.span`
-  ${({ theme }) => css`
-    ${theme.color.Primary}
-    ${theme.border.Primary}
-    ${theme.font.Caption}
-    padding: 4px;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-  `}
-`
-
-const Waving = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(15deg);
-  }
-`
-
-const WavingHand = styled.span`
-  display: inline-flex;
-
-  ::before {
-    content: '👋';
-    margin-right: 0.5rem;
-  }
-
-  ::before {
-    animation: ${Waving} 0.2s infinite ease-in-out alternate;
-  }
 `
