@@ -153,6 +153,9 @@ export default function Page() {
                     ))}
                   </PosterFront>
                   <PosterOverlay data-poster-face="back">
+                    <h3>
+                      <PublicationTitle>{title}</PublicationTitle>
+                    </h3>
                     <PublicationMeta>
                       <span>{conference}</span>
                       {awards?.map((award, i) => (
@@ -558,6 +561,14 @@ const PosterAward = styled.span`
   color: white;
   background: rgba(122, 80, 0, 0.92);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+`
+
+const PublicationTitle = styled.div`
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: white;
+  margin: 0 0 8px;
 `
 
 const PosterDescription = styled.p`
