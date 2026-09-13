@@ -72,7 +72,7 @@ export default function Page() {
               <Body $marginBottom={8}>
                 I envision{' '}
                 <ExternalLink href="https://docs.google.com/presentation/d/1ceeAvr6LtJf5zyLr69K3CoH3PYKuXd0wWbwgVQWBXgw/edit?usp=sharing">
-                  End-learner Programming
+                  End-Learner Programming
                 </ExternalLink>{' '}
                 in which learners and instructors can customize existing or even create new learning content, paths, and
                 tools beyond given resources and classes for their personal needs. I research human-AI interaction,
@@ -133,7 +133,7 @@ export default function Page() {
         <PosterContent>
           <h2>
             <SectionTitle $marginTop={16} $marginBottom={16}>
-              PUBLICATION
+              PUBLICATIONS
             </SectionTitle>
           </h2>
           <PosterGrid>
